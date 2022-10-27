@@ -1,0 +1,15 @@
+1.  se gasesc zonele statics: `data`, `rodata`, `bss`, `text`, etc.
+    nu se gasesc stack-ul si heap-ul pentru ca acestea exista doar la runtime
+
+    Unde incep:
+    text: 1040
+    rodata: 2000 
+    data: 4008
+    bss: 4018
+
+2.  acum gasim si zonele de `heap` si `stack`
+    mai observam biblioteci (lib.c) partajate
+    rulez `ldd` si vad libc link-uit la alta adresa (ASLR)
+    mai vad `ld-linux-x86-64.so.2` mapat la alta adresa (ASLR)
+    mai vad `linux-vdso.so.1` ([vdso]) mapat la alta adresa (ASLR)
+
