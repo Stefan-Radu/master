@@ -1,0 +1,161 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{valgrind}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://valgrind.org/
+      \endverb
+      \verb{url}
+      \verb https://valgrind.org/
+      \endverb
+    \endentry
+    \entry{cppcheck}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://cppcheck.net/
+      \endverb
+      \verb{url}
+      \verb http://cppcheck.net/
+      \endverb
+    \endentry
+    \entry{valgrindcore}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://valgrind.org/docs/manual/manual-core.html
+      \endverb
+      \verb{url}
+      \verb https://valgrind.org/docs/manual/manual-core.html
+      \endverb
+    \endentry
+    \entry{ncursesmanual}{misc}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://man.archlinux.org/man/curs_terminfo.3x.en
+      \endverb
+      \verb{url}
+      \verb https://man.archlinux.org/man/curs_terminfo.3x.en
+      \endverb
+    \endentry
+    \entry{ncursesfaq}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e033031e31a3be3e77fead5cae536575}{%
+           family={Dickey},
+           familyi={D\bibinitperiod},
+           given={Thomas\bibnamedelima E.},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{e033031e31a3be3e77fead5cae536575}
+      \strng{fullhash}{e033031e31a3be3e77fead5cae536575}
+      \strng{bibnamehash}{e033031e31a3be3e77fead5cae536575}
+      \strng{authorbibnamehash}{e033031e31a3be3e77fead5cae536575}
+      \strng{authornamehash}{e033031e31a3be3e77fead5cae536575}
+      \strng{authorfullhash}{e033031e31a3be3e77fead5cae536575}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{day}{16}
+      \field{month}{3}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://invisible-island.net/ncurses/ncurses.faq.html#config_leaks
+      \endverb
+      \verb{url}
+      \verb https://invisible-island.net/ncurses/ncurses.faq.html#config_leaks
+      \endverb
+    \endentry
+    \entry{soundness}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=69cb741734a7429ce7f1dd4dd7eacade}{%
+           family={Hicks},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{69cb741734a7429ce7f1dd4dd7eacade}
+      \strng{fullhash}{69cb741734a7429ce7f1dd4dd7eacade}
+      \strng{bibnamehash}{69cb741734a7429ce7f1dd4dd7eacade}
+      \strng{authorbibnamehash}{69cb741734a7429ce7f1dd4dd7eacade}
+      \strng{authornamehash}{69cb741734a7429ce7f1dd4dd7eacade}
+      \strng{authorfullhash}{69cb741734a7429ce7f1dd4dd7eacade}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{day}{23}
+      \field{month}{10}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://www.pl-enthusiast.net/2017/10/23/what-is-soundness-in-static-analysis/
+      \endverb
+      \verb{url}
+      \verb http://www.pl-enthusiast.net/2017/10/23/what-is-soundness-in-static-analysis/
+      \endverb
+    \endentry
+    \entry{git}{misc}{}
+      \field{sortinit}{u}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labeltitlesource}{title}
+      \field{title}{util-linux}
+      \field{urlday}{23}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/util-linux/util-linux
+      \endverb
+      \verb{url}
+      \verb https://github.com/util-linux/util-linux
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

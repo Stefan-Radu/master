@@ -16,8 +16,10 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{somepaleyellow}{rgb}{0.98,0.98,0.93}
 
 \lstdefinestyle{lststyle}{
+    backgroundcolor=\color{somepaleyellow},
     numberstyle=\tiny\color{gray},
     keywordstyle=\color{blue},
     commentstyle=\color{dkgreen},
@@ -34,6 +36,16 @@
     showtabs=false,
     tabsize=2
 }
+
+% Utilizează biblatex pentru referințe bibliografice
+\usepackage[
+    maxbibnames=50,
+    sorting=nty,
+    backend=biber,
+    style=numeric
+]{biblatex}
+
+\addbibresource{bibliography.bib}
 
 \lstset{style=lststyle}
 
@@ -61,37 +73,55 @@
 
 \begin{document}
 
-\twocolumn[
-  \maketitle
-  \begin{onecolabstract}
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
-felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. Donec
-vehicula augue eu neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus
-sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo
-ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor
-semper nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget
-orci sit amet orci dignissim rutrum.
-  \end{onecolabstract}
-]
+\maketitle
 
-\section{Tools Used}
+\section{Introduction}
+      In this report I present the process I went through to find various bugs in the \lstinline{util-linux} collection of Linux utilities. I start by giving a bit of information about the tools used. After that, I describe the runtime analysis process using the \lstinline{valgrind} memory checker and describe my findings. I finish the section with a solution to the identified issue. I go on to explain the static analysis process using the \lstinline{cppcheck} tool. I give examples of many false positive findings, but also of a positively identified bug. In the end I present the conclusions of the experiment.
 
-For this analysis I used the memory checker tool that is bundled with \lstinline{valgrind} and the \lstinline{cppcheck} static analyser.
+\section{Preliminaries}
 
-\subsection{About the Valgrind memory checker}
+For this analysis I used the memory checker tool that is bundled with \lstinline{valgrind} \cite{valgrind} for runtime analysis and the \lstinline{cppcheck} \cite{cppcheck} tool for static analysis.
 
+\subsection{Valgrind}
 
-\section{Dynamic Analysis}
+Valgrind is an instrumentation framework for building dynamic analysis tools. There are also standard tools provided as part of Valgrind itself, which can be used for instrumenting programs. When using Valgrind for instrumentation, it runs the binary of the program in an sandboxed environment, on a virtual synthetic CPU. This allows the Valgrind core to pass the code to the specific tool that is in use. Memcheck, which is the specific tool referred to in this report, inserts code which checks every memory allocation and release made during the execution of the program. By tracking memory flow in this manner it can determine various types of memory related issues, such as memory leaks, or unreleased memory. It also provides detailed stack traces which aid in pinpointing the exact source of each problem. \cite{valgrindcore}
+
+To use valgrind with the Memcheck tool, you just have to call the program and provide as an argument the path to your executable: \lstinline{valgrind ./<binary>}. To get a more comprehensive result I also used two extra flags: \lstinline{valgrind --leak-check=full --show-leak-kinds=all}
+
+\subsection{CppCheck}
+
+CppCheck is a static analysis tool designed for C/C++ programs. It claims to be
+different from other similar tools because it uses unsound flow sensitive
+analysis \cite{cppcheck}, as opposed to path sensitive analysis which is used
+by most other tools. At a high level, flow sensitive means that the tool will
+take into account the order of operations in the program and will compute an
+answer for each point in the program. Moreover it is considered unsound,
+meaning that it doesn't guarantee that all errors that exist in the program
+will be reported, despite the error types being among the ones supported by
+CppCheck \cite{soundness}.
+
+To use CppCheck you just have to call the program and provide as an argument the path to the code you want to analyse and, optionally, an extra argument with the
+path of any \lstinline{include} directory. In my specific use case I used the following command in the root of the project: \lstinline{cppcheck -I ./include ./}. 
+
+\section{Runtime Analysis}
 
 \subsection{About the target}
 
-My analysis started from the \lstinline{cal} terminal utility. Running the \lstinline{valgrind} memory checker on the already installed instanced I could see that a few thousand kilobytes of memory were either lost or not properly freed upon the program exist. \lstinline{cal} is a simply utility program that runs in the terminal and displays a calender with the current day highlighted using the \lstinline{ncurses} library. It is part of a bigger suite of CLI utilities and programs bundled together in the \lstinline{util-linux} repository \cite{git}. The repository hosted on Github, which this paper is based on is used for specifically for development.
+My analysis started from the \lstinline{cal} terminal utility. Running the
+\lstinline{valgrind} memory checker on the already installed instanced I could
+see that a few thousand kilobytes of memory were either lost or not properly
+freed upon the program exist. \lstinline{cal} is a simple utility program that
+runs in the terminal and displays a calender with the current day highlighted
+using the \lstinline{ncurses} library. It is part of a bigger suite of CLI
+utilities and programs bundled together in the \lstinline{util-linux}
+repository \cite{git}. The repository hosted on Github, which this paper is
+based on is used for specifically for development.
 
 \subsection{Investigation process}
 
-The first step was to clone the repository and compile the targeted program. Running 
-\lstinline{valgrind} on the compiled program leads to the results shown in Listing \ref{innitial}.
+The first step was to clone the repository and compile the targeted program.
+Running \lstinline{valgrind} on the compiled program leads to the results shown
+in Listing \ref{innitial}.
 
 \begin{code}[basicstyle=\ttfamily\small,
     caption=Innitial Leak Summary, label=innitial]
@@ -103,30 +133,48 @@ LEAK SUMMARY:
         suppressed: 0 bytes in 0 blocks
 \end{code}
 
-Seeing \lstinline{still reachable} memory is sign of improper handling and freeing of allocated memory before a program exits. Using the additional flags \lstinline{--leak-check=full} and \lstinline{--show-leak-kinds=all} I can get a stack trace of the memory allocation in the first place.
+Seeing \lstinline{still reachable} memory is sign of improper handling and
+freeing of allocated memory before a program exits. Using the additional flags
+\lstinline{--leak-check=full} and \lstinline{--show-leak-kinds=all} I can get a
+stack trace which allows me to track the calls which caused the leak.
 
-Following the stack trace and testing the code along the way I understood that while initializing the necessary elements needed for colour support, there is also a check
-performed that verifies if the current terminal in used supports colours.
+Following the stack trace and testing the code along the way I understood that
+while initializing the necessary elements needed for colour support, there is
+also a check performed that verifies if the current terminal in use supports
+colours.
 
 \begin{code}[language=c, basicstyle=\ttfamily\small,
     caption=Stack Trace]
 // cal.c
-if (colors_init(ctl.colormode, "cal") == 0) {
+if (colors_init(ctl.colormode, "cal") == 0)
     ...
 // colors.c
 if (cc->mode == UL_COLORMODE_UNDEF
-    && (ready = colors_terminal_is_ready())) {
+    && (ready = colors_terminal_is_ready()))
     ...
 // colors.c
 if (setupterm(NULL, STDOUT_FILENO, &ret) == 0
         && ret == 1)
 \end{code}
 
-The \lstinline{setupterm} function is part of the \lstinline{ncurses} system library. While consulting its manual \cite{manual} I learned that, as the name suggests, \lstinline{setupterm} is a routine that handles initialization of various low-level terminal-dependant structures and variables. Upon initialization, the \lstinline{cur_term} global is set to point to the newly initialized memory segment. Releasing this memory however, is the responsibility of the developer who should call the \lstinline{del_curterm}. A careful inspection of the code shows that \lstinline{del_curterm} is not called while using the \lstinline{cal} program.
+The \lstinline{setupterm} function is part of the \lstinline{ncurses} system
+library. While consulting its manual \cite{ncursesmanual} I learned that, as
+the name suggests, \lstinline{setupterm} is a routine that handles
+initialization of various low-level terminal-dependant structures and
+variables. Upon initialization, the \lstinline{cur_term} global is set to point
+to the newly initialized memory segment. Releasing this memory however, is the
+responsibility of the developer who should call \lstinline{del_curterm}. A
+careful inspection of the code shows that \lstinline{del_curterm} is not called
+while using the \lstinline{cal} program.
 
 \subsection{Solution}
 
-The solution I came up with was to insure that when \lstinline{setupterm} is called, \lstinline{del_curterm} will also be called. For this I used \lstinline{atexit} from the standard C library which calls a provided function when the program exits. I thus created a wrapper around the \lstinline{del_curterm} function and pass it as an argument to the \lstinline{atexit} call as seen in Listing \ref{atexit}.
+The solution I came up with was to ensure that when \lstinline{setupterm} is
+called, \lstinline{del_curterm} will also be called. For this I used
+\lstinline{atexit} from the standard C library which calls a provided function
+when the program exits. I thus created a wrapper around the
+\lstinline{del_curterm} function and pass it as an argument to the
+\lstinline{atexit} call as seen in Listing \ref{atexit}.
 
 \begin{code}[language=c, basicstyle=\ttfamily\small,
     caption=Wrapper for atexit, label=atexit]
@@ -146,7 +194,10 @@ if (setupterm(NULL, STDOUT_FILENO, &ret) == 0
 
 \subsection{Results}
 
-Following the proposed change, I recorded its effects by running \lstinline{valgrind} again on the newly compiled binary. As shown in Listing \ref{final}, I managed to reduce the improperly released memory by 9640 bytes in a total of 15 blocks.
+Following the proposed change, I recorded its effects by running
+\lstinline{valgrind} again on the newly compiled binary. As shown in Listing
+\ref{final}, I managed to reduce the improperly released memory by 9640 bytes
+in a total of 15 blocks.
 
 \begin{code}[basicstyle=\ttfamily\small,
     caption=Leak Summary after changes, label=final]
@@ -158,17 +209,128 @@ LEAK SUMMARY:
         suppressed: 0 bytes in 0 blocks
 \end{code}
 
-Since the problem originated from the \lstinline{colors.h} library, this change affects not only the \lstinline{cal} utility, but any other program from the repository which imports \lstinline{colors.h}. This includes common utilities such as \lstinline{fdisk}, or \lstinline{hexdump}.
+Since the problem originated from the \lstinline{colors.h} library, this change
+affects not only the \lstinline{cal} utility, but also any other program from the
+repository which imports \lstinline{colors.h}. This includes common utilities
+such as \lstinline{fdisk}, or \lstinline{hexdump}.
 
 \subsection{Further efforts}
 
-As it's obvious from Listing \ref{final}, there is still unreleased memory when the process finishes execution. By following the cues from \lstinline{valgrind} I concluded the problem originate in the \lstinline{tigetnum("colors");} as well as in low level code in the \lstinline{ncurses} library. After unsuccessful attempts of fixing the problem from the library level and some more research on the topic I came across an interesting finding in the ncurses FAQ page \cite{ncursesfaq}. It seems that reports regarding memory still in use in programs which depend on the \lstinline{ncurses} library are normal and expected. There are certain chunks of memory which are never freed for performance reasons.
+As it's obvious from Listing \ref{final}, there is still unreleased memory when
+the process finishes execution. By following the cues from \lstinline{valgrind}
+I concluded the remaining problems originate in the
+\lstinline{tigetnum("colors");} as well as in low level code in the
+\lstinline{ncurses} library. After unsuccessful attempts of modifying to code
+from the \lstinline{ncurses} library in a meaningful way and some more research
+on the topic, I came across an interesting finding in the ncurses FAQ page
+\cite{ncursesfaq}. It seems that reports regarding memory still in use in
+programs which depend on the \lstinline{ncurses} library are normal and
+expected. There are certain chunks of memory which are never freed for
+performance reasons.
 
-The final verdict regarding the 5 blocks of memory still in use is thus inconclusive. There is a high probability that not properly releasing the respective blocks is intentional, but I couldn't find conclusive evidence for this.
+The final verdict regarding the 5 blocks of memory still in use is thus
+inconclusive. There is a high probability that not properly releasing the
+respective blocks is intentional, but I couldn't find clear evidence for this.
 
 \section{Static Analysis}
 
-\bibliography{bibliography}
-\bibliographystyle{ieeetr}
+\subsection{About the target}
+
+I thought the best course of action for the Static Analysis part was to verify as much code as possible. As such, I decided to use the CppCheck program on all the code that was available in the repository, thus checking for bugs in every available tool.
+
+\subsection{False Positives}
+
+Calling \lstinline{cppcheck} in the root of the project and filtering for
+errors outputs more than 400 issues with the codebase. On a closer inspection I
+found the following:
+
+\begin{itemize}
+\setlength\itemsep{0em}
+\setlength\parsep{0em}
+    \item The majority of issues reported were ``null pointer dereference''
+        errors. Most of them were reported in scenarios where a function was
+        called with a `struct type' as a parameter. All turned out to be false
+        positives. 
+    \item There were a few reports of ``uninitialized variable''. Analysing the
+        specific scenarios showed that the respective variables were
+        initialized in some initialization function to which the corresponding
+        address was passed. False positive.
+    \item There was one report of ``double free''. In that particular case the
+        freed pointer was either reallocated or set to \lstinline{NULL}, which
+        wouldn't cause any issues. False positive.
+    \item There was one report of ``index out bounds access''. In that
+        particular case, there was an explicit bound-check wrapping the memory
+        access. False positive.
+    \item There were a few ``integer overflow'' errors reported. All of the
+        cases involved shifting to the left the number 1 with a value
+        (\lstinline{1<<K}), which turned out to be less than or equal to 31.
+        This wouldn't cause an integer overflow. False positive.
+    \item There was a very interesting ``null pointer dereference'' report
+        which I emphasized in Listing \ref{pointerderef}. This is actually a
+        declaration using the \lstinline{__typeof__} construct called on a null
+        pointer variable. This however is not incorrect. False positive.
+
+\end{itemize}
+
+\begin{code}[basicstyle=\ttfamily\small, language=c,
+    caption=Declaration using \_\_typeof\_\_, label=pointerderef]
+    __typeof__(ask->data.num) *num;
+\end{code}
+
+\subsection{One identified bug}
+
+Out of the more than 400 reports, more than $99\%$ of them were false
+positives. However, there was one report of ``path with no return statement''.
+Analysing the source code led me to conclude that a bug is indeed present
+there. Looking at Listing \ref{noreturn} we can see that there are 3 return
+paths handled but 4 present. If the conditional evaluates to false and none of
+the pre-processor checks hold, then the function will end without returning.
+This leads to undefined behaviour, which must be avoided. This is especially
+severe as it occurs in a function which deals with authentication related
+issues.
+
+To solve this issue, an appropriate return statement should be appeneded to the
+function.
+
+\begin{code}[basicstyle=\ttfamily\small, language=c,
+    caption=Path with no return, label=noreturn]
+...
+	if (su->suppress_pam_info
+    && num_msg == 1
+    && msg
+    && msg[0]->msg_style == PAM_TEXT_INFO)
+        return PAM_SUCCESS;
+
+#ifdef HAVE_SECURITY_PAM_MISC_H
+        return misc_conv(num_msg,
+            msg, resp, data);
+#elif defined(HAVE_SECURITY_OPENPAM_H)
+        return openpam_ttyconv(num_msg,
+            msg, resp, data);
+#endif
+    
+    /* return expected */
+}
+\end{code}
+
+CppCheck claims to report very few false positives. It is very surprising that
+despite this claim, more than $99\%$ of my finding were false positives. I
+attribute this result to the surprising differences that can occur between the
+sytax of a piece of code and its semantics.
+
+\section{Conclusion}
+
+In this report I presented my efforts of finding bugs in the
+\lstinline{util-linux} collection of Linux utilities. With the use of the
+\lstinline{valgrind} memory checker I managed to identify and also fix an
+improper handling of initialized data upon the program exit. This previously
+resulted in a certain amount of memory not being released upon the program exit.
+Furthermore, with the use of the \lstinline{cppcheck} static analysis tool, I
+managed to find a non-void function which has an execution path that doesn't
+end with a return statement. This can lead to undefined behaviour. This
+experiments prove that the use of both runtime and static analysis tools is
+invaluable during development. This is especially relevant when programming
+languages such as C, which do not have any memory safety guarantees.
+\printbibliography[heading=bibintoc]
 
 \end{document}
