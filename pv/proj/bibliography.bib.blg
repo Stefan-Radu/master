@@ -1,0 +1,5 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'bibliography.bib.blg'
+[100] biber:340> INFO - === Sun Apr 23, 2023, 15:17:34
+[179] Utils.pm:410> ERROR - Cannot find 'bibliography.bib.bcf'!
+[179] Biber.pm:136> INFO - ERRORS: 1

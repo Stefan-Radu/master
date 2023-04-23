@@ -1,0 +1,174 @@
+\documentclass[a4paper,10pt,twocolumn,english]{article}
+
+%---------------------------------------------------------
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{lipsum} 
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{abstract}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{lststyle}{
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    basicstyle=\ttfamily,
+    breakatwhitespace=false,
+    breaklines=false, 
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=true,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=lststyle}
+
+\lstnewenvironment{code}[1][]%
+{
+   \noindent\minipage{\linewidth}\lstset{#1}}
+{\endminipage}
+
+\graphicspath{./images/}
+\usepackage[margin=0.5in, bottom=1in]{geometry}
+
+\setlength{\columnsep}{7mm}
+
+%---------------------------------------------------------
+% Equation reference, e.g. (1)
+\titlespacing*{\section}{0pt}{15pt}{10pt}
+\titlespacing*{\subsection}{0pt}{15pt}{10pt}
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\lastacc}{[Accessed: \today]} % last accessed quick command
+%---------------------------------------------------------
+
+\title{Bughunting in util-linux}
+\author{Stefan-Octavian Radu}
+\date{\footnotesize\today}
+
+\begin{document}
+
+\twocolumn[
+  \maketitle
+  \begin{onecolabstract}
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae,
+felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. Donec
+vehicula augue eu neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus
+sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo
+ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor
+semper nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget
+orci sit amet orci dignissim rutrum.
+  \end{onecolabstract}
+]
+
+\section{Tools Used}
+
+For this analysis I used the memory checker tool that is bundled with \lstinline{valgrind} and the \lstinline{cppcheck} static analyser.
+
+\subsection{About the Valgrind memory checker}
+
+
+\section{Dynamic Analysis}
+
+\subsection{About the target}
+
+My analysis started from the \lstinline{cal} terminal utility. Running the \lstinline{valgrind} memory checker on the already installed instanced I could see that a few thousand kilobytes of memory were either lost or not properly freed upon the program exist. \lstinline{cal} is a simply utility program that runs in the terminal and displays a calender with the current day highlighted using the \lstinline{ncurses} library. It is part of a bigger suite of CLI utilities and programs bundled together in the \lstinline{util-linux} repository \cite{git}. The repository hosted on Github, which this paper is based on is used for specifically for development.
+
+\subsection{Investigation process}
+
+The first step was to clone the repository and compile the targeted program. Running 
+\lstinline{valgrind} on the compiled program leads to the results shown in Listing \ref{innitial}.
+
+\begin{code}[basicstyle=\ttfamily\small,
+    caption=Innitial Leak Summary, label=innitial]
+LEAK SUMMARY:
+   definitely lost: 0 bytes in 0 blocks
+   indirectly lost: 0 bytes in 0 blocks
+     possibly lost: 0 bytes in 0 blocks
+   still reachable: 17,760 bytes in 20 blocks
+        suppressed: 0 bytes in 0 blocks
+\end{code}
+
+Seeing \lstinline{still reachable} memory is sign of improper handling and freeing of allocated memory before a program exits. Using the additional flags \lstinline{--leak-check=full} and \lstinline{--show-leak-kinds=all} I can get a stack trace of the memory allocation in the first place.
+
+Following the stack trace and testing the code along the way I understood that while initializing the necessary elements needed for colour support, there is also a check
+performed that verifies if the current terminal in used supports colours.
+
+\begin{code}[language=c, basicstyle=\ttfamily\small,
+    caption=Stack Trace]
+// cal.c
+if (colors_init(ctl.colormode, "cal") == 0) {
+    ...
+// colors.c
+if (cc->mode == UL_COLORMODE_UNDEF
+    && (ready = colors_terminal_is_ready())) {
+    ...
+// colors.c
+if (setupterm(NULL, STDOUT_FILENO, &ret) == 0
+        && ret == 1)
+\end{code}
+
+The \lstinline{setupterm} function is part of the \lstinline{ncurses} system library. While consulting its manual \cite{manual} I learned that, as the name suggests, \lstinline{setupterm} is a routine that handles initialization of various low-level terminal-dependant structures and variables. Upon initialization, the \lstinline{cur_term} global is set to point to the newly initialized memory segment. Releasing this memory however, is the responsibility of the developer who should call the \lstinline{del_curterm}. A careful inspection of the code shows that \lstinline{del_curterm} is not called while using the \lstinline{cal} program.
+
+\subsection{Solution}
+
+The solution I came up with was to insure that when \lstinline{setupterm} is called, \lstinline{del_curterm} will also be called. For this I used \lstinline{atexit} from the standard C library which calls a provided function when the program exits. I thus created a wrapper around the \lstinline{del_curterm} function and pass it as an argument to the \lstinline{atexit} call as seen in Listing \ref{atexit}.
+
+\begin{code}[language=c, basicstyle=\ttfamily\small,
+    caption=Wrapper for atexit, label=atexit]
+/* atexit() wrapper */
+static void colors_del_curterm(void)
+{
+	del_curterm(cur_term);
+}
+...
+
+if (setupterm(NULL, STDOUT_FILENO, &ret) == 0
+        && ret == 1) {
+    ...
+    atexit(colors_del_curterm);
+}
+\end{code}
+
+\subsection{Results}
+
+Following the proposed change, I recorded its effects by running \lstinline{valgrind} again on the newly compiled binary. As shown in Listing \ref{final}, I managed to reduce the improperly released memory by 9640 bytes in a total of 15 blocks.
+
+\begin{code}[basicstyle=\ttfamily\small,
+    caption=Leak Summary after changes, label=final]
+LEAK SUMMARY:
+   definitely lost: 0 bytes in 0 blocks
+   indirectly lost: 0 bytes in 0 blocks
+     possibly lost: 0 bytes in 0 blocks
+   still reachable: 8,120 bytes in 5 blocks
+        suppressed: 0 bytes in 0 blocks
+\end{code}
+
+Since the problem originated from the \lstinline{colors.h} library, this change affects not only the \lstinline{cal} utility, but any other program from the repository which imports \lstinline{colors.h}. This includes common utilities such as \lstinline{fdisk}, or \lstinline{hexdump}.
+
+\subsection{Further efforts}
+
+As it's obvious from Listing \ref{final}, there is still unreleased memory when the process finishes execution. By following the cues from \lstinline{valgrind} I concluded the problem originate in the \lstinline{tigetnum("colors");} as well as in low level code in the \lstinline{ncurses} library. After unsuccessful attempts of fixing the problem from the library level and some more research on the topic I came across an interesting finding in the ncurses FAQ page \cite{ncursesfaq}. It seems that reports regarding memory still in use in programs which depend on the \lstinline{ncurses} library are normal and expected. There are certain chunks of memory which are never freed for performance reasons.
+
+The final verdict regarding the 5 blocks of memory still in use is thus inconclusive. There is a high probability that not properly releasing the respective blocks is intentional, but I couldn't find conclusive evidence for this.
+
+\section{Static Analysis}
+
+\bibliography{bibliography}
+\bibliographystyle{ieeetr}
+
+\end{document}
