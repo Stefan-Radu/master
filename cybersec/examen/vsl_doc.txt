@@ -1,0 +1,129 @@
+=============================
+EtherChannel - pe fiecare switch
+
+en
+conf t
+int range fa0/1-2
+channel-group 1 mode desirable
+int port-channel 1 
+switchport mode access
+(sau)
+switchport trunk encapsulation dot1q
+switchport mode trunk
+
+===================================
+Switch
+enable
+conf t
+hostname <name> (schimba hostname)
+enable password <pass> (schimba parola pt enable)
+show vlan
+vlan <vlan-no> (conf vlang <no>)
+name <vlan name>
+interface [range]<interface name>[range]
+switchport mode access
+switchport mode access vlan <vlan-no>
+
+===================================
+HSRP
+(per interface)
+standby <gr no> ip <ip max>
+standby <gr no> priority <priority>
+standby <gr no> preempt
+no sh
+exit
+
+====================================
+EIGRP
+
+router eigrp <no>
+network <ip> <wildcard bits | aka reverse mask>
+...
+end
+
+=====================================
+OSPF
+
+router ospf <no>
+network <ip> <wildcard bits | aka reverse mask> area <no>
+...
+end
+
+======================================
+
+RipV2
+-------
+conf t
+router rip
+version 2
+network <ip1>
+network <ip2>
+network ...
+end
+=======================================
+redistribute eigrp <no>
+redistribute ospf <no> metric 1 1 1 1 1
+redistributre rip metric <random>
+
+=======================================
+ACL
+en
+conf t
+access-list 100 ?????
+int <int> access-group 100 in/out
+
+WEB
+10 permit tcp any host 8.8.8.11 eq www
+20 permit tcp any host 8.8.8.11 eq 443
+30 deny ip any host 8.8.8.11
+40 permit ip any any
+
+=====================
+
+DNS
+10 permit tcp any host 18.18.20.2 eq domain
+20 permit udp any host 18.18.20.2 eq domain
+30 deny ip any host 18.18.20.2
+40 permit ip any any
+
+=====================
+
+EMAIL
+10 permit tcp any host 90.90.90.10 eq smtp
+20 permit tcp any host 90.90.90.10 eq pop3
+30 deny ip any host 90.90.90.10
+40 permit ip any any
+
+=========================
+
+SSH
+10 permit tcp host 90.90.90.11 any eq 22
+20 deny tcp any host 8.8.8.2 eq 22
+30 deny tcp any host 8.8.8.9 eq 22
+40 deny tcp any host 8.8.8.14 eq 22
+50 deny tcp any host 8.8.8.17 eq 22
+60 deny tcp any host 8.8.8.22 eq 22
+
+
+=================================
+
+GRE
+internal network 1 fa0/0- 192.168.1.0
+internal network 2 fa0/0 -192.168.2.0
+tunnel int 1 - 172.16.1.1
+tunnel in 2 - 172.16.1.2
+fa0/1 - 1.1.1.1
+fa0/2 - 2.2.2.2 
+
+R1(config)# interface Tunnel1
+R1(config-if)# ip address 172.16.1.1 255.255.255.0
+R1(config-if)# tunnel source 1.1.1.1
+R1(config-if)# tunnel destination 2.2.2.2
+
+R2(config)# interface Tunnel1
+R2(config-if)# ip address 172.16.1.2 255.255.255.0
+R2(config-if)# tunnel source 2.2.2.2
+R2(config-if)# tunnel destination 1.1.1.1
+
+R1(config)# ip route 192.168.2.0 255.255.255.0 172.16.1.2
+R2(config)# ip route 192.168.1.0 255.255.255.0 172.16.1.1

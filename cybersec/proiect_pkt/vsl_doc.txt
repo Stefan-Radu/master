@@ -1,0 +1,147 @@
+RipV2
+-------
+conf t
+router rip
+version 2
+network <ip1>
+network <ip2>
+network ...
+end
+
+=============================
+EtherChannel - pe fiecare switch
+
+en
+conf t
+int range fa0/1-2
+channel-group 1 mode desirable
+int port-channel 1 
+switchport mode access
+(sau)
+switchport trunk encapsulation dot1q
+switchport mode trunk
+
+===================================
+Switch
+enable
+conf t
+hostname <name> (schimba hostname)
+enable password <pass> (schimba parola pt enable)
+show vlan
+vlan <vlan-no> (conf vlang <no>)
+name <vlan name>
+interface [range]<interface name>[range]
+switchport mode access
+switchport mode access vlan <vlan-no>
+
+===================================
+HSRP
+(per interface)
+standby <gr no> ip <ip max>
+standby <gr no> priority <priority>
+standby <gr no> preempt
+no sh
+exit
+
+====================================
+EIGRP
+
+router eigrp <no>
+network <ip> <wildcard bits | aka reverse mask>
+...
+end
+
+=====================================
+OSPF
+
+router ospf <no>
+network <ip> <wildcard bits | aka reverse mask> area <no>
+...
+end
+
+======================================
+redistribute eigrp <no>
+redistribute ospf <no> metric 1 1 1 1 1
+redistributre rip metric <random>
+
+======================================
+switch
+
+en
+conf t
+no ip domain lookup
+hostname sw11
+enable secret ensec
+enable password enpass
+service password-encryption
+banner motd "Pe 05.04.2023 se vor efectua lucrari"
+line console 0
+password conpass
+login
+logging synchronous
+exec-timeout 10 10
+exit
+line vty 0 15
+password vtypass
+login
+logging synchronous
+exec-timeout 10 10
+exit
+exit
+clock set 20:00:00 3 Apr 2023
+config terminal
+ip domain name sla.ro
+username admin privilege 15 secret adminpass
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key generate rsa 
+2048
+no cdp run
+interface vlan 1
+ip address 18.18.20.10 255.255.255.248
+no sh
+exit
+ip default-gateway 18.18.20.14
+
+
+=========================
+
+
+en
+conf t
+no ip domain lookup
+hostname r2
+security passwords min-length 10
+login block-for 30 attempts 3 within 15
+enable secret ensec12345
+enable password enpass1234
+service password-encryption
+banner login "Accesul persoanelor neautorizate strict interzis!"
+banner motd "In data de 05.04.2023 se vor efectua lucrari."
+line console 0
+password conpass1234
+login
+logging synchronous
+exec-timeout 10 10
+exit
+line vty 0 15
+password vtypass1234
+login
+logging synchronous
+exec-timeout 10 10
+exit
+exit
+clock set 20:00:00 3 Apr 2023
+config terminal
+ip domain name sla.ro
+username Admin privilege 15 secret adminpass1234
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key generate rsa
+2048
+no cdp run
+

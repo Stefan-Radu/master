@@ -1,0 +1,231 @@
+dns/server = ultimu ip din range de pe ramura cu server
+SWITCH BAZA
+
+enable
+config terminal
+no ip domain lookup
+hostname [Nume SW]
+enable secret cisco12345
+enable password cisco54321
+service password-encryption
+banner motd "Astazi la ora 23:00 se vor efectua lucrari"
+line console 0
+password ciscoconpass
+login
+logging synchronous
+exec-timeout 10 10
+exit
+line vty 0 15
+password ciscovtypass
+login
+logging synchronous
+exec-timeout 10 10
+exit
+exit
+clock set 12:40:00 30 Mar 2020
+config terminal
+ip domain name CTI.RO
+username Admin privilege 15 secret adminpass1
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key generate rsa 
+2048
+no cdp run
+
+[Pentru fiecare vlan date,man,null]
+vlan [numar]
+name [nume]
+exit
+[PT SWITCH CARE N ARE TREABA CU VLAN]
+interface vlan 1
+ip address [ip] [submask]
+no shutdown
+ip default gateway [adresa router]
+
+
+[PENTRU ACCESS]
+[pt fiecare vlan,fara man sau null]
+interface range fa0/[range-u de la vlan]
+switchport mode access
+switchport access vlan [numar vlan]
+mls qos trust cos - pt telefon optional
+switchport voice vlan [dat] - optional
+switchport port-security
+switchport port-security maximum 2
+switchport port-security mac-address sticky
+switchport port-security violation shutdown
+spanning-tree bpduguard enable
+spanning-tree portfast
+no shutdown
+
+exit
+
+------------------------------------------
+
+[Pentru toate]
+[MAN]
+interface range fa0/[pt MAN,de ob ultimele 2 valabile]
+switchport mode trunk
+switchport trunk native vlan [numar_MAN]
+switchport trunk allowed vlan [toate nr fara null]
+switchport access vlan (nr lui man)
+interface vlan [nr_man]
+ip add [ip] [submask]
+no shutdown
+exit
+
+[NULL]
+interface range fa0/(ce nu folosim), giga0/(ce nu folosim] [LA DISTRUBUTION SI CORE NU FOLOSIM PORTURILE PE CARE LE FOLOSIM LA ACCES SI LE INCHIDEM]
+shutdown
+switchport access vlan [nr_null]
+exit
+
+
+
+ROUTER BAZA
+
+enable
+config terminal
+no ip domain lookup
+hostname [Nume]
+security passwords min-length 10
+login block-for 30 attempts 3 within 15
+enable secret cisco12345
+enable password cisco54321
+service password-encryption
+banner login "Accesul persoanelor neautorizate strict interzis!"
+banner motd "Astazi la ora 23:00 se vor efectua lucrari."
+line console 0
+password ciscoconpass
+login
+logging synchronous
+exec-timeout 10 10
+exit
+line vty 0 15
+password ciscovtypass
+login
+logging synchronous
+exec-timeout 10 10
+exit
+exit
+clock set 13:00:00 30 Mar 2020
+config terminal
+ip domain name CTI.RO
+username Admin privilege 15 secret adminpass1
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key generate rsa
+2048
+no cdp run
+interface range [toate]-s ar putea sa fie nevoie sa faci g si serial separat
+ip helper address [adresa server]
+
+
+[PT ROUTER CONNECTAT LA SW CORE]
+pt fiecare [vlan,fara null]
+interface giga0/1.[nr vlan]
+encapsulation dot1q [nr_vlan]
+description "Legatura cu ramura [vlan]"
+ip address [ip din pool de vlan respectiv] [submask]
+no shutdown
+exit
+
+
+
+interface giga0/1
+no shutdown
+exit
+
+
+[PT TOATE]
+router rip
+version 2
+no auto-summary
+network [ip network address pt fiecare retea conectata direct la router]
+network …
+network…
+
+[SysLog]: 
+logging host [Adresa Server]
+service timestamps log datetime msec
+service timestamps debug datetime msec
+
+[PT conectiuni cu wifi, alte routere]
+
+interface [interfata giga serial] [ip-ul routerului în care te afli în reteaua respectiva]
+(legutara router-wi-fi--->giga 0/0)
+
+
+[WIFI]
+
+Internet setup
+-Internet Connection type- Static IP
+INTERNET IP ADDRESS: [adresa wi-fi-ului in reateaua cu rouiterul]
+Subnet Mask[masca in reteaua cu routerul]
+Default Gateway [adresa routerului]
+Dns1 [adresa serverului dns]
+
+Network Setup
+router ip [ip-ul pe care vrem sa il aiba wi-fi-ul în sub-reteaua cu laptopuri]
+subnet mask- setata astfel incat sa permita numarul de useri dorit
+start ip address- sa nu se supprapuna cu adresa routerului si sa se regaseasca in range
+
+
+Wireless->basic settings
+Network Mode: Mixed
+SSID: [nume]
+Radio Band:Auto
+Wide Channel:Auto
+Standard Channel: 6 sau 11
+SSID: ON
+
+Wireless->Wireless Security
+WPA2 Enterprise
+Encryption AES
+RADIUS SERVER: [ip server]
+Shared Secret: Radiuspa55
+
+Wireless->MAC FILTER
+Enabled
+[de ales daca vrem ca ip-urile sa se poata conecta sau sa fie excluse] 
+[aflat adresa MAC WIFI a laptopurilor]
+[Profil pe fiecare laptop pt connect]
+
+
+SERVER
+-schimbam placa si punem cge ca la pc
+-ip configuration
+ip address: ip-ul server-ului =ultimu ip din range de pe ramura cu server
+subnet mask: masca
+default gateway: adresa router-ului 
+dns server: adresa serverului[ip-ul de mai sus, daca nu e nebun dragan sa dea mai multe server]
+-configurare de mail 
+Services:
+
+HTTP-> HTTP= off    HTTPS=on
+AAA-> completare cu datele wifi + adaugare useri de la laptop
+EMAIL->Domeniu folosit + user hosturi
+DNS-> name: cti.ro ; address a serverului
+Syslog: -> on în server
+[SysLog]: în routere si switchuri
+logging host [Adresa Server]
+service timestamps log datetime msec
+service timestamps debug datetime msec
+
+ÎN ROUTER
+DHCP
+
+Router(config)# ip dhcp pool [nume]
+Router(dhcp-config)# network [Net address]/[masca(1,2...30)]
+Router(dhcp-config)#domain-name [nume_domeniu]
+Router(dhcp-config)#dns-server adresa server
+Router(dhcp-config)#default-router [ip router în care suntem]
+
+[daca vrem sa excludem anumite adrese]: 
+Router(config)#ip dhcp excluded-address 1.1.1.0 1.1.1.100
+
+

@@ -1,0 +1,246 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{belady1966study}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4bb6b85d418cb0deb7002aabe3a3e216}{%
+           family={Belady},
+           familyi={B\bibinitperiod},
+           given={Laszlo\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IBM}%
+      }
+      \strng{namehash}{4bb6b85d418cb0deb7002aabe3a3e216}
+      \strng{fullhash}{4bb6b85d418cb0deb7002aabe3a3e216}
+      \strng{bibnamehash}{4bb6b85d418cb0deb7002aabe3a3e216}
+      \strng{authorbibnamehash}{4bb6b85d418cb0deb7002aabe3a3e216}
+      \strng{authornamehash}{4bb6b85d418cb0deb7002aabe3a3e216}
+      \strng{authorfullhash}{4bb6b85d418cb0deb7002aabe3a3e216}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IBM Systems journal}
+      \field{number}{2}
+      \field{title}{A study of replacement algorithms for a virtual-storage computer}
+      \field{volume}{5}
+      \field{year}{1966}
+      \field{pages}{78\bibrangedash 101}
+      \range{pages}{24}
+    \endentry
+    \entry{karlin1988competitive}{article}{}
+      \name{author}{4}{}{%
+        {{hash=ebc19edc06144fdf56fb26514654ef6e}{%
+           family={Karlin},
+           familyi={K\bibinitperiod},
+           given={Anna\bibnamedelima R},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=b469d9912ef986a5859d3eb560e4ec7d}{%
+           family={Manasse},
+           familyi={M\bibinitperiod},
+           given={Mark\bibnamedelima S},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=7c38af9528d59f0536b1e6eb83816407}{%
+           family={Rudolph},
+           familyi={R\bibinitperiod},
+           given={Larry},
+           giveni={L\bibinitperiod}}}%
+        {{hash=3292cba23d6ef12bbb1990d5303b9e60}{%
+           family={Sleator},
+           familyi={S\bibinitperiod},
+           given={Daniel\bibnamedelima D},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e069455c027abb15a4bdb7f64871ba71}
+      \strng{fullhash}{4187ec7d0f65a0a89e4701655482bd64}
+      \strng{bibnamehash}{4187ec7d0f65a0a89e4701655482bd64}
+      \strng{authorbibnamehash}{4187ec7d0f65a0a89e4701655482bd64}
+      \strng{authornamehash}{e069455c027abb15a4bdb7f64871ba71}
+      \strng{authorfullhash}{4187ec7d0f65a0a89e4701655482bd64}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Algorithmica}
+      \field{number}{1}
+      \field{title}{Competitive snoopy caching}
+      \field{volume}{3}
+      \field{year}{1988}
+      \field{pages}{79\bibrangedash 119}
+      \range{pages}{41}
+    \endentry
+    \entry{peserico2013paging}{article}{}
+      \name{author}{1}{}{%
+        {{hash=26523be63e55fccf3f763b20e2a9f04d}{%
+           family={Peserico},
+           familyi={P\bibinitperiod},
+           given={Enoch},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{fullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{bibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorbibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authornamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorfullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \field{extraname}{1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1304.6007}
+      \field{title}{Paging with dynamic memory capacity}
+      \field{year}{2013}
+    \endentry
+    \entry{peserico2013paging3}{article}{}
+      \name{author}{1}{}{%
+        {{hash=26523be63e55fccf3f763b20e2a9f04d}{%
+           family={Peserico},
+           familyi={P\bibinitperiod},
+           given={Enoch},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{fullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{bibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorbibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authornamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorfullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1304.6007}
+      \field{title}{Paging with dynamic memory capacity}
+      \field{year}{2013}
+      \field{pages}{3}
+      \range{pages}{1}
+    \endentry
+    \entry{peserico2013paging34}{article}{}
+      \name{author}{1}{}{%
+        {{hash=26523be63e55fccf3f763b20e2a9f04d}{%
+           family={Peserico},
+           familyi={P\bibinitperiod},
+           given={Enoch},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{fullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{bibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorbibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authornamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorfullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \field{extraname}{3}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1304.6007}
+      \field{title}{Paging with dynamic memory capacity}
+      \field{year}{2013}
+      \field{pages}{3\bibrangessep 4}
+      \range{pages}{2}
+    \endentry
+    \entry{peserico2013paging811}{article}{}
+      \name{author}{1}{}{%
+        {{hash=26523be63e55fccf3f763b20e2a9f04d}{%
+           family={Peserico},
+           familyi={P\bibinitperiod},
+           given={Enoch},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{fullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{bibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorbibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authornamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorfullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \field{extraname}{4}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1304.6007}
+      \field{title}{Paging with dynamic memory capacity}
+      \field{year}{2013}
+      \field{pages}{8\bibrangedash 11}
+      \range{pages}{4}
+    \endentry
+    \entry{peserico2013paging1114}{article}{}
+      \name{author}{1}{}{%
+        {{hash=26523be63e55fccf3f763b20e2a9f04d}{%
+           family={Peserico},
+           familyi={P\bibinitperiod},
+           given={Enoch},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{fullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{bibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorbibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authornamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorfullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \field{extraname}{5}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1304.6007}
+      \field{title}{Paging with dynamic memory capacity}
+      \field{year}{2013}
+      \field{pages}{11\bibrangedash 14}
+      \range{pages}{4}
+    \endentry
+    \entry{peserico2013paging2223}{article}{}
+      \name{author}{1}{}{%
+        {{hash=26523be63e55fccf3f763b20e2a9f04d}{%
+           family={Peserico},
+           familyi={P\bibinitperiod},
+           given={Enoch},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{fullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{bibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorbibnamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authornamehash}{26523be63e55fccf3f763b20e2a9f04d}
+      \strng{authorfullhash}{26523be63e55fccf3f763b20e2a9f04d}
+      \field{extraname}{6}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1304.6007}
+      \field{title}{Paging with dynamic memory capacity}
+      \field{year}{2013}
+      \field{pages}{22\bibrangedash 23}
+      \range{pages}{2}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

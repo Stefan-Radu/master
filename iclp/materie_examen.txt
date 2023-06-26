@@ -1,0 +1,16 @@
+Materie 
+---
+
+5p - Java - toate modelele studiate
+          - Reader, Writer
+          - Producer - Consumer
+          + structurile concurentiale
+
+4p - Haskell - MVar si TVar
+             - implementarea structurilor concurente
+             - char - server
+             - santa claus
+             - pb. restaurant din ultimul lab online
+
+1p oficiu
+26 iunie ora 8:00 (dimineata)

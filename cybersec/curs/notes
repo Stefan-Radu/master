@@ -1,0 +1,7 @@
+## confirmed
+* any user (inc guests) can edit any problem
+* no CSRF on edit??
+* zipslip
+* problem title missformat created arbitrary files and breaks site
+
+* BASE_DIR = str(Path(__file__).resolve().parent.parent.parent)
