@@ -88,28 +88,27 @@ Germany\\
 
 \section{Background}
 
-This short section will give a short overview of a few important concepts
-present throughout this material, as well as a definition of TEEs. 
+This short section will give an overview of a few important concepts present
+throughout this material, as well as a definition of TEEs. 
 % TODO refactor & fix this part
 
 \subsection{Definition}
 
-This short section is the result of my effort to summarise and combine
-information from multiple source to arrive at a definition which gives, as best
-as possible, an overview of the subject at hand. This however is not an easy
-task, because in spite of great research effort on the subject and the growth in
-adoption of this solution in the industry, there doesn't seem to be a widely
-accepted definition of TEEs, as noted as well in previous works.
+Here follows the result of my effort to summarise and combine information from
+multiple source to arrive at a definition which gives, as best as possible, an
+overview of the subject at hand. This however is not an easy task, because in
+spite of great research effort on the subject and the growth in adoption of
+this solution in the industry, there doesn't seem to be a widely accepted
+definition of TEEs, noted as well in previous works.
 
-Going forward, let's consider the following definition: A
-\emph{Trusted execution environment}(TEE) is a feature of modern
-microprocessors which provides a hardware-isolated ``secure area that runs in
-parallel with, but isolated from, the normal execution environment''
-\cite{tee_ieee_standard}. This environment aims to guarantee that the executed
-code, the runtime states and the stored data are integrity and privacy
-protected. It's end goal is to improve the security of the whole
-system (\cite{tee_review_of_applications}, \cite{tee_in_securities},
-\cite{tee_is_and_not}).
+Going forward, let's consider the following definition: A \emph{Trusted
+execution environment}(TEE) is a feature of modern microprocessors which
+provides a hardware-isolated ``secure area that runs in parallel with, but
+separate, from the normal execution environment'' \cite{tee_ieee_standard}.
+This environment aims to guarantee that the executed code, the runtime states
+and the stored data are integrity and privacy protected. It's end goal is to
+improve the overall security of the whole system (\cite{tee_app_rev},
+\cite{tee_in_securities}, \cite{tee_is_and_not}).
 
 %TODO
 [ I expect to have to rewrite or at least change a big part of this introduction at the end. I started with it, and looking back it wasn't a good decision ]
@@ -127,7 +126,7 @@ that enable the creation of enclaves.
 
 \subsubsection{Mutability.}
 
-In this context, we refer to a component of the TCB as begin \emph{mutable}
+In this context, we refer to a component of the TCB as being \emph{mutable}
 when it can be updated post-manufacturing. Mutable components are usually
 implemented in software, but there are exceptions, such as CPU microcode
 \cite{microcode_update}. \emph{Immutable} components cannot be changed after
@@ -142,9 +141,9 @@ protections of a TEE is called the Trusted Computing Base (TCB)''
 \cite{tee_hw_sup}. Most often, it is desirable to minimize the TCB, thus
 reducing the possible number of bugs and vulnerabilities and making it more
 suitable to be formally verified. However, many solutions choose to have
-mutable components as part of the TCB, which enables updating in down the line,
+mutable components as part of the TCB, which enables updating it down the line,
 instead of relying on formal methods to guarantee safety. This will be further
-highlighted when discussing the security principles of the main TEE
+highlighted when discussing the security principles of the most common TEE
 implementations.
 
 \subsubsection{Trusted Applications.}
@@ -156,19 +155,21 @@ larger application that handles sensitive data \cite{tee_app_rev}.
 % \subsubsection{Trusted Platform Module.}
 
 % TODO
-[ there are a few definitions that I didn't include here, but I'm waiting to decide wether or not I will write them inline or not ]
+[ there are a few definitions that I didn't include here, but I'm waiting to
+decide wether or not I will write them inline or not ]
 
 % TODO consider mentioning A_bus here 
 
 \section{Applications \& Developer Support}
 
-This section is based on a recent study by Paju et. al. \cite{tee_app_rev}
-where they analyse the recent evolution of TEE usage both in academia and in
-the industry. The main topics covered in the survey include application
-use-cases, Software Development Kits (SDKs), trusted containers and their
-performance. There are also a number of insightful tables covering
-usage-example graphs, application classification in groups, development tools
-and trusted container support that were not included in this work.
+This section is based on a recent study by Paju et al. \cite{tee_app_rev} where
+they analyse the recent evolution of TEE usage both in academia and in the
+industry. The main topics covered in the survey include application use-cases,
+Software Development Kits (SDKs), trusted containers and their performance.
+There are also a number of insightful tables covering usage-example graphs,
+application classification in groups, development tools and trusted container
+support that were not included in this work, but could be inspected in the
+original paper.
 
 \subsection{Applications of TEEs}
 
@@ -188,7 +189,7 @@ The main applications used for data processing are based on \emph{machine
 learning (ML)}. This is especially prevalent with the rise of AI and with its
 success in the healthcare and financial industry. Often, ML applications
 process sensitive information which can be protected through the use of TEEs.
-Moreover, the cloud computing is frequently used for ML applications. In the
+Moreover, cloud computing is frequently used for ML applications. In the
 context of the Cloud, TEEs can provide protection against compromised
 infrastructure, isolating crucial data and code from adversaries. Both ML
 applications and cloud computing make up the two largest categories of TEE
@@ -212,7 +213,7 @@ increase in solutions that process and verify biometric data directly on the
 sensors. Even in such cases, TEEs are still used to share the attestation of
 the biometric data. Cryptographic private keys are another example of critical
 data stored in TEEs. Solutions such as Apple's \emph{passkey}
-\cite{apple_passkey} used both cryptographic primitives and biometric
+\cite{apple_passkey} use both cryptographic primitives and biometric
 information to enable password-less authentication.
 
 \subsubsection{Security Solutions}
@@ -222,13 +223,13 @@ attestation systems, solutions for secure code offloading to IO devices, such
 as GPUs, secure storage solutions, network security (TOR enhancements, trusted
 execution of JS, publish/subscribe systems), secure channels (between TA and
 REE or peripherals which can be remote or local) and content sharing, primarily
-digital rights management (DRM) \cite{tee_rev_app}.
+digital rights management (DRM) \cite{tee_app_rev}.
 
 \subsubsection{Others}
 
 Other use cases include smart contracts, computer games, medical data, formal
 methods, accelerators, or niche implementations of web searches protection, 
-digital contract signing, or secure logging \cite{tee_rev_app}.
+digital contract signing, or secure logging \cite{tee_app_rev}.
 
 % TODO
 [ intend to provide examples, and add more references ]
@@ -241,13 +242,13 @@ support either Intel SGX, or ARM TrustZone, namely ``21 of the 23 referred
 frameworks''. There are also two development tools which offer support for
 RISC-V, namely Keystone \cite{tee_keystone} and Sanctum \cite{tee_sanctum}, the
 latter of which appear to not be in development any longer. With regards to
-programming language support, the vast majority support either C++ or C, but
+programming language support, the vast majority support either C or C++, but
 there are some exceptions. OP-TEE \cite{optee} also offers support for Rust,
 among others like Edgeless RT \cite{edgelessrt} which also supports Go. The
 Samsung Knox SDK \cite{knox_sdk}, but also open source projects like Trusty TEE
 \cite{trustytee} offer Java support for the development of Android apps.
 
-Developers are restricted in their choice of SDS by the platform they're
+Developers are restricted in their choice of SDK by the platform they're
 developing for. Most Android TEE-enabled devices use ARM chips, and will thus
 need a solution designed for ARM TrustZone \cite{arm_tz}. This resulted in
 developers being constrained to use proprietary tools such as Samsung Knox SDK
@@ -267,15 +268,16 @@ enable an application to run unmodified inside a TEE, or enable automatic code
 modification of the application, such that it can run in the TEE. The downside
 of tcons, from a security perspective, is that they increase the TCB. From a
 development standpoint however, the trade-offs could be worth it, considering
-the lower resources invested in porting the application to run on a TEE and the
-fact that some applications have limited amount of system interactions (eg. ML
-models) which diminishes their attack surface. A non exhaustive list of the
-surveyed tcons include: Twine, Gramine, vSGX, Apache Teaclave, Occlum. 
+the lower amount of resources invested in porting the application to run on a
+TEE and the fact that some applications have limited amount of system
+interactions (eg. ML models) which, as a result, diminishes their attack
+surface. A non exhaustive list of the surveyed tcons include: Twine, Gramine,
+vSGX, Apache Teaclave and Occlum. 
 
-Out of all the containers analysed, non support ARM TrustZone, which further
+Out of all the containers analysed, none support ARM TrustZone, which further
 confines mobile developers to using SDKs. Intel SGX is the most supported
-architecture with 19 out of 20 projects supporting it, and only a few also
-supporting AMD SEV. There are recent solutions which offer support for both
+architecture with 19 out of 20 projects supporting it. Only a few of them also
+support AMD SEV. There are recent solutions which offer support for both
 platforms, such as vSGX \cite{vsgx}. Such solutions can further simplify
 development by enabling an application to run unmodified on different TEE
 architectures.
@@ -283,13 +285,13 @@ architectures.
 LibOS \cite{libos} is a solution which was first used ten years before the
 concept of TEE. Its purpose is to be an intermediary between the OS and the
 client, by exposing OS functionality through a set of libraries. LibOS is
-especially useful in the context of TEEs and tcons especially, because Intel
-SGX restricts system calls inside the enclave. Because of that, unmodified
-applications cannot run inside an SGX enclave, but through LibOs, system calls
-from inside the enclave can be securely relayed to the OS outside the enclave.
-There are further advantages of using LibOS such as smaller TCB as a result of
-OS encapsulation and increased performance as a result of a reduction in
-context switches.
+useful in the context of TEEs and tcons especially, because Intel SGX restricts
+system calls inside the enclave. Because of that, unmodified applications
+cannot run inside an SGX enclave, but through LibOs, system calls from inside
+the enclave can be securely relayed to the OS outside of the enclave. There are
+further advantages of using LibOS such as smaller TCB as a result of OS
+encapsulation and increased performance as a result of a reduction in context
+switches.
 
 Wrappers around the libc library, or the WebAssembly System Interface (WASI)
 act similarly as application middleware interfaces and relay system calls
@@ -297,35 +299,38 @@ outside the enclave. EGo SDK is an example utilising a libc-wrapper, whereas
 AccTEE, ApacheTeaclave, or Twine use the WASI, also enables the execution of
 Web Assembly (WASM) binaries inside the TEE through a runtime for WASM.
 
+[ some missing citations needed ] 
+
 \section{Hardware-based TEEs}
 
 There has been a lot of research and development effort put into TEEs in the
 recent years. There are both commercial and academic solutions spanning across
 all major computer architectures (Intel, AMD, ARM, POWER, RISC-V) and even
-niche ones (SPARC, OPEN-RISC). It has been in a previous survey that despite
-different approaches in design, there are four security principles common among
-all implementations: \emph{verifiable launch}, \emph{run-time isolation},
-\emph{secure storage} and \emph{trusted IO}\emph{secure storage}
+niche ones (SPARC, OPEN-RISC). It has been shown in a previous survey that
+despite different approaches in design, there are four security principles
+common among all implementations: \emph{verifiable launch}, \emph{run-time
+isolation}, \emph{secure storage}, \emph{trusted IO} and \emph{secure storage}
 \cite{tee_hw_sup}.
 
 \subsection{Verifiable Launch}
 
-Before the enclave is even launched into execution, an important first step must
-be accomplished. \emph{Verifiable launch} aims to ensure that the initial state 
-of the environment matches the expected state and that the initial configuration is
-also correct. 
+Before the enclave is even launched into execution, an important first step
+must be accomplished. \emph{Verifiable launch} aims to ensure that the initial
+state of the environment matches the expected state. It must also confirm that
+the initial configuration is correct. 
 
 \subsubsection{Root of Trust (Measurement).}
-\ref{rtm}
+\label{rot}
 
 The base of this process is an entity called \emph{Root of Trust (RTM)}. It is
 the anchor of trust for the process of measurement, thus it is assumed to be
 secure by design. In this context, trust is defined as the property of a system
-to match its expected state of being secure. There are three types of RTMs used by TEEs:
+to match its expected state of being secure. There are three types of RTMs used
+by TEEs:
 
 \begin{itemize}
     \item Static RTM (SRTM) (TMP \cite{tee_tcg_arch_overview},
-        Secure Book \cite{windows-driver-content2023Dec}) is obtained
+        Secure Boot \cite{windows-driver-content2023Dec}) is obtained
         through an uninterrupted \emph{chain of trust} from boot time
         (reset) until the first line of code that runs in the enclave. The
         chain will generally include all software in the TCB, but not the
@@ -344,12 +349,12 @@ to match its expected state of being secure. There are three types of RTMs used 
     \item Hardware RTM (HW) can attest that a software module is not tampered
         and can be securely executed, without relying on any hardware. It is
         not a common implementation, but proposals such as Sancus
-        \cite{tee_sancus}, or Ixo-X \cite{tee_isox} exist. 
+        \cite{tee_sancus}, or Iso-X \cite{tee_isox} exist. 
 \end{itemize}
 
-Out of the thirty one ($31$) implementations analysed in the survey, only a few of 
-them implement DRTM, some of them being commercial solutions from Intel and AMD (
-\cite{arm_tz}, \cite{intel_tdx}, \cite{intel_sgx}). The rest, and the
+Out of the thirty one ($31$) implementations analysed in the survey, only a few
+of them implement DRTM, some of them being commercial solutions from Intel and
+AMD (\cite{arm_tz}, \cite{intel_tdx}, \cite{intel_sgx}). The rest, and the
 vast majority of the academic solutions use variants of SRTM. Only one proposal
 uses HW.
 
@@ -383,8 +388,9 @@ software with the same few exceptions \ref{hw_exp}.
 
 \emph{Provisioning} secrets into the newly created enclave is an optional step
 that can be accomplished and is usually done as a last step, or before the
-attestation. \cite{tee_hw_sup} % TODO write more here
+attestation. \cite{tee_hw_sup}
 
+% TODO
 [ this could be further elaborated ]
 
 \subsection{Run-Time Isolation}
@@ -430,7 +436,7 @@ enclave, which typically are executed at lower privilege levels
 \cite{tee_hw_sup}. 
 
 \subsubsection{Memory Isolation.}
-\ref{mem_isolation}
+\label{mem_isolation}
 
 This is a very challenging task as part of a TEE architecture, as it involved
 protecting not only the memory itself, but also various micro-architectural
@@ -526,7 +532,7 @@ of sealing.
 As a result of the survey, it's been determined that all TEE solutions that
 explicitly describe their design choices for secure storage follow closely the
 sealing algorithm from of a Trusted Platform Module (TPM) \cite{trust_plat_mod}
-\ref{about_tpm}, an immutable hardware component. This is based on an
+, an immutable hardware component. This is based on an
 asymmetric key pair used to encrypt a secret. The secret will only be unsealed
 if the system state matched the state at the time of sealing. Solutions such as
 SEA \cite{sea_minimal_tcb}, or IBM-PEF \cite{ibm_pef} are based on a TPM
@@ -603,7 +609,7 @@ the main CPU.
 [I would like to cover a bit more on this subject, as well as on software-based TEEs,
 even if they don't seem to be as well documented]
 
-% \subsection{Software-based TEE}
+\subsection{Software-based TEE}
 
 \section{Vulnerabilities}
 
