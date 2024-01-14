@@ -107,6 +107,12 @@ example : ((∃ x, p x) → r) → (∀ x, p x → r) :=
     have expx: ∃ x, p x := Exists.intro a h' -- have e gen let dar nu mai specifica definitia (teoretic)
     h expx
 
+example : ((∃ x, p x) → r) → (∀ x, p x → r) := 
+by 
+  intro hex hx hpx
+  have hr := hex (Exists.intro hx hpx)
+  exact hr
+
 /- 
   **Exercise 3:** 
   The following is not true as it is. Fix it an prove it * 
