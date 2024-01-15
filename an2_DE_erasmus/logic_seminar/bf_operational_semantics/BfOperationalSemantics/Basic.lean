@@ -44,7 +44,7 @@ def applyInput (s: State): State :=
     | h :: t => ⟨t, s.out, s.before, h, s.after⟩
 
 def applyOutput (s: State): State :=
-  let out := (Char.ofNat (*s) :: s.out.toList).toString
+  let out := s.out ++ (Char.ofNat (*s)).toString
   ⟨s.inp, out, s.before, *s, s.after⟩
 
 end State
@@ -69,7 +69,7 @@ notation "<"   => Op.pDec
 notation "+"   => Op.vInc
 notation "~"   => Op.vDec
 notation "^"   => Op.output
-notation ";"   => Op.input
+notation ","   => Op.input
 notation "[" ops "]" => (Op.brakPair ops)
 notation a:50 "_" b:51  => Op.seq a b
 
@@ -83,23 +83,12 @@ def toString op :=
     | Op.vInc => "+"
     | Op.vDec => "-"
     | Op.output => "."
-    | Op.input => ";"
+    | Op.input => ","
     | Op.brakPair op' => "[" ++ toString op' ++ "]"
     | Op.seq op1 op2 => (Op.toString op1) ++ (toString op2)
 
 instance: ToString Op where
   toString op := op.toString
-
-#eval ("<><>[]<><><[]11".splitOn "]").head!
-#eval "asldfkja;sdfj".splitOn "$"
-#eval String.join ["abc", "dev"]
-#eval "abc".take 1
-
-#eval String.fromUTF8Unchecked ("<>>><>]<>><]".toUTF8.toList.toByteArray)
-#eval '>'.toNat.toUInt8
-#eval ']'.toNat.toUInt8
-#eval [1,2,3].takeWhile (λ x => x > 0)
-
 
 def f {α : Type}: α → Bool := by
   intro _
@@ -162,7 +151,7 @@ where
       | 43 => Op.seq Op.vInc   (parse t)        -- 43 +
       | 45 => Op.seq Op.vDec   (parse t)        -- 45 -
       | 46 => Op.seq Op.output (parse t)        -- 46 .
-      | 59 => Op.seq Op.input  (parse t)        -- 59 ;
+      | 44 => Op.seq Op.input  (parse t)        -- 44 ,
       | 91 =>                                   -- 91 [
         let head := t.takeWhile (λ x => x ≠ 93) -- 93 ]
         have _ : head.length < t.length.succ := 
@@ -192,5 +181,5 @@ where
       
 end Op
 
-#eval (Op.fromString "[<>.;+-]><")
-#check (Op.fromString "[<>.;+-]><")
+#eval (Op.fromString "[<>.,+-]><")
+#check (Op.fromString "[<>.,+-]><")

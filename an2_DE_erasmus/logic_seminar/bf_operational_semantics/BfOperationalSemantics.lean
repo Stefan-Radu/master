@@ -268,10 +268,115 @@ Pointer :   ^
 -- well this is wrong :(
 --def hello_world := Op.fromString hello_world_s
 
-def hello_world_op: Op := +_+_+_+_+_+_+_+_[>_+_+_+_+_[>_+_+_>_+_+_+_>_+_+_+_>_+_<_<_<_<_~]_>_+_>_+_>_~_>_>_+_[<]_<_~]_>_>_^_>_~_~_~_^_+_+_+_+_+_+_+_^_^_+_+_+_^_>_>_^_<_~_^_<_^_+_+_+_^_~_~_~_~_~_~_^_~_~_~_~_~_~_~_~_^_>_>_+_^_>_+_+_^
+--def hello_world_op: Op := +_+_+_+_+_+_+_+_[>_+_+_+_+_[>_+_+_>_+_+_+_>_+_+_+_>_+_<_<_<_<_~]_>_+_>_+_>_~_>_>_+_[<]_<_~]_>_>_^_>_~_~_~_^_+_+_+_+_+_+_+_^_^_+_+_+_^_>_>_^_<_~_^_<_^_+_+_+_^_~_~_~_~_~_~_^_~_~_~_~_~_~_~_~_^_>_>_+_^_>_+_+_^
+def hello_world_op: Op := +_+_+_+_+_+_+_+_[>_+_+_+_+_[>_+_+_>_+_+_+_>_+_+_+_>_+_<_<_<_<_~]_>_+_>_+_>_~_>_>_+_[<]_<_~]
 
 #check hello_world_op
 #eval hello_world_op
 
---theorem 
+
+def hello_world_op1: Op := +_+_+_+_+_+_+_+
+
+theorem hello_world1 (i l r: List Nat):
+  (hello_world_op1, State.mk i "" l 0 r)
+  ⟹ State.mk i "" l 8 r :=
+  by
+     rw [hello_world_op1]
+     repeat (apply BigStep.seq; apply BigStep.vInc)
+     apply BigStep.vInc
+
+def hello_world_op2: Op := >_+_+_+_+_
+  [>_+_+_>_+_+_+_>_+_+_+_>_+_<_<_<_<_~]
+  _>_+_>_+_>_~_>_>_+_[<]_<_~
+
+def hello_world_op21: Op := >_+_+_+_+
+
+theorem hello_world21 (i l r: List Nat) (a b: Nat):
+  (hello_world_op21, State.mk i "" l a (b :: r))
+  ⟹ State.mk i "" (a :: l) (b + 4) r :=
+  by
+    rw [hello_world_op21]
+    apply BigStep.seq
+    apply BigStep.pInc
+    repeat (apply BigStep.seq; apply BigStep.vInc)
+    apply BigStep.vInc
+
+def hello_world_op22: Op := >_+_+_>_+_+_+_>_+_+_+_>_+_<_<_<_<_~
+
+theorem hello_world22 (i l r: List Nat) (a b c d x: Nat):
+  (hello_world_op22, State.mk i "" l (x + 1) (a :: b :: c :: d :: r))
+  ⟹ State.mk i "" l x ((a + 2) :: (b + 3) :: (c + 3) :: (d + 1) :: r) :=
+  by 
+    rw [hello_world_op22]
+    repeat ( first 
+           | apply BigStep.seq 
+           | apply BigStep.pInc
+           | apply BigStep.vInc
+           | apply BigStep.pDec)
+    apply BigStep.vDec
+
+theorem hello_world2 {i l r: List Nat} {a b c x₁ x₂ x₃ x₄ : Nat} :
+  (hello_world_op2, State.mk i "" l (a + 1) (b :: x₁ :: x₂ :: x₃ :: x₄ :: c :: r))
+  ⟹ State.mk i "" l a (0 :: (x₁ + 9) :: (x₂ + 13) :: (x₃ + 11) :: (x₄ + 4) :: (c + 1) :: r) := sorry
+    --rw [hello_world_op2]
+    --repeat ( first 
+           --| apply BigStep.seq 
+           --| apply BigStep.pInc
+           --| apply BigStep.vInc )
+    --repeat ( first
+           --| rw [State.applyVInc]
+           --| rw [State.applyPInc] )
+    --simp
+--  I give up on this lol, it literally kills my poor laptop
+-- I'll try an easier one
+
+---------
+-- CAT --
+---------
+
+def cat_op: Op := ,_[^_,]
+#eval cat_op
+
+--def hello_world_inp := [72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100, 33, 0]
+def hello_world_inp := [72]
+
+-- apparently it's very very hard to output anything... ugh
+
+--def cat {l r: List Nat} {x : Nat} : (cat_op, State.mk hello_world_inp "" l x r)
+  --⟹ State.mk [] "H" l 0 r := 
+  --by 
+    --rw [cat_op]
+    --rw [hello_world_inp]
+    --apply BigStep.seq
+    --apply BigStep.input
+    --rw [State.applyInput]
+    --apply BigStep.brakPairTrue
+    --. simp
+    --. apply BigStep.seq
+      --apply BigStep.output
+      --simp
+      --rw [State.applyInput]
+    --. repeat rw [State.applyOutput]
+      --simp
+      
+      
+
+
+
+
+
+    
+
+    --apply BigStep.brakPairFalse
+    --. rw [State.current]
+
+
+
+
+      
+
+
+
+
+
 
