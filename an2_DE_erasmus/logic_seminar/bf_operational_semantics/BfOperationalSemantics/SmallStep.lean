@@ -1,0 +1,47 @@
+-- TODO maybe get back to this one day
+
+--inductive SmallStep: Op × State → Op × State → Prop where
+  --| pointerRight (s: State):
+      --SmallStep (pInc, s) (
+        --nop,
+        --let b := s.band
+        --⟨s.input, s.output,
+        --match b.after with
+            --| [] => ⟨b.current :: b.before, 0, []⟩
+            --| h :: t => ⟨b.current :: b.before, h, t⟩ ⟩)
+  --| pointerLeft (s: State):
+      --SmallStep (pDec, s) ( --nop,
+        --match s.band.before with
+          --| [] => ⟨s.input, s.output, ⟨[], 0, s.band.current :: s.band.after⟩⟩
+          --| h :: t => ⟨s.input, s.output, ⟨t, h, s.band.current :: s.band.after⟩⟩)
+  --| valueInc (s: State):
+      --SmallStep (vInc, s) (
+        --nop,
+        --⟨s.input, s.output, ⟨s.band.before, s.band.current + 1, s.band.after⟩⟩)
+  --| valueDec (s: State):
+      --SmallStep (vDec, s) (
+        --nop,
+        --⟨s.input, s.output, ⟨s.band.before, s.band.current - 1, s.band.after⟩⟩)
+  --| brakPair_true (op: Op) (s: State):
+      --SmallStep (Op.brakPair op, s) (Op.seq op (Op.brakPair op), s)
+  --| brakPair_false (op: Op) (s: State):
+      --SmallStep (Op.brakPair op, s) (Op.nop, s)
+  --| seqStep (ops ops' ops'': Op) (s s' : State) (step: SmallStep (ops, s) (ops', s')) :
+      --SmallStep ((Op.seq ops ops''), s) ((Op.seq ops' ops''), s')
+  --| seqSkip (ops: Op) (s: State):
+      --SmallStep ((Op.seq Op.nop ops), s) (ops, s)
+  --| input (s: State):
+      --SmallStep (Op.input, s) (
+        --nop,
+        --let b := s.band
+        --match s.input with
+          --| [] => ⟨[],
+                   --"¬<<error occurred: Not enough input>>¬" :: s.output,
+                   --⟨b.before, 0, b.after⟩⟩
+          --| h :: t => ⟨t, s.output, ⟨b.before, h, b.after⟩⟩)
+  --| output (s: State):
+      --SmallStep (Op.output, s) (
+        --nop,
+        --let b := s.band
+        --let c := (Char.ofNat b.current).toString
+        --⟨s.input, c :: s.output, b⟩)
