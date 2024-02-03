@@ -1,0 +1,131 @@
+\newcommand{\newglossaryentrywithacronym}[3]{
+    % From https://tex.stackexchange.com/questions/8946/how-to-combine-acronym-and-glossary
+    %%% The glossary entry the acronym links to   
+    \newglossaryentry{#1_gls}{
+        name={#1},
+        long={#2},
+        description={#3}
+    }
+
+    % Acronym pointing to glossary
+    \newglossaryentry{#1}{
+        type=\acronymtype,
+        name={#1},
+        description={#2},
+        first={#2 (#1)\glsadd{#1_gls}},
+        see={[Glossary:]{#1_gls}},
+    }
+}
+
+\newcommand{\newacro}[2]{
+    \newglossaryentry{#1}{
+        type=\acronymtype,
+        name={#1},
+        description={#2},
+        first={#2 (#1)},
+    }
+}
+
+\newglossaryentrywithacronym{TEE} {Trusted Execution Environments} {
+    A Trusted execution environment is a feature of modern microprocessors
+    which provides a hardware-isolated ``secure area that runs in parallel with,
+    but separate, from the normal execution environment'' \cite{tee_ieee_standard}.
+    This environment aims to guarantee that the executed code, the runtime states
+    and the stored data are integrity and privacy protected. It's end goal is to
+    improve the overall security of the whole system, by enabling the safe
+    execution of security-crytical applications (\cite{tee_app_rev},
+    \cite{tee_in_securities}, \cite{tee_is_and_not})
+}
+
+\newglossaryentrywithacronym{TA}{Trusted Applications} {
+    The code that is executed inside a TEE is commonly referred to as a
+    \emph{Trusted Application}, although it typically is just a small portion of a
+    larger application that handles sensitive data \cite{tee_app_rev}
+}
+
+\newglossaryentrywithacronym{TCB}{Trusted Computing Base}{
+    ``The hardware and software components that are used to achieve the security
+    protections of a TEE is called the Trusted Computing Base (TCB)''
+    \cite{tee_hw_sup}. Most often, it is desirable to minimize the TCB, thus
+    reducing the possible number of bugs and vulnerabilities and making it more
+    suitable to be formally verified. However, many solutions choose to have
+    mutable components as part of the TCB, which enables updating it down the line,
+    instead of relying on formal methods to guarantee safety. This will be further
+    highlighted when discussing the security principles of the most common TEE
+    implementations
+}
+
+\newglossaryentrywithacronym{SW} {Secure World} {
+    When discussing TEE it is important to distinguish between code execution
+    inside and outside of an enclave. We will name the inside of an enclave the
+    ``Secure World''
+}
+
+\newglossaryentrywithacronym{NW}{Normal World}{
+    When discussing TEE it is important to distinguish between code execution
+    inside and outside of an enclave. We will name the outside of an enclave
+    the ``Normal World''. Any type of execution in the NW will be named as
+    untrusted execution
+}
+
+\newglossaryentry{enclave} {
+    name={Enclave},
+    description={
+        Even thought \emph{enclaves} are often confused or used interchangeably with
+        TEE, those terms are subtly different. As defined in the \emph{IEEE standard}
+        \cite{tee_ieee_standard}, an enclave is a protected memory area, the contents
+        of which cannot be tampered with, or read from outside the enclave. Most often,
+        enclaves are instances of TEE, while TEE are the entire set of technologies
+        that enable the creation of enclaves
+    }
+}
+
+\newglossaryentry{mutable} {
+    name=Mutability,
+    description={
+        In this context, we refer to a component of the TCB as being \emph{mutable}
+        when it can be updated post-manufacturing. Mutable components are usually
+        implemented in software, but there are exceptions, such as CPU microcode
+        \cite{microcode_update}. \emph{Immutable} components cannot be changed after
+        manufacturing, are most commonly implemented in hardware and are prevalent as
+        \emph{Root of Trust} (see \ref{rot}) (eg. PUF \cite{tee_base_article}).
+        Software can be also immutable (eg. Boot ROM as part of Secure Boot)
+    }
+}
+
+\newglossaryentry{BUS} {
+    name=BUS,
+    description={
+        ``In computer architecture, a bus is a communication system that
+        transfers data between components inside a computer, or between
+        computers. This expression covers all related hardware components
+        (wire, optical fiber, etc.) and software, including communication
+        protocols.'' \cite{wiki_bus}
+    }
+}
+
+\newglossaryentrywithacronym{TPM} {Trusted Platform Module} {
+    The Trusted Platform Module (TPM) can either refer to an international standard
+    for a microcontroller designed to enable trust in computing platforms by
+    securing hardware through integrated cryptographic keys, or to specific chips 
+    which follow this standard \cite{iso_11889}, \cite{wikipedia_tpm}
+}
+
+\newacro{DMA}{Direct Memory Access}
+\newacro{MMIO}{Memory Mapped IO}
+\newacro{SDK}{Software Development Kit}
+\newacro{TCON}{Trusted Containers}
+\newacro{WASM}{Web Assembly}
+\newacro{WASI}{WebAssembly System Interface}
+\newacro{SCA}{Side-Channel Attacks}
+\newacro{FI}{Fault Injection Attacks}
+\newacro{TZ}{(ARM) TrustZone}
+\newacro{MDS}{Micro-architectural data sampling}
+\newacro{RTM}{Root of Trust (Measurement)}
+\newacro{SRTM}{Static RTM}
+\newacro{DRTM}{Dynamic RTM}
+\newacro{MPU}{Memory Protection Units}
+\newacro{MMU}{Memory Management Units}
+\newacro{ML}{Machine Learning}
+\newacro{VM}{Virtual Machines}
+\newacro{CPU}{Central Processing Unit}

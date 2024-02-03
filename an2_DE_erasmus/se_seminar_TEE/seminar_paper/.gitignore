@@ -4,5 +4,11 @@
 *.log
 *.bcf
 *.xml
+*.acn
+*.acr
+*.alg
+*.glg
+*.gls
+*.ist
 *.synctex.gz
 /*.pdf
