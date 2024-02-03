@@ -16,9 +16,9 @@
 %% -------------------------------
 %% | Information for Declaration |
 %% -------------------------------
-\newcommand{\authorName}{Your Name}
-\newcommand{\place}{Place}
-\newcommand{\submissionTime}{XX. Month 20YY}
+\newcommand{\authorName}{Ștefan-Octavian Radu}
+\newcommand{\place}{Würzburg}
+\newcommand{\submissionTime}{29 January 2024}
 
 
 \usepackage[utf8]{inputenc}
@@ -26,6 +26,7 @@
 \usepackage{amsmath}
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
+\graphicspath{ {./graphics/} }
 \usepackage{array}
 \usepackage{ragged2e}
 \usepackage{arydshln}
@@ -45,21 +46,20 @@
 \mainmatter 
 
 % first the title is needed
-\title{}%TODO
+\title{Trusted Execution Environments: An Overview}
 \subtitle{Seminar Software Engineering}
 
 % a short form should be given in case it is too long for the running head
 %\titlerunning{Bearbeitungshinweise Seminar Software Engineering}
-\titlerunning{} %TODO
+%\titlerunning{} %TODO
 
 \date{Winter Semester 2023}
 
 
-%\author{Informatik LS2 Dozent}
-\author{} %TODO
+\author{Ștefan-Octavian Radu}
 %
 %\authorrunning{LS2 Dozent}
-\authorrunning{} %TODO
+%\authorrunning{Trusted Execution Environments: An Overview} %TODO
 % (feature abused for this document to repeat the title also on left hand pages)
 
 % the affiliations are given next
@@ -71,47 +71,72 @@ Germany\\
 \maketitle
 
 \begin{abstract}
-	%Hier kommt der Abstract hin. Der Abstract behandelt alle Unterpunkte, welche auch in der Introduction behandelt werden (s. Section~\ref{sub:intro}) und liefert damit eine Zusammenfassung über die Seminararbeit als Ganzes. Im Gegensatz zur Zusammenfassung ist der Abstract sehr kurz gehalten und hat ca. ein bis zwei Sätze pro Unterpunkt.
 
-    %TODO at the end
-
+    With computing systems processing more and more information, arose the need
+    for more rigorous security guarantees for the processed data. Trusted
+    execution environments (TEE) are one of the solutions which address the
+    problem of secure computation. They enable secure code execution and data
+    storage in a secure isolated execution environment. In this paper we will
+    cover the architecture of these systems, how they are currently used, both
+    in the industry and in academia, and what tools are available for
+    application development. In the end we will cover some known attacks that
+    have been proven to compromise the security guarantees of TEE.
 
 \end{abstract}
 
-[ since this is a draft for review, I left notes similar to this one throughout the paper, to aid the reviewing process ]
-
-[ I will write this at the end ]
-
 \section{Introduction}
 
-[ I will write this at the end ]
+The computing systems of the present are more and more complex. Their
+applications range from personal computers and mobile phones targeting end
+users, to large-scale servers dedicated to processing large amounts of data in
+the cloud. As computers became more capable in the recent years, more and more
+sensitive information started to pass through these systems. In order to
+protect this data, some security mechanisms had to be implemented. This is a
+difficult task because of the sheer complexity of computing systems themselves,
+as well as the large number of software components that run simultaneously on a
+system, each of which does not come with any security guarantee and issues
+within it can affect the security of the other components. 
+
+On of the most widely used solutions for the isolation of sensitive information
+is the use of Trusted Execution Environments (TEE). These are usually based on some
+hardware extensions that enable the creation of execution contexts, completely
+isolated from the rest of the system. By making use of such isolated
+environments to make sensitive computations, the trust is moved away from other
+software components that coexist on the computing platform or the operating
+system itself, exclusively to the primitives that make such isolation possible.
+
+This paper we will give an overview of Trusted Execution Environments, starting
+with a definition and covering some key terms. We will then discuss in detail
+the architecture and the security principles that make them possible, including
+chains of trust from initialisation until the instantiation of such an
+environment, memory protection of various components during runtime, the secure
+storage of information across instances and how secure interaction with
+external IO devices can be performed. Further, the main applications of TEEs we 
+will cover the main applications of a TEE, the array of tooling available for
+the development of applications for TEEs as well as common difficulties in the 
+current development process. Lastly we will cover security vulnerabilities which
+have been found in TEEs since their adoption, thus highlighting some shortcomings
+of the technology.
 
 \section{Background}
 
 This short section will give an overview of a few important concepts present
-throughout this material, as well as a definition of TEEs. 
-% TODO refactor & fix this part
+throughout this material, as well as a definition of Trusted Execution
+Environments.
 
 \subsection{Definition}
 
-Here follows the result of my effort to summarise and combine information from
-multiple source to arrive at a definition which gives, as best as possible, an
-overview of the subject at hand. This however is not an easy task, because in
-spite of great research effort on the subject and the growth in adoption of
-this solution in the industry, there doesn't seem to be a widely accepted
-definition of TEEs, noted as well in previous works.
-
-Going forward, let's consider the following definition: A \emph{Trusted
-execution environment}(TEE) is a feature of modern microprocessors which
-provides a hardware-isolated ``secure area that runs in parallel with, but
-separate, from the normal execution environment'' \cite{tee_ieee_standard}.
+A \emph{Trusted execution environment} is a feature of modern microprocessors
+which provides a hardware-isolated ``secure area that runs in parallel with,
+but separate, from the normal execution environment'' \cite{tee_ieee_standard}.
 This environment aims to guarantee that the executed code, the runtime states
 and the stored data are integrity and privacy protected. It's end goal is to
 improve the overall security of the whole system (\cite{tee_app_rev},
 \cite{tee_in_securities}, \cite{tee_is_and_not}).
 
-%TODO
-[ I expect to have to rewrite or at least change a big part of this introduction at the end. I started with it, and looking back it wasn't a good decision ]
+It is important to note that definitions of TEEs vary in literature. The above is
+not an official definition, but rather a combination of core ideas extracted from
+multiple sources with the goal of covering all the core ideas of the subject.
 
 \subsection{Key Terms}
 
@@ -131,8 +156,8 @@ when it can be updated post-manufacturing. Mutable components are usually
 implemented in software, but there are exceptions, such as CPU microcode
 \cite{microcode_update}. \emph{Immutable} components cannot be changed after
 manufacturing, are most commonly implemented in hardware and are prevalent as
-ROT \ref{rot} (eg. PUF \cite{tee_base_article}). Software can be also immutable
-(eg. Boot ROM as part of Secure Boot).
+\emph{Root of Trust} (see \ref{rot}) (eg. PUF \cite{tee_base_article}).
+Software can be also immutable (eg. Boot ROM as part of Secure Boot).
 
 \subsubsection{Trusted Computer Base.}
 
@@ -152,20 +177,28 @@ The code that is executed inside a TEEs is commonly referred to as a
 \emph{Trusted Application}, although it typically is just a small portion of a
 larger application that handles sensitive data \cite{tee_app_rev}.
 
-% \subsubsection{Trusted Platform Module.}
+\subsubsection{Trusted Platform Module.}
 
-% TODO
-[ there are a few definitions that I didn't include here, but I'm waiting to
-decide wether or not I will write them inline or not ]
+The Trusted Platform Module (TPM) can either refer to an international standard
+for a microcontroller designed to enable trust in computing platforms by
+securing hardware through integrated cryptographic keys, or to specific chips 
+which follow this standard \cite{iso_11889}, \cite{wikipedia_tpm}.
 
-% TODO consider mentioning A_bus here 
+\subsubsection{Execution Worlds.}
+
+When discussing TEEs it is important to distinguish between code execution
+inside and outside of an enclave. We will name the inside of an enclave the
+``Secure World'' (SW), and the outside of an enclave as the ``Normal World''
+(NW). Any type of execution in the NW will be named as untrusted execution.
 
 \section{Applications \& Developer Support}
+
+%TODO consider adding this after the technical details
 
 This section is based on a recent study by Paju et al. \cite{tee_app_rev} where
 they analyse the recent evolution of TEE usage both in academia and in the
 industry. The main topics covered in the survey include application use-cases,
-Software Development Kits (SDKs), trusted containers and their performance.
+Software Development Kits (SDK), trusted containers and their performance.
 There are also a number of insightful tables covering usage-example graphs,
 application classification in groups, development tools and trusted container
 support that were not included in this work, but could be inspected in the
@@ -229,24 +262,32 @@ digital rights management (DRM) \cite{tee_app_rev}.
 
 Other use cases include smart contracts, computer games, medical data, formal
 methods, accelerators, or niche implementations of web searches protection, 
-digital contract signing, or secure logging \cite{tee_app_rev}.
+digital contract signing, or secure logging \cite{tee_app_rev}. A visual overview
+of the most relevant application categories and related security properties can be
+seen in Figure \ref{fig:tee_apps}.
 
-% TODO
-[ intend to provide examples, and add more references ]
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.3]{tee_apps.png}
+    \caption{An overview of the most common TEE application use cases and
+        related security properties \cite{tee_app_rev}}
+    \label{fig:tee_apps}
+\end{figure}
 
 \subsection{Application Development}
 
-There are a number of available Software Development Kits (SDK) that aid in the
+There are a number of available SDKs that aid in the
 development process of trusted applications. The majority of the surveyed SDKs,
 support either Intel SGX, or ARM TrustZone, namely ``21 of the 23 referred
-frameworks''. There are also two development tools which offer support for
-RISC-V, namely Keystone \cite{tee_keystone} and Sanctum \cite{tee_sanctum}, the
-latter of which appear to not be in development any longer. With regards to
-programming language support, the vast majority support either C or C++, but
-there are some exceptions. OP-TEE \cite{optee} also offers support for Rust,
-among others like Edgeless RT \cite{edgelessrt} which also supports Go. The
-Samsung Knox SDK \cite{knox_sdk}, but also open source projects like Trusty TEE
-\cite{trustytee} offer Java support for the development of Android apps.
+frameworks''\cite{tee_app_rev}. There are also two development tools which
+offer support for RISC-V, namely Keystone \cite{tee_keystone} and Sanctum
+\cite{tee_sanctum}, the latter of which appear to not be in development any
+longer. With regards to programming language support, the vast majority support
+either C or C++, but there are some exceptions. OP-TEE \cite{optee} also offers
+support for Rust, among others like Edgeless RT \cite{edgelessrt} which also
+supports Go. The Samsung Knox SDK \cite{knox_sdk}, but also open source
+projects like Trusty TEE \cite{trustytee} offer Java support for the
+development of Android apps.
 
 Developers are restricted in their choice of SDK by the platform they're
 developing for. Most Android TEE-enabled devices use ARM chips, and will thus
@@ -295,22 +336,31 @@ switches.
 
 Wrappers around the libc library, or the WebAssembly System Interface (WASI)
 act similarly as application middleware interfaces and relay system calls
-outside the enclave. EGo SDK is an example utilising a libc-wrapper, whereas
-AccTEE, ApacheTeaclave, or Twine use the WASI, also enables the execution of
-Web Assembly (WASM) binaries inside the TEE through a runtime for WASM.
-
-[ some missing citations needed ] 
+outside the enclave \cite{understanding}. EGo SDK is an example utilising a
+libc-wrapper, whereas AccTEE, ApacheTeaclave, or Twine use the WASI, which
+enable the execution of Web Assembly (WASM) binaries inside the TEE through a
+runtime for WASM.
 
 \section{Hardware-based TEEs}
 
 There has been a lot of research and development effort put into TEEs in the
-recent years. There are both commercial and academic solutions spanning across
-all major computer architectures (Intel, AMD, ARM, POWER, RISC-V) and even
-niche ones (SPARC, OPEN-RISC). It has been shown in a previous survey that
-despite different approaches in design, there are four security principles
-common among all implementations: \emph{verifiable launch}, \emph{run-time
-isolation}, \emph{secure storage}, \emph{trusted IO} and \emph{secure storage}
-\cite{tee_hw_sup}.
+recent years. The most common types of TEEs are based on architecture-specific
+hardware extensions which enable the creation of enclaves. These will be the
+focus of this section. There are both commercial and academic solutions
+implemented, spanning across all major computer architectures (Intel, AMD, ARM,
+POWER, RISC-V) and even more niche ones (SPARC, OPEN-RISC). It has been shown
+in a previous survey that despite different approaches in design, there are
+four security principles common among all implementations: \emph{verifiable
+launch}, \emph{run-time isolation}, \emph{secure storage}, \emph{trusted IO}
+and \emph{secure storage} \cite{tee_hw_sup}. An overview of these building
+blocks can be seen in Figure \ref{fig:tee_components}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.6]{tee_components.png}
+    \caption{An overview of TEE building blocks \cite{tee_is_and_not}}
+    \label{fig:tee_components}
+\end{figure}
 
 \subsection{Verifiable Launch}
 
@@ -347,12 +397,12 @@ by TEEs:
         will serve as the TCB and will be responsible for loading and measuring
         the enclave \cite{tee_hw_sup}.
     \item Hardware RTM (HW) can attest that a software module is not tampered
-        and can be securely executed, without relying on any hardware. It is
+        and can be securely executed, without relying on any software. It is
         not a common implementation, but proposals such as Sancus
         \cite{tee_sancus}, or Iso-X \cite{tee_isox} exist. 
 \end{itemize}
 
-Out of the thirty one ($31$) implementations analysed in the survey, only a few
+Out of the 31 implementations analysed in the survey, only a few
 of them implement DRTM, some of them being commercial solutions from Intel and
 AMD (\cite{arm_tz}, \cite{intel_tdx}, \cite{intel_sgx}). The rest, and the
 vast majority of the academic solutions use variants of SRTM. Only one proposal
@@ -371,38 +421,38 @@ done in a mutable part of the software TCB with a few exceptions
 
 \subsubsection{Attestation.}
 
-\emph{Attestation} is the process of ensuring that upon the launch of the newly
-created enclave, its state, measurement, and its whole TCB correspond to their
-reference values. This is done by a \emph{verifier}, which splits the process
-into: \emph{local attestation} and \emph{remote attestation}, base on the
-location of the verifier. They usually differ by the method of encryption used,
-the remote verifier commonly using \emph{public key cryptography}, while a
-verifier co-located with the enclave will use \emph{symmetric key
-cryptography}, which is lighter on resources. Most of the analysed solutions
-use remote attestation, and only a few of them also support local attestation,
-concluding thus that remote attestation is the standard both in industry and in
-academia \cite{tee_hw_sup}. Like measurement, attestation is also done in
-software with the same few exceptions \ref{hw_exp}.
+\emph{Attestation} is the process of ensuring that upon the launch
+of the newly created enclave, its state, measurement, and its
+whole TCB correspond to their reference values. This is done by a
+\emph{verifier}, which splits the process into: \emph{local
+attestation} and \emph{remote attestation}, base on the location
+of the verifier. They usually differ by the method of encryption
+used, the remote verifier commonly using \emph{public key
+cryptography}, while a verifier co-located with the enclave will
+use \emph{symmetric key cryptography}, which is lighter on
+resources. Most of the analysed solutions use remote attestation,
+and only a few of them also support local attestation, concluding
+thus that remote attestation is the standard both in industry and
+in academia \cite{tee_hw_sup}. Like measurement, attestation is
+also done in software with the same few exceptions seen in
+\ref{hw_exp}.
 
 \subsubsection{Provisioning.}
 
 \emph{Provisioning} secrets into the newly created enclave is an optional step
 that can be accomplished and is usually done as a last step, or before the
-attestation. \cite{tee_hw_sup}
-
-% TODO
-[ this could be further elaborated ]
+attestation. In case the provisioning is performed before the attestation, the measurement will also reflect the inclusion of the secrets. \cite{tee_hw_sup}
 
 \subsection{Run-Time Isolation}
 
 The resources in use by the enclave after it starts must be protected against
 tampering, or reading by adversaries. These resources include the \emph{CPU}
-and \emph{memory / caches}. As noted in \cite{tee_hw_sup}, we can categorize run-time
-isolation by the method of \emph{partitioning} resources into a scale from
-\emph{spatial} partitioning to \emph{temporal} partitioning. Extremes are
-unusual, so a mix called \emph{spatio-temporal} partitioning is considered.
-Isolation enforcement is categorised into \emph{logical isolation} and
-\emph{cryptographic} isolation.
+and \emph{memory / caches}. As noted in \cite{tee_hw_sup}, we can categorize
+run-time isolation by the method of \emph{partitioning} resources into a scale
+from \emph{spatial} partitioning to \emph{temporal} partitioning. Extremes are
+unusual, so a middle ground called \emph{spatio-temporal} partitioning is a
+common choice. Isolation enforcement is categorised into \emph{logical
+isolation} and \emph{cryptographic} isolation.
 
 \subsubsection{CPU isolation.}
 
@@ -411,11 +461,11 @@ are suboptimal. Spatial separation would involved dedicating CPU cores to
 specific enclaves, which would inherently limit the total number of possible
 simultaneous enclaves. A mixed, spatio-temporal solution is also sub-optimal
 because of implementation difficulties. This solution would require extra
-hardware to protect to guarantee the integrity of spatially-separated
-resources. On the other side, cryptographic enforcement would incur large
-computational overhead and would likely require extra hardware. With these
-considerations, the optimal solutions for CPU isolation would be the logical
-enforcement of a temporal partitioning \cite{tee_hw_sup}.
+hardware in order to guarantee the integrity of spatially-separated resources.
+On the other side, cryptographic enforcement would incur large computational
+overhead and would likely require extra hardware. With these considerations,
+the optimal solutions for CPU isolation would be the logical enforcement of a
+temporal partitioning \cite{tee_hw_sup}.
 
 The analysis shows this is indeed the case with all analysed TEEs. This is
 achieved through secure context switching during which the state of the enclave
@@ -452,8 +502,8 @@ enclaves which have static and predictable memory requirements. Spatial
 partitioning is also often leveraged to protect access control information.
 Temporal isolation is the most rarely used strategy, because the context
 switching is very computationally expensive, making it not suitable for systems
-running concurrent enclaves. The most preferred solution is the mixed
-spatio-temporal partitioning as it enables dynamic reallocation of partitions,
+running concurrent enclaves. The preferred solution is the mixed
+spatio-temporal partitioning as it enables dynamic reallocation of partitions
 based on runtime requirements. Logical enforcement of isolation is based on an
 \emph{access control mechanism} \label{acc_control} to only give access to
 trusted entities. Integrity can be achieved efficiently and requires minimal
@@ -472,7 +522,7 @@ earlier, there are also implementations that use different strategies.
 \emph{Flicker} \cite{flicker} and \emph{SEA} \cite{sea_minimal_tcb} use
 logically enforced temporal isolation for the both the enclave memory and the
 TCB. Among others, SEV \cite{amd_sev} by AMD and AEGIS \cite{aegis}, use
-cryptographically enforced spatio-temporal isolation for the memory enclave.
+cryptographically enforced spatio-temporal isolation for the enclave's memory.
 The latter uses the same strategy for isolating the TCB. All sampled
 implementations, however enforce the isolation via cryptographic means at the
 BUS level \ref{bus_crypto}.
@@ -480,48 +530,41 @@ BUS level \ref{bus_crypto}.
 \subsubsection{Architectural details of memory isolation.}
 
 Logical enforcement of spatio-temporal isolation is achieved through
-\emph{access control mechanisms} \ref{acc_control}. The surveyed TEEs use
-either \emph{memory protection units (MPU)} or \emph{memory management units
-(MMU)}. MPUs check access rights against physical addresses of memory and can
-typically offer coarse-grained memory control. This is achieved by enforcing a
-limited set of access control rules, which must be managed by the TCB. MPUs are
-preferred in academic solutions and are seen in modern TEEs such as Sancus
-\cite{tee_sancus}, Keystone \cite{tee_keystone}, or CURE \cite{tee_cure}. MMUs
-offer more fine grained control. MMUs handle virtual addresses and convert them
-to physical addresses via page tables. Entries in a page table also hold
-sensitive information such as permissions, which must be protected. This is
-achieved either by letting the TCB managed all page tables of the enclaves as
-well as the page tables of all \emph{untrusted software} \cite{tee_ha-vmsi}, or
-by having the TCB manage only the tables of the enclaves and then using
-additional access information for enclave access, based on the execution
-context \cite{intel_tdx}, \cite{arm_tz}, \cite{arm_realms} \cite{tee_hw_sup}.
-
-% TODO extra information on TLBs
-% TODO define untrusted software
-
-[ TLBs not covered. missing "untrusted software" definition ]
+\emph{access control mechanisms} as seen in \ref{acc_control}. The surveyed
+TEEs use either \emph{memory protection units (MPU)} or \emph{memory management
+units (MMU)}. MPUs check access rights against physical addresses of memory and
+can typically offer coarse-grained memory control. This is achieved by
+enforcing a limited set of access control rules, which must be managed by the
+TCB. MPUs are preferred in academic solutions and are seen in modern TEEs such
+as Sancus \cite{tee_sancus}, Keystone \cite{tee_keystone}, or CURE
+\cite{tee_cure}. MMUs offer more fine grained control. MMUs handle virtual
+addresses and convert them to physical addresses via page tables. Entries in a
+page table also hold sensitive information which must be protected (eg. access
+permissions). This is achieved either by letting the TCB managed all page
+tables of the enclaves as well as the page tables of all \emph{untrusted
+software} \cite{tee_ha-vmsi}, or by having the TCB manage only the tables of
+the enclaves and then using additional access information for enclave access,
+based on the execution context \cite{intel_tdx}, \cite{arm_tz},
+\cite{arm_realms} \cite{tee_hw_sup}.
 
 \subsubsection{Caches.}
 
 Caches store recently accessed data to improve performance and have been
-notoriously been used for leaking data, as will be further seen in TODO.
-Enclave data can be protected in the cache by using functions of the MMU / MPU,
-as seen in some architectures \cite{intel_sgx}. In others, this is achieved
-with additional protection strategies \cite{arm_tz}. Most of the solutions
-involved logically enforced spatio-temporal isolation of the caches, but there
-are exceptions, mainly aiming to mitigate side-channel attacks TODO\_ref.
-Spatial partitioning, despite not scaling well and diminishing performance is
-implemented for example in MI6 \cite{tee_mi6}, or Keystone \cite{tee_keystone}.
-Temporal partitioning involves flushing the full cache on each context switch,
-which drastically degrades performance, but from the same prior considerations
-it is used in a few implementations such as SANCTUARY \cite{tee_sanctuary}, or
-Sancus \cite{tee_sancus}. No cryptographic solution for isolation has been used
-for caches, most likely because of the increased latency it would result in
+notoriously been used for leaking data, as will be further seen in
+\ref{cache_attacks}. Enclave data can be protected in the cache by using
+functions of the MMU / MPU, as seen in some architectures \cite{intel_sgx}. In
+others, this is achieved with additional protection strategies \cite{arm_tz}.
+Most of the solutions involved logically enforced spatio-temporal isolation of
+the caches, but there are exceptions, mainly aiming to mitigate side-channel
+attacks \ref{sidechannel_attacks}. Spatial partitioning, despite not scaling
+well and diminishing performance is implemented for example in MI6
+\cite{tee_mi6}, or Keystone \cite{tee_keystone}. Temporal partitioning involves
+flushing the full cache on each context switch, which drastically degrades
+performance, but from the same prior considerations it is used in a few
+implementations such as SANCTUARY \cite{tee_sanctuary}, or Sancus
+\cite{tee_sancus}. No cryptographic solution for isolation has been used for
+caches, most likely because of the increased latency it would result in
 \cite{tee_hw_sup}.
-
-% TODO ``e.g., Intel SGX [7] uses spatio- temporal partitioning and logical enforcement
-%to protect enclave memory, but it uses purely spatial partitioning to protect
-%its TCB, and cryptographic isolation to cope with Abus''
 
 \subsection{Secure Storage}
 
@@ -531,16 +574,17 @@ of sealing.
 
 As a result of the survey, it's been determined that all TEE solutions that
 explicitly describe their design choices for secure storage follow closely the
-sealing algorithm from of a Trusted Platform Module (TPM) \cite{trust_plat_mod}
-, an immutable hardware component. This is based on an
-asymmetric key pair used to encrypt a secret. The secret will only be unsealed
-if the system state matched the state at the time of sealing. Solutions such as
-SEA \cite{sea_minimal_tcb}, or IBM-PEF \cite{ibm_pef} are based on a TPM
-microcontroller. Intel SGX \cite{intel_sgx} exposes sealing capabilities
-through CPU instructions. There are however, solutions which provide sealing
-support purely thought their software TCB, such as \cite{optee}, or
-\cite{tee_timber}. This is useful in solutions which utilise a software TCB, as
-it it not dependant on the system's hardware \cite{tee_hw_sup}.
+sealing algorithm from of a Trusted Platform Module (TPM)
+\cite{trust_plat_mod}, an immutable hardware component. An asymmetric key pair
+used to encrypt a secret. The secret will only be unsealed if the system state
+matched the state at the time of sealing. Further, the secret is used for
+decrypting the stored data. Solutions such as SEA \cite{sea_minimal_tcb}, or
+IBM-PEF \cite{ibm_pef} are based on a TPM microcontroller. Intel SGX
+\cite{intel_sgx} exposes sealing capabilities through CPU instructions. There
+are however, solutions which provide sealing support purely thought their
+software TCB, such as \cite{optee}, or \cite{tee_timber}. This is useful in
+solutions which utilise a software TCB, as it it not dependant on the system's
+hardware \cite{tee_hw_sup}.
 
 \subsection{Trusted IO}
 
@@ -556,7 +600,7 @@ established either through logical or cryptographic means.
 
 Logical trusted paths require architectural support for direct memory access
 (DMA) and memory mapped IO (MMIO). The former involves the same techniques used
-to protect memory access in an enclave \ref{mem_isolation}. A trusted path for
+to protect memory access in an enclave (see \ref{mem_isolation}). A trusted path for
 MMIO can be implemented by allowing or denying MMIO requests based on source or
 destination. This can be achieved through access filters. A number of
 implementations leverage the \emph{Trusted Protection Controller} from ARM for
@@ -569,9 +613,11 @@ enclaves and IO devices.
 Cryptographic trusted paths are based on encryption and create a secure
 communication channel between the enclave and the device, which must be both
 provisioned with credentials and cryptographic keys for authentication. As
-already seen, these solutions come with a computational overhead, but can also
-bring the advantage of protection at the link level. There are a number of 
-TEEs which utilise cryptographic trusted paths either solely (eg. HIX \cite{tee_hix}), or in combination with logical trusted paths (eg. SGXIO \cite{tee_sgxio}).   
+previously mentioned, these solutions come with a computational overhead, but can also
+bring the advantage of protection at the link level. There are a number of TEEs
+which utilise cryptographic trusted paths either solely (eg. HIX
+\cite{tee_hix}), or in combination with logical trusted paths (eg. SGXIO
+\cite{tee_sgxio}).   
 
 \subsubsection{Trusted Device Architecture.}
 
@@ -595,96 +641,188 @@ partitioning and cryptographic enforcement are considered unsuitable
 
 \section{Other Architectures}
 
-%TODO see if this is necessary
-%TODO cred ca merge mentionat ca majoritatea TEE-urilor populare sunt hardware-based
+The vast majority of relevant academic and industry TEE implementations used
+hardware extensions to provide the necessary building blocks for TEEs. There
+exist however some architectures that diverge from this trend.
 
-\subsection{Co-processors}
+Purely software-based architecture try to address the dependence of TEEs on the
+CPU architecture of the system they are running on. A relevant example is
+SecTEE, which implements in its software TCB all primitives necessary for
+running secure enclaves: ``integrity measurement, remote attestation, data
+sealing, secrets provisioning, and life cycle management'' \cite{sec_tee}.
 
-Solutions such as AMD Platform Security Processor (PSP), Google Titan M, Apple
-Secure Enclave Processor (SEP) or Hardware Security Modules (HSM) aim to
-provided similar benefits with TEEs, but are implemented as separate chips from
-the main CPU.
-
-% TODO
-[I would like to cover a bit more on this subject, as well as on software-based TEEs,
-even if they don't seem to be as well documented]
-
-\subsection{Software-based TEE}
+On the other hand, we find solutions such as AMD Platform Security Processor
+(PSP), Google Titan M, Apple Secure Enclave Processor (SEP) or Hardware
+Security Modules (HSM), which aim to provide similar benefits with TEEs, but
+are implemented as separate chips from the main CPU.
 
 \section{Vulnerabilities}
 
-This section is based on a recent survey by Muñoz et al. \cite{tee_in_securities},
-and will cover an overview of existing vulnerabilities in TEEs.
+This section is based on a recent survey by Muñoz et al.
+\cite{tee_in_securities}, and will provide an overview of vulnerabilities in
+TEEs as well as a number of examples for each category.
 
-% TODO
-[I intend to focus on this section primarily as a last step towards finishing the paper]
+\subsection{Software vulnerabilities}
+
+In spite of the security mechanisms introduced by TEEs, the software running on
+the system is still often vulnerable. Unintentional bugs that have previously
+been found in the code of TAs running inside enclaves can include improper
+parameter validation, or improper memory handling. Attacker can exploit such
+vulnerabilities and compromise the system with effects ranging from revealing
+sensitive information to exploiting the kernel of the TEE.
+
+\subsubsection{Kernel attacks.}
+
+There are a number of Kernel exploits performed on TEEs. Most of them involve a
+multi-step process, chaining together exploits on different components. As
+described by the authors, these exploits can include applications running the
+NW that communicate with the TEE, attacks on vulnerable TEE drivers, privilege
+escalations, disabling of protection mechanisms, vulnerable syscalls, etc. It
+has been proven in the past that an attacker can get full control over any
+aspect of a device through such methods, in exploits such as \emph{Bits Please}
+\cite{bits_please}. 
+
+\subsubsection{System calls.}
+
+A number of attacks exploit vulnerabilities in the implementation of system
+calls in the TEE. Techniques such as the aforementioned ones can be utilised
+to gain higher privileges through a vulnerable trusted application. Then the
+vulnerable system call can be exploited, for example to extract encryption keys
+from the system \cite{bits_fde}. Another example involves the lack of user
+input validation in certain system calls. \emph{Trust None} \cite{trust_none}
+exploits this to bypass certain security mechanisms which leads to read and write
+permissions in the TZ kernel context. Bootloader unlocking has been proven 
+possible through this exploits.
+
+%\subsubsection{Downgrade Attack.}
+
+% TODO include architectural attacks or not?
+% -- erring on the side of NOT
+
+%Trusted applications must be signed using the TEE trusted public key, meaning that 
+%an application will pass verification if it's properly signed. The Downgrade attack
+%involved executing older versions of a TA, known to be vulnerable. These can then be
+%exploited in order to hijack control of the system. To mitigate this, a versioning
+%system was introduced. However, research shows that adoption of the system was slow,
+%so despite mitigations being introduced, they can be rendered useless by lack of adoption.
+
+\subsection{Side-channel attacks}
+\label{sidechannel_attacks}
+
+\emph{Side Channel attacks} (SCA) mainly exploit secondary sources of
+information (power consumption, noise levels, response time, etc.) to extract
+information from a system. A subcategory of SCAs, called \emph{Fault Injection}
+(FI) exploit glitches induced by applying high voltages, temperatures, or
+electromagnetic pulses. FI attacks are particularly hard to protect against.
+
+\subsubsection{PlunderVolt.}
+
+Plundervolt \cite{plundervolt} involves a privileged adversary which abuses a
+voltage scaling interface to cause predictable failures in the system. PlunderVolt
+can break the confidentiality and integrity of data in Intel SGX, despite memory
+encryption. Event more, PlunderVolt can be exploited to alter the Instruction Set
+of the processor, thus making it possible to attack previously trusted, bug free
+code.
+
+\subsubsection{Platypus.}
+
+Intel exposes to unprivileged users and interface which reveals power
+consumption. Platypus \cite{platypus} shows that this information can be
+leveraged through various statistical techniques to identify code instructions
+and thus monitor application control flow. Moreover, researchers showed that
+Platypus can be leveraged to infer secret keys, break KASLR \cite{kaslr} and
+create a covert channel through which information can be leaked from inside
+enclaves.
+
+\subsection{Micro-architectural attacks}
+
+Attacks falling in this category target micro-architectural elements and
+execution processes, which include among others: cache memory, the branch
+predictor and out-of-order execution.
+
+\subsubsection{Cache timing attacks.}
+\label{cache_attacks}
+
+TEEs based on TrustZone (TZ) have been shown vulnerable to cache timing
+attacks. On such systems, the cache is shared between the NW and the Secure
+World. As a result, attackers can exploit hardware information such as access
+time on cache lines to extract information from enclaves. The most common
+target is encryption keys. Successful deployments of these attacks showed
+several weaknesses in the NS-bit mechanism in TZ, which separates the SW from
+NW. Such attacks, have also been shown possible on Intel SGX. In fact, the
+authors affirm that SGX increases the side-channel attack surface
+\cite{cache_sgx} of Intel systems. Concrete examples of cache timing attacks
+include Prime+Probe \cite{prime_probe}, Flush+Reload \cite{flush_reload} and
+Flush+Flush \cite{flush_flush}.
+
+\subsubsection{Speculative execution attacks.}
+
+Speculative execution is an optimization mechanism present in all modern CPUs.
+It is based on predicting future execution flow (speculation) and executing the
+predicted set of instructions in advance. In case the prediction was wrong, the
+state is reverted. However, not all changes are reverted and speculative
+execution can leave traces behind, which can be leveraged by attackers to
+extract confidential information, despite security measures protecting it.
+Meltdown and Spectre are the two most prevalent example of speculative
+execution attacks and have been shown possible on Intel SGX and ARM TZ
+\cite{brasser}, \cite{sgxpectre}.
+
+\subsubsection{Out-of-order execution attacks.}
+
+As a subtype of speculative execution, out-of-order executing allows
+instructions to be executed out of order to maximize performance. There are a
+number of attacks which exploit this behaviour. Foreshadow \cite{foreshadow}
+proved that Intel SGX is not resistant against speculative execution attacks,
+by reading memory inside the enclave and extracting attestation keys.
+Micro-architectural data sampling (MDS) attacks also fall in this category.
+These, typically involve the exfiltration of data from internal CPU buffers.
+A notable instance for this type of attack is Fallout \cite{fallout}.
+
+%TODO include mitigations?
 
 \section{Conclusions}
 
-% TODO
-[ this section will be written at the end ]
+Trusted execution environments have been increasingly adopted in the past few
+years as a mechanism for providing security features in the context of
+computing devices, from mobile to cloud. In this paper we gave an overview of
+TEE, covering three main topics.
 
-% ========= details {{{
+Firstly, we discussed their most common use cases seen until now, which include Data
+Processing, Finance and Authentication. We also analysed the tools currently
+used in order to develop Trusted Applications. The options are mostly limited
+to Intel SGX and ARM TrustZone. Furthermore, the cross-platform options are
+very limited. Tcons, which try to avoid platform-specific modifications in the
+development process, have also been briefly covered.
 
-% \section{Allgemeiner Aufbau}
+Secondly, we discussed in detail the four security principles which are common
+among all implementations of hardware-based TEEs, namely: \emph{verifiable
+launch}, \emph{run-time isolation}, \emph{secure storage}, \emph{trusted IO}
+and \emph{secure storage}. We also briefly covered other types of
+architectures.
 
-%\textbf{Prinzip der Pyramide}: Der Aufbau eines wissenschaftlichen Papiers (und auch der Seminararbeit) sollte idealerweise dem Prinzip der Pyramide folgen. Das bedeutet, dass der Artikel einen hierarchischen Aufbau verfolgen sollte. Der eigentliche Inhalt des Papiers (Motivation, Inhalt, Ergebnisse) wird in mehreren Iterationen wiedergegeben (z.B. 3), wobei der Abstraktionsgrad bei jeder Iteration sinkt. In hochwertigen Publikationen (z.B. Papieren in IEEE TSE) ist dieses Prinzip deutlich zu erkennen. Dieses Prinzip wird bereits durch Abstract/Introduction induziert und sollte auch im Rest des Papiers weitergeführt werden. Der Vorteil ist, dass es das Verständnis eines komplexen Sachverhalts mit vielen Details wesentlich erleichtert, weil man die Struktur des Vorgestellten besser nachvollziehen kann. Der Leser kann die Details eines Lösungsansatzes besser einordnen, wenn er das Ziel der Argumentation bereits kennt. Auf diese Weise wird auch verhindert, dass ein Papier einen Krimi erzählt, bei dem erst am Schluss klar wird, worauf die Autoren hinaus wollten und was das eigentliche Ergebnis der Arbeit war.
+Thirdly, we covered a number of relevant types of exploits encountered in the
+realm of TEEs including software-based, side-channel-based and
+micro-architectural attacks. The goal of TEEs is to provide higher security
+guarantees for TAs as opposed to ``classic'' applications. However, the vast
+number of ways TEEs have been attacked proves that they are not a bullet-proof 
+solution and still have a number of security shortcomings.
 
-%\subsection{Über die Introduction}
-%\label{sub:intro}
-
-%``Abstract'', ``Introduction'' und ``Conclusions'' gehören zu den meist gelesenen Abschnitten eines Papers und sollten daher mit besonderer Sorgfalt geschrieben werden. Idealerweise enthalten Abstract und Introduction die folgenden 4 oder 5 Punkte. In einem Abstract sollten zu jedem dieser Punkte ein bis zwei Sätze geschrieben werden, mehr nicht. Die Einleitung behandelt die gleichen Punkte, wie der Abstract, verwendet aber nicht nur ein bis zwei Sätze sondern ein bis zwei Absätze pro Punkt. Die Punkte sind:
-
-%\begin{enumerate}
-	%\item Eingrenzung des Forschungsbereichs (In welchem Themengebiet ist das Thema/die Arbeit angesiedelt?)
-	%\item Beschreibung des Problems, das in den bearbeiteten Arbeiten gelöst werden sollte (Was ist das Problem und warum ist es wichtig dies zu lösen?)
-	%\item \label{item-related-work} Lösungsansatz/Lösungsansätze der zu bearbeitenden Arbeiten (Welcher Ansatz wurde in welcher Arbeit verwendet, um das Problem zu lösen? Was ist der Beitrag der jeweiligen Artikel?)
-	%\item {
-		%\color{gray}
-		%\textbf{Optional}: Lösungsansatz der eigenen Arbeit (Welcher neue Ansatz wurde in dieser Arbeit verwendet, um das Problem zu lösen? Was ist der Beitrag der eigenen Arbeit?). Dieser Punkt kommt normalerweise bei Seminararbeiten nicht zum Tragen, da hier kein eigener Lösungsansatz entwickelt wird, ist aber für Bachelor- und Masterarbeiten besonders relevant.
-		
-		%In Arbeiten mit einem eigenen Lösungsansatz/Beitrag, wird bei Punkt~\ref{item-related-work} auf die Defizite in bestehenden Arbeiten bzgl. des Problems eingegangen (Welche Arbeiten gibt es und warum konnten diese das Problem nicht lösen? Bzw. warum ist es ein Problem, obwohl sich schon andere mit dem gleichen Thema beschäftigt haben?).
-		%}
-	%\item Art der Validierung + Ergebnisse (Wie wurde nachgewiesen, dass die Arbeiten {\color{gray} oder die eigene Arbeit} die versprochene Verbesserung wirklich vollbracht haben (Fallstudie, Experiment, o.ä.); Was waren die Ergebnisse der Validierung (idealerweise Prozentsatz der Verbesserung)?)
-%\end{enumerate}
-
- %Die Einleitung dient dazu, den Leser an die Arbeit heranzuführen. Sie sollte sich von allgemeinen Aussagen zum eigentlichen Thema heranarbeiten (hineinzoomen). Die Einleitung sollte so geschrieben werden, dass jeder Informatiker (auch aus anderen Teilbereichen der Informatik) verstehen kann wozu die Arbeit dient. Idealerweise folgt die Einleitung dem gleichen Aufbau (4~--~5 Punkte) wie der Abstract, jedoch wird jetzt für jeden der Punkte ein ganzer Abschnitt geschrieben. Der vorletzte Absatz der Einleitung (also nach Abhandlung der 4 -- 5 Punkte) sollte die Beiträge (Contributions) der bearbeiteten Werke nochmals deutlich herausstellen. Das erleichtert es Lesern, im Wust von Motivation, verwandten Arbeiten, Grundlagen usw. das Inkrement bzw. den wissenschaftlichen Beitrag der Arbeiten zu erfassen. 
-
-%Im Allgemeinen schließt die Einleitung am Ende mit einer Mini-Zusammen\-fassung der Struktur der Seminararbeit ab. Beispiel, im Bezug auf diesen Beipieltext (rekursives Beispiel!): Section~\ref{seq:content} contains details on the content beyond the Introduction. Finally, Section~\ref{seq:conclusion} concludes this paper.
-
-%\section{Content}
-%\label{seq:content}
-
-%Der Inhalt hängt stark von dem Thema der Arbeit ab und kann daher unterschiedlich strukturiert sein. Folgend sind potentielle Sections, die oft, aber nicht immer nützlich sind, aufgelistet. Einige dieser Abschnitte können sich gegenseitig ausschließen:
-%\begin{itemize}
-	%\item Foundations: Grundlagen, die zum Verständnis der Arbeiten notwendig sind.
-	%\item Approach(es): Die Ansätze, die in den Arbeiten verwendet werden.
-	%\item Evaluation: Wie wurden die Arbeiten evaluiert/validiert?
-	%\item Comparison: Ein Vergleich der verschiedenen Ansätze / Evaluationen / Ergebnisse.
-	%\item Discussion: Wie Evaluation oder Comparison, aber stärkerer Fokus auf der Bewertung der Arbeiten.
-%\end{itemize}
-
-
-
-%\label{seq:conclusion}
-%Die Schlussfolgerungen beenden den Artikel und erhöhen den Abstraktionsgrad der Beschreibung wieder (hinauszoomen), genauso wie die Einleitung diesen gesenkt hat (hineinzoomen). Meist sind ``Conclusions'' sehr wichtig, da viele Gutachter nach ``Abstract'' und ``Introduction'' zunächst die ``Conclusions'' lesen und dann voreingenommen den Rest des Artikels lesen. Idealerweise bestehen die ``Conclusions'' aus den folgenden 3 Punkten, für die jeweils ein Abschnitt spendiert werden sollte:
-%\begin{enumerate}
-	%\item Zusammenfassung: Was wurde in dieser Arbeit gemacht? Was waren die Schlüsselergebnisse? Diesmal jedoch zusammengefasst nochmals für einen Leser, der die vorherigen Seiten mit allen Details bereits gelesen hat.
-	%\item Adressaten der Verbesserung: Wem nützen die Verbesserungen/Beiträge der Arbeit? Inwieweit wird die Software-Technik (oder Informatik als Ganzes) durch die Arbeit verbessert?
-	%\item Aufbauende/Zukünftige Arbeiten: Welche nächsten Schritte sind geplant (erst kurzfristige, dann längerfristige)? Welche möglichen Lösungsansätze für noch bestehende Probleme sind denkbar? Wie könnten zukünftige Forschungsarbeiten aussehen?
-%\end{enumerate}
-
-% }}}
+TEEs are a good solution in the development of more secure applications, but
+they still are an immature technology which will likely continue to improve
+in the near future, addressing development and security issues.
 
 \newpage
+
 \bibliographystyle{splncs03}
 \bibliography{sesebib.bib}
+
+% Declaration {{{
 
 %% -------------------
 %% |   Declaration   |
 %% -------------------
 \cleardoublepage
-\vspace*{20\baselineskip}
+%\vspace*{5\baselineskip}
 \hbox to \textwidth{\hrulefill}
 \par
 %\iflanguage{english}{english text here}{german text here}
@@ -713,7 +851,7 @@ Ich bin mir bewusst, dass eine unwahre Erklärung zur Versicherung der selbstst�
 \noindent\dotfill\hspace*{8.0cm}\\
 \noindent\hspace*{2cm}(\authorName) %center name with hspace
 
-
+% }}}
 
 \thispagestyle{empty}
 

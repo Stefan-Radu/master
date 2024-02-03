@@ -1,0 +1,836 @@
+@ARTICLE{tee_ieee_standard,
+    author={IEEE},
+    journal={IEEE Std 2952-2023}, 
+    title={IEEE Standard for Secure Computing Based on Trusted Execution Environment}, 
+    year={2023},
+    volume={},
+    number={},
+    pages={1-29},
+    abstract={A framework of TEE-based secure computing system, and technical requirements of a general secure computing platform for isolation, confidentiality, compatibility, performance, usability, and security aspects are specified in this standard. Use cases and scenarios of secure computing technology are also specified.},
+    keywords={},
+    doi={10.1109/IEEESTD.2023.10186307},
+    ISSN={},
+    month={July}
+}
+
+@article{tee_in_securities,
+    title = {A survey on the (in)security of trusted execution environments},
+    journal = {Computers \& Security},
+    volume = {129},
+    pages = {103180},
+    year = {2023},
+    issn = {0167-4048},
+    doi = {https://doi.org/10.1016/j.cose.2023.103180},
+    url = {https://www.sciencedirect.com/science/article/pii/S0167404823000901},
+    author = {Antonio Muñoz and Ruben Ríos and Rodrigo Román and Javier López},
+    keywords = {Computer security, Secure hardware, Trusted execution environments, Hardware attacks, Software attacks, Side-channel attacks},
+    abstract = {As the number of security and privacy attacks continue to grow around the world, there is an ever increasing need to protect our personal devices. As a matter of fact, more and more manufactures are relying on Trusted Execution Environments (TEEs) to shield their devices. In particular, ARM TrustZone (TZ) is being widely used in numerous embedded devices, especially smartphones, and this technology is the basis for secure solutions both in industry and academia. However, as shown in this paper, TEE is not bullet-proof and it has been successfully attacked numerous times and in very different ways. To raise awareness among potential stakeholders interested in this technology, this paper provides an extensive analysis and categorization of existing vulnerabilities in TEEs and highlights the design flaws that led to them. The presented vulnerabilities, which are not only extracted from existing literature but also from publicly available exploits and databases, are accompanied by some effective countermeasures to reduce the likelihood of new attacks. The paper ends with some appealing challenges and open issues.}
+}
+
+@misc{tee_hw_sup,
+    title={SoK: Hardware-supported Trusted Execution Environments}, 
+    author={Moritz Schneider and Ramya Jayaram Masti and Shweta Shinde and Srdjan Capkun and Ronald Perez},
+    year={2022},
+    eprint={2205.12742},
+    archivePrefix={arXiv},
+    primaryClass={cs.CR}
+}
+
+@inproceedings{tee_app_rev,
+    author = {Paju, Arttu and Javed, Muhammad Owais and Nurmi, Juha and Savim\"{a}ki, Juha and McGillion, Brian and Brumley, Billy Bob},
+    title = {SoK: A Systematic Review of TEE Usage for Developing Trusted Applications},
+    year = {2023},
+    isbn = {9798400707728},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3600160.3600169},
+    doi = {10.1145/3600160.3600169},
+    abstract = {Trusted Execution Environments (TEEs) are a feature of modern central processing units (CPUs) that aim to provide a high assurance, isolated environment in which to run workloads that demand both confidentiality and integrity. Hardware and software components in the CPU isolate workloads, commonly referred to as Trusted Applications (TAs), from the main operating system (OS). This article aims to analyse the TEE ecosystem, determine its usability, and suggest improvements where necessary to make adoption easier. To better understand TEE usage, we gathered academic and practical examples from a total of 223 references. We summarise the literature and provide a publication timeline, along with insights into the evolution of TEE research and deployment. We categorise TAs into major groups and analyse the tools available to developers. Lastly, we evaluate trusted container projects, test performance, and identify the requirements for migrating applications inside them.},
+    booktitle = {Proceedings of the 18th International Conference on Availability, Reliability and Security},
+    articleno = {34},
+    numpages = {15},
+    keywords = {Confidential Computing, Trusted Execution Environment, Application Security, TEE, Privacy and Confidentiality, Usability},
+    location = {<conf-loc>, <city>Benevento</city>, <country>Italy</country>, </conf-loc>},
+    series = {ARES '23}
+}
+
+@ARTICLE{tee_base_article,
+  author={Hu, Wei and Chang, Chip-Hong and Sengupta, Anirban and Bhunia, Swarup and Kastner, Ryan and Li, Hai},
+  journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems}, 
+  title={An Overview of Hardware Security and Trust: Threats, Countermeasures, and Design Tools}, 
+  year={2021},
+  volume={40},
+  number={6},
+  pages={1010-1038},
+  doi={10.1109/TCAD.2020.3047976}
+}
+
+@INPROCEEDINGS{tee_is_and_not,
+  author={Sabt, Mohamed and Achemlal, Mohammed and Bouabdallah, Abdelmadjid},
+  booktitle={2015 IEEE Trustcom/BigDataSE/ISPA}, 
+  title={Trusted Execution Environment: What It is, and What It is Not}, 
+  year={2015},
+  volume={1},
+  number={},
+  pages={57-64},
+  doi={10.1109/Trustcom.2015.357}}
+
+@misc{tee_smart_rot,
+    title = {SMART: Secure and Minimal Architecture for (Establishing a Dynamic) Root of Trust},
+    author = {Eldefrawy, Karim and Perito, Daniele and Tsudik, Gene},
+    year = {2012},
+    month = {01},
+}
+
+@misc{tee_tcg_arch_overview,
+	title = {TCG specification architecture overview},
+    author={Trusted Computing Group},
+    revision={1.4.},
+	year = {2007},
+	note = {[Online; accessed 8. Dec. 2023]},
+	url = {https://trustedcomputinggroup.org/wp-content/uploads/TCG_1_4_Architecture_Overview.pdf}
+}
+
+@misc{windows-driver-content2023Dec,
+	author = {windows-driver-content},
+	title = {{Secure boot}},
+	year = {2023},
+	note = {[Online; accessed 8. Dec. 2023]},
+	url = {https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot}
+}
+
+@inproceedings {tee_sancus,
+    author = {Job Noorman and Pieter Agten and Wilfried Daniels and Raoul Strackx and Anthony Van Herrewege and Christophe Huygens and Bart Preneel and Ingrid Verbauwhede and Frank Piessens},
+    title = {Sancus: Low-cost Trustworthy Extensible Networked Devices with a Zero-software Trusted Computing Base},
+    booktitle = {22nd USENIX Security Symposium (USENIX Security 13)},
+    year = {2013},
+    isbn = {978-1-931971-03-4},
+    address = {Washington, D.C.},
+    pages = {479--498},
+    url = {https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/noorman},
+    publisher = {USENIX Association},
+    month = aug
+}
+
+@misc{arm_tz,
+  title={TrustZone : Integrated Hardware and Software Security},
+  author={Tiago Alves},
+  year={2004},
+  url={https://api.semanticscholar.org/CorpusID:58463902}
+}
+
+@misc{intel_tdx,
+    author={Intel Corporation},
+    title={"Intel® trust domain extensions (Intel® TDX) module base architecture specification"},
+    year={2021},
+    month={9}
+}
+
+@inproceedings{intel_sgx,
+  title={Innovative instructions and software model for isolated execution},
+  author={Francis X. McKeen and Ilya Alexandrovich and Alex Berenzon and Carlos V. Rozas and Hisham Shafi and Vedvyas Shanbhogue and Uday R. Savagaonkar},
+  booktitle={Hardware and Architectural Support for Security and Privacy},
+  year={2013},
+  url={https://api.semanticscholar.org/CorpusID:40428970}
+}
+
+@misc{arm_cca,
+    title={rm® architecture reference manual supplement, the realm
+management extension (RME), for Armv9-A},
+    author={Arm},
+    note={document number: ARM DDI 0615}
+}
+
+@inproceedings{ibm_pef,
+    author = {Hunt, Guerney D. H. and Pai, Ramachandra and Le, Michael V. and Jamjoom, Hani and Bhattiprolu, Sukadev and Boivie, Rick and Dufour, Laurent and Frey, Brad and Kapur, Mohit and Goldman, Kenneth A. and Grimm, Ryan and Janakirman, Janani and Ludden, John M. and Mackerras, Paul and May, Cathy and Palmer, Elaine R. and Rao, Bharata Bhasker and Roy, Lawrence and Starke, William A. and Stuecheli, Jeff and Valdez, Enriquillo and Voigt, Wendel},
+    title = {Confidential Computing for OpenPOWER},
+    year = {2021},
+    isbn = {9781450383349},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3447786.3456243},
+    doi = {10.1145/3447786.3456243},
+    abstract = {This paper presents Protected Execution Facility (PEF), a virtual machine-based Trusted Execution Environment (TEE) for confidential computing on Power ISA. PEF enables protected secure virtual machines (SVMs). Like other TEEs, PEF verifies the SVM prior to execution. PEF utilizes a Trusted Platform Module (TPM), secure boot, and trusted boot as well as newly introduced architectural changes for Power ISA systems. Exploiting these architectural changes requires new firmware, the Protected Execution Ultravisor. PEF is supported in the latest version of the POWER9 chip. PEF demonstrates that access control for isolation and cryptography for confidentiality is an effective approach to confidential computing. We particularly focus on how our design (i) balances between access control and cryptography, (ii) maximizes the use of existing security components, and (iii) simplifies the management of the SVM life cycle. Finally, we evaluate the performance of SVMs in comparison to normal virtual machines on OpenPOWER systems.},
+    booktitle = {Proceedings of the Sixteenth European Conference on Computer Systems},
+    pages = {294–310},
+    numpages = {17},
+    keywords = {TEE, POWER9, enclave, KVM, secure computing, Linux, ultravisor, confidential computing, firmware, trusted execution environment},
+    location = {Online Event, United Kingdom},
+    series = {EuroSys '21}
+}
+
+@inproceedings{tee_replay_attacks,
+    author = {Skarlatos, Dimitrios and Yan, Mengjia and Gopireddy, Bhargava and Sprabery, Read and Torrellas, Josep and Fletcher, Christopher W.},
+    title = {MicroScope: Enabling Microarchitectural Replay Attacks},
+    year = {2019},
+    isbn = {9781450366694},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3307650.3322228},
+    doi = {10.1145/3307650.3322228},
+    abstract = {The popularity of hardware-based Trusted Execution Environments (TEEs) has recently skyrocketed with the introduction of Intel's Software Guard Extensions (SGX). In SGX, the user process is protected from supervisor software, such as the operating system, through an isolated execution environment called an enclave. Despite the isolation guarantees provided by TEEs, numerous microarchitectural side channel attacks have been demonstrated that bypass their defense mechanisms. But, not all hope is lost for defenders: many modern fine-grain, high-resolution side channels---e.g., execution unit port contention---introduce large amounts of noise, complicating the adversary's task to reliably extract secrets.In this work, we introduce Microarchitectural Replay Attacks, whereby an SGX adversary can denoise nearly arbitrary microarchitectural side channels in a single run of the victim, by causing the victim to repeatedly replay on a page faulting instruction. We design, implement, and demonstrate our ideas in a framework, called MicroScope, and use it to denoise notoriously noisy side channels. Our main result shows how MicroScope can denoise the execution unit port contention channel. Specifically, we show how Micro-Scope can reliably detect the presence or absence of as few as two divide instructions in a single logical run of the victim program. Such an attack could be used to detect subnormal input to individual floating-point instructions, or infer branch directions in an enclave despite today's countermeasures that flush the branch predictor at the enclave boundary. We also use MicroScope to single-step and denoise a cache-based attack on the OpenSSL implementation of AES. Finally, we discuss the broader implications of microarchitectural replay attacks---as well as discuss other mechanisms that can cause replays.},
+    booktitle = {Proceedings of the 46th International Symposium on Computer Architecture},
+    pages = {318–331},
+    numpages = {14},
+    keywords = {side-channel, operating system, security, virtual memory},
+    location = {Phoenix, Arizona},
+    series = {ISCA '19}
+}
+
+@inproceedings{flicker,
+  title={Flicker: An execution infrastructure for TCB minimization},
+  author={McCune, Jonathan M and Parno, Bryan J and Perrig, Adrian and Reiter, Michael K and Isozaki, Hiroshi},
+  booktitle={Proceedings of the 3rd ACM SIGOPS/EuroSys European Conference on Computer Systems 2008},
+  pages={315--328},
+  year={2008}
+}
+
+@INPROCEEDINGS{sea_minimal_tcb,
+  author={McCune, Jonathan M. and Parno, Bryan and Perrig, Adrian and Reiter, Michael K. and Seshadri, Arvind},
+  booktitle={2007 IEEE Symposium on Security and Privacy (SP '07)}, 
+  title={Minimal TCB Code Execution}, 
+  year={2007},
+  volume={},
+  number={},
+  pages={267-272},
+  doi={10.1109/SP.2007.27}}
+
+@inproceedings{aegis,
+    author = {Suh, G. Edward and Clarke, Dwaine and Gassend, Blaise and van Dijk, Marten and Devadas, Srinivas},
+    title = {AEGIS: Architecture for Tamper-Evident and Tamper-Resistant Processing},
+    year = {2003},
+    isbn = {9781450328401},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/2591635.2667184},
+    doi = {10.1145/2591635.2667184},
+    abstract = {We describe the architecture for a single-chip AEGIS processor which can be used to build computing systems secure against both physical and software attacks. Our architecture assumes that all components external to the processor, such as memory, are untrusted. We show two different implementations. In the first case, the core functionality of the operating system is trusted and implemented in a security kernel. We also describe a variant implementation assuming an untrusted operating system. AEGIS provides users with tamper-evident, authenticated environments in which any physical or software tampering by an adversary is guaranteed to be detected, and private and authenticated tamper-resistant environments where additionally the adversary is unable to obtain any information about software or data by tampering with, or otherwise observing, system operation. AEGIS enables many applications, such as commercial grid computing, secure mobile agents, software licensing, and digital rights management.Preliminary simulation results indicate that the overhead of security mechanisms in AEGIS is reasonable.},
+    booktitle = {ACM International Conference on Supercomputing 25th Anniversary Volume},
+    pages = {357–368},
+    numpages = {12},
+    keywords = {certified execution, secure processors, software licensing},
+    location = {Munich, Germany} }
+
+@inproceedings{tee_keystone,
+    author = {Lee, Dayeol and Kohlbrenner, David and Shinde, Shweta and Asanovi\'{c}, Krste and Song, Dawn},
+    title = {Keystone: An Open Framework for Architecting Trusted Execution Environments},
+    year = {2020},
+    isbn = {9781450368827},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3342195.3387532},
+    doi = {10.1145/3342195.3387532},
+    abstract = {Trusted execution environments (TEEs) see rising use in devices from embedded sensors to cloud servers and encompass a range of cost, power constraints, and security threat model choices. On the other hand, each of the current vendor-specific TEEs makes a fixed set of trade-offs with little room for customization. We present Keystone---the first open-source framework for building customized TEEs. Keystone uses simple abstractions provided by the hardware such as memory isolation and a programmable layer underneath untrusted components (e.g., OS). We build reusable TEE core primitives from these abstractions while allowing platform-specific modifications and flexible feature choices. We showcase how Keystone-based TEEs run on unmodified RISC-V hardware and demonstrate the strengths of our design in terms of security, TCB size, execution of a range of benchmarks, applications, kernels, and deployment models.},
+    booktitle = {Proceedings of the Fifteenth European Conference on Computer Systems},
+    articleno = {38},
+    numpages = {16},
+    keywords = {RISC-V, open source, hardware enclave, trusted execution environment, secure enclave, side-channel attack, hardware root of trust, memory isolation},
+    location = {Heraklion, Greece},
+    series = {EuroSys '20}
+}
+
+@inproceedings {tee_cure,
+    author = {Raad Bahmani and Ferdinand Brasser and Ghada Dessouky and Patrick Jauernig and Matthias Klimmek and Ahmad-Reza Sadeghi and Emmanuel Stapf},
+    title = {{CURE}: A Security Architecture with {CUstomizable} and Resilient Enclaves},
+    booktitle = {30th USENIX Security Symposium (USENIX Security 21)},
+    year = {2021},
+    isbn = {978-1-939133-24-3},
+    pages = {1073--1090},
+    url = {https://www.usenix.org/conference/usenixsecurity21/presentation/bahmani},
+    publisher = {USENIX Association},
+    month = aug
+}
+
+
+@article{tee_ha-vmsi,
+    author = {Zhu, Min and Tu, Bibo and Wei, Wei and Meng, Dan},
+    title = {HA-VMSI: A Lightweight Virtual Machine Isolation Approach with Commodity Hardware for ARM},
+    year = {2017},
+    issue_date = {July 2017},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {52},
+    number = {7},
+    issn = {0362-1340},
+    url = {https://doi.org/10.1145/3140607.3050767},
+    doi = {10.1145/3140607.3050767},
+    abstract = {Once compromising the hypervisor, remote or local adversaries can easily access other customers' sensitive data in the memory and context of guest virtual machines (VMs). VM isolation is an efficient mechanism for protecting the memory of guest VMs from unauthorized access. However, previous VM isolation systems either modify hardware architecture or introduce a software module without being protected, and most of them focus on the x86 architecture.This paper proposes HA-VMSI, a lightweight hardware-assisted VM isolation approach for ARM, to provide runtime protection of guest VMs, even with a compromised hypervisor. In the ARM TrustZone secure world, a thin security monitor is introduced as HA-VMSI's entire TCB. Hence, the security monitor is much less vulnerable and safe from attacks that can compromise the hypervisor. The key of HA-VMSI is decoupling the functions of memory isolation among VMs from the hypervisor into the security monitor. As a result, the hypervisor can only update the Stage-2 page tables of VMs via the security monitor, which inspects and approves each new mapping. It is worth noting that HA-VMSI is more secure and effective than current software approaches, and more flexible and compatible than hardware approaches. We have implemented a prototype for KVM hypervisor with multiple Linux as guest OSes on Juno board. The security assessment and performance evaluation show that HA-VMSI is effective, efficient and practical.},
+    journal = {SIGPLAN Not.},
+    month = {apr},
+    pages = {242–256},
+    numpages = {15},
+    keywords = {VM Security, ARM TrustZone, Multi-tenant Cloud, Virtualization}
+}
+
+@inproceedings{10.1145/3050748.3050767,
+author = {Zhu, Min and Tu, Bibo and Wei, Wei and Meng, Dan},
+title = {HA-VMSI: A Lightweight Virtual Machine Isolation Approach with Commodity Hardware for ARM},
+year = {2017},
+isbn = {9781450349482},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3050748.3050767},
+doi = {10.1145/3050748.3050767},
+abstract = {Once compromising the hypervisor, remote or local adversaries can easily access other customers' sensitive data in the memory and context of guest virtual machines (VMs). VM isolation is an efficient mechanism for protecting the memory of guest VMs from unauthorized access. However, previous VM isolation systems either modify hardware architecture or introduce a software module without being protected, and most of them focus on the x86 architecture.This paper proposes HA-VMSI, a lightweight hardware-assisted VM isolation approach for ARM, to provide runtime protection of guest VMs, even with a compromised hypervisor. In the ARM TrustZone secure world, a thin security monitor is introduced as HA-VMSI's entire TCB. Hence, the security monitor is much less vulnerable and safe from attacks that can compromise the hypervisor. The key of HA-VMSI is decoupling the functions of memory isolation among VMs from the hypervisor into the security monitor. As a result, the hypervisor can only update the Stage-2 page tables of VMs via the security monitor, which inspects and approves each new mapping. It is worth noting that HA-VMSI is more secure and effective than current software approaches, and more flexible and compatible than hardware approaches. We have implemented a prototype for KVM hypervisor with multiple Linux as guest OSes on Juno board. The security assessment and performance evaluation show that HA-VMSI is effective, efficient and practical.},
+booktitle = {Proceedings of the 13th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments},
+pages = {242–256},
+numpages = {15},
+keywords = {Virtualization, ARM TrustZone, Multi-tenant Cloud, VM Security},
+location = {Xi'an, China},
+series = {VEE '17}
+}
+
+@misc{arm_realms,
+    author={ARM},
+	title = {Arm{\ifmmode\circledR\else\textregistered\fi} architecture reference manual supplement, the realm management extension (RME), for Armv9-A},
+	note = {last accessed 12. Dec. 2023},
+	url = {https://documentation-service.arm.com/static/62ff4dcbc3b04f2bd53e21d5}
+}
+
+
+@misc{amd_sev,
+    author={AMD},
+    title={AMD SEV-SNP: Strengthening VM Isolation with Integrity Protection and More},
+    url={https://www.amd.com/content/dam/amd/en/documents/epyc-business-docs/white-papers/SEV-SNP-strengthening-vm-isolation-with-integrity-protection-and-more.pdf},
+    note={Last accessed: 10.12.2023}}
+
+@inproceedings{tee_mi6,
+    author = {Bourgeat, Thomas and Lebedev, Ilia and Wright, Andrew and Zhang, Sizhuo and Arvind and Devadas, Srinivas},
+    title = {MI6: Secure Enclaves in a Speculative Out-of-Order Processor},
+    year = {2019},
+    isbn = {9781450369381},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3352460.3358310},
+    doi = {10.1145/3352460.3358310},
+    abstract = {Recent attacks have broken process isolation by exploiting microarchitectural side channels that allow indirect access to shared microarchitectural state. Enclaves strengthen the process abstraction to restore isolation guarantees.We propose MI6, an aggressively speculative out-of-order processor capable of providing secure enclaves under a threat model that includes an untrusted OS and an attacker capable of mounting any software attack currently considered practical, including those utilizing control flow mis-speculation. MI6 is inspired by Sanctum [16] and extends its isolation guarantee to more realistic memory hierarchy. It also introduces a purge instruction, which is used only when a secure process is (de)scheduled, and implements it for a complex processor microarchitecture. We model the performance impact of enclaves in MI6 through FPGA emulation on AWS F1 FPGAs by running SPEC CINT2006 benchmarks as enclaves within an untrusted Linux OS. Security comes at the cost of approximately 16.4\% average slowdown for protected programs.},
+    booktitle = {Proceedings of the 52nd Annual IEEE/ACM International Symposium on Microarchitecture},
+    pages = {42–56},
+    numpages = {15},
+    keywords = {architectural isolation, microarchitectural isolation, secure processors},
+    location = {Columbus, OH, USA},
+    series = {MICRO '52}
+}
+
+@article{tee_sanctuary,
+  title={SANCTUARY: ARMing TrustZone with User-space Enclaves},
+  author={Ferdinand Brasser and David Gens and Patrick Jauernig and Ahmad-Reza Sadeghi and Emmanuel Stapf},
+  journal={Proceedings 2019 Network and Distributed System Security Symposium},
+  year={2019},
+  url={https://api.semanticscholar.org/CorpusID:86835387}
+}
+
+@misc{trust_plat_mod,
+	title = {{Trusted Platform Module (TPM) Summary {$\vert$} Trusted Computing Group}},
+	journal = {Trusted Computing Group},
+    author = {TCG},
+	year = {2018},
+	month = {mar},
+	note = {[Online; accessed 12. Dec. 2023]},
+	url = {https://trustedcomputinggroup.org/resource/trusted-platform-module-tpm-summary}
+}
+
+@misc{optee,
+	title = {{OP-TEE Documentation {\ifmmode---\else\textemdash\fi} OP-TEE documentation documentation}},
+    author = {optee},
+	year = {2023},
+	month = {nov},
+	note = {[Online; accessed 12. Dec. 2023]},
+	url = {https://optee.readthedocs.io/en/latest/index.html}
+}
+
+@article{tee_timber,
+  title={TIMBER-V: Tag-Isolated Memory Bringing Fine-grained Enclaves to RISC-V},
+  author={Samuel Weiser and Mario Werner and Ferdinand Brasser and Maja Malenko and Stefan Mangard and Ahmad-Reza Sadeghi},
+  journal={Proceedings 2019 Network and Distributed System Security Symposium},
+  year={2019},
+  url={https://api.semanticscholar.org/CorpusID:70230629}
+}
+
+@misc{microcode_update,
+	title = {Microcode Update Guidance},
+	author = {Intel},
+	year = {2020},
+	month = {dec},
+	note = {[Online; accessed 12. Dec. 2023]},
+	url = {https://www.intel.com/content/www/us/en/developer/articles/technical/software-security-guidance/best-practices/microcode-update-guidance.html}
+}
+
+@inproceedings{tee_truz_droid,
+  title={Truz-droid: Integrating trustzone with mobile operating system},
+  author={Ying, Kailiang and Ahlawat, Amit and Alsharifi, Bilal and Jiang, Yuexin and Thavai, Priyank and Du, Wenliang},
+  booktitle={Proceedings of the 16th annual international conference on mobile systems, applications, and services},
+  pages={14--27},
+  year={2018}
+}
+
+
+@inproceedings{tee_vbutton,
+  title={Vbutton: Practical attestation of user-driven operations in mobile apps},
+  author={Li, Wenhao and Luo, Shiyu and Sun, Zhichuang and Xia, Yubin and Lu, Long and Chen, Haibo and Zang, Binyu and Guan, Haibing},
+  booktitle={Proceedings of the 16th annual international conference on mobile systems, applications, and services},
+  pages={28--40},
+  year={2018}
+}
+
+@inproceedings{tee_hector_v,
+    title = "HECTOR-V: A Heterogeneous CPU Architecture for a Secure RISC-V Execution Environment",
+    abstract = "To ensure secure and trustworthy execution of applications in potentially insecure environments, vendors frequently embed trusted execution environments (TEE) into their systems.Applications executed in this safe, isolated space are protected from adversaries, including a malicious operating system.TEEs are usually build by integrating protection mechanisms directly into the processor or by using dedicated external secure elements.However, both of these approaches only cover a narrow threat model resulting in limited security guarantees.Enclaves nested into the application processor typically provide weak isolation between the secure and non-secure domain, especially when considering side-channel attacks.Although external secure elements do provide strong isolation, the slow communication interface to the application processor is exposed to adversaries and restricts the use cases.Independently of the used approach, TEEs often lack the possibility to establish secure communication to peripherals, and most operating systems executed inside TEEs do not provide state-of-the-art defense strategies, making them vulnerable to various attacks.We argue that TEEs, such as Intel SGX or ARM TrustZone, implemented on the main application processor, are insecure, especially when considering side-channel attacks.In this paper, we demonstrate how a heterogeneous multicore architecture can be utilized to realize a secure TEE design.We directly embed a secure processor into our HECTOR-V architecture to provide strong isolation between the secure and non-secure domain.The tight coupling of the TEE and the application processor enables HECTOR-V to provide mechanisms for establishing secure communication channels between different devices.We further introduce RISC-V Secure Co-Processor (RVSCP), a security-hardened processor tailored for TEEs.To secure applications executed inside the TEE, RVSCP provides hardware enforced control-flow integrity and rigorously restricts I/O accesses to certain execution states.RVSCP reduces the trusted computing base to a minimum by providing operating system services directly in hardware.",
+    author = "Pascal Nasahl and Robert Schilling and Mario Werner and Stefan Mangard",
+    year = "2021",
+    month = may,
+    doi = "10.1145/3433210.3453112",
+    language = "English",
+    pages = "187–199",
+    booktitle = "ASIA CCS '21: Proceedings of the 2021 ACM Asia Conference on Computer and Communications Security",
+    publisher = "Association of Computing Machinery",
+    address = "United States",
+    note = "2021 ACM Asia Conference on Computer and Communications Security, ACM ASIACCS 2021 ; Conference date: 07-06-2021 Through 11-06-2021",
+    url = "https://asiaccs2021.comp.polyu.edu.hk/",
+
+}
+
+@article{tee_hix,
+  title={Heterogeneous Isolated Execution for Commodity GPUs},
+  author={Insu Jang and Adrian Tang and Taehoon Kim and Simha Sethumadhavan and Jaehyuk Huh},
+  journal={Proceedings of the Twenty-Fourth International Conference on Architectural Support for Programming Languages and Operating Systems},
+  year={2019},
+  url={https://api.semanticscholar.org/CorpusID:102347054}
+}
+
+@inproceedings{tee_sgxio,
+    author = {Weiser, Samuel and Werner, Mario},
+    title = {SGXIO: Generic Trusted I/O Path for Intel SGX},
+    year = {2017},
+    isbn = {9781450345231},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3029806.3029822},
+    doi = {10.1145/3029806.3029822},
+    abstract = {Application security traditionally strongly relies upon security of the underlying operating system. However, operating systems often fall victim to software attacks, compromising security of applications as well. To overcome this dependency, Intel SGX allows to protect application code against a subverted or malicious OS by running it in a hardware-protected enclave. However, SGX lacks support for generic trusted I/O paths to protect user input and output between enclaves and I/O devices. This work presents SGXIO, a generic trusted path architecture for SGX, allowing user applications to run securely on top of an untrusted OS, while at the same time supporting trusted paths to generic I/O devices. To achieve this, SGXIO combines the benefits of SGX's easy programming model with traditional hypervisor-based trusted path architectures. Moreover, SGXIO can tweak insecure debug enclaves to behave like secure production enclaves. SGXIO surpasses traditional use cases in cloud computing and digital rights management and makes SGX technology usable for protecting user-centric, local applications against kernel-level keyloggers and likewise. It is compatible to unmodified operating systems and works on a modern commodity notebook out of the box. Hence, SGXIO is particularly promising for the broad x86 community to which SGX is readily available.},
+    booktitle = {Proceedings of the Seventh ACM on Conference on Data and Application Security and Privacy},
+    pages = {261–268},
+    numpages = {8},
+    keywords = {secure execution, software guard extensions, SGX, trusted path, hypervisor},
+    location = {Scottsdale, Arizona, USA},
+    series = {CODASPY '17}
+}
+
+@article{tee_heetee,
+  author       = {Jianping Zhu and
+                  Rui Hou and
+                  XiaoFeng Wang and
+                  Wenhao Wang and
+                  Jiangfeng Cao and
+                  Lutan Zhao and
+                  Fengkai Yuan and
+                  Peinan Li and
+                  Zhongpu Wang and
+                  Boyan Zhao and
+                  Lixin Zhang and
+                  Dan Meng},
+  title        = {Enabling Privacy-Preserving, Compute- and Data-Intensive Computing
+                  using Heterogeneous Trusted Execution Environment},
+  journal      = {CoRR},
+  volume       = {abs/1904.04782},
+  year         = {2019},
+  url          = {http://arxiv.org/abs/1904.04782},
+  eprinttype    = {arXiv},
+  eprint       = {1904.04782},
+  timestamp    = {Fri, 12 Aug 2022 14:39:03 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-1904-04782.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{tee_shef,
+  author       = {Mark Zhao and
+                  Mingyu Gao and
+                  Christos Kozyrakis},
+  title        = {ShEF: Shielded Enclaves for Cloud FPGAs},
+  journal      = {CoRR},
+  volume       = {abs/2103.03500},
+  year         = {2021},
+  url          = {https://arxiv.org/abs/2103.03500},
+  eprinttype    = {arXiv},
+  eprint       = {2103.03500},
+  timestamp    = {Mon, 15 Mar 2021 17:30:55 +0100},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2103-03500.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@INPROCEEDINGS{tee_segive,
+  author={Wang, Ziyang and Zheng, Fangyu and Lin, Jingqiang and Fan, Guang and Dong, Jiankuo},
+  booktitle={2020 IEEE 39th International Performance Computing and Communications Conference (IPCCC)}, 
+  title={SEGIVE: A Practical Framework of Secure GPU Execution in Virtualization Environment}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={1-10},
+  doi={10.1109/IPCCC50635.2020.9391574}}
+
+@inproceedings{tee_trustore,
+    author = {Oh, Hyunyoung and Ahmad, Adil and Park, Seonghyun and Lee, Byoungyoung and Paek, Yunheung},
+    title = {TRUSTORE: Side-Channel Resistant Storage for SGX Using Intel Hybrid CPU-FPGA},
+    year = {2020},
+    isbn = {9781450370899},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3372297.3417265},
+    doi = {10.1145/3372297.3417265},
+    abstract = {Intel SGX is a security solution promising strong and practical security guarantees for trusted computing. However, recent reports demonstrated that such security guarantees of SGX are broken due to access pattern based side-channel attacks, including page fault, cache, branch prediction, and speculative execution. In order to stop these side-channel attackers, Oblivious RAM (ORAM) has gained strong attention from the security community as it provides cryptographically proven protection against access pattern based side-channels. While several proposed systems have successfully applied ORAM to thwart side-channels, those are severely limited in performance and its scalability due to notorious performance issues of ORAM. This paper presents TrustOre, addressing these issues that arise when using ORAM with Intel SGX. TrustOre leverages an external device, FPGA, to implement a trusted storage service within a completed isolated environment secure from side-channel attacks. TrustOre tackles several challenges in achieving such a goal: extending trust from SGX to FPGA without imposing architectural changes, providing a verifiably-secure connection between SGX applications and FPGA, and seamlessly supporting various access operations from SGX applications to FPGA.We implemented TrustOre on the commodity Intel Hybrid CPU-FPGA architecture. Then we evaluated with three state-of-the-art ORAM-based SGX applications, ZeroTrace, Obliviate, and Obfuscuro, as well as an end-to-end key-value store application. According to our evaluation, TrustOre-based applications outperforms ORAM-based original applications ranging from 10x to 43x, while also showing far better scalability than ORAM-based ones. We emphasize that since TrustOre can be deployed as a simple plug-in to SGX machine's PCIe slot, it is readily used to thwart side-channel attacks in SGX, arguably one of the most cryptic and critical security holes today.},
+    booktitle = {Proceedings of the 2020 ACM SIGSAC Conference on Computer and Communications Security},
+    pages = {1903–1918},
+    numpages = {16},
+    keywords = {Intel SGX, access pattern based side-channel, secure storage, hybrid CPU-FPGA},
+    location = {Virtual Event, USA},
+    series = {CCS '20} }
+
+@INPROCEEDINGS{tee_isox,
+  author={Evtyushkin, Dmitry and Elwell, Jesse and Ozsoy, Meltem and Ponomarev, Dmitry and Ghazaleh, Nael Abu and Riley, Ryan},
+  booktitle={2014 47th Annual IEEE/ACM International Symposium on Microarchitecture}, 
+  title={Iso-X: A Flexible Architecture for Hardware-Managed Isolated Execution}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={190-202},
+  doi={10.1109/MICRO.2014.25}}
+
+@inproceedings {light_blockchain,
+    author = {Sinisa Matetic and Karl W{\"u}st and Moritz Schneider and Kari Kostiainen and Ghassan Karame and Srdjan Capkun},
+    title = {{BITE}: Bitcoin Lightweight Client Privacy using Trusted Execution},
+    booktitle = {28th USENIX Security Symposium (USENIX Security 19)},
+    year = {2019},
+    isbn = {978-1-939133-06-9},
+    address = {Santa Clara, CA},
+    pages = {783--800},
+    url = {https://www.usenix.org/conference/usenixsecurity19/presentation/matetic},
+    publisher = {USENIX Association},
+    month = aug
+    }
+
+@article{tee_in_android,
+	author = {Snyder, Joel},
+	title = {{How to use biometrics for authentication in Android}},
+	journal = {Samsung Business Insights},
+	year = {2021},
+    note = {[Online; accessed 13. Dec. 2023]},
+	month = sep,
+	url = {https://insights.samsung.com/2021/04/21/using-biometrics-for-authentication-in-android-2}
+}
+
+@misc{apple_passkey,
+	title = {{Supporting passkeys {$\vert$} Apple Developer Documentation}},
+	journal = {Apple Developer Documentation},
+    author = {Apple},
+	year = {2023},
+	month = dec,
+	note = {[Online; accessed 13. Dec. 2023]},
+	url = {https://developer.apple.com/documentation/authenticationservices/public-private_key_authentication/supporting_passkeys}
+}
+
+@misc{knox_sdk,
+	title = {{Knox SDK {$\vert$} Samsung Knox Documentation}},
+    author = {Samsung},
+	year = {2023},
+	month = dec,
+	note = {[Online; accessed 13. Dec. 2023]},
+	url = {https://docs.samsungknox.com/dev/knox-sdk}
+}
+
+@inproceedings{tee_sanctum,
+    author = {Victor Costan and Ilia Lebedev and Srinivas Devadas},
+    title = {Sanctum: Minimal Hardware Extensions for Strong Software Isolation},
+    booktitle = {25th USENIX Security Symposium (USENIX Security 16)},
+    year = {2016},
+    isbn = {978-1-931971-32-4},
+    address = {Austin, TX},
+    pages = {857--874},
+    url = {https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/costan},
+    publisher = {USENIX Association},
+    month = aug
+    }
+
+@misc{edgelessrt,
+	title = {Edgeless RT},
+    author = {edgelesssys},
+	note = {[Online; accessed 13. Dec. 2023]},
+	url = {https://github.com/edgelesssys/edgelessrt}
+}
+
+@misc{trustytee,
+	title = {Trusty TEE},
+	journal = {Android Open Source Project},
+    author = {Android},
+	year = {2022},
+	month = {sep},
+	note = {[Online; accessed 13. Dec. 2023]},
+	url = {https://source.android.com/docs/security/features/trusty}
+}
+
+
+@INPROCEEDINGS{vsgx,
+  author={Zhao, Shixuan and Li, Mengyuan and Zhangyz, Yinqian and Lin, Zhiqiang},
+  booktitle={2022 IEEE Symposium on Security and Privacy (SP)}, 
+  title={vSGX: Virtualizing SGX Enclaves on AMD SEV}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={321-336},
+  doi={10.1109/SP46214.2022.9833694}}
+
+@inproceedings{libos,
+author = {Porter, Donald E. and Boyd-Wickizer, Silas and Howell, Jon and Olinsky, Reuben and Hunt, Galen C.},
+title = {Rethinking the Library OS from the Top Down},
+year = {2011},
+isbn = {9781450302661},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1950365.1950399},
+doi = {10.1145/1950365.1950399},
+abstract = {This paper revisits an old approach to operating system construc-tion, the library OS, in a new context. The idea of the library OS is that the personality of the OS on which an application depends runs in the address space of the application. A small, fixed set of abstractions connects the library OS to the host OS kernel, offering the promise of better system security and more rapid independent evolution of OS components.We describe a working prototype of a Windows 7 library OS that runs the latest releases of major applications such as Microsoft Excel, PowerPoint, and Internet Explorer. We demonstrate that desktop sharing across independent, securely isolated, library OS instances can be achieved through the pragmatic reuse of net-working protocols. Each instance has significantly lower overhead than a full VM bundled with an application: a typical application adds just 16MB of working set and 64MB of disk footprint. We contribute a new ABI below the library OS that enables application mobility. We also show that our library OS can address many of the current uses of hardware virtual machines at a fraction of the overheads. This paper describes the first working prototype of a full commercial OS redesigned as a library OS capable of running significant applications. Our experience shows that the long-promised benefits of the library OS approach better protection of system integrity and rapid system evolution are readily obtainable.},
+booktitle = {Proceedings of the Sixteenth International Conference on Architectural Support for Programming Languages and Operating Systems},
+pages = {291–304},
+numpages = {14},
+keywords = {libos, library os, drawbridge},
+location = {Newport Beach, California, USA},
+series = {ASPLOS XVI}
+}
+
+@article{10.1145/1961296.1950399,
+author = {Porter, Donald E. and Boyd-Wickizer, Silas and Howell, Jon and Olinsky, Reuben and Hunt, Galen C.},
+title = {Rethinking the Library OS from the Top Down},
+year = {2011},
+issue_date = {March 2011},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {46},
+number = {3},
+issn = {0362-1340},
+url = {https://doi.org/10.1145/1961296.1950399},
+doi = {10.1145/1961296.1950399},
+abstract = {This paper revisits an old approach to operating system construc-tion, the library OS, in a new context. The idea of the library OS is that the personality of the OS on which an application depends runs in the address space of the application. A small, fixed set of abstractions connects the library OS to the host OS kernel, offering the promise of better system security and more rapid independent evolution of OS components.We describe a working prototype of a Windows 7 library OS that runs the latest releases of major applications such as Microsoft Excel, PowerPoint, and Internet Explorer. We demonstrate that desktop sharing across independent, securely isolated, library OS instances can be achieved through the pragmatic reuse of net-working protocols. Each instance has significantly lower overhead than a full VM bundled with an application: a typical application adds just 16MB of working set and 64MB of disk footprint. We contribute a new ABI below the library OS that enables application mobility. We also show that our library OS can address many of the current uses of hardware virtual machines at a fraction of the overheads. This paper describes the first working prototype of a full commercial OS redesigned as a library OS capable of running significant applications. Our experience shows that the long-promised benefits of the library OS approach better protection of system integrity and rapid system evolution are readily obtainable.},
+journal = {SIGPLAN Not.},
+month = {mar},
+pages = {291–304},
+numpages = {14},
+keywords = {libos, library os, drawbridge}
+}
+
+@article{10.1145/1961295.1950399,
+author = {Porter, Donald E. and Boyd-Wickizer, Silas and Howell, Jon and Olinsky, Reuben and Hunt, Galen C.},
+title = {Rethinking the Library OS from the Top Down},
+year = {2011},
+issue_date = {March 2011},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {39},
+number = {1},
+issn = {0163-5964},
+url = {https://doi.org/10.1145/1961295.1950399},
+doi = {10.1145/1961295.1950399},
+abstract = {This paper revisits an old approach to operating system construc-tion, the library OS, in a new context. The idea of the library OS is that the personality of the OS on which an application depends runs in the address space of the application. A small, fixed set of abstractions connects the library OS to the host OS kernel, offering the promise of better system security and more rapid independent evolution of OS components.We describe a working prototype of a Windows 7 library OS that runs the latest releases of major applications such as Microsoft Excel, PowerPoint, and Internet Explorer. We demonstrate that desktop sharing across independent, securely isolated, library OS instances can be achieved through the pragmatic reuse of net-working protocols. Each instance has significantly lower overhead than a full VM bundled with an application: a typical application adds just 16MB of working set and 64MB of disk footprint. We contribute a new ABI below the library OS that enables application mobility. We also show that our library OS can address many of the current uses of hardware virtual machines at a fraction of the overheads. This paper describes the first working prototype of a full commercial OS redesigned as a library OS capable of running significant applications. Our experience shows that the long-promised benefits of the library OS approach better protection of system integrity and rapid system evolution are readily obtainable.},
+journal = {SIGARCH Comput. Archit. News},
+month = {mar},
+pages = {291–304},
+numpages = {14},
+keywords = {drawbridge, libos, library os}
+}
+
+@ARTICLE{plundervolt,
+  author={Murdock, Kit and Oswald, David and Garcia, Flavio D. and Van Bulck, Jo and Piessens, Frank and Gruss, Daniel},
+  journal={IEEE Security \& Privacy}, 
+  title={Plundervolt: How a Little Bit of Undervolting Can Create a Lot of Trouble}, 
+  year={2020},
+  volume={18},
+  number={5},
+  pages={28-37},
+  abstract={Historically, fault injection was the realm of adversaries with physical access. This changed when research revealed that remote attackers could use software to inject faults. Plundervolt is a new software-based attack on Intel's trusted execution technology (SGX). Plundervolt can break cryptography and inject memory-safety bugs into secure code.},
+  keywords={Circuit faults;Program processors;Clocks;Security;Central Processing Unit;Reactive power},
+  doi={10.1109/MSEC.2020.2990495},
+  ISSN={1558-4046},
+  month={Sep.},}
+
+
+@inproceedings{platypus,
+  title={PLATYPUS: Software-based power side-channel attacks on x86},
+  author={Lipp, Moritz and Kogler, Andreas and Oswald, David and Schwarz, Michael and Easdon, Catherine and Canella, Claudio and Gruss, Daniel},
+  booktitle={2021 IEEE Symposium on Security and Privacy (SP)},
+  pages={355--371},
+  year={2021},
+  organization={IEEE}
+}
+
+@inproceedings{kaslr,
+  title={Kaslr is dead: long live kaslr},
+  author={Gruss, Daniel and Lipp, Moritz and Schwarz, Michael and Fellner, Richard and Maurice, Cl{\'e}mentine and Mangard, Stefan},
+  booktitle={Engineering Secure Software and Systems: 9th International Symposium, ESSoS 2017, Bonn, Germany, July 3-5, 2017, Proceedings 9},
+  pages={161--176},
+  year={2017},
+  organization={Springer}
+}
+
+@InProceedings{prime_probe,
+author="Osvik, Dag Arne
+and Shamir, Adi
+and Tromer, Eran",
+editor="Pointcheval, David",
+title="Cache Attacks and Countermeasures: The Case of AES",
+booktitle="Topics in Cryptology -- CT-RSA 2006",
+year="2006",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="1--20",
+abstract="We describe several software side-channel attacks based on inter-process leakage through the state of the CPU's memory cache. This leakage reveals memory access patterns, which can be used for cryptanalysis of cryptographic primitives that employ data-dependent table lookups. The attacks allow an unprivileged process to attack other processes running in parallel on the same processor, despite partitioning methods such as memory protection, sandboxing and virtualization. Some of our methods require only the ability to trigger services that perform encryption or MAC using the unknown key, such as encrypted disk partitions or secure network links. Moreover, we demonstrate an extremely strong type of attack, which requires knowledge of neither the specific plaintexts nor ciphertexts, and works by merely monitoring the effect of the cryptographic process on the cache. We discuss in detail several such attacks on AES, and experimentally demonstrate their applicability to real systems, such as OpenSSL and Linux's dm-crypt encrypted partitions (in the latter case, the full key can be recovered after just 800 writes to the partition, taking 65 milliseconds). Finally, we describe several countermeasures for mitigating such attacks.",
+isbn="978-3-540-32648-9"
+}
+
+@inproceedings {flush_reload,
+author = {Yuval Yarom and Katrina Falkner},
+title = {{FLUSH+RELOAD}: A High Resolution, Low Noise, L3 Cache {Side-Channel} Attack},
+booktitle = {23rd USENIX Security Symposium (USENIX Security 14)},
+year = {2014},
+isbn = {978-1-931971-15-7},
+address = {San Diego, CA},
+pages = {719--732},
+url = {https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/yarom},
+publisher = {USENIX Association},
+month = aug
+}
+
+@inproceedings{flush_flush,
+  title={Flush+ flush: A fast and stealthy cache attack},
+  author={Gruss, Daniel and Maurice, Cl{\'e}mentine and Wagner, Klaus and Mangard, Stefan},
+  booktitle={Detection of Intrusions and Malware, and Vulnerability Assessment: 13th International Conference, DIMVA 2016, San Sebasti{\'a}n, Spain, July 7-8, 2016, Proceedings 13},
+  pages={279--299},
+  year={2016},
+  organization={Springer}
+}
+
+@inproceedings{cache_sgx,
+author = {G\"{o}tzfried, Johannes and Eckert, Moritz and Schinzel, Sebastian and M\"{u}ller, Tilo},
+title = {Cache Attacks on Intel SGX},
+year = {2017},
+isbn = {9781450349352},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3065913.3065915},
+doi = {10.1145/3065913.3065915},
+abstract = {For the first time, we practically demonstrate that Intel SGX enclaves are vulnerable against cache-timing attacks. As a case study, we present an access-driven cache-timing attack on AES when running inside an Intel SGX enclave. Using Neve and Seifert's elimination method, as well as a cache probing mechanism relying on Intel PMC, we are able to extract the AES secret key in less than 10 seconds by investigating 480 encrypted blocks on average. The AES implementation we attack is based on a Gladman AES implementation taken from an older version of OpenSSL, which is known to be vulnerable to cache-timing attacks. In contrast to previous works on cache-timing attacks, our attack is executed with root privileges running on the same host as the vulnerable enclave. Intel SGX, however, was designed to precisely protect applications against such root-level attacks. As a consequence, we show that SGX cannot withstand its designated attacker model when it comes to side-channel vulnerabilities. To the contrary, the attack surface for side-channels increases dramatically in the scenario of SGX due to the power of root-level attackers, for example, by exploiting the accuracy of PMC, which is restricted to kernel code.},
+booktitle = {Proceedings of the 10th European Workshop on Systems Security},
+articleno = {2},
+numpages = {6},
+keywords = {Root-level Attacks, Intel SGX, Cache-timing Attacks},
+location = {Belgrade, Serbia},
+series = {EuroSec'17}
+}
+
+@inproceedings{brasser,
+  title={Software grand exposure:$\{$SGX$\}$ cache attacks are practical},
+  author={Brasser, Ferdinand and M{\"u}ller, Urs and Dmitrienko, Alexandra and Kostiainen, Kari and Capkun, Srdjan and Sadeghi, Ahmad-Reza},
+  booktitle={11th USENIX Workshop on Offensive Technologies (WOOT 17)},
+  year={2017}
+}
+
+@INPROCEEDINGS{sgxpectre,
+  author={Chen, Guoxing and Chen, Sanchuan and Xiao, Yuan and Zhang, Yinqian and Lin, Zhiqiang and Lai, Ten H.},
+  booktitle={2019 IEEE European Symposium on Security and Privacy (EuroS\&P)}, 
+  title={SgxPectre: Stealing Intel Secrets from SGX Enclaves Via Speculative Execution}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={142-157},
+  keywords={Security;Registers;Seals;Out of order;Hardware;SGX;side channel;speculative execution},
+  doi={10.1109/EuroSP.2019.00020}}
+
+@inproceedings{foreshadow,
+  title={Foreshadow: Extracting the keys to the intel $\{$SGX$\}$ kingdom with transient $\{$Out-of-Order$\}$ execution},
+  author={Van Bulck, Jo and Minkin, Marina and Weisse, Ofir and Genkin, Daniel and Kasikci, Baris and Piessens, Frank and Silberstein, Mark and Wenisch, Thomas F and Yarom, Yuval and Strackx, Raoul},
+  booktitle={27th USENIX Security Symposium (USENIX Security 18)},
+  pages={991--1008},
+  year={2018}
+}
+
+@inproceedings{fallout,
+author = {Canella, Claudio and Genkin, Daniel and Giner, Lukas and Gruss, Daniel and Lipp, Moritz and Minkin, Marina and Moghimi, Daniel and Piessens, Frank and Schwarz, Michael and Sunar, Berk and Van Bulck, Jo and Yarom, Yuval},
+title = {Fallout: Leaking Data on Meltdown-resistant CPUs},
+year = {2019},
+isbn = {9781450367479},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3319535.3363219},
+doi = {10.1145/3319535.3363219},
+abstract = {Meltdown and Spectre enable arbitrary data leakage from memory via various side channels. Short-term software mitigations for Meltdown are only a temporary solution with a significant performance overhead. Due to hardware fixes, these mitigations are disabled on recent processors. In this paper, we show that Meltdown-like attacks are still possible on recent CPUs which are not vulnerable to Meltdown. We identify two behaviors of the store buffer, a microarchitectural resource to reduce the latency for data stores, that enable powerful attacks. The first behavior, Write Transient Forwarding forwards data from stores to subsequent loads even when the load address differs from that of the store. The second, Store-to-Leak exploits the interaction between the TLB and the store buffer to leak metadata on store addresses. Based on these, we develop multiple attacks and demonstrate data leakage, control flow recovery, and attacks on ASLR. Our paper shows that Meltdown-like attacks are still possible, and software fixes with potentially significant performance overheads are still necessary to ensure proper isolation between the kernel and user space.},
+booktitle = {Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {769–784},
+numpages = {16},
+keywords = {meltdown, side-channel attack, spectre, store buffer, store-to-load},
+location = {London, United Kingdom},
+series = {CCS '19}
+}
+
+@misc{bits_please,
+    author = {laginimaineb},
+	title = {{TrustZone Kernel Privilege Escalation (CVE-2016-2431)}},
+	year = {2016},
+	note = {[Online; accessed 30. Jan. 2024]},
+	url = {https://bits-please.blogspot.com/2016/06/trustzone-kernel-privilege-escalation.html}
+}
+
+@misc{bits_fde,
+    author = {laginimaineb},
+	title = {{Extracting Qualcomm's KeyMaster Keys - Breaking Android Full Disk Encryption}},
+	year = {2016},
+	note = {[Online; accessed 30. Jan. 2024]},
+	url = {https://bits-please.blogspot.com/2016/06/extracting-qualcomms-keymaster-keys.html}
+}
+
+@misc{trust_none,
+    author = {Beaupre, S.},
+	title = {Trustnone},
+	year = {2015},
+	note = {[Online; accessed 30. Jan. 2024]},
+	url = {http://theroot.ninja/disclosures/TRUSTNONE_1.0-11282015.pdf}
+}
+
+@inproceedings{sec_tee,
+author = {Zhao, Shijun and Zhang, Qianying and Qin, Yu and Feng, Wei and Feng, Dengguo},
+title = {SecTEE: A Software-based Approach to Secure Enclave Architecture Using TEE},
+year = {2019},
+isbn = {9781450367479},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3319535.3363205},
+doi = {10.1145/3319535.3363205},
+abstract = {Secure enclaves provide a practical solution to secure computation, and current approaches to secure enclaves are implemented by extending hardware security mechanisms to the CPU architecture. Therefore, it is hard for a platform to offer secure computation if its CPU architecture is not equipped with any secure enclave features. Unfortunately, ARM CPUs, dominating mobile devices and having increasing momentum in cloud markets, do not provide any security mechanisms achieving the security equivalent to modern secure enclave architectures. In this paper, we propose SecTEE, a software-based secure enclave architecture which is based on the CPU's isolation mechanism and does not require specialized security hardware of the CPU architecture such as memory encryption engines. SecTEE achieves a high level of security even compared with hardware-based secure enclave architectures: resistance to privileged host software attacks, lightweight physical attacks, and memory access based side-channel attacks. Besides, SecTEE provides rich trusted computing primitives for enclaves: integrity measurement, remote attestation, data sealing, secrets provisioning, and life cycle management. We implement a SecTEE prototype based on the ARM TrustZone technology, but our approach can be applied to other CPU architectures with isolation mechanisms. The evaluation results show that most overhead comes from the software encryption and the runtime overhead imposed by trusted computing primitives is acceptable.},
+booktitle = {Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {1723–1740},
+numpages = {18},
+keywords = {TEE, arm trustzone, board-level physical attacks, memory access based side-channel attacks, secure enclave},
+location = {London, United Kingdom},
+series = {CCS '19}
+}
+
+@misc{iso_11889,
+	title = {{ISO/IEC 11889-1:2015}},
+    key = {1},
+	journal = {ISO},
+	year = {2015},
+	note = {[Online; accessed 30. Jan. 2024]},
+	url = {https://www.iso.org/standard/66510.html}
+}
+
+@misc{wikipedia_tpm,
+	author = {{Contributors to Wikimedia projects}},
+	title = {{Trusted Platform Module - Wikipedia}},
+	note = {[Online; accessed 30. Jan. 2024]},
+	url = {https://en.wikipedia.org/w/index.php?title=Trusted_Platform_Module\&oldid=1198974600}
+}
+
+@misc{understanding,
+      title={Understanding TEE Containers, Easy to Use? Hard to Trust}, 
+      author={Weijie Liu and Hongbo Chen and XiaoFeng Wang and Zhi Li and Danfeng Zhang and Wenhao Wang and Haixu Tang},
+      year={2021},
+      eprint={2109.01923},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR}
+}

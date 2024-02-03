@@ -16,7 +16,7 @@ def bfAddition: Op := Op.brakPair (
 
 -- sum 1 2 eq 3
 theorem bfSum_1_2 : (bfAddition, (State.mk [] "" [] 1 [2])) 
-  ⟹ State.mk [] "" [] 0 [3] :=
+  ⟹  State.mk [] "" [] 0 [3] :=
   by
     rw [bfAddition]
     apply BigStep.brakPairTrue;
@@ -35,12 +35,12 @@ theorem bfSum_1_2 : (bfAddition, (State.mk [] "" [] 1 [2]))
         rw [State.applyVDec] }
 
 -- same as before, but take numbers from input
-def bfSum_in := ;_>_;_<_(bfAddition)
+def bfSum_in: Op := ;_>_;_<_(bfAddition)
 
 -- sum a b eq a + b
 
 theorem bfSum: (bfSum_in, (State.mk (a :: b :: i) o l x (y :: r)))
-  ⟹ State.mk i o l 0 ((a + b) :: r) := 
+  ⟹  State.mk i o l 0 ((a + b) :: r) := 
   by 
     rw [bfSum_in]
     apply BigStep.seq
