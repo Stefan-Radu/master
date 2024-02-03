@@ -2,5 +2,7 @@
 *.bbl
 *.blg
 *.log
+*.bcf
+*.xml
 *.synctex.gz
 /*.pdf
