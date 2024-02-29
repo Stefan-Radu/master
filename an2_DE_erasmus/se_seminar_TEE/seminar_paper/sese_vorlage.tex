@@ -17,7 +17,7 @@
 %% -------------------------------
 \newcommand{\authorName}{Ștefan-Octavian Radu}
 \newcommand{\place}{Würzburg}
-\newcommand{\submissionTime}{29 January 2024}
+\newcommand{\submissionTime}{28 February 2024}
 
 
 \usepackage[utf8]{inputenc}
@@ -55,7 +55,7 @@
 %\titlerunning{Bearbeitungshinweise Seminar Software Engineering}
 %\titlerunning{} %TODO
 
-\date{Winter Semester 2023}
+\date{Winter Semester 2023-2024}
 
 
 \author{Ștefan-Octavian Radu}
@@ -121,17 +121,21 @@ security-critical applications (\cite{tee_app_rev}, \cite{tee_in_securities},
 
 In this paper we will give an overview of \glspl{TEE}. We will start by
 discussing in detail the architecture and the security principles that
-\glspl{TEE} are based on, including chains of trust from initialisation until the
-instantiation of an \gls{enclave}, memory protection of various components
-during runtime, the secure storage of information across enclaves and how
-secure interaction with external IO devices can be performed. Next, we will
-cover the main applications of a \gls{TEE}, the array of tooling available for
-the development of applications for \glspl{TEE} as well as common difficulties
-currently faced as part of the development process. In the end, we will highlight
-some security shortcomings of this technology, by discussing the main classes
-of security vulnerabilities which have been found to affect \glspl{TEE} since
-their adoption. At the end of the paper, a list of acronyms and a glossary with
-relevant terms can be found.
+\glspl{TEE} are based on, in order to facilitate a deeper understanding of the
+technology and a knowledge base for the following sections. This section will
+cover chains of trust from initialisation until the instantiation of an
+\gls{enclave}, memory protection of various components during runtime, the
+secure storage of information across enclaves and how secure interaction with
+external IO devices can be performed. Next, we will cover the main applications
+of a \gls{TEE}, the array of tooling available for the development of
+applications for \glspl{TEE} as well as common difficulties currently faced as
+part of the development process. Lastly, we will highlight some security
+shortcomings of this technology, by discussing the main classes of security
+vulnerabilities which have been found to affect \glspl{TEE} since their
+adoption. In this section we aim to emphasize the fact that security enhancing
+technologies are beneficial, but often not perfect, which leaves room for
+further improvements in the future. We will end the paper with a list of
+acronyms and a glossary with relevant terms.
 
 % }}}
 
