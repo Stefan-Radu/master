@@ -253,70 +253,7 @@ hvcalls_dict = {
     0x00EE: 'HvCallUpdatePerformanceStateCountersForLp',
 } # extracted from: https://github.com/gerhart01/Hyper-V-scripts/blob/master/CreatemVmcallHandlersTable20H1.py
 
-# hvcall (return) status codes name to value dict
-hvcall_return_status_codes_dict = {
-    "HV_STATUS_SUCCESS": 0x0000,
-    "Reserved00": 0x0001,
-    "HV_STATUS_INVALID_hvcall_CODE": 0x0002,
-    "HV_STATUS_INVALID_hvcall_INPUT": 0x0003,
-    "HV_STATUS_INVALID_ALIGNMENT": 0x0004,
-    "HV_STATUS_INVALID_PARAMETER": 0x0005,
-    "HV_STATUS_ACCESS_DENIED": 0x0006,
-    "HV_STATUS_INVALID_PARTITION_STATE": 0x0007,
-    "HV_STATUS_OPERATION_DENIED": 0x0008,
-    "HV_STATUS_UNKNOWN_PROPERTY": 0x0009,
-    "HV_STATUS_PROPERTY_VALUE_OUT_OF_RANGE": 0x000A,
-    "HV_STATUS_INSUFFICIENT_MEMORY": 0x000B,
-    "HV_STATUS_PARTITION_TOO_DEEP": 0x000C,
-    "HV_STATUS_INVALID_PARTITION_ID": 0x000D,
-    "HV_STATUS_INVALID_VP_INDEX": 0x000E,
-    "Reserved01": 0x000F,
-    "Reserved02": 0x0010,
-    "HV_STATUS_INVALID_PORT_ID": 0x0011,
-    "HV_STATUS_INVALID_CONNECTION_ID": 0x0012,
-    "HV_STATUS_INSUFFICIENT_BUFFERS": 0x0013,
-    "HV_STATUS_NOT_ACKNOWLEDGED": 0x0014,
-    "HV_STATUS_INVALID_VP_STATE": 0x0015,
-    "HV_STATUS_ACKNOWLEDGED": 0x0016,
-    "HV_STATUS_INVALID_SAVE_RESTORE_STATE": 0x0017,
-    "HV_STATUS_INVALID_SYNIC_STATE": 0x0018,
-    "HV_STATUS_OBJECT_IN_USE": 0x0019,
-    "HV_STATUS_INVALID_PROXIMITY_DOMAIN_INFO": 0x001A,
-    "HV_STATUS_NO_DATA": 0x001B,
-    "HV_STATUS_INACTIVE": 0x001C,
-    "HV_STATUS_NO_RESOURCES": 0x001D,
-    "HV_STATUS_FEATURE_UNAVAILABLE": 0x001E,
-    "HV_STATUS_PARTIAL_PACKET": 0x001F,
-    "HV_STATUS_PROCESSOR_FEATURE_NOT_SUPPORTED": 0x0020,
-    "HV_STATUS_PROCESSOR_CACHE_LINE_FLUSH_SIZE_INCOMPATIBLE": 0x0030,
-    "HV_STATUS_INSUFFICIENT_BUFFER": 0x0033,
-    "HV_STATUS_INCOMPATIBLE_PROCESSOR": 0x0037,
-    "HV_STATUS_INSUFFICIENT_DEVICE_DOMAINS": 0x0038,
-    "HV_STATUS_CPUID_FEATURE_VALIDATION_ERROR": 0x003C,
-    "HV_STATUS_CPUID_XSAVE_FEATURE_VALIDATION_ERROR": 0x003D,
-    "HV_STATUS_PROCESSOR_STARTUP_TIMEOUT": 0x003E,
-    "HV_STATUS_SMX_ENABLED": 0x003F,
-    "HV_STATUS_INVALID_LP_INDEX": 0x0041,
-    "HV_STATUS_INVALID_REGISTER_VALUE": 0x0050,
-    "HV_STATUS_NX_NOT_DETECTED": 0x0055,
-    "HV_STATUS_INVALID_DEVICE_ID": 0x0057,
-    "HV_STATUS_INVALID_DEVICE_STATE": 0x0058,
-    "HV_STATUS_PENDING_PAGE_REQUESTS": 0x0059,
-    "HV_STATUS_PAGE_REQUEST_INVALID": 0x0060,
-    "HV_STATUS_OPERATION_FAILED": 0x0071,
-    "HV_STATUS_NOT_ALLOWED_WITH_NESTED_VIRT_ACTIVE": 0x0072
-} # extracted from: Hypervisor Top Level Functional Specification v6.0b
-
-HVCALLS_BASE_ADDRESS = "0xfffff80000c00018"
-
-# each hypercall returns an HV_STATUS
-# this functions defines the HV_STATUS enum
-def add_hvcall_status_codes_enum():
-    enum = EnumDataType("HV_STATUS", 8)
-    for k, v in hvcall_return_status_codes_dict.items():
-        enum.add(k, v)
-    currentProgram.dataTypeManager.addDataType(enum, None)
-
+HVCALLS_BASE_ADDRESS = "0xfffff81a50473018"
 
 # for all hypercalls set it's name according to hvcalls_dict
 # and the return type to HV_STATUS
@@ -336,13 +273,13 @@ def set_hvcall_names_and_return_types():
         entry = hvcalls_entry_table.getComponentAt((i - 1) * hvcall_entry_size)
         hvcall_address = toAddr(entry.getComponent(0).getValue().toString())
         hvcall = getFunctionAt(hvcall_address)
-    if hvcall is None:
-        # TODO there are some inconsistencies with the hvcall names - do figure
-        # to avoid inconsistencies as much as possible I just made a placeholder name
-        createFunction(hvcall_address, "place_holder_undefined")
-    else:
-        hvcall.setName(hvcalls_dict[i], SourceType.ANALYSIS)
-        hvcall.setReturnType(ret_type, SourceType.ANALYSIS)
 
-add_hvcall_status_codes_enum()
+        if hvcall is None:
+            # TODO there are some inconsistencies with the hvcall names - do figure
+            # to avoid inconsistencies as much as possible I just made a placeholder name
+            createFunction(hvcall_address, "place_holder_undefined")
+        else:
+            hvcall.setName(hvcalls_dict[i], SourceType.ANALYSIS)
+            hvcall.setReturnType(ret_type, SourceType.ANALYSIS)
+
 set_hvcall_names_and_return_types()
