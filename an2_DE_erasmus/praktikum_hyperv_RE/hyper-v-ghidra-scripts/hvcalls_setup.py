@@ -2,8 +2,13 @@
 #@zenbassi 
 #@category Hyper-V
 
-from ghidra.program.model.symbol import SourceType
-from ghidra.program.model.data import EnumDataType
+"""
+the current address must correspond to the base address
+of the hypercalls table in the CONST section
+"""
+
+from ghidra.program.model.symbol import *
+from ghidra.program.model.data import *
 
 # hyper-v hvcalls names
 hvcalls_dict = {
@@ -253,7 +258,7 @@ hvcalls_dict = {
     0x00EE: 'HvCallUpdatePerformanceStateCountersForLp',
 } # extracted from: https://github.com/gerhart01/Hyper-V-scripts/blob/master/CreatemVmcallHandlersTable20H1.py
 
-HVCALLS_BASE_ADDRESS = "0xfffff81a50473018"
+print("currently selected: %s" % currentProgram)
 
 # for all hypercalls set it's name according to hvcalls_dict
 # and the return type to HV_STATUS
@@ -261,8 +266,8 @@ def set_hvcall_names_and_return_types():
     dt_manager = currentProgram.dataTypeManager
     ret_type = dt_manager.findDataType("/HV_STATUS")
 
-    hvcalls_base_address = toAddr(HVCALLS_BASE_ADDRESS)
-    hvcalls_entry_table = getDataAt(hvcalls_base_address)
+    # you actually have to click at the base of the hv-calls table
+    hvcalls_entry_table = getDataAt(currentAddress)
     hvcalls_cnt = hvcalls_entry_table.getNumComponents()
     hvcalls_data_type = hvcalls_entry_table.getComponentAt(0).getDataType()
     hvcall_entry_size = hvcalls_data_type.getLength()
@@ -278,8 +283,12 @@ def set_hvcall_names_and_return_types():
             # TODO there are some inconsistencies with the hvcall names - do figure
             # to avoid inconsistencies as much as possible I just made a placeholder name
             createFunction(hvcall_address, "place_holder_undefined")
-        else:
+        elif i in hvcalls_dict:
             hvcall.setName(hvcalls_dict[i], SourceType.ANALYSIS)
             hvcall.setReturnType(ret_type, SourceType.ANALYSIS)
+        else:
+            hvcall.setName("HvCallUndefined", SourceType.ANALYSIS)
+            hvcall.setReturnType(ret_type, SourceType.ANALYSIS)
+
 
 set_hvcall_names_and_return_types()

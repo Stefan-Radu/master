@@ -61,8 +61,8 @@ def hv_hypercall_table_entry(name):
 hvcall_return_status_codes_dict = {
     "HV_STATUS_SUCCESS": 0x0000,
     "Reserved00": 0x0001,
-    "HV_STATUS_INVALID_hvcall_CODE": 0x0002,
-    "HV_STATUS_INVALID_hvcall_INPUT": 0x0003,
+    "HV_STATUS_INVALID_HVCALL_CODE": 0x0002,
+    "HV_STATUS_INVALID_HVCALL_INPUT": 0x0003,
     "HV_STATUS_INVALID_ALIGNMENT": 0x0004,
     "HV_STATUS_INVALID_PARAMETER": 0x0005,
     "HV_STATUS_ACCESS_DENIED": 0x0006,
