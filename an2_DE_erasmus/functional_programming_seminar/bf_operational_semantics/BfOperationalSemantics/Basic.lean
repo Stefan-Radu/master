@@ -3,6 +3,7 @@ open Lean.Parser
 
 -- TODO this should actually be UInt8,
 -- but the proofs are way harder then..
+
 structure State : Type where
   inp: List Nat
   out: String
@@ -50,18 +51,21 @@ def applyOutput (s: State): State :=
 end State
 
 #eval ¬(State.mk [] "" [] 1 []).isZero
-#check State.mk [1, 2, 3] "" [] 0 []
+
+#check State.mk [1, 2, 3] "" [] 0 [0, 0, 0]
 
 inductive Op : Type where
-  | nop        : Op
-  | pInc       : Op
-  | pDec       : Op
-  | vInc       : Op
-  | vDec       : Op
-  | brakPair   : Op -> Op
-  | seq        : Op -> Op -> Op
-  | output     : Op
-  | input      : Op
+  | nop        : Op                -- nop
+  | pInc       : Op                -- >
+  | pDec       : Op                -- <
+  | vInc       : Op                -- +
+  | vDec       : Op                -- -
+  | input      : Op                -- ,
+  | output     : Op                -- .
+  | brakPair   : Op -> Op          -- [ s ] 
+  | seq        : Op -> Op -> Op    -- s t 
+
+
 
 notation "#"   => Op.nop
 notation ">"   => Op.pInc
@@ -72,6 +76,11 @@ notation "^"   => Op.output
 notation ","   => Op.input
 notation "[" ops "]" => (Op.brakPair ops)
 notation a:50 "_" b:51  => Op.seq a b
+
+
+namespace Op
+
+end Op
 
 namespace Op
 
@@ -85,10 +94,15 @@ def toString op :=
     | Op.output => "."
     | Op.input => ","
     | Op.brakPair op' => "[" ++ toString op' ++ "]"
-    | Op.seq op1 op2 => (Op.toString op1) ++ (toString op2)
+    | Op.seq op1 op2 => (toString op1) ++ (toString op2)
 
 instance: ToString Op where
   toString op := op.toString
+
+-- [->+<]
+#eval (brakPair (seq vDec (seq pInc (seq vInc pDec))): Op)
+#eval ([~_>_+_<]: Op)
+
 
 def f {α : Type}: α → Bool := by
   intro _

@@ -3,6 +3,37 @@
 
 import «BfOperationalSemantics».BigStep
 
+-----------------
+-- Dec to zero --
+-----------------
+
+-- (--, [2] ⟹   [0])  -- (*s -= 2, [2] ⟹   [0])
+
+-- ([-], [n] ⟹   [0]) -- (while(*s) { *s -= 1}, [n] ⟹   [0])
+
+theorem dec_2: (~_~, (State.mk [] "" [] 2 [])) ⟹   State.mk [] "" [] 0 [] :=
+  by
+    apply BigStep.seq
+    case h =>
+      apply BigStep.vDec
+    case h' =>
+      apply BigStep.vDec
+
+theorem dec_n {n: Nat}: ([~], (State.mk [] "" [] n []))
+  ⟹   State.mk [] "" [] 0 [] :=
+  by
+    induction n
+    case zero =>
+      . apply BigStep.brakPairFalse
+        . simp
+    case succ d hd =>
+      . apply BigStep.brakPairTrue
+        . simp
+        . apply BigStep.vDec
+        . rw [State.applyVDec]
+          simp
+          assumption
+
 -------------------------
 -- two number addition --
 -------------------------
@@ -12,7 +43,7 @@ def bfAddition: Op := Op.brakPair (
   ( Op.seq  Op.pInc
   ( Op.seq  Op.vInc  Op.pDec ))))
 
-#eval bfAddition.toString
+#eval bfAddition
 
 -- sum 1 2 eq 3
 theorem bfSum_1_2 : (bfAddition, (State.mk [] "" [] 1 [2])) 
@@ -34,8 +65,31 @@ theorem bfSum_1_2 : (bfAddition, (State.mk [] "" [] 1 [2]))
         rw [State.applyPInc]
         rw [State.applyVDec] }
 
+theorem bfSum_1_1' : (bfAddition, (State.mk [] "" [] 1 [1])) 
+  ⟹  State.mk [] "" [] 0 [2] :=
+  by
+    rw [bfAddition]
+    apply BigStep.brakPairTrue
+    . rw [State.current]
+      simp
+    . apply BigStep.seq
+      apply BigStep.vDec
+      apply BigStep.seq
+      apply BigStep.pInc
+      apply BigStep.seq
+      apply BigStep.vInc
+      apply BigStep.pDec
+    . apply BigStep.brakPairFalse
+      rw [State.applyPDec]
+      rw [State.applyVInc]
+      rw [State.applyPInc]
+      rw [State.applyVDec]
+
+
 -- same as before, but take numbers from input
-def bfSum_in: Op := ;_>_;_<_(bfAddition)
+def bfSum_in: Op := ,_>_,_<_(bfAddition)
+
+#eval bfSum_in
 
 -- sum a b eq a + b
 
@@ -126,14 +180,13 @@ def bfSwap' : Op := [<_+_>_~]
 #eval bfSwap'
 
 theorem swap' (l r: List Nat) (b a: Nat): (bfSwap', State.mk [] "" (a :: l) b r) 
-  ⟹ State.mk [] "" ((a + b) :: l) 0 r :=
+  ⟹  State.mk [] "" ((a + b) :: l) 0 r :=
   by 
     rw [bfSwap']
     induction b generalizing a with
     | zero =>
-      simp
       apply BigStep.brakPairFalse
-      rw [State.current]
+      simp
     | succ k h =>
       apply BigStep.brakPairTrue
       case c =>
@@ -190,14 +243,16 @@ theorem swap'' (l r: List Nat) (a b x: Nat):
         rw [Nat.succ_eq_add_one]
         exact h'
 
+#eval bfSwap'
 def bfSwapTX: Op := >_(bfSwap')         -- x[t+x-]
 def bfSwapXY: Op := >_(bfSwap')         -- y[x+y-]
 def bfSwapYT: Op := <_<_(bfSwap'')      -- t[y+t-]
 
 def bfSwap: Op := (bfSwapTX)_(bfSwapXY)_(bfSwapYT)
+#eval bfSwap
 
 theorem swap: (bfSwap, State.mk [] "" l 0 (x :: y :: r))
-  ⟹ State.mk [] "" l 0 (y :: x :: r) :=
+  ⟹  State.mk [] "" l 0 (y :: x :: r) :=
   by 
     rw [bfSwap]
     rw [bfSwapTX]

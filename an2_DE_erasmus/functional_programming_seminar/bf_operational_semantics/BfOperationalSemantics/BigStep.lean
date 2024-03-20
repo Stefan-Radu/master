@@ -13,14 +13,14 @@ inductive BigStep: Op × State → State → Prop where
       BigStep (Op.brakPair ops, s) u
   | brakPairFalse ops (s: State) (c: *s = 0):
       BigStep (Op.brakPair ops, s) s
-  | seq (ops1 s ops2 t u)
-    (h:  BigStep (ops1, s) t)
-    (h': BigStep (ops2, t) u):
-      BigStep ((Op.seq ops1 ops2), s) u
+  | seq (S s T t u)
+    (h:  BigStep (S, s) t)
+    (h': BigStep (T, t) u):
+      BigStep ((Op.seq S T), s) u
   | input s: BigStep (Op.input, s) s.applyInput
   | output s: BigStep (Op.output, s) s.applyOutput
 
-infix:110 " ⟹ " => BigStep
+infix:110 " ⟹  " => BigStep
 
 @[simp] theorem BigStep_nop_Iff {s t} :
   (Op.nop, s) ⟹ t ↔ t = s := by
