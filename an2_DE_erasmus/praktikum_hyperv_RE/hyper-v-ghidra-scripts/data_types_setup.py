@@ -2,10 +2,7 @@
 #@zenbassi 
 #@category Hyper-V
 
-from ghidra.program.model.data import EnumDataType
-from ghidra.program.model.data import StructureDataType
-from ghidra.program.model.data import QWordDataType
-from ghidra.program.model.data import WordDataType
+from ghidra.program.model.data import *
 
 """ take function and make a type name out of it """
 def get_type_name(f):
@@ -46,15 +43,37 @@ def hv_eventlog_buffer_state(name):
 def hv_hypercall_table_entry(name):
     struct = StructureDataType(name, 0)
     struct.add(QWordDataType(), 8, "handler_routine_fp", "")
-    struct.add(WordDataType(), 2, "hypercall_code", "")
-    struct.add(WordDataType(), 2, "hypercall_control_vector", "")
-    struct.add(WordDataType(), 2, "input_parameters_and_header_size", "")
-    struct.add(WordDataType(), 2, "input_list_element_size", "")
-    struct.add(WordDataType(), 2, "output_parameters_size", "")
-    struct.add(WordDataType(), 2, "output_list_element_size", "")
-    struct.add(WordDataType(), 2, "statistical_hypercall_group_number", "")
+    struct.add(WordDataType(), 2, "hypercall_id", "")
+    struct.add(WordDataType(), 2, "is_rep_call", "")
+    struct.add(WordDataType(), 2, "no_rep_input_param_size", "")
+    struct.add(WordDataType(), 2, "rep_input_param_size_rep", "")
+    struct.add(WordDataType(), 2, "no_rep_output_param_size", "")
+    struct.add(WordDataType(), 2, "rep_output_param_size", "")
+
+    dt_mgr = currentProgram.dataTypeManager
+    dt = dt_mgr.findDataType("/" + 'HV_HYPERCALL_STATS_GROUP')
+    struct.add(dt, 2, "statistical_hypercall_group_number", "")
     struct.add(WordDataType(), 2, "padding", "")
+
     currentProgram.dataTypeManager.addDataType(struct, None)
+    add_success(name)
+
+def hv_hypercall_stats_group(name):
+    win_20h1_offset = 3
+    enum = EnumDataType(name, 2)
+    enum.add("GPA_SPACE_HYPERCALL"                    , 0x3D + win_20h1_offset)
+    enum.add("LOGICAL_PROCESSOR_HYPERCALL"            , 0x3E + win_20h1_offset)
+    enum.add("LONG_SPIN_WAIT_HYPERCALL"               , 0x3F + win_20h1_offset)
+    enum.add("OTHER_HYPERCALL"                        , 0x40 + win_20h1_offset)
+    # i don't see same counter in PerformanceMonitor, but there is category in Hyper-v TLFS.
+    enum.add("INTER_PARTITION_COMMUNICATION_HYPERCALL", 0x41 + win_20h1_offset)
+    enum.add("VIRTUAL_INTERRUPT_HYPERCALL"            , 0x42 + win_20h1_offset)
+    enum.add("VIRTUAL_MMU_HYPERCALL"                  , 0x43 + win_20h1_offset)
+    enum.add("VIRTUAL_PROCESSOR_HYPERCALL"            , 0x44 + win_20h1_offset)
+    enum.add("VIRTUAL_PROCESSOR_HYPERCALL02"          , 0x45 + win_20h1_offset)
+    enum.add("FLUSH_PHYSICAL_ADDRESS_SPACE"           , 0x8F + win_20h1_offset)
+    enum.add("FLUSH_PHYSICAL_ADDRESS_LIST"            , 0x90 + win_20h1_offset)
+    currentProgram.dataTypeManager.addDataType(enum, None)
     add_success(name)
 
 # hvcall (return) status codes name to value dict
@@ -123,6 +142,7 @@ def hv_status(name):
 types_list = [
     hv_eventlog_type,
     hv_eventlog_buffer_state,
+    hv_hypercall_stats_group,
     hv_hypercall_table_entry,
     hv_status,
 ]

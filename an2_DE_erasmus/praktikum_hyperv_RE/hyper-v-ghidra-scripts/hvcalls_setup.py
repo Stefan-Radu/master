@@ -9,6 +9,8 @@ of the hypercalls table in the CONST section
 
 from ghidra.program.model.symbol import *
 from ghidra.program.model.data import *
+from ghidra.program.model.mem import *
+from ghidra.app.cmd.data import CreateArrayCmd
 
 # hyper-v hvcalls names
 hvcalls_dict = {
@@ -258,37 +260,41 @@ hvcalls_dict = {
     0x00EE: 'HvCallUpdatePerformanceStateCountersForLp',
 } # extracted from: https://github.com/gerhart01/Hyper-V-scripts/blob/master/CreatemVmcallHandlersTable20H1.py
 
-print("currently selected: %s" % currentProgram)
+const_block = currentProgram.getMemory().getBlock('CONST')
+start_address = const_block.getStart()
+
+print("Start address: %s" % start_address)
+
+dt_manager = currentProgram.dataTypeManager
+
+#create hypercall entries array
+hvcalls_entry_type = dt_manager.findDataType("/HV_HYPERCALL_TABLE_ENTRY")
+assert(hvcalls_entry_type is not None)
+hvcall_entry_size = hvcalls_entry_type.getLength()
+create_array_cmd = CreateArrayCmd(start_address, 260, hvcalls_entry_type, hvcall_entry_size)
+create_array_cmd.applyTo(currentProgram)
+print("Created array")
 
 # for all hypercalls set it's name according to hvcalls_dict
 # and the return type to HV_STATUS
-def set_hvcall_names_and_return_types():
-    dt_manager = currentProgram.dataTypeManager
-    ret_type = dt_manager.findDataType("/HV_STATUS")
+hvcall_ret_type = dt_manager.findDataType("/HV_STATUS")
+hvcalls_entry_table = getDataAt(start_address)
+hvcalls_cnt = hvcalls_entry_table.getNumComponents()
 
-    # you actually have to click at the base of the hv-calls table
-    hvcalls_entry_table = getDataAt(currentAddress)
-    hvcalls_cnt = hvcalls_entry_table.getNumComponents()
-    hvcalls_data_type = hvcalls_entry_table.getComponentAt(0).getDataType()
-    hvcall_entry_size = hvcalls_data_type.getLength()
+for i in range(hvcalls_cnt):
+    entry = hvcalls_entry_table.getComponentAt(i * hvcall_entry_size)
+    hvcall_address = toAddr(entry.getComponent(0).getValue().toString())
+    hvcall = getFunctionAt(hvcall_address)
 
-    # iterate from 1 because call nr. 0 is not used
-    # so we have a 1-indexed array
-    for i in range(1, hvcalls_cnt + 1):
-        entry = hvcalls_entry_table.getComponentAt((i - 1) * hvcall_entry_size)
-        hvcall_address = toAddr(entry.getComponent(0).getValue().toString())
-        hvcall = getFunctionAt(hvcall_address)
+    if hvcall is None:
+        # TODO there are some inconsistencies with the hvcall names - do figure
+        # to avoid inconsistencies as much as possible I just made a placeholder name
+        createFunction(hvcall_address, "place_holder_undefined")
+    elif i in hvcalls_dict:
+        hvcall.setName(hvcalls_dict[i], SourceType.ANALYSIS)
+        hvcall.setReturnType(hvcall_ret_type, SourceType.ANALYSIS)
+    else:
+        hvcall.setName("HvCallUndefined", SourceType.ANALYSIS)
+        hvcall.setReturnType(hvcall_ret_type, SourceType.ANALYSIS)
 
-        if hvcall is None:
-            # TODO there are some inconsistencies with the hvcall names - do figure
-            # to avoid inconsistencies as much as possible I just made a placeholder name
-            createFunction(hvcall_address, "place_holder_undefined")
-        elif i in hvcalls_dict:
-            hvcall.setName(hvcalls_dict[i], SourceType.ANALYSIS)
-            hvcall.setReturnType(ret_type, SourceType.ANALYSIS)
-        else:
-            hvcall.setName("HvCallUndefined", SourceType.ANALYSIS)
-            hvcall.setReturnType(ret_type, SourceType.ANALYSIS)
-
-
-set_hvcall_names_and_return_types()
+print("All types set")
