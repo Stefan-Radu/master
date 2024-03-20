@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{haskell}
+{Haskell Language} (2024), \url{https://www.haskell.org}, online; accessed 4.
+  Mar. 2024
+
+\bibitem{ocaml}
+{Welcome to a World of OCaml} (2024), \url{https://ocaml.org}, online; accessed
+  4. Mar. 2024
+
+\bibitem{natural}
+{Natural Number Game} (Mar 2024),
+  \url{https://adam.math.hhu.de/#/g/leanprover-community/nng4}, online;
+  accessed 7. Mar. 2024
+
+\bibitem{bf}
+{Brainf*ck - Esolang} (Feb 2024), \url{https://esolangs.org/wiki/Brainfuck},
+  online; accessed 8. Mar. 2024
+
+\bibitem{altenkirch2005dependent}
+Altenkirch, T., McBride, C., McKinna, J.: Why dependent types matter.
+  Manuscript, available online  (2005),
+  \url{https://www.cs.nott.ac.uk/~psztxa/publ/ydtm.pdf}
+
+\bibitem{theorem_proving_in_lean4}
+Avigad, J., De~Moura, L., Kong, S.: Theorem proving in lean. Online:
+  https://leanprover.github.io/theorem\_proving\_in\_lean/theorem\_proving\_in\_lean.pdf
+   (2021)
+
+\bibitem{hitchhiker}
+Baanen, A., Bentkamp, A., Blanchette, J., H{\"o}lzl, J., Limperg, J.: The
+  hitchhiker’s guide to logical verification (2023 edition) (2023),
+  \url{https://lean-forward.github.io/hitchhikers-guide/2023}, online; accessed
+  8. Mar. 2024
+
+\bibitem{func_prog_in_lean}
+Contributors: {Introduction - Functional Programming in Lean} (Mar 2024),
+  \url{https://lean-lang.org/functional_programming_in_lean/introduction.html},
+  online; accessed 4. Mar. 2024
+
+\bibitem{systemu}
+{Contributors to Wikimedia projects}: {System U - Wikipedia} (Nov 2023),
+  \url{https://en.wikipedia.org/w/index.php?title=System_U&oldid=1183340249},
+  online; accessed 5. Mar. 2024
+
+\bibitem{girard}
+Coquand, T.: An analysis of Girard's paradox. Ph.D. thesis, INRIA (1986)
+
+\bibitem{floyd}
+Floyd, R.W.: Assigning meanings to programs. In: Program Verification:
+  Fundamental Issues in Computer Science, pp. 65--81. Springer (1993)
+
+\bibitem{hoare}
+Hoare, C.A.R.: An axiomatic basis for computer programming. Communications of
+  the ACM  \textbf{12}(10),  576--580 (1969)
+
+\bibitem{russell}
+Irvine, A.D., Deutsch, H.: Russell’s paradox (1995)
+
+\bibitem{formalver}
+Sanghavi, A.: What is formal verification? EE Times\_Asia  (2010)
+
+\end{thebibliography}

@@ -1,0 +1,1014 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.21 of 2022/01/12
+%
+\documentclass[runningheads]{llncs}
+%
+\usepackage[T1]{fontenc}
+% T1 fonts will be used to generate the final print and online PDFs,
+% so please use T1 fonts in your manuscript whenever possible.
+% Other font encondings may result in incorrect characters.
+%
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following two lines
+% to display URLs in blue roman font according to Springer's eBook style:
+%\usepackage{color}
+%\renewcommand\UrlFont{\color{blue}\rmfamily}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,      
+    anchorcolor=black,
+    pdftitle={Formal Verification with Lean},
+    pdfauthor={Stefan-Octavian Radu},
+}
+
+% escape text in math mode
+\usepackage{amsmath}
+
+% multiple columns
+\usepackage{multicol}
+\setlength{\columnsep}{1.0cm}
+
+% lst blocks
+\usepackage{listings}
+\newcommand{\cc}{\lstinline[mathescape]}
+% Custom colors
+\usepackage{xcolor}
+
+% appendix title
+\usepackage[titletoc]{appendix}
+
+\definecolor{lstgreen}{rgb}{0,0.6,0}
+\definecolor{lstgray}{rgb}{0.5,0.5,0.5}
+\definecolor{lstgrayy}{rgb}{0.92,0.92,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{lstgrayy},
+    commentstyle=\color{lstgreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{lstgray},
+    stringstyle=\color{magenta},
+    basicstyle=\ttfamily\footnotesize,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=lines,
+    language=haskell
+}
+
+\lstset{style=mystyle}
+
+% missing math symbols
+\usepackage{stmaryrd}
+
+%
+\begin{document}
+%
+\title{Formal Verification with Lean}
+%
+%\titlerunning{Abbreviated paper title} If the paper title is too long for the
+%running head, you can set an abbreviated paper title here
+%
+\author{Stefan-Octavian Radu}
+%
+\authorrunning{S. Radu}
+% First names are abbreviated in the running head. If there are more than two
+% authors, 'et al.' is used.
+%
+\institute{Julius-Maximilians-Universität Würzburg \\ Institute for Computer
+Science Chair for Computer Science VI \\ Am Hubland, D-97074 Würzburg.\\
+\url{informatik.uni-wuerzburg.de/is}}
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract} Lean is a proof assistant primarily used in the field of
+    mathematics. In this paper we discuss how this powerful tool can be used to
+    reason about programs, using formal methods. We cover three approaches to
+    formal semantics, the Lean programming language and the features that set
+    it apart. We conclude with a practical example where we reason about
+    programs written in an unusual programming language.
+
+\keywords{Formal Verification
+    \and Functional Programming
+    \and Lean }
+
+%TODO something with calculus of inductive constructions
+
+\end{abstract}
+
+\section{Introduction}
+
+Lean is a project started at Microsoft Research, with the main goal of offering
+a public library to hold all mathematical knowledge. It is a proof assistant,
+as well as a powerful functional language, based on dependent types.
+Dependently typed languages treat types as first-class objects, and Lean is no
+exception to this. The added expressiveness of the type system allows users to
+embed proofs into the types themselves. While typically used for mathematical
+theorems, we want to discuss how Lean and the unique features that it offers
+can be utilised for formal verification. We will take a look at the options
+available for formalising the semantics of programming languages and reasoning
+about them. In this regard, we will give a high-level overview of
+\emph{Operational Semantics}, \emph{Axiomatic Semantics} and \emph{Denotational
+Semantics}. Next, we will give an overview of the Lean programming language,
+and will discuss how its features can be used for theorem proving. Lastly, we
+will give a practical example in which we will describe the approach we took to
+formalise the semantics of the esoteric programming language Brainf*ck. We will
+also present a few theorems that we proved based on the formalised semantics.
+
+\section{Formal Verification}
+
+``Formal verification is the act of proving or disproving the correctness of a
+system with respect to a certain formal specification or property, using formal
+methods of mathematics'' \cite{formalver}. In this work, we will focus on the
+formal verification of imperative programming languages. In this context,
+formal verification refers to formally specifying the syntax and semantics of
+the programming language. This path of action enables us to reason about
+concrete programs and prove properties of the semantics. In this section, we
+will only give a high level overview of three approaches to describing the
+formal semantics of a programming language: \emph{Operational Semantics},
+\emph{Denotational Semantics} and \emph{Axiomatic Semantics}. A more in-depth
+coverage of program semantics can be seen in chapters 9-11 of \emph{``The
+Hitchhiker’s Guide to Logical Verification''} \cite{hitchhiker}.
+
+\subsection{Operational Semantics}
+
+An operational semantics can be thought of as an \emph{idealised interpretor},
+which describes in a formal way how the program instructions alters the state
+of the program. There are two main variants: \emph{big-step} semantics and
+\emph{small-step} semantics.
+
+Big-step semantics enable us to reason in terms of transitions from an initial
+state to a final state of the program. More concretely, big-step semantics is
+based on relations such as: $(S,s) \Rightarrow t$. Intuitively, this
+relationship suggests that the program \cc{S} executed in the starting state
+\cc{s} will terminate in the final state \cc{t}. The semantics of a programming
+language is usually presented as a set of derivation rules for each of the
+instructions in the target language.
+
+Small-step semantics are more complex, but enable us to reason in more detail,
+compared to the big-step semantics. Small-step semantics is based on relations
+such as: $(S, s) \Rightarrow (T, t)$. Intuitively, this relationship suggests
+that executing one step of program \cc{S} in the starting state \cc{s} will
+terminate with the program \cc{T} left to be executed in state \cc{t}.
+
+With both the big-step and the small-step semantics defined, one can prove the
+equivalence between them:
+
+$$(S, s) \Rightarrow t \Leftrightarrow (S, s) \Rightarrow\hspace{-1.3mm}* (skip, t)$$
+
+where $\Rightarrow\hspace{-1.3mm}*$ is the reflexive transitive closure of the
+binary relationship defined with $\Rightarrow$, and \cc{skip} is the null
+operation. With the semantics defined, one can start reasoning about concrete
+programs, or start proving properties such as termination, or determinism about
+the language. A concrete example of defining the big-step semantics for a
+programming language and using it for reasoning about programs can be seen in
+section \ref{sec:bf}.
+
+\subsection{Axiomatic Semantics (Floyd-Hoare Logic)}
+
+The Floyd-Hoare Logic (also called \emph{axiomatic semantics}) is a formal
+system based on logic derivation rules, for reasoning rigorously about the
+correctness of computer programs. The system was first proposed by Tony Hoare
+in 1969 \cite{hoare}. The ideas stem from the previous works of Robert W. Floyd
+who proposed a similar system in 1967 \cite{floyd}. 
+
+Hoare logic is most useful for reasoning about concrete programs in order to
+prove them correct. The building blocks of Hoare Logic are Hoare Triples, of
+the form $\{P\}\ C\ \{Q\}$. Here $P$ is a precondition, $C$ is the program, and
+$Q$ is the postcondition. We read a Hoare rule the following way: \emph{``If
+the precondition P is true before S is executed and the execution terminates
+normally, the postcondition Q is true at termination''} \cite{hitchhiker}. From
+the interpretation, we can notice that Hoare Logic can only guarantee partial
+correctness. This is because the above statement only holds, if the program
+terminates. If the program does not terminate, the behaviour is assumed to be
+arbitrary.
+
+For reasoning about concrete programs, a set of derivation rules based on Hoare
+Triples for the target language is typically used. Before ending the overview
+of Floyd-Hoare Logic, let's consider a concrete example for a sequential
+composition operation in an arbitrary language. The corresponding derivation
+rule is:
+
+$$\frac{\quad\{P\}\ S \ \{R\} \qquad \{R\}\ T\ \{Q\}\ \ }
+     {\{P\}\ S;T\ \{Q\}}
+     \ \textsc{SEQ}$$
+
+For ${\{P\}\ S;T\ \{Q\}}$ to hold, we must be able to execute $S$ and $T$
+sequentially. As such, there must exist an intermediary condition $R$, such
+that ${\{P\}\ S \ \{R\}}$ holds with $R$ as postcondition, and ${\{R\}\ T \
+\{Q\}}$ holds with $R$ as precondition.
+
+Those interested to further explore this topic, can look into the
+\href{https://dafny.org/latest/DafnyRef/DafnyRef#sec-introduction}{Dafny}
+project.
+
+\subsection{Denotational Semantics}
+
+Denotational semantics are used to express what programs ``mean''. It can be
+views as an idealised compiler that converts programs to mathematics. In this
+sense, every program is mapped to a mathematical object, such as:
+
+$$\llbracket\ \rrbracket : syntax \to semantics$$
+
+A key property of denotational semantics is \emph{compositionality}: the
+meaning of a compound statement must be defined in terms of the meanings of its
+components \cite{hitchhiker}. A fully compositional definition enables
+reasoning in terms of equations, which can be more convenient than previous
+approaches, such as \emph{big-step semantics}. What we are looking for
+structurally recursive equations such as:
+
+$$\llbracket S\ ; T \rrbracket =\ \dots\ 
+\llbracket S \rrbracket\ \dots\ \llbracket T \rrbracket$$
+
+In practice, the denotational semantics of a programming language can be
+expressed in a relational manner, as a set of relations $\{State \times
+State\}$, where $State$ denotes a theoretically possible point during the
+execution of the program (state of memory, variables, etc.). In the end of the
+discussion of denotational semantics, let's consider a more concrete example,
+by revisiting the sequential composition of two statements \cc{S} and \cc{T},
+which was mentioned above. Let's assume that $\llbracket S \rrbracket = r_1$
+and $\llbracket T \rrbracket = r_2$. Then, $\llbracket S\ ; T \rrbracket$ is
+equal to the relational composition of $r_1$ and $r_2$:
+
+$$r_1 \circ r_2 = \{(a,c)\ |\ \exists b, (a,b) \in r_1 \land (b,c) \in r_2\}$$
+
+\section{The Lean programming language}
+
+\emph{Lean} is a project which was started in 2013 by Leonardo de Moura while
+working at Microsoft Research \cite{theorem_proving_in_lean4}. It is released
+under the open-source
+\href{https://lean-lang.org/theorem_proving_in_lean4/LICENSE}{Apache 2.0
+license}, which allows it to be easily used and extended by the community.
+
+With regards to its applications, Lean is a multi-purpose tool. First of all it
+is a theorem prover, based on dependent types \ref{sec:dt}, and more
+specifically on the system of \emph{Calculus of Constructions}
+\cite{theorem_proving_in_lean4}. As mentioned in the ``Functional programming
+in Lean'' book \cite{func_prog_in_lean}, \emph{``Dependent type theory unites
+the worlds of programs and proofs''}. This enables Lean to also be a fully
+capable, general-purpose programming language. As a matter of fact, Lean is
+(partially) implemented in Lean.
+
+In this section we will give a high level overview of Lean. We will firstly
+cover its basic syntax and features as a programming language. Then we will
+discuss dependent types and how they enable Lean to be used as a theorem
+prover. Lastly we will go over Lean's \emph{Tactic Mode}, which enables its
+users to write clear and elegant mathematical proofs.
+
+\subsection{Functional Programming in Lean}
+
+``When viewed as a programming language, Lean is a \emph{strict}, \emph{pure},
+functional programming language, with \emph{dependent types}''
+\cite{func_prog_in_lean}. It is \emph{strict}, in the sense that when calling a
+function, the function body is only evaluated after the function arguments have
+been evaluated. It is \emph{pure}, in the sense that functions do not have side
+effects. This also means that evaluating a function multiple times with the
+same arguments will yield the same result. In these regards it is similar to
+\href{https://www.haskell.org/}{Haskell} \cite{haskell}, but differs from it by
+not being lazily evaluated and having a syntax more similar to
+\href{https://ocaml.org/}{OCaml} \cite{ocaml}.
+
+\subsubsection{Simple Definitions and Functions.}
+
+In Lean we can use the \lstinline{def} keyword to define anything from
+constants to complex functions. See listing \ref{lst:defs} for examples.
+
+\begin{lstlisting}[caption=Examples of simple definitions and function definitions in Lean,
+    label=lst:defs]
+-- simple definitions
+def a: Nat := 42
+def hw: String := "hello " ++ "world!"
+-- #eval evaluates an expression inline and shows the result
+#eval a  -- 42
+#eval hw -- "hello world!"
+-- defining functions 
+def add1 (k: Nat): Nat := k + 3
+def add2 (a b: Nat) := a + b
+#eval add1 3   -- 6
+#eval add2 3 3 -- 6
+-- highlighting a more complex function and currying 
+def applyTwice (f: Nat → Nat) (k: Nat) := f (f k)
+#eval applyTwice (add 3) 4 -- 10
+\end{lstlisting}
+
+\subsubsection{Defining new types.}
+
+Most of the non-primitive data types in Lean are inductive types. Those are
+types allow choices (instantiating an element to be one from a set, see listing
+\ref{lst:bool}) and also allow instances of themselves as part of the
+definition (see listing \ref{lst:nat}). Lean also supports the creation of
+structures, which group multiple values together, and are very similar to
+structures found in imperative languages such as C or Rust
+\cite{func_prog_in_lean}. 
+
+\begin{multicols}{2}
+
+\begin{lstlisting}[caption=The Bool type has two constructors without
+    parameters: one for \lstinline{true} and one for \lstinline{false},
+    label=lst:bool]
+inductive Bool where
+  | false : Bool
+  | true : Bool
+\end{lstlisting}
+
+\columnbreak
+
+\begin{lstlisting}[caption=Recursive definition of natural numbers,
+    label=lst:nat]
+inductive Nat where
+  -- just zero (0)
+  | zero : Nat
+  -- successor of k (k + 1)
+  | succ (k : Nat): Nat
+\end{lstlisting}
+
+\end{multicols}
+
+Inductive types are very useful, because we can reason based on their
+structure, and also we can use induction to prove mathematical properties
+of them.
+
+\subsubsection{Recursion and pattern matching.}
+
+When using inductive types, pattern matching can be used in order to handle
+each of the type's constructors independently. For example, to calculate the
+factorial of a natural number, we can give the function's implementation for
+the two constructors of the \lstinline{Nat} data type, utilising the
+\lstinline{match} keyword (see listing \ref{lst:fact}).
+
+\vspace{0.2cm}
+
+\begin{lstlisting}[
+    caption=Using recursion and pattern matching in Lean, 
+    label=lst:fact]
+def factorial n :=
+  match n with
+--| 0
+  | zero => 1
+--| k + 1
+  | succ k => (k + 1) * factorial k
+
+#eval factorial 5 -- 120
+\end{lstlisting}
+
+We also notice how in listing \ref{lst:fact} Lean can infer the type of the
+argument and the return type of the function from the match case, so we don't
+have to explicitly state them.
+
+\subsubsection{Lists and higher-order functions.}
+
+Lists are part of the standard library of Lean, and are one of the building
+blocks of what we will present in the next section. In listing \ref{lst:fold}
+we show some common List functions, as well as how lists can be used in
+conjunction with higher-order functions such as \lstinline{map, foldr, filter}.
+One more unusual feature of Lean is the that it facilitates the introduction
+and usage of mathematical (unicode) symbols. This becomes especially useful
+when working with mathematical proofs. An example of this can also be seen in
+the \ref{lst:fold} listing, where the $\lambda$ symbol is used as an equivalent
+to the \lstinline{fun} keyword, which introduces a lambda abstraction. 
+
+\begin{lstlisting}[caption={An example of using lists and higher-order functions in Lean. Usage of lambda abstractions and syntactic sugar can be observed.}, label=lst:fold, mathescape]
+#eval [1, 2, 3]           -- [1, 2, 3]
+#eval 5 :: [1, 2]         -- [5, 1, 2]
+#eval [1, 2] ++ [3, 4]    -- [1, 2, 3, 4]
+#eval (List.range 3)      -- [0, 1, 2]
+
+#eval (List.range 3).map (fun x => x * 2)        -- [0, 2, 4] 
+
+#eval (List.range 3).foldl (fun x y => x + y) 0  -- 6
+#eval (List.range 3).foldl ($\lambda$ x y => x + y) 0    -- 6
+
+#eval (List.range 3).filter ($\lambda$ x => x $\leq$ 1)       -- [0, 1]
+#eval (List.range 3).filter (. $\leq$ 1)              -- [0, 1]
+
+\end{lstlisting}
+
+\subsubsection{Other features of Lean.}
+
+Lean is a fully capable programming language. As such it includes a complex
+array of features such as: structures, type classes, functors, applicative
+functors, mondas, monad transformers. We will not cover such features since
+they are outside the scope of this work. However, we provided listing
+\ref{lst:hello} as an example of the \lstinline{IO monad} and the
+\lstinline{do} notation.
+
+\begin{lstlisting}[caption={Hello World example in Lean}, label=lst:hello]
+def main: IO Unit := do
+  let stdin <- IO.getStdin
+  let stdout <- IO.getStdout
+
+  IO.print "What is your name?: "
+  let input <- stdin.getLine
+  let name := input.dropRightWhile Char.isWhitespace
+
+  stdout.putStrLn s!"Hello, {name}!"
+\end{lstlisting}
+
+\subsection{Dependent Types}
+\label{sec:dt}
+
+Dependent types stem from ``Type Theory'', the main idea of which is that every
+expression has a type. For example if \lstinline{a} and \lstinline{b} have the
+type \lstinline{bool}, the expression  \lstinline{a && b} is also of type
+\lstinline{bool}. This also means that we can create new types by combining
+types. As such, if $\alpha$ and $\beta$ are types $\alpha \rightarrow \beta$
+would be a function from $\alpha$ to $\beta$.
+
+In Lean, types are considered first-class objects of the language. This fact,
+in turn, means that each type has a type of itself
+\cite{theorem_proving_in_lean4}. In lean one can use the \lstinline{#check}
+command to find the type of an expression. An exemplification of these claims
+can be seen in listing \ref{lst:types}.
+
+\vspace{3mm}
+
+\begin{lstlisting}[caption=Types are first class objects in Lean,
+    mathescape, label=lst:types]
+def $\alpha$: Type := Bool
+def $\beta$: Type → Type := List
+
+#check $\alpha$        -- Type
+#check $\beta$ Nat    -- Type 
+#check p = p    -- Prop
+#check Prop     -- Type
+#check Type     -- Type 1
+#check Type 1   -- Type 2
+#check Type 2   -- Type 3
+-- etc.
+\end{lstlisting}
+
+A subtle aspect of the language can be noticed in \ref{lst:types} listing. Lean
+has an infinite hierarchy of types. This prevents the underlying logic from
+being unsound, by avoiding \emph{Girard's Paradox} \cite{girard}.
+\emph{Girard's Paradox} is the ``type-theoretical analogue of \emph{Russell's
+Paradox}'' from set theory, which preceded type theory as a foundational theory
+for mathematics \cite{russell} \cite{systemu}.
+
+What makes dependent types \emph{dependent} is that types can depend on
+terms of other types. The distinction between terms (or values) and their
+types is blurred and programs can be evaluated to types. A good example 
+that illustrates this ideas is the creation of an array of fixed length.
+A term of this type would depend firstly on the type of the values it holds,
+and secondly on the value which states its length. We could then use this
+type in functions which only accept fixed length arrays, without needing
+to specify the exact length, or know it at compile time. By extending the 
+expressiveness of types in such a way, programmers can catch more errors 
+at compile time. Listing \ref{lst:vect} exemplifies such a use case.
+
+\vspace{3mm}
+
+\begin{lstlisting}[mathescape, label=lst:vect, 
+    caption=Defining a fixed-size list type and defining a function
+    which produces a fixed-size list based on input parameters]
+inductive Vect ($\alpha$ : Type) : Nat → Type where
+  | nil   : Vect $\alpha$ 0
+  | cons  : $\alpha$ → Vect $\alpha$ n → Vect $\alpha$ (n + 1)
+  deriving Repr
+
+def replicate {$\alpha$: Type} (x: $\alpha$) (n: Nat): Vect $\alpha$ n :=
+  match n with
+  | 0     => .nil
+  | k + 1 => .cons x (replicate x k)
+
+#eval replicate 42 5 -- [42, 42, 42, 42, 42]
+\end{lstlisting}
+
+``Dependently typed programs are, by their nature, proof carrying code''
+\cite{altenkirch2005dependent}. If we see types as logical formulas, then the
+program which computes an element of that type is a proof of the formula. If we
+can build it, then it is true. In the listing \ref{lst:vect}, the
+\lstinline{replicate} function is a proof that \lstinline[mathescape]{$\alpha
+\to$ x $\to$ n $\to$ (Vect $\alpha$ n)}. It is clearly not very intuitive how
+this analogy would be useful, but it becomes more apparent when the type
+resembles more ``classic'' theorems, such as \ref{lst:or_elim}. We can leverage
+these properties to prove various properties of programming languages (see
+section \ref{sec:bf}).
+
+\subsection{Tactic Mode}
+
+In Lean, \emph{theorems} (introduced with the \cc{theorem} keyword) are similar
+to definitions (introduced using the \cc{def} keyword). The difference is that
+they cannot be called and they signal to the compiler not to unfold the
+definition. The usage of theorems is similar to their usage in mathematics,
+which is to record formally proven statements, based on axioms or other proofs.
+In Lean, the \cc{example} keyword, introduces unnamed theorems
+\cite{theorem_proving_in_lean4}.
+
+Tactic mode is an alternative to using functions for theorem proving. It is
+introduced through the \lstinline{by} keyword. Tactic mode uses \emph{tactics},
+which are commands that one can use in order to build proofs in an incremental
+way. This is achieved by reasoning on goals and modifying them step by step
+until the proof is complete \cite{theorem_proving_in_lean4}. Listings
+\ref{lst:or_elim} and \ref{lst:or_elim_tactic} show equivalent proofs written
+functionally and by using tactic mode respectively.
+
+\begin{multicols}{2}
+
+\begin{lstlisting}[mathescape, label=lst:or_elim,
+    caption={A proof example for a theorem expressed in propositional logic. We
+    use the Or.elim theorem and the Or.inl and Or.inr constructurs for a
+    logical Or expression, which are built into the standard Lean library. See
+    \ref{lst:defs} for the definitions of these constructs.}]
+example: p $\lor$ q $\to$ q $\lor$ p :=
+  fun (h: p ∨ q) =>
+    Or.elim h Or.inr Or.inl
+\end{lstlisting}
+
+\columnbreak
+
+\begin{lstlisting}[mathescape, label=lst:or_elim_tactic, 
+    caption={An equivalent implementation to \ref{lst:or_elim} can be given
+    using tactics.}]
+example: p $\lor$ q $\to$ q $\lor$ p :=
+by
+  intro (h: p ∨ q)
+  apply Or.elim
+  . exact h
+  . apply Or.inr
+  . apply Or.inl
+\end{lstlisting}
+
+\end{multicols}
+
+\begin{lstlisting}[mathescape,
+    caption={Useful definitions to better understand examples \ref{lst:or_elim}
+    and \ref{lst:or_elim_tactic}.}]
+#check @Or.inl  -- @Or.inl : $\forall$ {a b : Prop}, a $\to$ a $\lor$ b
+#check @Or.inr  -- @Or.inr : $\forall$ {a b : Prop}, b $\to$ a $\lor$ b
+#check @Or.elim -- @Or.elim : $\forall$ {a b c : Prop}, 
+                --    a $\lor$ b $\to$ (a $\to$ c) $\to$ (b $\to$ c) $\to$ c
+\end{lstlisting}
+
+Throughout the next section we will use a number of different tactics to
+construct proofs about our chosen programming language. We will cover the main
+tactics used, and briefly discuss the way they interact contribute to the
+proof.
+
+\vspace{-3mm}
+
+\subsubsection{intro.} If the goal is $p \to q$, then \lstinline{intro h} will introduce \lstinline{h: p} as a hypothesis, and then change the goal to \lstinline{q} \cite{natural}.
+\vspace{-3mm}
+
+\subsubsection{exact.} If the goal is a statement \lstinline{P}, then
+\lstinline{exact h} will prove the goal and complete the proof, if
+\lstinline{h} is a proof of \lstinline{P} (has type \lstinline{P})
+\cite{natural}.
+\vspace{-3mm}
+
+\subsubsection{apply.} If we consider the case when we have a goal of \cc{Q} to
+be proved, and we know \cc{t: $P \to Q$}, then \cc{apply t} will change the
+goal to \cc{P}. Apply can be used to work backwards on goals. The reasoning
+behind it is that if we want to prove \cc{Q}, by knowing \cc{t}, it is enough
+to prove \cc{P} \cite{natural}.
+\vspace{-3mm}
+
+\subsubsection{cases.} The cases tactics is used to reason about a part of a proof in terms of its building blocks. For example, if we have a hypothesis
+\cc{h}, which depends on \cc{$c_1, c_2, c_3$}, by using \cc{cases h} we can
+reason about \cc{$c_1, c_2, c_3$} individually \cite{natural}.
+\vspace{-3mm}
+
+\subsubsection{rfl.} The \cc{rfl} tactic stands for ``reflexivity'' and proves
+goals of the for \cc{A = B}, if \cc{A} and \cc{B} are provably identical (e.g. $2 + 2 = 4$ is a goal which can be closed by using \cc{rlf}) \cite{natural}.
+\vspace{-3mm}
+
+\subsubsection{rw.} The \cc{rw} tactic stands for ``rewrite'' and is a way of
+substitution. If \cc{h} is a proof of an equality \cc{X = Y}, then \cc{rw [h]}
+will change all occurrences of \cc{X} in the goal to \cc{Y}. There also exist a
+number of variants of this tactic (e.g for repeated rewrites, or for a reverse rewrite of \cc{Y} to \cc{X}) \cite{natural}.
+\vspace{-3mm}
+
+\subsubsection{simp.} The \cc{simp} tactic stands for ``simplify''. It
+automatically rewrites every lemma provided to it, as well as every lemma
+tagged with the \cc{@[simp]} keyword, which can be used by users to increase
+the power Lean's automation \cite{natural}. \vspace{-3mm}
+
+\subsubsection{induction.} If $n : N$ is a part of the goal of a proof, we
+can use \cc{induction n with} to prove the goal by induction on \cc{n}. This
+tactic splits the goal in two cases: the initial (zero) case, and then
+the inductive (successor) case, which is also paired with the inductive hypothesis.
+
+\section{A practical example}
+\label{sec:bf}
+
+This section is inspired from chapter 9 of the \emph{``The Hitchhiker’s Guide
+to Logical Verification''} book \cite{hitchhiker}. However, instead of using a
+theoretical language, we chose to formally specify the infamous esoteric
+programming language Brainf*ck. Even though it doesn't have many practical
+applications, it makes an interesting study-case, which is only facilitated by
+the language's small syntax.
+
+We will define our variant of Brainf*ck's big-step semantics and cover some
+examples of how it can be used to prove the correctness programs, such as a
+\cc{swap} procedure. All the code is available on
+\href{https://github.com/Stefan-Radu/master/tree/master/an2_DE_erasmus/logic_seminar/bf_operational_semantics}{github}.
+
+\subsection{Brainf*ck}
+
+Brainf*ck has well known for its extremely small set of instructions. The 
+syntax is comprised of only 8 instructions: \cc{+-<>.;[]}. Its runtime is
+very simple as well, consisting of only a linear memory array and a pointer
+to the current memory cell.
+
+\vspace{-3mm}
+
+\subsubsection{State.} 
+
+Let's define our program state:
+
+\vspace{2mm}
+\begin{lstlisting}[mathescape]
+structure State : Type where
+  inp: List Nat    -- input array
+  out: String      -- output string
+  before: List Nat -- values to the left of the current cell
+  current: Nat     -- value of current cell
+  after: List Nat  -- values to the right of the current cell
+\end{lstlisting}
+
+We represent the memory from three components: the current cell and two lists
+representing the elements to the left and right of the current cell
+respectively. This model enables us to have theoretically infinite memory. We
+use \cc{Nat} as the memory cell's data type, which is an infinite size unsigned
+integer. While not reflecting the most popular implementations of the language,
+the \cc{Nat} is easier to reason about, than for example an \cc{UInt8}. We also
+have the input and output explicitly defined, which enables us to reason about
+possible inputs and outputs.
+
+\subsubsection{State operations.} 
+
+Having the state of the program defined, we can further define functions which
+describe how the state changes when one of the basic operations is applied on
+it. Listing \ref{lst:state_change} shows two examples of such functions. For
+more information on the meaning of each of the operations of Brainf*ck the
+appendix \ref{ap:syntax} can be consulted.
+
+\vspace{2mm}
+\begin{lstlisting}[mathescape, label=lst:state_change, 
+    caption={Implementations for functions which modify the state
+    after pointer increase (\cc{>}), value increase (\cc{+}) and
+    input (\cc{,}) operations.}]
+def applyPInc (s: State): State :=
+    match s.after with
+    | [] => s -- do nothing at the end of the band
+    | h :: t => $\langle$s.inp, s.out, *s :: s.before, h, t$\rangle$
+
+def applyVInc (s: State): State := 
+    $\langle$s.inp, s.out, s.before, *s + 1, s.after$\rangle$
+
+def applyInput (s: State): State :=
+  match s.inp with
+  | [] => $\langle$[], s.out, s.before, *s, s.after$\rangle$
+  | h :: t => $\langle$t, s.out, s.before, h, s.after$\rangle$
+\end{lstlisting}
+
+Notice how we use \cc{$\langle$} and \cc{$\rangle$} pairs to construct state
+structures. Also, we used another one of Lean's features to create a
+dereferencing-like notation for the current cell's value from a state \cc{s}:
+\ \cc{notation "*" s:100 => State.current s}.
+
+\vspace{-3mm}
+\subsubsection{Syntax.} 
+
+To be able to reason about concrete programs and the language itself, we will
+also define the Brainf*ck's syntax. We will name it \cc{Op}, as can be seen in
+listing \ref{lst:op}.
+
+\vspace{5mm}
+\begin{lstlisting}[label=lst:op, caption=Syntax of the language implemented
+    in Lean.]
+inductive Op : Type where
+  | pInc       : Op              -- >
+  | pDec       : Op              -- <
+  | vInc       : Op              -- +
+  | vDec       : Op              -- -
+  | input      : Op              -- ,
+  | output     : Op              -- .
+  | brakPair   : Op -> Op        -- [S] 
+  | seq        : Op -> Op -> Op  -- S T 
+\end{lstlisting}
+
+In addition to the known operations, we introduce the sequencing operation,
+which is used to chain operations together in a more complex program. We
+can now define programs using the newly created syntax:
+
+\vspace{2mm}
+\begin{lstlisting}[label=lst:program, 
+    caption=Defining programs using the Op syntax]
+#eval (brakPair ( seq vDec (
+        seq pInc ( seq vInc pDec))): Op) -- [->+<]
+\end{lstlisting}
+
+As listing \ref{lst:program} suggests, the syntax is rather cumbersome to
+use. However, we can define more convenient notations, so we can write the
+same program like this: \cc{#eval ([~_>_+_<]: Op) -- [->+<]}. The notations
+are not a perfect match, because some symbols are reserved by Lean. Refer to appendix \ref{ap:notations} for the full definition.
+
+We now how all the building blocks necessary for defining the big-step
+semantics.
+
+\subsection{Big-step semantics}
+
+As mentioned before, the big-step semantics of a programming language is a set
+of transitions, defined formally as relations of the form $(S,s) \Rightarrow
+t$. The transitions for most of the operations are rather easy to define, with
+the final state being just the result of the previously defined state functions
+(see \ref{lst:state_change}), called with the starting state as the parameter:
+
+$$\frac{}{\quad (S, s) \Rightarrow \text{\cc{s.applyOperation}}\ \ }
+     \ \textsc{bf operation}$$
+
+The sequencing operation is defined as follows:
+
+$$\frac{\quad(S, s) \Rightarrow t \qquad (T, t) \Rightarrow u\ \ }
+     {(S\_T, s) \Rightarrow u}
+     \ \textsc{bf seq}$$
+
+The intuitive interpretation is that we can sequence operations $S$ and $T$ in
+state $s$ such that they terminate in state $u$, only if there exists an
+intermediary state $t$, such that executing $S$ in state $s$ terminates in
+state $t$ and then executing $T$ in state $t$ terminates in state $u$.
+
+The loop operation is the most difficult to implement. In order to avoid
+infinite loops in our proofs, we must split it based on the condition. As
+such, we get two derivation rules, one for each truth value:
+
+$$\frac{\quad(S, s) \Rightarrow t \qquad ([S], t) \Rightarrow u\ \ }
+     {([S], s) \Rightarrow u}
+     \ \textsc{bf loop-true   if *s $\ne$ 0}$$
+
+$$\frac{}{\quad([S], s) \Rightarrow s\ \ }
+        \ \textsc{bf loop-false   if *s = 0}$$
+
+The \emph{loop-true} rule gives us a method of unravelling a loop iteration, in
+order to reason about it independently. The \emph{loop-false} rule is trivial.
+Listing \ref{lst:bigstep} contains the full implementation of the big-step
+semantics in Lean. We will use this further in order to write proofs on
+concrete programs.
+
+\vspace{2mm}
+\begin{lstlisting}[mathescape, label={lst:bigstep},
+    caption={Implementation
+    of big-step semantics for the Brainf*uck programming language}]
+inductive BigStep: Op × State $\to$ State $\to$ Prop where
+  | nop  (s: State): BigStep (Op.nop, s)  s
+  | pInc (s: State): BigStep (Op.pInc, s) s.applyPInc
+  | pDec (s: State): BigStep (Op.pDec, s) s.applyPDec
+  | vInc s: BigStep (Op.vInc, s) s.applyVInc
+  | vDec s: BigStep (Op.vDec, s) s.applyVDec
+  | brakPairTrue {ops} {s t u: State}
+    (c: *s ≠ 0)
+    (body: BigStep (ops, s) t)
+    (rest: BigStep ((Op.brakPair ops), t) u):
+      BigStep (Op.brakPair ops, s) u
+  | brakPairFalse ops (s: State) (c: *s = 0):
+      BigStep (Op.brakPair ops, s) s
+  | seq (S s T t u)
+    (h:  BigStep (S, s) t)
+    (h': BigStep (T, t) u):
+      BigStep ((Op.seq S T), s) u
+  | input s: BigStep (Op.input, s) s.applyInput
+  | output s: BigStep (Op.output, s) s.applyOutput
+\end{lstlisting}
+
+\subsection{Proving Theorems}
+
+In this subsection we will discuss a few proofs that we made using the
+previously defined big-step semantics.
+
+\vspace{-3mm}
+\subsubsection{Zeroing a cell}
+
+\lstinline{[-]} is a very simple program which subtracts one from the current
+cell until its value is reduced to zero. Let's prove it!
+
+\vspace{2mm}
+\begin{lstlisting}[mathescape, label=lst:thdec, 
+    caption={Proof by induction in Lean, that \cc{[-]} reduces a cell to 0}]
+#eval ([~]: Op) -- [-]
+theorem dec_n {n: Nat}: ([~], (State.mk [] "" [] n []))
+  $\Longrightarrow$ State.mk [] "" [] 0 [] :=
+  by
+    induction n
+    case zero =>
+      . apply BigStep.brakPairFalse
+        . simp
+    case succ d hd =>
+      . apply BigStep.brakPairTrue
+        . simp
+        . apply BigStep.vDec
+        . rw [State.applyVDec]
+          simp
+          assumption
+\end{lstlisting}
+
+Listing \ref{lst:thdec} contains the full proof. The proof can be done by
+induction on $n$. The zero case is trivial, and the inductive step can be 
+proved by reducing the state to the inductive hypothesis by unwrapping the
+loop once.
+
+\vspace{-3mm}
+\subsubsection{Adding two input numbers together.}
+
+This theorem is a bit more difficult, and certainly takes more effort to prove.
+The distinctive aspect of this proof, compared to the previous one, is that we
+need to used induction on one of the variables, while generalizing the other.
+The \emph{shortened} proof can be seen in listing \ref{lst:sum}.
+
+\vspace{2mm}
+\begin{lstlisting}[mathescape, label=lst:sum,
+    caption={Proof in Lean that
+    the algorithm \cc{,>,<[->+<]} takes to numbers from the input and computes
+    their sum.}]
+def bfSumIn: Op := ,_>_,_<_[-_>_+_<]
+#eval bfSumIn -- ,>,<[->+<]
+
+theorem bfSum: (bfSumIn,
+    (State.mk (a :: b :: i) o l x (y :: r)))
+  $\Longrightarrow$ State.mk i o l 0 ((a + b) :: r) := 
+  by 
+    rw [bfSumIn]
+    apply BigStep.seq
+    apply BigStep.input
+    -- ... more use of apply
+    apply BigStep.pDec
+    rw [State.applyPDec]
+    repeat rw [State.applyInput]
+    rw [State.applyPInc]
+    simp
+    rw [bfAddition]
+    induction a generalizing b with
+    | zero =>
+      rw [Nat.zero_eq]
+      rw [Nat.zero_add]
+      apply BigStep.brakPairFalse
+      . rw [State.current]
+    | succ k h =>
+      apply BigStep.brakPairTrue
+      . rw [State.current]
+        simp
+      . apply BigStep.seq
+        apply BigStep.vDec
+        -- ... more use of apply
+        apply BigStep.pDec
+      . rw [State.applyVDec]
+        rw [State.applyPDec]
+        rw [State.applyPInc]
+        rw [State.applyVInc]
+        simp
+        rw [Nat.succ_eq_add_one]
+        rw [Nat.add_assoc]
+        rw [Nat.add_comm 1 b]
+        exact @h (b + 1)
+\end{lstlisting}
+
+\subsubsection{Swapping two values.}
+
+As part of our experiments, we also managed to prove correct the algorithm for
+swapping two values: \cc{>[<+>-]>[<+>-]<<[>>+<<-]}. It can be split in three
+parts, which can be proved individually, using similar techniques as previously
+seen. Let's consider that \cc{swap'} and \cc{swap''} are proofs that the
+individual component behave as expected. Listing \ref{lst:swap} shows the final
+proof, which combines the previously mentioned proofs of the individual
+components. We chose to present this format, because the integral proof would
+be too long to present in this format. The full implementation can, however, be
+inspected online on the
+\href{https://github.com/Stefan-Radu/master/tree/master/an2_DE_erasmus/logic_seminar/bf_operational_semantics}{github}.
+
+\vspace{2mm}
+\begin{lstlisting}[mathescape, label=lst:swap, 
+    caption={Proof that the program \cc{>[<+>-]>[<+>-]<<[>>+<<-]} successfully
+    swaps two consecutive memory cells}]
+theorem swap: (bfSwap, State.mk [] "" l 0 (x :: y :: r))
+  \Longrightarrow State.mk [] "" l 0 (y :: x :: r) :=
+  by 
+    rw [bfSwap]   -- full program
+    rw [bfSwapTX] -- first component: >[<+>-]
+    apply BigStep.seq
+    . apply BigStep.seq
+      . apply BigStep.pInc
+      . rw [State.applyPInc]
+        simp
+        exact swap' l (y :: r) x 0
+    rw [bfSwapXY] -- second component: >[<+>-]
+    apply BigStep.seq
+    . apply BigStep.seq
+      . apply BigStep.pInc
+      . rw [State.applyPInc]
+        simp
+        exact swap' (x :: l) r y 0
+    rw [bfSwapYT] -- third component: <<[>>+<<-]
+    apply BigStep.seq
+    . apply BigStep.pDec
+    . apply BigStep.seq
+      . apply BigStep.pDec
+      . repeat rw [State.applyPDec]
+        simp
+        have h' := swap'' l r x 0 y
+        rw [Nat.zero_add] at h'
+        assumption
+
+\end{lstlisting}
+
+%\subsubsection{Thoughts on Termination}
+% TODO this could probably be moved in the Lean section
+% no example
+% just mention that functions need to terminate
+
+\section{Conclusions}
+
+In this paper we gave a new perspective for a programming language that is
+mostly known for formalising mathematics. We discussed formal verification in
+the context of formalising programming languages and reasoning about them and
+about programs written in those languages. We gave a short overview on three
+possible approaches to specifying semantics. We gave an overview of Lean, a
+powerful proof assistant, as well as a capable functional programming language
+with dependent types. We discussed its features and how it can be used for
+theorem proving. In the end we presented our experiments with giving a big-step
+semantics for the esoteric Brainf*ck programming language. We also presented
+some theorems that we proved using the defined big-step semantics. We hope
+that this work inspires others to consider Lean, or other dependently-typed
+language for their next project.
+
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+
+\newpage
+\bibliographystyle{splncs04}
+\bibliography{sample.bib}
+
+\clearpage
+\appendix
+\chapter*{Appendix}
+
+\section{Brainf*ck syntax}
+\label{ap:syntax}
+
+We are proving here a complete description of Brainf*ck's syntax \cite{bf}:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|l|}
+        \hline
+        \textbf{Symbol} & \textbf{Description} \\
+        \hline
+        \textgreater & Move the pointer to the right \\
+        \hline
+        \textless & Move the pointer to the left \\
+        \hline
+        + & Increment the memory cell at the pointer \\
+        \hline
+        - & Decrement the memory cell at the pointer \\
+        \hline
+        . & Output the character signified by the cell at the pointer \\
+        \hline
+        , & Input a character and store it in the cell at the pointer \\
+        \hline
+        [ & Jump past the matching ] if the cell at the pointer is 0 \\
+        \hline
+        ] & Jump back to the matching [ if the cell at the pointer is nonzero
+        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Syntax Notation}
+\label{ap:notations}
+
+\begin{lstlisting}[caption=Notations used for the defined operations. The goal
+    of this is to simplify program declaration]
+notation ">"   => Op.pInc
+notation "<"   => Op.pDec
+notation "+"   => Op.vInc
+notation "~"   => Op.vDec
+notation "^"   => Op.output
+notation ","   => Op.input
+notation "[" ops "]" => (Op.brakPair ops)
+notation a:50 "_" b:51  => Op.seq a b
+
+-- the following become equivalent definitions of [->+<]
+#eval (brakPair (seq vDec (seq pInc (seq vInc pDec))): Op)
+#eval ([~_>_+_<]: Op)
+\end{lstlisting}
+
+\end{document}
+
+% --- for inspo
+
+%\begin{credits}
+%\subsubsection{\ackname} A bold run-in heading in small font size at the end of the paper is
+%used for general acknowledgments, for example: This study was funded
+%by X (grant number Y).
