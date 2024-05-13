@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 ea46db383a0ff2ff447d50a3d70183a1944c4597 Stefan Radu <stefan270101@gmail.com> 1700840908 +0100	commit (initial): implement hvcalls name and return type assignment script
+ea46db383a0ff2ff447d50a3d70183a1944c4597 bda01cec6d7270408e9a039dd6560d20d48fada2 Stefan Radu <stefan270101@gmail.com> 1701029784 +0100	commit: add separate script for adding various data types

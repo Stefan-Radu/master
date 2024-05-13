@@ -1,0 +1,78 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{ghidra}
+{Ghidra} (Mar 2024), \url{https://github.com/NationalSecurityAgency/ghidra},
+  [Online; accessed 19. Mar. 2024]
+
+\bibitem{ghidra_license}
+{Ghidra License} (Mar 2024),
+  \url{https://github.com/NationalSecurityAgency/ghidra?tab=Apache-2.0-1-ov-file#readme},
+  [Online; accessed 19. Mar. 2024]
+
+\bibitem{kvm}
+{KVM} (Mar 2024), \url{https://linux-kvm.org/page/Main_Page}, [Online; accessed
+  20. Mar. 2024]
+
+\bibitem{virt-manager}
+{Virtual Machine Manager} (Jan 2024), \url{https://virt-manager.org}, [Online;
+  accessed 20. Mar. 2024]
+
+\bibitem{nested-virt}
+{Nested Guests - KVM} (Oct 2023),
+  \url{https://www.linux-kvm.org/page/Nested_Guests}, [Online; accessed 20.
+  Mar. 2024]
+
+\bibitem{retsync}
+{ret-sync} (Mar 2024),
+  \url{https://github.com/bootleg/ret-sync?tab=readme-ov-file#ghidra-usage},
+  [Online; accessed 21. Mar. 2024]
+
+\bibitem{numa}
+{Hyper-V Virtual NUMA Overview} (Oct 2016),
+  \url{https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn282282(v=ws.11)},
+  [Online; accessed 23. Mar. 2024]
+
+\bibitem{tlfs}
+alexgrest: {Hypervisor Specification} (May 2022),
+  \url{https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/tlfs/tlfs},
+  [Online; accessed 21. Mar. 2024]
+
+\bibitem{debugg}
+Domars: {Debugging Tools for Windows - Windows drivers} (Dec 2023),
+  \url{https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools},
+  [Online; accessed 21. Mar. 2024]
+
+\bibitem{kdnet}
+Domars: {Set Up KDNET Network Kernel Debugging Automatically - Windows drivers}
+  (Aug 2023),
+  \url{https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/setting-up-a-network-debugging-connection-automatically},
+  [Online; accessed 21. Mar. 2024]
+
+\bibitem{redpill}
+Linpro, R.: {Nested Virtualization - Hyper-V 2019 in qemu-kvm} (Apr 2021),
+  \url{https://www.redpill-linpro.com/techblog/2021/04/07/nested-virtualization-hyper-v-in-qemu-kvm.html},
+  [Online; accessed 20. Mar. 2024]
+
+\bibitem{ghidrathon}
+Mediant: {Ghidrathon} (Mar 2024), \url{https://github.com/mandiant/Ghidrathon},
+  [Online; accessed 20. Mar. 2024]
+
+\bibitem{petr}
+PeterGV: {Using WinDbg Over KDNet on QEMU-KVM} (Oct 2021),
+  \url{https://www.osr.com/blog/2021/10/05/using-windbg-over-kdnet-on-qemu-kvm},
+  [Online; accessed 20. Mar. 2024]
+
+\bibitem{intro_hyperv}
+siwat: {First Steps in Hyper-V Research {$\vert$} MSRC Blog {$\vert$} Microsoft
+  Security Response Center} (Mar 2024),
+  \url{https://msrc.microsoft.com/blog/2018/12/first-steps-in-hyper-v-research},
+  [Online; accessed 19. Mar. 2024]
+
+\bibitem{super_user}
+Strube, R.: {Kvm nested Virtualbox windows guest} (Sep 2020),
+  \url{https://superuser.com/a/1589286}, [Online; accessed 20. Mar. 2024]
+
+\end{thebibliography}

@@ -1,0 +1,112 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{tlfs}
+\@writefile{toc}{\contentsline {title}{On Reverse Engineering Hyper-V}{1}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\authcount {1}}
+\@writefile{toc}{\contentsline {author}{Ștefan-Octavian Radu}{1}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Lab Environment Specifications}{1}{subsection.1.1.1}\protected@file@percent }
+\citation{ghidra}
+\citation{ghidra}
+\citation{ghidra_license}
+\citation{intro_hyperv}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Outline}{2}{subsection.1.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Static Analysis Setup}{2}{section.1.2}\protected@file@percent }
+\newlabel{sec:static}{{2}{2}{Static Analysis Setup}{section.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Ghidra}{2}{subsection.1.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Setup}{2}{subsection.1.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Useful Imports.}{2}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Defining Types.}{3}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Scripting.}{3}{section*.4}\protected@file@percent }
+\newlabel{lst:struct}{{1.1}{3}{Python script which creates the \cc {HV_HYPERCALL_TABLE_ENTRY} structure}{lstlisting.1.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.1}Python script which creates the \lstinline [mathescape]{HV_HYPERCALL_TABLE_ENTRY} structure.}{3}{lstlisting.1.1}\protected@file@percent }
+\citation{ghidrathon}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A view of the \lstinline [mathescape]{HV\_HYPERCALL\_TABLE\_ENTRY} struct, which we defined through the Ghidra structure Editor. We used it to retype each entry in the hypercall table from the \lstinline [mathescape]{CONST} section of the binary.}}{4}{figure.1.1}\protected@file@percent }
+\newlabel{fig:struct_editor}{{1}{4}{A view of the \cc {HV\_HYPERCALL\_TABLE\_ENTRY} struct, which we defined through the Ghidra structure Editor. We used it to retype each entry in the hypercall table from the \cc {CONST} section of the binary}{figure.1.1}{}}
+\newlabel{lst:type_assign}{{1.2}{4}{Example of array creation and changing the name and return type of a hypercall function reference}{lstlisting.1.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.2}Example of array creation and changing the name and return type of a hypercall function reference.}{4}{lstlisting.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Result.}{5}{section*.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The \lstinline [mathescape]{CONST} section before setup \\is displayed as a random array of bytes.}}{5}{figure.1.2}\protected@file@percent }
+\newlabel{fig:const_before}{{2}{5}{The \cc {CONST} section before setup \\is displayed as a random array of bytes}{figure.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces After running the script, the \lstinline [mathescape]{CONST} section is displayed as an array. We can jump to any of the hypercall handlers' code by clicking on the \lstinline [mathescape]{handler_routine_fp} field of the corresponding entry.}}{5}{figure.1.3}\protected@file@percent }
+\newlabel{fig:const_after}{{3}{5}{After running the script, the \cc {CONST} section is displayed as an array. We can jump to any of the hypercall handlers' code by clicking on the \cc {handler_routine_fp} field of the corresponding entry}{figure.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Other Useful Features.}{5}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Other Tools.}{5}{section*.7}\protected@file@percent }
+\citation{kvm}
+\citation{virt-manager}
+\citation{debugg}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Dynamic Analysis Setup}{6}{section.1.3}\protected@file@percent }
+\newlabel{sec:dynamic}{{3}{6}{Dynamic Analysis Setup}{section.1.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Tools}{6}{subsection.1.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Setup}{6}{subsection.1.3.2}\protected@file@percent }
+\citation{nested-virt}
+\citation{redpill}
+\citation{super_user}
+\citation{redpill}
+\citation{petr}
+\citation{super_user}
+\citation{redpill}
+\citation{petr}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Debugger setup}{7}{subsection.1.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Debuggee Setup}{7}{subsection.1.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{CPU Configuration.}{7}{section*.8}\protected@file@percent }
+\newlabel{lst:xml}{{1.3}{7}{Settings necessary for running Hyper-V inside a QEMU/KVM-based virtual machine}{lstlisting.1.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.3}Settings necessary for running Hyper-V inside a QEMU/KVM-based virtual machine.}{7}{lstlisting.1.3}\protected@file@percent }
+\newlabel{line:tsx}{{2}{7}{Settings necessary for running Hyper-V inside a QEMU/KVM-based virtual machine}{lstnumber.1.3.2}{}}
+\newlabel{line:hyper}{{3}{7}{Settings necessary for running Hyper-V inside a QEMU/KVM-based virtual machine}{lstnumber.1.3.3}{}}
+\newlabel{line:vmx}{{4}{7}{Settings necessary for running Hyper-V inside a QEMU/KVM-based virtual machine}{lstnumber.1.3.4}{}}
+\citation{intro_hyperv}
+\citation{kdnet}
+\@writefile{toc}{\contentsline {subsubsection}{Further CPU Configuration.}{8}{section*.9}\protected@file@percent }
+\newlabel{lst:finalcpu}{{1.4}{8}{Reduced CPU configuration}{lstlisting.1.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.4}Reduced CPU configuration.}{8}{lstlisting.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Manual Setup.}{8}{section*.10}\protected@file@percent }
+\newlabel{lst:manual}{{1.5}{8}{Commands for the manual setup of the debuggee}{lstlisting.1.5}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.5}Commands for the manual setup of the debuggee.}{8}{lstlisting.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Kdnet Setup.}{8}{section*.11}\protected@file@percent }
+\citation{intro_hyperv}
+\citation{tlfs}
+\citation{retsync}
+\citation{numa}
+\newlabel{lst:check}{{1.6}{9}{Optional commands which can be run to inspect the config}{lstlisting.1.6}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.6}Optional commands which can be run to inspect the config.}{9}{lstlisting.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Debugging}{9}{subsection.1.3.5}\protected@file@percent }
+\newlabel{lst:windbg}{{1.7}{9}{Commands to run for starting windbg and accepting connections from the debuggee to the kernel and hypervisor debuggers}{lstlisting.1.7}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.7}Commands to run for starting windbg and accepting connections from the debuggee to the kernel and hypervisor debuggers.}{9}{lstlisting.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{A Useful Extension.}{9}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Findings}{9}{section.1.4}\protected@file@percent }
+\newlabel{sec:findings}{{4}{9}{Findings}{section.1.4}{}}
+\citation{numa}
+\citation{tlfs}
+\newlabel{lst:numaif}{{1.8}{10}{Decompilartion of the \cc {HvCallQueryNumaDistance} hypercall handler, after being ``beautified'' in Gidra}{lstlisting.1.8}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.8}Decompilartion of the \lstinline [mathescape]{HvCallQueryNumaDistance} hypercall handler, after being ``beautified'' in Gidra.}{10}{lstlisting.1.8}\protected@file@percent }
+\newlabel{line:default}{{3}{10}{Decompilartion of the \cc {HvCallQueryNumaDistance} hypercall handler, after being ``beautified'' in Gidra}{lstnumber.1.8.3}{}}
+\newlabel{line:nondef}{{6}{10}{Decompilartion of the \cc {HvCallQueryNumaDistance} hypercall handler, after being ``beautified'' in Gidra}{lstnumber.1.8.6}{}}
+\newlabel{line:ret1}{{10}{10}{Decompilartion of the \cc {HvCallQueryNumaDistance} hypercall handler, after being ``beautified'' in Gidra}{lstnumber.1.8.10}{}}
+\newlabel{line:numafun}{{14}{10}{Decompilartion of the \cc {HvCallQueryNumaDistance} hypercall handler, after being ``beautified'' in Gidra}{lstnumber.1.8.14}{}}
+\newlabel{lst:get_numa}{{1.9}{11}{Main part of the \cc {get_numa_distance} function decompilation from Ghidra}{lstlisting.1.9}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.9}Main part of the \lstinline [mathescape]{get_numa_distance} function decompilation from Ghidra.}{11}{lstlisting.1.9}\protected@file@percent }
+\newlabel{lst:array}{{1.10}{11}{Main part of the \cc {numa_find} function decompilation from Ghidra}{lstlisting.1.10}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.10}Main part of the \lstinline [mathescape]{numa_find} function decompilation from Ghidra.}{11}{lstlisting.1.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusions}{12}{section.1.5}\protected@file@percent }
+\newlabel{sec:conc}{{5}{12}{Conclusions}{section.1.5}{}}
+\bibstyle{splncs04}
+\bibdata{bibliography.bib}
+\bibcite{ghidra}{1}
+\bibcite{ghidra_license}{2}
+\bibcite{kvm}{3}
+\bibcite{virt-manager}{4}
+\bibcite{nested-virt}{5}
+\bibcite{retsync}{6}
+\bibcite{numa}{7}
+\bibcite{tlfs}{8}
+\bibcite{debugg}{9}
+\bibcite{kdnet}{10}
+\bibcite{redpill}{11}
+\bibcite{ghidrathon}{12}
+\bibcite{petr}{13}
+\bibcite{intro_hyperv}{14}
+\bibcite{super_user}{15}
+\gdef \@abspage@last{13}
