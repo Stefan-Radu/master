@@ -1,0 +1,53 @@
+\chapter{Background Information} % TODO obv change this
+
+In this chapter we will cover concepts relevant for the rest of the paper. %TODO continue
+
+\section{Reverse Engineering} % TODO obv change this
+% TODO get a glossary going
+% TODO glossary list:
+% * reverse engineering
+
+As stated on \emph{Wikipedia}: \emph{Reverse engineering is a process or method through which one attempts to understand through deductive reasoning how a previously made device, process, system, or piece of software accomplishes a task with very little (if any) insight into exactly how it does so} \cite{re_wiki}.
+% TODO maybe give more context into historical examples of reverse engineering and how they benefited society: hierogliphs, russian plane, telescope, IBM pc, etc.
+
+% TODO define malware
+
+In this work we will focus on reverse engineering pieces of software in the context of performing security research or malware analysis. Typically, in such contexts, the goal is to understand the behaviour of a piece of software, without having access to its source code. Depending on the type of analysis, a reverse engineer might have different approaches. 
+
+They might focus on gaining a comprehensive understanding of specific parts of the software in order to identify weaknesses, or more commonly named \emph{vulnerabilities}. The analysis could be restricted to specific parts because for multiple reasons which include, but are not limited to: the full program being to big to justify performing a full analysis, or the existence of prior knowledge which gives higher priority to the analysis of certain code regions. With the knowledge obtained from RE, the engineer can identify and prove the existence of attack vectors on a system that is running this software. They might then write a report which covers the risks to which entities running the software are exposed, describing in detail the finding and, eventually exemplifying how an attacker might abuse the discovered vulnerabilities. In this case, the end goal is to initiate the process of patching the vulnerable piece of software. % TODO might want to cite here
+
+In other instances, the engineers might perform a full and comprehensive analysis of piece of software. This is typically done when dealing with malware. The malware analyst will first try to determine if the piece of software is in fact malicious or not. If the code is malicious, it is important to determine its behaviour, how it interacts with the system, or with outside entities (possibly by creating network traffic). Further, analysts might study and document novel techniques employed by attackers. They might also integrate the newly find malware into a detection system to prevent future uses of the respective malware \cite{malware_crowdstrike}.
+
+Regardless of the goal, RE falls in one of two broad categories which determine the typical approach and the tooling used: \textbf{static analysis} and \textbf{dynamic analysis}.
+
+\subsection{Static Analysis}
+
+Static analysis represents the multitude of techniques employed to analyse a program without executing it. These techniques range in difficulty and complexity starting from reading source code, to reading assembly, attempting to decompile the binary and ultimately to using very advanced tools and theoretical knowledge such as symbolic execution engines, SMT solvers or formal methods.
+
+In its most basic form, static analysis is equivalent with reading the source code in order to understand what the program does. However, in the context of this paper, we are dealing with binary files, compiled to machine code. The source code is not available to us, so we must resort to other analysis techniques. One option is to convert the machine code into the human readable form, called assembly. The process is known as machine code disassembly. Assembly code is typically very hard to understand for humans, but from it the logic of the program can be successfully recovered, given enough time and effort. One advantage of static analysis through reading assembly is that the entry barrier is not high in terms of the tooling required. A very basic tool such as \cc{objdump} \cite{TODO} can be enough for simple programs, but most likely a more feature rich tool such as \cc{radare2}/\cc{cutter} \cite{TODO} might be more suitable, as these are able to display basic blocks and how all such basic block(BB TODO) relate to each other and form the Control Flow Graph(CFG TODO).
+
+Reverse engineers typically default to more advanced static analysis tools, such as IDA or Ghidra. These tools feature a suite of functionalities, out of which, probably the most prominent is the \emph{decompiler}. Compilation is the process of converting source code into machine code. Decompilation is the opposite: the process of converting machine code, back into source code. Compared to the disassembly process, which is deterministic and corresponds exactly to the assembly process, the decompilation process will almost never yield back the original source code. This is the case because a lot of information useful to programmers, but useless for the CPU(TODO) is lost during the compilation process. This information includes, but is not limited to: variable and function names, type information, custom defined data types such as structures, or particular language features. This is why decompilers will always output an approximation of the original code. Nonetheless, decompilers are very powerful tools which can speed up the process of statically analysing binary files by a long margin.
+
+\subsection{Dynamic Analysis}
+
+%Incep sa scriu la disertatie asta e prima linie.
+%Should be english though.
+
+%List of ideas and sections to cover:
+
+%* Reverse engineering
+%* What/why is obfuscation
+%* Obfuscation techniques
+%* Vms
+%* Vm-based obfuscation
+%* State of the art VM-based obfuscation
+%* Techniques for reverse engineering vm-based obfuscation
+%* Novel approaches - Symbolic execution-based tool
+%* On Symbolic execution
+%* Popular Symbolic execution tools
+    %* Angr
+    %* Miasm
+    %* comparison
+%* Implementation in both
+    %* comparison
+%* Future directions
