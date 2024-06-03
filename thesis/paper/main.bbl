@@ -19,7 +19,40 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{re-wiki}{misc}{}
+    \entry{concept_of_da_1999}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=0bab8231c87d1dd0fdffe7d7eeee7908}{%
+           family={Ball},
+           familyi={B\bibinitperiod},
+           given={Thoms},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Toulouse, France}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{0bab8231c87d1dd0fdffe7d7eeee7908}
+      \strng{fullhash}{0bab8231c87d1dd0fdffe7d7eeee7908}
+      \strng{bibnamehash}{0bab8231c87d1dd0fdffe7d7eeee7908}
+      \strng{authorbibnamehash}{0bab8231c87d1dd0fdffe7d7eeee7908}
+      \strng{authornamehash}{0bab8231c87d1dd0fdffe7d7eeee7908}
+      \strng{authorfullhash}{0bab8231c87d1dd0fdffe7d7eeee7908}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Dynamic analysis is the analysis of the properties of a running program. In this paper, we explore two new dynamic analyses based on program profiling:Frequency Spectrum Analysis. We show how analyzing the frequencies of program entities in a single execution can help programmers to decompose a program, identify related computations, and find computations related to specific input and output characteristics of a program.Coverage Concept Analysis. Concept analysis of test coverage data computes dynamic analogs to static control flow relationships such as domination, postdomination, and regions. Comparison of these dynamically computed relationships to their static counterparts can point to areas of code requiring more testing and can aid programmers in understanding how a program and its test sets relate to one another.}
+      \field{booktitle}{Proceedings of the 7th European Software Engineering Conference Held Jointly with the 7th ACM SIGSOFT International Symposium on Foundations of Software Engineering}
+      \field{isbn}{3540665382}
+      \field{series}{ESEC/FSE-7}
+      \field{title}{The concept of dynamic analysis}
+      \field{year}{1999}
+      \field{pages}{216\bibrangedash 234}
+      \range{pages}{19}
+    \endentry
+    \entry{re_wiki}{misc}{}
       \name{author}{1}{}{%
         {{hash=3a6de00f5a66ceb09c099e969c33bc67}{%
            family={{Contributors to Wikimedia projects}},
@@ -46,13 +79,44 @@
       \verb https://en.wikipedia.org/w/index.php?title=Reverse_engineering&oldid=1221145420
       \endverb
     \endentry
-    \entry{fake_citation}{article}{}
-      \name{author}{1}{}{%
-        {{hash=ec08e6f01da5f3814f28a70c89c64656}{%
-           family={Knuth},
-           familyi={K\bibinitperiod},
-           given={Donald\bibnamedelima E.},
-           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+    \entry{malware_crowdstrike}{misc}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Crowdstrike}
+      \field{month}{4}
+      \field{note}{[Online; accessed 21. May 2024]}
+      \field{title}{{Malware Analysis: Steps {\&} Examples - CrowdStrike}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.crowdstrike.com/cybersecurity-101/malware/malware-analysis
+      \endverb
+      \verb{url}
+      \verb https://www.crowdstrike.com/cybersecurity-101/malware/malware-analysis
+      \endverb
+    \endentry
+    \entry{da_survey_2019}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9e89c829f7bf3edbce5af40c6c55310f}{%
+           family={Or-Meir},
+           familyi={O\bibinithyphendelim M\bibinitperiod},
+           given={Ori},
+           giveni={O\bibinitperiod}}}%
+        {{hash=6f90004606ced7c88b58840e1a989316}{%
+           family={Nissim},
+           familyi={N\bibinitperiod},
+           given={Nir},
+           giveni={N\bibinitperiod}}}%
+        {{hash=48129f0a13603c1456c886b59a8498d3}{%
+           family={Elovici},
+           familyi={E\bibinitperiod},
+           given={Yuval},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=e583bae19511d6aca7ecc9e44953ed07}{%
+           family={Rokach},
+           familyi={R\bibinitperiod},
+           given={Lior},
+           giveni={L\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {New York, NY, USA}%
@@ -60,36 +124,90 @@
       \list{publisher}{1}{%
         {Association for Computing Machinery}%
       }
-      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \strng{namehash}{eab38e5a333e118ea75b0e6f0a89aee8}
+      \strng{fullhash}{cb11f1cc60c249e3c03a9155ab403c48}
+      \strng{bibnamehash}{cb11f1cc60c249e3c03a9155ab403c48}
+      \strng{authorbibnamehash}{cb11f1cc60c249e3c03a9155ab403c48}
+      \strng{authornamehash}{eab38e5a333e118ea75b0e6f0a89aee8}
+      \strng{authorfullhash}{cb11f1cc60c249e3c03a9155ab403c48}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{abstract}{Although malicious software (malware) has been around since the early days of computers, the sophistication and innovation of malware has increased over the years. In particular, the latest crop of ransomware has drawn attention to the dangers of malicious software, which can cause harm to private users as well as corporations, public services (hospitals and transportation systems), governments, and security institutions. To protect these institutions and the public from malware attacks, malicious activity must be detected as early as possible, preferably before it conducts its harmful acts. However, it is not always easy to know what to look for—especially when dealing with new and unknown malware that has never been seen. Analyzing a suspicious file by static or dynamic analysis methods can provide relevant and valuable information regarding a file's impact on the hosting system and help determine whether the file is malicious or not, based on the method's predefined rules. While various techniques (e.g., code obfuscation, dynamic code loading, encryption, and packing) can be used by malware writers to evade static analysis (including signature-based anti-virus tools), dynamic analysis is robust to these techniques and can provide greater understanding regarding the analyzed file and consequently can lead to better detection capabilities. Although dynamic analysis is more robust than static analysis, existing dynamic analysis tools and techniques are imperfect, and there is no single tool that can cover all aspects of malware behavior. The most recent comprehensive survey performed in this area was published in 2012. Since that time, the computing environment has changed dramatically with new types of malware (ransomware, cryptominers), new analysis methods (volatile memory forensics, side-channel analysis), new computing environments (cloud computing, IoT devices), new machine-learning algorithms, and more. The goal of this survey is to provide a comprehensive and up-to-date overview of existing methods used to dynamically analyze malware, which includes a description of each method, its strengths and weaknesses, and its resilience against malware evasion techniques. In addition, we include an overview of prominent studies presenting the usage of machine-learning methods to enhance dynamic malware analysis capabilities aimed at detection, classification, and categorization.}
       \field{issn}{0360-0300}
       \field{journaltitle}{ACM Comput. Surv.}
-      \field{month}{12}
-      \field{number}{4}
-      \field{title}{Structured Programming with \textit{Go to} Statements}
-      \field{volume}{6}
-      \field{year}{1974}
-      \field{pages}{261\bibrangedash 301}
-      \range{pages}{41}
+      \field{month}{9}
+      \field{number}{5}
+      \field{title}{Dynamic Malware Analysis in the Modern Era—A State of the Art Survey}
+      \field{volume}{52}
+      \field{year}{2019}
       \verb{doi}
-      \verb 10.1145/356635.356640
+      \verb 10.1145/3329786
       \endverb
       \verb{urlraw}
-      \verb https://doi.org/10.1145/356635.356640
+      \verb https://doi.org/10.1145/3329786
       \endverb
       \verb{url}
-      \verb https://doi.org/10.1145/356635.356640
+      \verb https://doi.org/10.1145/3329786
+      \endverb
+      \keyw{malware,evasion,detection,behavioral analysis,Dynamic analysis}
+    \endentry
+    \entry{crusu_relabs}{misc}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{[Online; accessed 27. May 2024]}
+      \field{title}{{RE: Reverse Engineering}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://cs.unibuc.ro/~crusu/re/labs.html
+      \endverb
+      \verb{url}
+      \verb https://cs.unibuc.ro/~crusu/re/labs.html
       \endverb
     \endentry
+    \entry{all_about_taint_2010}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=306cb39322d65280b134f67c7898e024}{%
+           family={Schwartz},
+           familyi={S\bibinitperiod},
+           given={Edward\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=35db40352e7e903f8222f5b595ffc4ae}{%
+           family={Avgerinos},
+           familyi={A\bibinitperiod},
+           given={Thanassis},
+           giveni={T\bibinitperiod}}}%
+        {{hash=cbeda943714c044f03a749cf0a15f952}{%
+           family={Brumley},
+           familyi={B\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{a543b93fd81dd74ef8e8dd990376c53a}
+      \strng{fullhash}{a543b93fd81dd74ef8e8dd990376c53a}
+      \strng{bibnamehash}{a543b93fd81dd74ef8e8dd990376c53a}
+      \strng{authorbibnamehash}{a543b93fd81dd74ef8e8dd990376c53a}
+      \strng{authornamehash}{a543b93fd81dd74ef8e8dd990376c53a}
+      \strng{authorfullhash}{a543b93fd81dd74ef8e8dd990376c53a}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2010 IEEE Symposium on Security and Privacy}
+      \field{title}{All You Ever Wanted to Know about Dynamic Taint Analysis and Forward Symbolic Execution (but Might Have Been Afraid to Ask)}
+      \field{year}{2010}
+      \field{pages}{317\bibrangedash 331}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1109/SP.2010.26
+      \endverb
+      \keyw{Filters;Runtime;Information analysis;Testing;Computerized monitoring;Performance analysis;Information security;Reactive power;Privacy;Heuristic algorithms;taint analysis;symbolic execution;dynamic analysis}
+    \endentry
   \enddatalist
+  \missing{TODO}
 \endrefsection
 \endinput
 

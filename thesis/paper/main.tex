@@ -18,9 +18,15 @@
 % Suport pentru mai multe limbi
 \usepackage{polyglossia}
 
-% Setează limba textului la română
+% Acronyms and glossary support
+\usepackage[acronym]{glossaries}
+
+% Lorem ipsum place holders
+\usepackage{lipsum}  
+
+% Setează limba textului la engleză
 \setdefaultlanguage{english}
-% Am nevoie de engleză pentru rezumat
+% Am nevoie de română pentru rezumat
 \setotherlanguages{romanian}
 
 % Indentează și primul paragraf al fiecărei noi secțiuni
@@ -67,12 +73,12 @@
     urlcolor={blue}
 ]{hyperref}
 
-% Simboluri matematice codificate Unicode
-\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
-
 % Comenzi matematice
 \usepackage{amsmath}
 \usepackage{mathtools}
+
+% Simboluri matematice codificate Unicode
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
 
 % Formule matematice
 \newcommand{\bigO}[1]{\symcal{O}\left(#1\right)}
@@ -102,7 +108,7 @@
 \usepackage{realboxes}
 
 % appendix title
-\usepackage[titletoc]{appendix}
+%\usepackage[titletoc]{appendix}
 
 \definecolor{lstgreen}{rgb}{0,0.6,0}
 \definecolor{lstgray}{rgb}{0.5,0.5,0.5}
@@ -114,7 +120,7 @@
     keywordstyle=\color{blue},
     numberstyle=\tiny\color{lstgray},
     stringstyle=\color{magenta},
-    basicstyle=\ttfamily\small,
+    basicstyle=\ttfamily\footnotesize,
     captionpos=b,
     keepspaces=true,
     numbers=left,
@@ -124,13 +130,14 @@
     tabsize=2,
     frame=lines,
     language=c,
-    escapechar=|,
+    escapeinside={@}{@},
     breaklines=true,
 }
-\lstset{style=mystyle}
+\lstset{style=mystyle, mathescape=false}
 
 % missing math symbols
 \usepackage{stmaryrd}
+
 
 % Metadate
 \title{Titlul lucrării de licență}
@@ -138,6 +145,10 @@
 
 % Generează variabilele cu @
 \makeatletter
+
+% Generate glossaries
+\makeglossaries
+\input{./glossary.tex}
 
 \begin{document}
 
@@ -175,6 +186,10 @@
 \include{2-continut}
 \include{3-concluzii}
 
+\printglossary[type=\acronymtype]
+\printglossary
+
+\newpage
 \printbibliography[heading=bibintoc]
 
 \end{document}

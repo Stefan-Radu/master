@@ -15,3 +15,78 @@
 	note = {[Online; accessed 21. May 2024]},
 	url = {https://www.crowdstrike.com/cybersecurity-101/malware/malware-analysis}
 }
+
+@article{da_survey_2019,
+author = {Or-Meir, Ori and Nissim, Nir and Elovici, Yuval and Rokach, Lior},
+title = {Dynamic Malware Analysis in the Modern Era—A State of the Art Survey},
+year = {2019},
+issue_date = {September 2020},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {52},
+number = {5},
+issn = {0360-0300},
+url = {https://doi.org/10.1145/3329786},
+doi = {10.1145/3329786},
+abstract = {Although malicious software (malware) has been around since the early days of computers, the sophistication and innovation of malware has increased over the years. In particular, the latest crop of ransomware has drawn attention to the dangers of malicious software, which can cause harm to private users as well as corporations, public services (hospitals and transportation systems), governments, and security institutions. To protect these institutions and the public from malware attacks, malicious activity must be detected as early as possible, preferably before it conducts its harmful acts. However, it is not always easy to know what to look for—especially when dealing with new and unknown malware that has never been seen. Analyzing a suspicious file by static or dynamic analysis methods can provide relevant and valuable information regarding a file's impact on the hosting system and help determine whether the file is malicious or not, based on the method's predefined rules. While various techniques (e.g., code obfuscation, dynamic code loading, encryption, and packing) can be used by malware writers to evade static analysis (including signature-based anti-virus tools), dynamic analysis is robust to these techniques and can provide greater understanding regarding the analyzed file and consequently can lead to better detection capabilities. Although dynamic analysis is more robust than static analysis, existing dynamic analysis tools and techniques are imperfect, and there is no single tool that can cover all aspects of malware behavior. The most recent comprehensive survey performed in this area was published in 2012. Since that time, the computing environment has changed dramatically with new types of malware (ransomware, cryptominers), new analysis methods (volatile memory forensics, side-channel analysis), new computing environments (cloud computing, IoT devices), new machine-learning algorithms, and more. The goal of this survey is to provide a comprehensive and up-to-date overview of existing methods used to dynamically analyze malware, which includes a description of each method, its strengths and weaknesses, and its resilience against malware evasion techniques. In addition, we include an overview of prominent studies presenting the usage of machine-learning methods to enhance dynamic malware analysis capabilities aimed at detection, classification, and categorization.},
+journal = {ACM Comput. Surv.},
+month = {sep},
+articleno = {88},
+numpages = {48},
+keywords = {malware, evasion, detection, behavioral analysis, Dynamic analysis}
+}
+
+@inproceedings{concept_of_da_1999,
+author = {Ball, Thoms},
+title = {The concept of dynamic analysis},
+year = {1999},
+isbn = {3540665382},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+abstract = {Dynamic analysis is the analysis of the properties of a running program. In this paper, we explore two new dynamic analyses based on program profiling:Frequency Spectrum Analysis. We show how analyzing the frequencies of program entities in a single execution can help programmers to decompose a program, identify related computations, and find computations related to specific input and output characteristics of a program.Coverage Concept Analysis. Concept analysis of test coverage data computes dynamic analogs to static control flow relationships such as domination, postdomination, and regions. Comparison of these dynamically computed relationships to their static counterparts can point to areas of code requiring more testing and can aid programmers in understanding how a program and its test sets relate to one another.},
+booktitle = {Proceedings of the 7th European Software Engineering Conference Held Jointly with the 7th ACM SIGSOFT International Symposium on Foundations of Software Engineering},
+pages = {216–234},
+numpages = {19},
+location = {Toulouse, France},
+series = {ESEC/FSE-7}
+}
+
+@misc{crusu_relabs,
+	title = {{RE: Reverse Engineering}},
+	year = {2023},
+	month = apr,
+	note = {[Online; accessed 27. May 2024]},
+	url = {https://cs.unibuc.ro/~crusu/re/labs.html}
+}
+
+
+@INPROCEEDINGS{all_about_taint_2010,
+  author={Schwartz, Edward J. and Avgerinos, Thanassis and Brumley, David},
+  booktitle={2010 IEEE Symposium on Security and Privacy}, 
+  title={All You Ever Wanted to Know about Dynamic Taint Analysis and Forward Symbolic Execution (but Might Have Been Afraid to Ask)}, 
+  year={2010},
+  volume={},
+  number={},
+  pages={317-331},
+  keywords={Filters;Runtime;Information analysis;Testing;Computerized monitoring;Performance analysis;Information security;Reactive power;Privacy;Heuristic algorithms;taint analysis;symbolic execution;dynamic analysis},
+  doi={10.1109/SP.2010.26}}
+
+@article{survey_symbolic_2018,
+author = {Baldoni, Roberto and Coppa, Emilio and D’elia, Daniele Cono and Demetrescu, Camil and Finocchi, Irene},
+title = {A Survey of Symbolic Execution Techniques},
+year = {2018},
+issue_date = {May 2019},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {51},
+number = {3},
+issn = {0360-0300},
+url = {https://doi.org/10.1145/3182657},
+doi = {10.1145/3182657},
+abstract = {Many security and software testing applications require checking whether certain properties of a program hold for any possible usage scenario. For instance, a tool for identifying software vulnerabilities may need to rule out the existence of any backdoor to bypass a program’s authentication. One approach would be to test the program using different, possibly random inputs. As the backdoor may only be hit for very specific program workloads, automated exploration of the space of possible inputs is of the essence. Symbolic execution provides an elegant solution to the problem, by systematically exploring many possible execution paths at the same time without necessarily requiring concrete inputs. Rather than taking on fully specified input values, the technique abstractly represents them as symbols, resorting to constraint solvers to construct actual instances that would cause property violations. Symbolic execution has been incubated in dozens of tools developed over the past four decades, leading to major practical breakthroughs in a number of prominent software reliability applications. The goal of this survey is to provide an overview of the main ideas, challenges, and solutions developed in the area, distilling them for a broad audience.},
+journal = {ACM Comput. Surv.},
+month = {may},
+articleno = {50},
+numpages = {39},
+keywords = {static analysis, software testing, concolic execution, Symbolic execution}
+}

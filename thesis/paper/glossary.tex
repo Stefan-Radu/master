@@ -1,0 +1,38 @@
+\newcommand{\newglossaryentrywithacronym}[3]{
+    % From https://tex.stackexchange.com/questions/8946/how-to-combine-acronym-and-glossary
+    %%% The glossary entry the acronym links to   
+    \newglossaryentry{#1_gls}{
+        name={#1},
+        long={#2},
+        description={#3}
+    }
+
+    % Acronym pointing to glossary
+    \newglossaryentry{#1}{
+        type=\acronymtype,
+        name={#1},
+        description={#2},
+        first={#2 (#1)\glsadd{#1_gls}},
+        see={[Glossary:]{#1_gls}},
+    }
+}
+
+\newcommand{\newacro}[2]{
+    \newglossaryentry{#1}{
+        type=\acronymtype,
+        name={#1},
+        description={#2},
+        first={#2 (#1)},
+    }
+}
+
+% Lorem ipsum place holders
+\usepackage{lipsum}  
+
+\newglossaryentrywithacronym{AC} {Arithmetic Cromatics} {
+    \lipsum[2-4]
+    asdlfkjasldfkjalsdjkflasdjf
+}
+
+\newacro{SE}{Symbolic Execution}
+\newacro{CE}{Concrete Execution}

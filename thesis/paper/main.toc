@@ -4,10 +4,15 @@
 \selectlanguage *[]{english}
 \selectlanguage *[]{english}
 \contentsline {chapter}{\numberline {1}Introducere}{4}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Lorem ipsum}{4}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Dolor sit amet}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Quis tellus vitae}{5}{subsection.1.2.1}%
-\contentsline {chapter}{\numberline {2}Background Information}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Reverse Engineering}{6}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Concluzii}{7}{chapter.3}%
-\contentsline {chapter}{Bibliography}{8}{chapter*.2}%
+\contentsline {chapter}{\numberline {2}Background Information}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Reverse Engineering}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Static Analysis}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Dynamic Analysis}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Debugging}{8}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Function Call Analysis}{9}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Fuzzing}{10}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Dynamic Taint analysis}{10}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Symbolic Execution}{10}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Mixed Approaches}{11}{subsection.2.3.6}%
+\contentsline {chapter}{\numberline {3}Concluzii}{12}{chapter.3}%
+\contentsline {chapter}{Bibliography}{14}{chapter*.4}%

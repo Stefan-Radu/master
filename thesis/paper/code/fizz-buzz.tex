@@ -1,0 +1,14 @@
+void fizzbuzz(int c) {
+    if (c < 1) {
+        print("too small");
+    } else if (c > 15) {
+        print("too big");
+    } else if (c % 3 == 0 || c % 5 == 0) {
+        if (c % 3 == 0)
+            print("fizz");
+        if (c % 5 == 0) 
+            print("buzz");
+    } else {
+        print(c); @\label{code:fizzbuzz-1}@
+    }
+}
