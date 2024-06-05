@@ -1,0 +1,441 @@
+#=============================================
+
+# This is the config file for the
+# 2023 uiuctf vmwhere VM
+
+#=============================================
+
+[arch]
+
+name = "vmwhere"
+alias_names = ["VMWHERE"]
+
+bits = 64
+endness = "LE" # should be in [ LE, BE, ANY ]
+instruction_alignment = 1
+ip_offset = 0
+sp_offset = 2
+stack_change = 8
+stack_size = 0x1000
+stack_end= 0x80000000
+stack_alignment = 8
+syscall_reg = 'sysnum'
+
+#=============================================
+
+[arch.register_list.ip]
+
+alias_names = ['pc']
+size = 8
+vex_offset=0
+# vex_offset = 0  -> TODO idk if this is necessary
+
+[arch.register_list.bp]
+
+alias_names = []
+size = 8
+vex_offset=8
+
+[arch.register_list.sp]
+
+alias_names = []
+size = 8
+vex_offset=16
+
+[arch.register_list.sysnum]
+
+alias_names = []
+size=8
+vex_offset=24
+
+[arch.register_list.ip_at_syscall]
+
+alias_names = []
+size=8
+vex_offset=32
+
+#=============================================
+
+## -------------------------
+# Instruction categories
+# * Arithmetic and Logical (add, sub, and, xor, shl, etc)
+# * Data Movement (mov, load, store, push, etc)
+# * Control Flow and Comparisons / Test (jmp, call, ret, cmp, test, etc)
+# * System (syscalls, etc)
+# * Special (nop, hlt, etc) # anything that doesn't fit in the above
+
+# ENUM = { AL, DM, CF, SYS, SP }
+## -------------------------
+# Type of operations you can use when defining an instruction.
+# This is limited and enforced by the .pyvex Instruction class
+
+# ENUM = { 
+#   constant,           -- UNSUPPORTED
+#   get,                -- UNSUPPORTED
+#   put,                -- UNSUPPORTED
+#   load,               -- UNSUPPORTED
+#   store,              -- UNSUPPORTED
+#   put_conditional,    -- UNSUPPORTED
+#   jump,               -- UNSUPPORTED
+#   ite,                -- UNSUPPORTED
+#   ccal,               -- UNSUPPORTED
+#   dirty               -- UNSUPPORTED
+# }
+
+# TODO this seems not to be used at all
+
+## -------------------------
+
+[lifter]
+
+[lifter.types]
+PTR_TYPE = 'int_64'
+STACK_ENTRY_TYPE = 'int_8'
+
+[lifter.disassemble_functions]
+
+generic = '''
+arg = self.rawbits[2:]
+if arg:
+    arg = int(self.rawbits[2:], 16)
+    arg = hex(arg)
+return self.addr, self.name, [arg], self.description'''
+
+push = '''
+arg = bytes.fromhex(self.rawbits[2:])
+return self.addr, self.name, [arg], self.description'''
+
+jmp = '''
+arg = int(self.rawbits[2:], 16)
+if arg & (0x8000):
+    offset = arg - 0xffff - 1
+else:
+    offset = arg
+jmp = self.addr + 3 + offset
+return self.addr, self.name, [hex(jmp), jmp, offset], self.description'''
+
+[lifter.defaults]
+
+disassemble = 'generic'
+
+[lifter.opcodes]
+
+[lifter.opcodes.exit]
+bin_format = [ 0x0 ]
+description = 'Just exit'
+behavior = '''
+# assert(self.last_instruction == True)
+self.jump(None, self.constant(self.addr, PTR_TYPE), jumpkind=JumpKind.Exit) '''
+
+[[lifter.opcodes.exit.override]]
+
+method_name = 'parse'
+args = [ 'bitstream' ]
+behavior = '''
+self.last_instruction = False
+data = Instruction.parse(self, bitstream)
+try:
+    bitstream.peek(8)
+except bitstring.ReadError:
+    # We ran off the end!
+    self.last_instruction = True
+return data '''
+# TODO add options for all overrides
+
+[lifter.opcodes.add]
+
+bin_format = [ 0x1 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+a = self.load(sp - 1, STACK_ENTRY_TYPE)
+b = self.load(sp - 2, STACK_ENTRY_TYPE)
+b = b + a
+self.store(b, sp - 2)
+self.put(sp - 1, SP_REG) '''
+
+[lifter.opcodes.sub]
+
+bin_format = [ 0x2 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+a = self.load(sp - 1, STACK_ENTRY_TYPE)
+b = self.load(sp - 2, STACK_ENTRY_TYPE)
+b = b - a
+self.store(b, sp - 2)
+self.put(sp - 1, SP_REG) '''
+
+[lifter.opcodes.and]
+
+bin_format = [ 0x3 ] 
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+a = self.load(sp - 1, STACK_ENTRY_TYPE)
+b = self.load(sp - 2, STACK_ENTRY_TYPE)
+b = b & a
+self.store(b, sp - 2)
+self.put(sp - 1, SP_REG) '''
+
+[lifter.opcodes.or]
+
+bin_format = [ 0x4 ] 
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+a = self.load(sp - 1, STACK_ENTRY_TYPE)
+b = self.load(sp - 2, STACK_ENTRY_TYPE)
+b = b | a
+self.store(b, sp - 2)
+self.put(sp - 1, SP_REG) '''
+
+[lifter.opcodes.xor]
+
+bin_format = [ 0x5 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+a = self.load(sp - 1, STACK_ENTRY_TYPE)
+b = self.load(sp - 2, STACK_ENTRY_TYPE)
+b = b ^ a
+self.store(b, sp - 2)
+self.put(sp - 1, SP_REG) '''
+
+[lifter.opcodes.shl]
+
+bin_format = [ 0x6 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+a = self.load(sp - 1, STACK_ENTRY_TYPE)
+b = self.load(sp - 2, STACK_ENTRY_TYPE)
+b = b << (a & 0x1f)
+self.store(b, sp - 2)
+self.put(sp - 1, SP_REG) '''
+
+[lifter.opcodes.shr]
+
+bin_format = [ 0x7 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+a = self.load(sp - 1, STACK_ENTRY_TYPE)
+b = self.load(sp - 2, STACK_ENTRY_TYPE)
+b = b >> (a & 0x1f)
+self.store(b, sp - 2)
+self.put(sp - 1, SP_REG) '''
+
+[lifter.opcodes.read]
+
+bin_format = [ 0x8 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+self.put(sp + 1, SP_REG)
+self.put(self.constant(0, PTR_TYPE), SYSNUM_REG)
+dst = self.constant(self.addr + 1, PTR_TYPE)
+self.jump(None, dst, jumpkind=JumpKind.Syscall) '''
+
+[lifter.opcodes.write]
+
+bin_format = [ 0x9 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+self.put(sp - 1, SP_REG)
+self.put(self.constant(1, PTR_TYPE), SYSNUM_REG)
+dst = self.constant(self.addr + 1, PTR_TYPE)
+self.jump(None, dst, jumpkind=JumpKind.Syscall) '''
+
+[lifter.opcodes.push]
+
+bin_format = [ 0xa, 'xxxxxxxx' ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+x = self.constant(int(self.data['x'], 2), STACK_ENTRY_TYPE)
+sp = self.get(SP_REG, PTR_TYPE)
+self.store(x, sp)
+self.put(sp + 1, SP_REG) '''
+disassemble = 'push'
+
+[lifter.opcodes.jlz]
+
+bin_format = [ 0xb, ['x' , 16 ] ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+jump_offset = int(self.data['x'], 2)
+dst = self.constant(self.addr + 3 + jump_offset, Type.int_16)
+
+sp = self.get(SP_REG, PTR_TYPE)
+top = self.load(sp - 1, STACK_ENTRY_TYPE).signed
+zero = self.constant(0, STACK_ENTRY_TYPE)
+
+self.jump(top < zero, dst) '''
+disassemble = 'jmp'
+
+[lifter.opcodes.jz]
+
+bin_format = [ 0xc, [ 'x', 16 ] ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+jump_offset = int(self.data['x'], 2)
+dst = self.constant(self.addr + 3 + jump_offset, Type.int_16)
+
+sp = self.get(SP_REG, PTR_TYPE)
+top = self.load(sp - 1, STACK_ENTRY_TYPE).signed
+zero = self.constant(0, STACK_ENTRY_TYPE)
+
+self.jump(top == zero, dst) '''
+disassemble = 'jmp'
+
+[lifter.opcodes.jmp]
+
+bin_format = [ 0xd, [ 'x', 16 ] ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+jump_offset = int(self.data['x'], 2)
+dst = self.constant(self.addr + 3 + jump_offset, Type.int_16)
+self.jump(None, dst) '''
+disassemble = 'jmp'
+
+[lifter.opcodes.pop]
+
+bin_format = [ 0xe ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+self.put(sp - 1, SP_REG) '''
+
+[lifter.opcodes.pushstk]
+
+bin_format = [ 0xf ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+top = self.load(sp - 1, STACK_ENTRY_TYPE)
+self.store(top, sp)
+self.put(sp + 1, SP_REG) '''
+
+[lifter.opcodes.rev]
+
+bin_format = [ 0x10, [ 'x', 8 ] ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+offset = int(self.data['x'], 2)
+sp = self.get(SP_REG, PTR_TYPE)
+bp = self.get(BP_REG, PTR_TYPE)
+for i in range(offset // 2):
+    b = self.load(sp + i - offset, STACK_ENTRY_TYPE)
+    a = self.load(sp + (~i), STACK_ENTRY_TYPE)
+    self.store(a, sp + i - offset)
+    self.store(b, sp + (~i))
+
+self.jump((sp - bp) < self.constant(offset, PTR_TYPE),
+          self.constant(0, PTR_TYPE))
+self.jump(None, self.constant(0, PTR_TYPE), JumpKind.Segfault) '''
+
+[lifter.opcodes.exp]
+
+bin_format = [ 0x11 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+top = self.load(sp - 1, STACK_ENTRY_TYPE)
+for i in range(8):
+    self.store(top & 1, sp - 1 + i)
+    top = top >> 1
+self.put(sp + 7, SP_REG) '''
+
+[lifter.opcodes.sqz]
+
+bin_format = [ 0x12 ]
+description = ''
+#op_type = 'AL'
+behavior = '''
+sp = self.get(SP_REG, PTR_TYPE)
+val = self.constant(0, STACK_ENTRY_TYPE)
+for i in range(7, -1, -1):
+    x = self.load(sp -i + i, STACK_ENTRY_TYPE)
+    val = val << 1 | (x & 1)
+self.store(val, sp - 8)
+self.put(sp - 7, SP_REG) '''
+
+[lifter.opcodes.invalid]
+
+bin_format = [ [ 'x', 8 ] ]
+description = ''
+behavior = '''
+log.error("invalid instruction encountered") '''
+
+[loader]
+offset = 3
+entry_point = 0
+base_addr = 0x000000
+header = 0x574842
+
+## -------------------------
+
+[simos]
+
+fp_args = []
+syscall_args = [ 'sp' ]
+return_addr = [ 'ip_at_syscall', 8 ]
+#return_val
+syscall_addr_alignment = 8
+
+[[simos.syscalls]]
+
+syscall_no = 0
+name = 'ReadByte'
+behavior = '''
+self.state.posix.fd[0].read(sp - 1, 1) '''
+description = 'Reads a byte from stdin'
+
+[[simos.syscalls]]
+
+syscall_no = 1
+name = 'WriteByte'
+behavior = '''
+self.state.posix.fd[1].write(sp, 1) '''
+description = 'Write a byte to stdout'
+
+[simos.init]
+bp = 0x80000000
+
+## -------------------------
+
+# These maybe??? but are so verbose
+# adv: code safety, but do I care??
+# NO?
+
+#[[lifter.opcodes.add.behavior]]
+#pyvex_op_type = 'get'
+#lvalue = 'sp'
+#arg_reg = 'sp'
+#arg_type = 'PTR_TYPE' # should be one of the types defined above
+
+#[[lifter.opcodes.add.behavior]]
+#pyvex_op_type = 'load'
+#lvalue = 'a'
+#arg_reg = 'sp' # should be some lvalue defined above
+#arg_reg_offset = -1
+#arg_type = 'STACK_ENTRY_TYPE'
+

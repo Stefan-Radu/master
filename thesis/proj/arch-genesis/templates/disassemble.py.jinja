@@ -1,0 +1,8 @@
+#! /usr/bin/env python3
+
+from {{archname}}.arch import Arch{{archname.upper()}}
+from {{archname}}.lifter import disassemble
+import sys
+
+arch = Arch{{archname.upper()}}()
+print(disassemble(sys.argv[1], arch))

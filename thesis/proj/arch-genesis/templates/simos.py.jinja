@@ -1,0 +1,97 @@
+from angr.simos import SimUserland, register_simos
+from angr.simos.userland import SimUserland
+from angr.procedures import SIM_PROCEDURES as P, SIM_LIBRARIES as L
+from angr.procedures.definitions import SimSyscallLibrary
+from angr import SimProcedure
+from angr.calling_conventions import SimCCSyscall, register_syscall_cc, register_default_cc, SimCCUnknown, SimRegArg
+from .arch import Arch{{archname.upper()}}
+
+
+{% for sc in syscalls %}
+class {{sc.name}}(SimProcedure):
+    {% if sc.description -%}
+    # {{sc.description}}
+    {%- endif %}
+    def run(self, 
+        {%- for arg in syscall_args -%} 
+            {{arg}} {{- "," if not loop.last -}}
+        {% endfor -%}): 
+        {{sc.behavior}}
+{% endfor %}
+
+P['{{archname}}'] = {}
+{% for sc in syscalls -%}
+P['{{archname}}']['{{sc.name.lower()}}'] = {{sc.name}}
+{% endfor %}
+
+syscall_lib = SimSyscallLibrary()
+syscall_lib.set_library_names('{{archname}}')
+syscall_lib.add_all_from_dict(P['{{archname}}'])
+syscall_lib.add_number_mapping_from_dict('{{archname}}', {
+    {% for sc in syscalls -%}
+    {{sc.syscall_no}} : '{{sc.name.lower()}}',
+    {% endfor -%}})
+
+
+class Sim{{archname.upper()}}(SimUserland):
+    """
+    Defines the "OS" of a {{archname}} program.
+
+    This means:
+    -  The memory layout (separate code and data)
+    -  The "syscalls" (read stdin and write stdout)
+    -  The calling convention (params, return, etc.)
+    """
+
+    def __init__(self, project, **kwargs):
+        super(Sim{{archname.upper()}}, self).__init__(
+            project,
+            syscall_library=L['{{archname}}'],
+            syscall_addr_alignment={{syscall_addr_alignment}},
+            name='{{archname}}',
+            **kwargs)
+
+    def state_blank(self, **kwargs):
+        # pylint:disable=arguments-differ
+        state = super(SimVMWHERE, self).state_blank(
+            stack_size={{arch.stack_size}},
+            stack_end={{arch.stack_end}},
+            **kwargs)  # pylint:disable=invalid-name
+
+        # Init other registers besides SP
+        {% for reg, val in init.items() -%}
+        state.regs.{{reg}} = {{val}}
+        {%- endfor %}
+
+        {% if arch.stack_change >= 0 -%}
+        # allocate stack space if the stack doesn't "grow down"
+        state.memory.map_region(state.regs.sp, {{arch.stack_size}}, 3, init_zero=True)
+        {% endif %}
+        return state
+
+    def state_entry(self, **kwargs):
+        state = super(Sim{{archname.upper()}}, self).state_entry(**kwargs)
+        return state
+
+
+class SimCC{{archname.upper()}}Syscall(SimCCSyscall):
+    {{ "ARG_REGS = {}".format(syscall_args) if syscall_args }}
+    {{ "FP_ARG_REGS = {}".format(fp_args) if fp_args }}
+    {{ "RETURN_ADDR = SimRegArg('{}', {})".format(return_addr.0, return_addr.1)
+        if return_addr }}
+    ARCH = Arch{{archname.upper()}}
+
+    @classmethod
+    def _match(cls, arch, args, sp_delta):  # pylint: disable=unused-argument
+        # never appears anywhere except syscalls
+        return False
+
+    @staticmethod
+    def syscall_num(state):
+        return state.regs.{{arch.syscall_reg}}
+
+
+register_simos('{{archname}}', Sim{{archname.upper()}})
+register_syscall_cc('{{archname}}','{{archname}}', SimCC{{archname.upper()}}Syscall)
+# register_syscall_cc('{{archname}}','default', SimCC{{archname.upper()}}Syscall)
+register_default_cc('{{archname}}',SimCCUnknown)

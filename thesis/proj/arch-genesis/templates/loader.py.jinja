@@ -4,9 +4,9 @@ import logging
 
 log = logging.getLogger("cle.loader")
 
-__all__ = ('VMWHERE',)
+__all__ = ('{{archname.upper()}}',)
 
-class VMWHERE(Blob):
+class {{archname.upper()}}(Blob):
     """
     Representation of a binary blob, i.e. an executable in an unknown file format.
     """
@@ -14,28 +14,28 @@ class VMWHERE(Blob):
 
     def __init__(self, *args, offset=3, **kwargs):
         """
-        Loader backend for vmwhere programs
+        Loader backend for {{archname}} programs
         :param path: The file path
         :param offset: Skip this many bytes from the beginning of the file.
         :param entry_point: start
         """
-        super(VMWHERE, self).__init__(*args,
-                arch=arch_from_id("vmwhere"),
+        super({{archname.upper()}}, self).__init__(*args,
+                arch=arch_from_id("{{archname}}"),
                 offset=offset,
-                entry_point=0,
-                base_addr=0,
+                entry_point={{entry_point}},
+                base_addr={{base_addr}},
                 **kwargs)
-        self.os = "vmwhere"
+        self.os = "{{archname}}"
 
     @staticmethod
     def is_compatible(stream):
         stream.seek(0)
-        stuff = stream.read(3)
-        header = bytes.fromhex(hex(5720130)[2:])
+        stuff = stream.read({{offset}})
+        header = bytes.fromhex(hex({{header}})[2:])
         if stuff == header:
-            log.info(f"matched vmwhere")
+            log.info(f"matched {{archname}}")
             return True
-        log.info(f"vmwhere NOT matched")
+        log.info(f"{{archname}} NOT matched")
         return False
 
-register_backend("vmwhere", VMWHERE)
+register_backend("{{archname}}", {{archname.upper()}})

@@ -2,7 +2,7 @@ from cle.backends import Blob, register_backend
 from archinfo import arch_from_id
 import logging
 
-log = logging.getLogger("cle.loader")
+l = logging.getLogger("cle.blob")
 
 __all__ = ('VMWHERE',)
 
@@ -14,28 +14,24 @@ class VMWHERE(Blob):
 
     def __init__(self, *args, offset=3, **kwargs):
         """
-        Loader backend for vmwhere programs
+        Loader backend for VMWHERE programs
         :param path: The file path
         :param offset: Skip this many bytes from the beginning of the file.
-        :param entry_point: start
         """
         super(VMWHERE, self).__init__(*args,
                 arch=arch_from_id("vmwhere"),
                 offset=offset,
-                entry_point=0,
                 base_addr=0,
+                entry_point=0,
                 **kwargs)
         self.os = "vmwhere"
 
     @staticmethod
     def is_compatible(stream):
         stream.seek(0)
-        stuff = stream.read(3)
-        header = bytes.fromhex(hex(5720130)[2:])
-        if stuff == header:
-            log.info(f"matched vmwhere")
+        stuff = stream.read(0x3)
+        if stuff == b'WH\x42':
             return True
-        log.info(f"vmwhere NOT matched")
         return False
 
 register_backend("vmwhere", VMWHERE)

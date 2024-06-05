@@ -37,7 +37,7 @@ flag_char = claripy.BVS(f'flag_char', 8)
 start_state = p.factory.entry_state(addr=116, stdin=flag_char)
 
 alphabet = string.ascii_lowercase + string.digits + string.punctuation
-terms = [flag_char == cc for cc in alphabet]
+terms = [flag_char == cc.encode() for cc in alphabet]
 start_state.solver.add(claripy.Or(*terms))
 constraints = get_input_byte_constraints()
 
@@ -46,7 +46,7 @@ sm.explore(find=118)
 sm.move('found', 'active')
 sm.explore(find=168, num_find=1000)
 
-IPython.embed()
+# IPython.embed()
 
 flag_bytes = []
 for constr in constraints:

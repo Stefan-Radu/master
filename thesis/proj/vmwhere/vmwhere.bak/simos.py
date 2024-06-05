@@ -6,41 +6,44 @@ from angr import SimProcedure
 from angr.calling_conventions import SimCCSyscall, register_syscall_cc, register_default_cc, SimCCUnknown, SimRegArg
 from .arch import ArchVMWHERE
 
+class WriteByte(SimProcedure):
+    """
+    corresponds with opcode 0x9
+    """
+    def run(self, sp):
+        # pylint:disable=unused-argument
+        print('write syscall')
+        self.state.posix.fd[1].write(sp, 1)
 
 
 class ReadByte(SimProcedure):
-    # Reads a byte from stdin
-    def run(self,sp): 
-        self.state.posix.fd[0].read(sp - 1, 1) 
-
-class WriteByte(SimProcedure):
-    # Write a byte to stdout
-    def run(self,sp): 
-        self.state.posix.fd[1].write(sp, 1) 
+    """
+    corresponds with opcode 0xa
+    """
+    def run(self, sp):
+        print('read syscall')
+        self.state.posix.fd[0].read(sp - 1, 1)
 
 
 P['vmwhere'] = {}
-P['vmwhere']['readbyte'] = ReadByte
-P['vmwhere']['writebyte'] = WriteByte
-
+P['vmwhere']['write_byte'] = WriteByte
+P['vmwhere']['read_byte'] = ReadByte
 
 syscall_lib = SimSyscallLibrary()
 syscall_lib.set_library_names('vmwhere')
 syscall_lib.add_all_from_dict(P['vmwhere'])
-syscall_lib.add_number_mapping_from_dict('vmwhere', {
-    0 : 'readbyte',
-    1 : 'writebyte',
-    })
+syscall_lib.add_number_mapping_from_dict('vmwhere', {0 : 'read_byte',
+                                                     1 : 'write_byte'})
 
-
+# TODO from where
 class SimVMWHERE(SimUserland):
     """
-    Defines the "OS" of a vmwhere program.
+    Defines the "OS" of a BrainFuck program.
 
     This means:
     -  The memory layout (separate code and data)
     -  The "syscalls" (read stdin and write stdout)
-    -  The calling convention (params, return, etc.)
+
     """
 
     def __init__(self, project, **kwargs):
@@ -54,27 +57,19 @@ class SimVMWHERE(SimUserland):
     def state_blank(self, **kwargs):
         # pylint:disable=arguments-differ
         state = super(SimVMWHERE, self).state_blank(
-            stack_size=4096,
-            stack_end=2147483648,
+            stack_size=0x1000,
+            stack_end=0x80000000,
             **kwargs)  # pylint:disable=invalid-name
-
-        # Init other registers besides SP
-        state.regs.bp = 2147483648
-
-        # allocate stack space if the stack doesn't "grow down"
-        state.memory.map_region(state.regs.sp, 4096, 3, init_zero=True)
-        
-        return state
-
-    def state_entry(self, **kwargs):
-        state = super(SimVMWHERE, self).state_entry(**kwargs)
+        # init bp to be the same as sp
+        state.regs.bp = 0x80000000
+        state.memory.map_region(state.regs.sp, 0x1000, 3, init_zero=True)
         return state
 
 
 class SimCCVMWHERESyscall(SimCCSyscall):
-    ARG_REGS = ['sp']
-    
-    RETURN_ADDR = SimRegArg('ip_at_syscall', 8)
+    ARG_REGS = [ 'sp' ]
+    FP_ARG_REGS = []
+    RETURN_ADDR = SimRegArg("ip_at_syscall", 8)
     ARCH = ArchVMWHERE
 
     @classmethod
