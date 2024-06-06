@@ -265,7 +265,7 @@ class Instruction_JZ(Instruction):
 
     def compute_result(self, *args):
         jump_offset = int(self.data['x'], 2)
-        dst = self.constant(self.addr + 3 + jump_offset, Type.int_16)
+        dst = self.constant(self.addr + 3 + jump_offset, Type.int_16).signed
 
         sp = self.get(SP_REG, PTR_TYPE)
         top = self.load(sp - 1, STACK_ENTRY_TYPE).signed
