@@ -1,4 +1,7 @@
-Warning: File 'main.glo' is empty.
-Have you used any entries defined in glossary 'main'?
-Remember to use package option 'nomain' if you
-don't want to use the main glossary.
+This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
+Scanning style file ./main.ist...........................done (27 attributes redefined, 0 ignored).
+Scanning input file main.glo....done (3 entries accepted, 0 rejected).
+Sorting entries....done (5 comparisons).
+Generating output file main.gls....done (11 lines written, 0 warnings).
+Output written in main.gls.
+Transcript written in main.glg.

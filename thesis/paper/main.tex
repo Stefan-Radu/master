@@ -19,7 +19,7 @@
 \usepackage{polyglossia}
 
 % Acronyms and glossary support
-\usepackage[acronym]{glossaries}
+\usepackage[acronym, toc]{glossaries}
 
 % Lorem ipsum place holders
 \usepackage{lipsum}  
@@ -107,6 +107,10 @@
 \usepackage{xcolor}
 \usepackage{realboxes}
 
+% enable the use of columns
+\usepackage{multicol}
+\setlength{\columnsep}{1.0cm}
+
 % appendix title
 %\usepackage[titletoc]{appendix}
 
@@ -130,7 +134,7 @@
     tabsize=2,
     frame=lines,
     language=c,
-    escapeinside={@}{@},
+    escapeinside={@$}{$@},
     breaklines=true,
 }
 \lstset{style=mystyle, mathescape=false}
@@ -173,7 +177,7 @@
 \addtocounter{page}{1}
 
 % Rezumatul
-\include{0-abstract}
+\include{abstract}
 
 \tableofcontents
 
@@ -182,12 +186,15 @@
 \pagestyle{main}
 \let\ps@plain\ps@main
 
-\include{1-introducere}
-\include{2-continut}
-\include{3-concluzii}
+\include{content}
 
 \printglossary[type=\acronymtype]
 \printglossary
+
+\lstlistoflistings
+\listoffigures
+% \listoftables % TODO see if this is necessary
+% TODO see if it's a good idea to include in table of contents TOC
 
 \newpage
 \printbibliography[heading=bibintoc]

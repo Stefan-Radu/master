@@ -53,7 +53,7 @@ class Sim{{archname.upper()}}(SimUserland):
 
     def state_blank(self, **kwargs):
         # pylint:disable=arguments-differ
-        state = super(SimVMWHERE, self).state_blank(
+        state = super(Sim{{archname.upper()}}, self).state_blank(
             stack_size={{arch.stack_size}},
             stack_end={{arch.stack_end}},
             **kwargs)  # pylint:disable=invalid-name

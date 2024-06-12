@@ -1,18 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[88] biber:340> INFO - === Mon May 27, 2024, 20:01:33
-[104] Biber.pm:419> INFO - Reading 'main.bcf'
-[172] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
-[193] Biber.pm:4419> INFO - Processing section 0
-[206] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[207] bibtex.pm:1713> INFO - LaTeX decoding ...
-[218] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[295] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[295] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[295] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[295] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[306] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[309] bbl.pm:763> INFO - Output to main.bbl
-[310] Biber.pm:131> WARN - legacy month field 'sep' in entry 'da_survey_2019' is not an integer - this will probably not sort properly.
-[310] Biber.pm:131> WARN - I didn't find a database entry for 'TODO' (section 0)
-[310] Biber.pm:133> INFO - WARNINGS: 2
+[107] biber:340> INFO - === Wed Jun 12, 2024, 02:16:13
+[133] Biber.pm:419> INFO - Reading 'main.bcf'
+[202] Biber.pm:979> INFO - Found 18 citekeys in bib section 0
+[221] Biber.pm:4419> INFO - Processing section 0
+[235] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[238] bibtex.pm:1713> INFO - LaTeX decoding ...
+[259] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[493] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[493] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[493] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[493] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[514] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[519] bbl.pm:763> INFO - Output to main.bbl
+[520] Biber.pm:131> WARN - legacy month field 'sep' in entry 'da_survey_2019' is not an integer - this will probably not sort properly.
+[520] Biber.pm:131> WARN - I didn't find a database entry for 'TODO' (section 0)
+[520] Biber.pm:131> WARN - I didn't find a database entry for 'TODO tim blog' (section 0)
+[520] Biber.pm:133> INFO - WARNINGS: 3

@@ -19,6 +19,37 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{wef_cybercrime}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{World Economic Forum}
+      \field{month}{6}
+      \field{note}{[Online; accessed 10. Jun. 2024]}
+      \field{title}{{2023 was a big year for cybercrime {–} here{'}s how we prepare for the future}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.weforum.org/agenda/2024/01/cybersecurity-cybercrime-system-safety
+      \endverb
+      \verb{url}
+      \verb https://www.weforum.org/agenda/2024/01/cybersecurity-cybercrime-system-safety
+      \endverb
+    \endentry
+    \entry{xz_backdoor}{misc}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 10. Jun. 2024]}
+      \field{title}{{Backdoor in XZ Utils That Almost Happened - Schneier on Security}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.schneier.com/blog/archives/2024/04/backdoor-in-xz-utils-that-almost-happened.html
+      \endverb
+      \verb{url}
+      \verb https://www.schneier.com/blog/archives/2024/04/backdoor-in-xz-utils-that-almost-happened.html
+      \endverb
+    \endentry
     \entry{concept_of_da_1999}{inproceedings}{}
       \name{author}{1}{}{%
         {{hash=0bab8231c87d1dd0fdffe7d7eeee7908}{%
@@ -52,6 +83,62 @@
       \field{pages}{216\bibrangedash 234}
       \range{pages}{19}
     \endentry
+    \entry{wiki_malware}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3a6de00f5a66ceb09c099e969c33bc67}{%
+           family={{Contributors to Wikimedia projects}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{fullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{bibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authorbibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{[Online; accessed 10. Jun. 2024]}
+      \field{title}{{Malware - Wikipedia}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Malware&oldid=1223843083
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Malware&oldid=1223843083
+      \endverb
+    \endentry
+    \entry{wiki_ransomware}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3a6de00f5a66ceb09c099e969c33bc67}{%
+           family={{Contributors to Wikimedia projects}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{fullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{bibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authorbibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{[Online; accessed 10. Jun. 2024]}
+      \field{title}{{Ransomware - Wikipedia}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Ransomware&oldid=1224625270
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Ransomware&oldid=1224625270
+      \endverb
+    \endentry
     \entry{re_wiki}{misc}{}
       \name{author}{1}{}{%
         {{hash=3a6de00f5a66ceb09c099e969c33bc67}{%
@@ -64,6 +151,7 @@
       \strng{authorbibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \field{extraname}{3}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -77,6 +165,66 @@
       \endverb
       \verb{url}
       \verb https://en.wikipedia.org/w/index.php?title=Reverse_engineering&oldid=1221145420
+      \endverb
+    \endentry
+    \entry{wiki_wannacry}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3a6de00f5a66ceb09c099e969c33bc67}{%
+           family={{Contributors to Wikimedia projects}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{fullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{bibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authorbibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \field{extraname}{4}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 10. Jun. 2024]}
+      \field{title}{{WannaCry ransomware attack - Wikipedia}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=WannaCry_ransomware_attack&oldid=1227800240
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=WannaCry_ransomware_attack&oldid=1227800240
+      \endverb
+    \endentry
+    \entry{stuxnet}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e9b331019491f5404b77e275b2f59013}{%
+           family={Kushner},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Spectrum}%
+      }
+      \strng{namehash}{e9b331019491f5404b77e275b2f59013}
+      \strng{fullhash}{e9b331019491f5404b77e275b2f59013}
+      \strng{bibnamehash}{e9b331019491f5404b77e275b2f59013}
+      \strng{authorbibnamehash}{e9b331019491f5404b77e275b2f59013}
+      \strng{authornamehash}{e9b331019491f5404b77e275b2f59013}
+      \strng{authorfullhash}{e9b331019491f5404b77e275b2f59013}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Spectr}
+      \field{month}{5}
+      \field{title}{{The Real Story of Stuxnet}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://spectrum.ieee.org/the-real-story-of-stuxnet
+      \endverb
+      \verb{url}
+      \verb https://spectrum.ieee.org/the-real-story-of-stuxnet
       \endverb
     \endentry
     \entry{malware_crowdstrike}{misc}{}
@@ -168,6 +316,43 @@
       \verb https://cs.unibuc.ro/~crusu/re/labs.html
       \endverb
     \endentry
+    \entry{andromeda}{article}{}
+      \name{author}{2}{}{%
+        {{hash=872087c4570a2f245b5ec1d51570761d}{%
+           family={Rutkovska},
+           familyi={R\bibinitperiod},
+           given={Ieva},
+           giveni={I\bibinitperiod}}}%
+        {{hash=7babbc0fefaa489d9962a3afa3223e70}{%
+           family={Team},
+           familyi={T\bibinitperiod},
+           given={The\bibnamedelimb BlackBerry\bibnamedelimb Research\bibnamedelimb {\&}\bibnamedelima Intelligence},
+           giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim \\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {BlackBerry}%
+      }
+      \strng{namehash}{f8a7fe202e7a077d184e3614dc52054f}
+      \strng{fullhash}{f8a7fe202e7a077d184e3614dc52054f}
+      \strng{bibnamehash}{f8a7fe202e7a077d184e3614dc52054f}
+      \strng{authorbibnamehash}{f8a7fe202e7a077d184e3614dc52054f}
+      \strng{authornamehash}{f8a7fe202e7a077d184e3614dc52054f}
+      \strng{authorfullhash}{f8a7fe202e7a077d184e3614dc52054f}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{BlackBerry}
+      \field{month}{5}
+      \field{title}{{Threat Spotlight: The Andromeda Botnet}}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://blogs.blackberry.com/en/2020/05/threat-spotlight-andromeda
+      \endverb
+      \verb{url}
+      \verb https://blogs.blackberry.com/en/2020/05/threat-spotlight-andromeda
+      \endverb
+    \endentry
     \entry{all_about_taint_2010}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=306cb39322d65280b134f67c7898e024}{%
@@ -206,8 +391,73 @@
       \endverb
       \keyw{Filters;Runtime;Information analysis;Testing;Computerized monitoring;Performance analysis;Information security;Reactive power;Privacy;Heuristic algorithms;taint analysis;symbolic execution;dynamic analysis}
     \endentry
+    \entry{kaspersky_malware_types}{misc}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Www.kaspersky}
+      \field{month}{4}
+      \field{note}{[Online; accessed 11. Jun. 2024]}
+      \field{title}{{What are the different types of malware?}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.kaspersky.com/resource-center/threats/types-of-malware
+      \endverb
+      \verb{url}
+      \verb https://www.kaspersky.com/resource-center/threats/types-of-malware
+      \endverb
+    \endentry
+    \entry{malware_obf}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=a31096762b5ffeda6e1ec00626db3c2a}{%
+           family={You},
+           familyi={Y\bibinitperiod},
+           given={Ilsun},
+           giveni={I\bibinitperiod}}}%
+        {{hash=12ffd1a743dbd6c7b1df471c96b56b1f}{%
+           family={Yim},
+           familyi={Y\bibinitperiod},
+           given={Kangbin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{36e3ff6f5261fcd60d84508b04719103}
+      \strng{fullhash}{36e3ff6f5261fcd60d84508b04719103}
+      \strng{bibnamehash}{36e3ff6f5261fcd60d84508b04719103}
+      \strng{authorbibnamehash}{36e3ff6f5261fcd60d84508b04719103}
+      \strng{authornamehash}{36e3ff6f5261fcd60d84508b04719103}
+      \strng{authorfullhash}{36e3ff6f5261fcd60d84508b04719103}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2010 International conference on broadband, wireless computing, communication and applications}
+      \field{title}{Malware obfuscation techniques: A brief survey}
+      \field{year}{2010}
+      \field{pages}{297\bibrangedash 300}
+      \range{pages}{4}
+    \endentry
+    \entry{zeusvm}{misc}{}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{6}
+      \field{note}{[Online; accessed 7. Jun. 2024]}
+      \field{title}{{Zeus{$\_$}Malware{$\_$}Analysis{$\_$}Case{$\_$}Study}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/Dulanaka/Zeus_Malware_Analysis_Case_Study
+      \endverb
+      \verb{url}
+      \verb https://github.com/Dulanaka/Zeus_Malware_Analysis_Case_Study
+      \endverb
+    \endentry
   \enddatalist
   \missing{TODO}
+  \missing{TODO tim blog}
 \endrefsection
 \endinput
 
