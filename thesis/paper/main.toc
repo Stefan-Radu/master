@@ -32,8 +32,8 @@
 \contentsline {subsubsection}{Classical Techniques}{15}{section*.7}%
 \contentsline {subsubsection}{Classical Techniques}{16}{section*.8}%
 \contentsline {subsubsection}{Opaque Predicates}{16}{section*.9}%
-\contentsline {subsubsection}{Control-Flow Flattening}{16}{section*.10}%
-\contentsline {subsubsection}{Mixed Boolean-Arithmetic}{16}{section*.11}%
+\contentsline {subsubsection}{Mixed Boolean-Arithmetic}{16}{section*.10}%
+\contentsline {subsubsection}{Control-Flow Flattening}{16}{section*.11}%
 \contentsline {subsubsection}{Virtual Machines}{16}{section*.12}%
 \contentsline {chapter}{\numberline {3}SOTA - VM-based deobfuscation}{17}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Our approach}{18}{chapter.4}%
@@ -41,12 +41,24 @@
 \contentsline {subsection}{\numberline {4.1.1}Assumptions}{19}{subsection.4.1.1}%
 \contentsline {section}{\numberline {4.2}Understanding the VM}{19}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Static Analysis}{19}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Automatic handler analysis using Miasm}{22}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Building an angr plugin}{22}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Loader}{22}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Automation and further analysis}{22}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Future directions}{22}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusions}{23}{chapter.5}%
-\contentsline {chapter}{Acronyms}{24}{section*.13}%
-\contentsline {chapter}{Glossary}{25}{section*.15}%
-\contentsline {chapter}{Bibliography}{28}{chapter*.19}%
+\contentsline {subsection}{\numberline {4.2.2}Automatic handler analysis using Miasm}{21}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Summary of Analysis}{23}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Building an angr architecture plugin}{25}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}A new entry in the Arch database}{26}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Extending the Loader}{27}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Building a Lifter}{27}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}SimOS}{29}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{29}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}What about a Disassembler?}{30}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Further Analysis}{31}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Solving the Challenges}{33}{subsection.4.6.1}%
+\contentsline {subsubsection}{VMWHERE}{33}{section*.13}%
+\contentsline {subsubsection}{VMCASTLE}{33}{section*.14}%
+\contentsline {section}{\numberline {4.7}Discussion}{34}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}angr vs Miasm}{34}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Difficulties and Shortcomings}{35}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Future Directions}{35}{subsection.4.7.3}%
+\contentsline {chapter}{\numberline {5}Conclusions}{36}{chapter.5}%
+\contentsline {chapter}{Acronyms}{37}{section*.15}%
+\contentsline {chapter}{Glossary}{39}{section*.17}%
+\contentsline {chapter}{Bibliography}{42}{chapter*.21}%

@@ -2389,7 +2389,22 @@
     <bcf:citekey order="26" intorder="1">TODO</bcf:citekey>
     <bcf:citekey order="27" intorder="1">TODO</bcf:citekey>
     <bcf:citekey order="28" intorder="1">TODO tim blog</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">TODO</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">ghidra</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">zeusvm_miasm</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">tim_miasm</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">miasm</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">zeusvm_miasm</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">msynth</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">qsynth</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">angr</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">angr_tut</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">valgrind</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">angr_tut</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">angr_tut</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">jinja</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">toml</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">capstone</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">zeusvm_miasm</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

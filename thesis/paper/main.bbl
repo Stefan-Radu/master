@@ -35,6 +35,22 @@
       \verb https://www.weforum.org/agenda/2024/01/cybersecurity-cybercrime-system-safety
       \endverb
     \endentry
+    \entry{angr_tut}{misc}{}
+      \field{sortinit}{a}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{6}
+      \field{note}{[Online; accessed 12. Jun. 2024]}
+      \field{title}{{angr-platforms/angr{$\_$}platforms/msp430/instrs{$\_$}msp430.py at master {$\cdot$} angr/angr-platforms}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/angr/angr-platforms/blob/master/tutorial/1_basics.md
+      \endverb
+      \verb{url}
+      \verb https://github.com/angr/angr-platforms/blob/master/tutorial/1_basics.md
+      \endverb
+    \endentry
     \entry{xz_backdoor}{misc}{}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
@@ -82,6 +98,33 @@
       \field{year}{1999}
       \field{pages}{216\bibrangedash 234}
       \range{pages}{19}
+    \endentry
+    \entry{capstone}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=c1d9154a79ca8fda7bd0cecddc25d17f}{%
+           family={Capstone},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c1d9154a79ca8fda7bd0cecddc25d17f}
+      \strng{fullhash}{c1d9154a79ca8fda7bd0cecddc25d17f}
+      \strng{bibnamehash}{c1d9154a79ca8fda7bd0cecddc25d17f}
+      \strng{authorbibnamehash}{c1d9154a79ca8fda7bd0cecddc25d17f}
+      \strng{authornamehash}{c1d9154a79ca8fda7bd0cecddc25d17f}
+      \strng{authorfullhash}{c1d9154a79ca8fda7bd0cecddc25d17f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{[Online; accessed 13. Jun. 2024]}
+      \field{title}{{The Ultimate Disassembly Framework}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.capstone-engine.org
+      \endverb
+      \verb{url}
+      \verb https://www.capstone-engine.org
+      \endverb
     \endentry
     \entry{wiki_malware}{misc}{}
       \name{author}{1}{}{%
@@ -195,6 +238,89 @@
       \verb https://en.wikipedia.org/w/index.php?title=WannaCry_ransomware_attack&oldid=1227800240
       \endverb
     \endentry
+    \entry{ghidra}{misc}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 14. Jun. 2024]}
+      \field{title}{{Ghidra}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://ghidra-sre.org
+      \endverb
+      \verb{url}
+      \verb https://ghidra-sre.org
+      \endverb
+    \endentry
+    \entry{qsynth}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=e3dafe978a62db8ea9fec63a537b07dc}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=4f628f1f9db8d7b6e3312ff12233b0ca}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e4a26b1ff362720faaefde283666afbd}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhenqiu},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=db95e12e50fb857658c08f6a7c79ae47}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Mingwen},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b1440dc3bc7f81f189d43c0a177e96b8}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Songlin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=32475e443a7c9de669926a5b6d59ac65}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zhiyong},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{85d5a3e7440eea6269102f4b58876c98}
+      \strng{fullhash}{5b9ba3c7cb1a432e32bfc9cdb03dc1e6}
+      \strng{bibnamehash}{5b9ba3c7cb1a432e32bfc9cdb03dc1e6}
+      \strng{authorbibnamehash}{5b9ba3c7cb1a432e32bfc9cdb03dc1e6}
+      \strng{authornamehash}{85d5a3e7440eea6269102f4b58876c98}
+      \strng{authorfullhash}{5b9ba3c7cb1a432e32bfc9cdb03dc1e6}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2010 IEEE International Conference on Web Services}
+      \field{title}{QSynth: A Tool for QoS-aware Automatic Service Composition}
+      \field{year}{2010}
+      \field{pages}{42\bibrangedash 49}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ICWS.2010.38
+      \endverb
+      \keyw{Quality of service;Web services;Search problems;Time factors;Indexes;Accuracy;Automatic Service Composition;QoS-Aware;Dependency Graph}
+    \endentry
+    \entry{jinja}{misc}{}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{[Online; accessed 13. Jun. 2024]}
+      \field{title}{{Jinja {\ifmmode---\else—\fi} Jinja Documentation (3.1.x)}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://jinja.palletsprojects.com/en/3.1.x
+      \endverb
+      \verb{url}
+      \verb https://jinja.palletsprojects.com/en/3.1.x
+      \endverb
+    \endentry
     \entry{stuxnet}{article}{}
       \name{author}{1}{}{%
         {{hash=e9b331019491f5404b77e275b2f59013}{%
@@ -301,6 +427,22 @@
       \endverb
       \keyw{malware,evasion,detection,behavioral analysis,Dynamic analysis}
     \endentry
+    \entry{msynth}{misc}{}
+      \field{sortinit}{m}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{6}
+      \field{note}{[Online; accessed 12. Jun. 2024]}
+      \field{title}{{msynth}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://github.com/mrphrazer/msynth
+      \endverb
+      \verb{url}
+      \verb https://github.com/mrphrazer/msynth
+      \endverb
+    \endentry
     \entry{crusu_relabs}{misc}{}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
@@ -391,6 +533,69 @@
       \endverb
       \keyw{Filters;Runtime;Information analysis;Testing;Computerized monitoring;Performance analysis;Information security;Reactive power;Privacy;Heuristic algorithms;taint analysis;symbolic execution;dynamic analysis}
     \endentry
+    \entry{toml}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 13. Jun. 2024]}
+      \field{title}{{TOML: Tom's Obvious Minimal Language}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://toml.io/en
+      \endverb
+      \verb{url}
+      \verb https://toml.io/en
+      \endverb
+    \endentry
+    \entry{valgrind}{misc}{}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 13. Jun. 2024]}
+      \field{title}{{Valgrind Home}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://valgrind.org
+      \endverb
+      \verb{url}
+      \verb https://valgrind.org
+      \endverb
+    \endentry
+    \entry{angr}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=7d3497120fd0eb1fe183bf5ac44a242b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Fish},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1c0d125a5b51f7c0735dae8d6cb85841}{%
+           family={Shoshitaishvili},
+           familyi={S\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ae0c463a0b3fec9f8df80b4ce0ba148}
+      \strng{fullhash}{3ae0c463a0b3fec9f8df80b4ce0ba148}
+      \strng{bibnamehash}{3ae0c463a0b3fec9f8df80b4ce0ba148}
+      \strng{authorbibnamehash}{3ae0c463a0b3fec9f8df80b4ce0ba148}
+      \strng{authornamehash}{3ae0c463a0b3fec9f8df80b4ce0ba148}
+      \strng{authorfullhash}{3ae0c463a0b3fec9f8df80b4ce0ba148}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE Cybersecurity Development (SecDev)}
+      \field{title}{Angr - The Next Generation of Binary Analysis}
+      \field{year}{2017}
+      \field{pages}{8\bibrangedash 9}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1109/SecDev.2017.14
+      \endverb
+      \keyw{Tutorials;Tools;Security;Next generation networking;Software;Static analysis}
+    \endentry
     \entry{kaspersky_malware_types}{misc}{}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
@@ -405,6 +610,21 @@
       \endverb
       \verb{url}
       \verb https://www.kaspersky.com/resource-center/threats/types-of-malware
+      \endverb
+    \endentry
+    \entry{tim_miasm}{misc}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{[Online; accessed 12. Jun. 2024]}
+      \field{title}{{Writing Disassemblers for VM-based Obfuscators}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://synthesis.to/2021/10/21/vm_based_obfuscation.html
+      \endverb
+      \verb{url}
+      \verb https://synthesis.to/2021/10/21/vm_based_obfuscation.html
       \endverb
     \endentry
     \entry{malware_obf}{inproceedings}{}
@@ -447,7 +667,7 @@
       \field{month}{6}
       \field{note}{[Online; accessed 7. Jun. 2024]}
       \field{title}{{Zeus{$\_$}Malware{$\_$}Analysis{$\_$}Case{$\_$}Study}}
-      \field{year}{2024}
+      \field{year}{2021}
       \verb{urlraw}
       \verb https://github.com/Dulanaka/Zeus_Malware_Analysis_Case_Study
       \endverb
@@ -455,9 +675,25 @@
       \verb https://github.com/Dulanaka/Zeus_Malware_Analysis_Case_Study
       \endverb
     \endentry
+    \entry{zeusvm_miasm}{misc}{}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{note}{[Online; accessed 12. Jun. 2024]}
+      \field{title}{{ZeusVM analysis - Miasm's blog}}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://miasm.re/blog/2016/09/03/zeusvm_analysis.html#results
+      \endverb
+      \verb{url}
+      \verb https://miasm.re/blog/2016/09/03/zeusvm_analysis.html#results
+      \endverb
+    \endentry
   \enddatalist
   \missing{TODO}
   \missing{TODO tim blog}
+  \missing{miasm}
 \endrefsection
 \endinput
 

@@ -17,32 +17,12 @@ class ArchVMWHERE(Arch):
     # register offset, and their width, in bytes
 
     register_list = [
-        Register(name="ip",
-                 size=8,
-                 vex_offset=0,
-                 alias_names=['pc'],
-                 ),
-        
-        Register(name="bp",
-                 size=8,
-                 vex_offset=8,
-                 ),
-        
-        Register(name="sp",
-                 size=8,
-                 vex_offset=16,
-                 ),
-        
-        Register(name="sysnum",
-                 size=8,
-                 vex_offset=24,
-                 ),
-        
-        Register(name="ip_at_syscall",
-                 size=8,
-                 vex_offset=32,
-                 ),
-        ]
+        Register(name="ip", size=8, vex_offset=0, alias_names=['pc'],),
+        Register(name="bp", size=8, vex_offset=8,),
+        Register(name="sp", size=8, vex_offset=16,),
+        Register(name="sysnum", size=8, vex_offset=24,),
+        Register(name="ip_at_syscall", size=8, vex_offset=32,),
+    ]
 
     ip_offset = RegisterOffset(0)
     sp_offset = RegisterOffset(2)
