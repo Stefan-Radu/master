@@ -19,24 +19,25 @@
 \@writefile{toc}{\contentsline {subsubsection}{Bot and Botnets}{7}{section*.6}\protected@file@percent }
 \@writefile{lof}{\setforeignlanguage {english}}
 \@writefile{lot}{\setforeignlanguage {english}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces TODO}}{8}{figure.2.1}\protected@file@percent }
-\newlabel{fig:wannacry}{{2.1}{8}{TODO}{figure.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces An infamous screenshot of the ransom pop-up which would show up on a system infected by the WannaCry worm \blx@tocontentsinit {0}\cite {wiki_wannacry}.}}{8}{figure.2.1}\protected@file@percent }
+\newlabel{fig:wannacry}{{2.1}{8}{An infamous screenshot of the ransom pop-up which would show up on a system infected by the WannaCry worm \cite {wiki_wannacry}}{figure.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Relevance}{8}{subsection.2.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Reverse Engineering}{8}{section.2.2}\protected@file@percent }
+\newlabel{sec:reverse_engineering}{{2.2}{8}{Reverse Engineering}{section.2.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Static Analysis}{9}{section.2.3}\protected@file@percent }
-\newlabel{code:decompilation-original}{{2.1}{10}{TODO}{lstlisting.2.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}TODO}{10}{lstlisting.2.1}\protected@file@percent }
-\newlabel{code:decompilation-1}{{2.2}{11}{TODO}{lstlisting.2.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}TODO}{11}{lstlisting.2.2}\protected@file@percent }
-\newlabel{code:decompilation-2}{{2.3}{11}{TODO}{lstlisting.2.3}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}TODO}{11}{lstlisting.2.3}\protected@file@percent }
+\newlabel{code:decompilation-original}{{2.1}{10}{A function which adds an integer value \cc {v} to the end of a linked list}{lstlisting.2.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.1}A function which adds an integer value \lstinline [mathescape]{v} to the end of a linked list.}{10}{lstlisting.2.1}\protected@file@percent }
+\newlabel{code:decompilation-1}{{2.2}{11}{Ghidra decompilation of the code presented in Listing \ref {code:decompilation-original}. The decompilation is take as-is and has not modified in any way}{lstlisting.2.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.2}Ghidra decompilation of the code presented in Listing \ref {code:decompilation-original}. The decompilation is take as-is and has not modified in any way.}{11}{lstlisting.2.2}\protected@file@percent }
+\newlabel{code:decompilation-2}{{2.3}{11}{Ghidra decompilation of the code presented in Listing \ref {code:decompilation-original}. The decompilation has been modified by renaming variabled and changing data types, based on educated guesses}{lstlisting.2.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.3}Ghidra decompilation of the code presented in Listing \ref {code:decompilation-original}. The decompilation has been modified by renaming variabled and changing data types, based on educated guesses.}{11}{lstlisting.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Dynamic Analysis}{11}{section.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Debugging}{12}{subsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Debugging}{11}{subsection.2.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Function Call Analysis}{12}{subsection.2.4.2}\protected@file@percent }
-\newlabel{code:ltrace}{{2.4}{13}{TODO}{lstlisting.2.4}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}TODO}{13}{lstlisting.2.4}\protected@file@percent }
-\newlabel{code:ltrace-1}{{4}{13}{TODO}{lstnumber.2.4.4}{}}
-\newlabel{code:ltrace-2}{{13}{13}{TODO}{lstnumber.2.4.13}{}}
+\newlabel{code:ltrace}{{2.4}{12}{ltrace (``a library call tracer'') output of an obfuscated crackme. One can observe a length check in the first execution, and different output when an input of the expected length is provided}{lstlisting.2.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2.4}ltrace (``a library call tracer'') output of an obfuscated crackme. One can observe a length check in the first execution, and different output when an input of the expected length is provided.}{12}{lstlisting.2.4}\protected@file@percent }
+\newlabel{code:ltrace-1}{{4}{13}{ltrace (``a library call tracer'') output of an obfuscated crackme. One can observe a length check in the first execution, and different output when an input of the expected length is provided}{lstnumber.2.4.4}{}}
+\newlabel{code:ltrace-2}{{13}{13}{ltrace (``a library call tracer'') output of an obfuscated crackme. One can observe a length check in the first execution, and different output when an input of the expected length is provided}{lstnumber.2.4.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Fuzzing}{13}{subsection.2.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}Dynamic Taint analysis}{13}{subsection.2.4.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Other Approaches}{14}{section.2.5}\protected@file@percent }
@@ -65,36 +66,37 @@
 \newlabel{static_ghidra}{{4.2.1}{19}{Static Analysis}{subsection.4.2.1}{}}
 \@writefile{lof}{\setforeignlanguage {english}}
 \@writefile{lot}{\setforeignlanguage {english}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces TODO, but also mention that you used Cutter because it looks better}}{19}{figure.4.1}\protected@file@percent }
-\newlabel{fig:cfg_vmwhere}{{4.1}{19}{TODO, but also mention that you used Cutter because it looks better}{figure.4.1}{}}
-\newlabel{lst:switch_vmwhere}{{4.1}{20}{TODO, also, maybe mention that this result is not natural decompilation, but the final result after work}{lstlisting.4.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}TODO, also, maybe mention that this result is not natural decompilation, but the final result after work}{20}{lstlisting.4.1}\protected@file@percent }
-\newlabel{lst:indirect_call_vmcastle}{{4.2}{21}{TODO}{lstlisting.4.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}TODO}{21}{lstlisting.4.2}\protected@file@percent }
-\newlabel{lst:add_vmwhere}{{4.3}{21}{TODO}{lstlisting.4.3}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.3}TODO}{21}{lstlisting.4.3}\protected@file@percent }
-\newlabel{lst:add_vmcastle}{{4.4}{21}{TODO}{lstlisting.4.4}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.4}TODO}{21}{lstlisting.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Automatic handler analysis using Miasm}{21}{subsection.4.2.2}\protected@file@percent }
-\newlabel{sec:miasm}{{4.2.2}{21}{Automatic handler analysis using Miasm}{subsection.4.2.2}{}}
-\newlabel{lst:miasm0}{{4.5}{22}{TODO}{lstlisting.4.5}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.5}TODO}{22}{lstlisting.4.5}\protected@file@percent }
-\newlabel{lst:miasm1}{{4.6}{23}{TODO}{lstlisting.4.6}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.6}TODO}{23}{lstlisting.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Summary of Analysis}{23}{section.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces \gls {CFG} of the \lstinline [mathescape]{vmwhere} \gls {VM} interpretor. The major components, such as the instruction fetcher, the dispatcher, \gls {VM} handers, as well as the \gls {VM} exit are clearly labelled. The image is generated with the help of the Cutter \gls {RE} tool \blx@tocontentsinit {0}\cite {cutter}.}}{20}{figure.4.1}\protected@file@percent }
+\newlabel{fig:cfg_vmwhere}{{4.1}{20}{\gls {CFG} of the \cc {vmwhere} \gls {VM} interpretor. The major components, such as the instruction fetcher, the dispatcher, \gls {VM} handers, as well as the \gls {VM} exit are clearly labelled. The image is generated with the help of the Cutter \gls {RE} tool \cite {cutter}}{figure.4.1}{}}
+\newlabel{lst:switch_vmwhere}{{4.1}{20}{Decompilation section of the \cc {vmwhere} dispatcher, after variable renaming and retyping. We notice the implementation of the \cc {add}, \cc {jlz} and \cc {push_top} instructions}{lstlisting.4.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}Decompilation section of the \lstinline [mathescape]{vmwhere} dispatcher, after variable renaming and retyping. We notice the implementation of the \lstinline [mathescape]{add}, \lstinline [mathescape]{jlz} and \lstinline [mathescape]{push_top} instructions.}{20}{lstlisting.4.1}\protected@file@percent }
+\newlabel{lst:indirect_call_vmcastle}{{4.2}{21}{x86\_64 disassembly of the \cc {vmcastle} dispatcher. The function handler corresponding to the current opcode is indirectly called through the register \cc {RDX}}{lstlisting.4.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.2}x86\_64 disassembly of the \lstinline [mathescape]{vmcastle} dispatcher. The function handler corresponding to the current opcode is indirectly called through the register \lstinline [mathescape]{RDX}.}{21}{lstlisting.4.2}\protected@file@percent }
+\newlabel{lst:add_vmwhere}{{4.3}{21}{Stack-based implementation of a simple \cc {add} instruction in the \cc {vmwhere} architecture}{lstlisting.4.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.3}Stack-based implementation of a simple \lstinline [mathescape]{add} instruction in the \lstinline [mathescape]{vmwhere} architecture.}{21}{lstlisting.4.3}\protected@file@percent }
+\newlabel{lst:add_vmcastle}{{4.4}{21}{Register-based implementation of a simple \cc {add} instruction in the \cc {vmcastle} architecture}{lstlisting.4.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.4}Register-based implementation of a simple \lstinline [mathescape]{add} instruction in the \lstinline [mathescape]{vmcastle} architecture.}{21}{lstlisting.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Automatic handler analysis using Miasm}{22}{subsection.4.2.2}\protected@file@percent }
+\newlabel{sec:miasm}{{4.2.2}{22}{Automatic handler analysis using Miasm}{subsection.4.2.2}{}}
+\newlabel{lst:miasm0}{{4.5}{22}{Partial result of symbolically executing a function handler in Miasm. One will notice the state change in core registers such as \cc {RDX}, flag changes, as well as changes in memory}{lstlisting.4.5}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.5}Partial result of symbolically executing a function handler in Miasm. One will notice the state change in core registers such as \lstinline [mathescape]{RDX}, flag changes, as well as changes in memory.}{22}{lstlisting.4.5}\protected@file@percent }
+\newlabel{lst:miasm1}{{4.6}{23}{Result of symbolically executing the same function handler as in Listing \ref {lst:miasm0} with some cleanup. We only chose to display the change in relevant registers and memory locations. Additionally, we introduced labels for better clarity}{lstlisting.4.6}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.6}Result of symbolically executing the same function handler as in Listing \ref {lst:miasm0} with some cleanup. We only chose to display the change in relevant registers and memory locations. Additionally, we introduced labels for better clarity.}{23}{lstlisting.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Summary of Analysis}{24}{section.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Building an angr architecture plugin}{25}{section.4.4}\protected@file@percent }
-\newlabel{lst:angr_ex}{{4.7}{25}{TODO}{lstlisting.4.7}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.7}TODO}{25}{lstlisting.4.7}\protected@file@percent }
 \@writefile{lof}{\setforeignlanguage {english}}
 \@writefile{lot}{\setforeignlanguage {english}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces TODO}}{26}{figure.4.2}\protected@file@percent }
 \newlabel{fig:angr}{{4.2}{26}{TODO}{figure.4.2}{}}
+\newlabel{lst:angr_ex}{{4.7}{26}{A minimal angr code sample. We load a program into \cc {p}, create a simulation manager, symbolically execute the program until we reach the desired address \cc {0xcafebabe}, and finally print the input which determined this execution path}{lstlisting.4.7}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.7}A minimal angr code sample. We load a program into \lstinline [mathescape]{p}, create a simulation manager, symbolically execute the program until we reach the desired address \lstinline [mathescape]{0xcafebabe}, and finally print the input which determined this execution path.}{26}{lstlisting.4.7}\protected@file@percent }
+\newlabel{line:project}{{2}{26}{A minimal angr code sample. We load a program into \cc {p}, create a simulation manager, symbolically execute the program until we reach the desired address \cc {0xcafebabe}, and finally print the input which determined this execution path}{lstnumber.4.7.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}A new entry in the Arch database}{26}{subsection.4.4.1}\protected@file@percent }
-\newlabel{lst:angr_arch}{{4.8}{26}{TODO}{lstlisting.4.8}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.8}TODO}{26}{lstlisting.4.8}\protected@file@percent }
+\newlabel{lst:angr_arch}{{4.8}{27}{TODO}{lstlisting.4.8}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.8}TODO}{27}{lstlisting.4.8}\protected@file@percent }
 \newlabel{line:reg_arch}{{15}{27}{TODO}{lstnumber.4.8.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Extending the Loader}{27}{subsection.4.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Building a Lifter}{27}{subsection.4.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Building a Lifter}{28}{subsection.4.4.3}\protected@file@percent }
 \newlabel{lst:instruction}{{4.9}{28}{TODO}{lstlisting.4.9}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.9}TODO}{28}{lstlisting.4.9}\protected@file@percent }
 \newlabel{line:instruction0}{{7}{28}{TODO}{lstnumber.4.9.7}{}}
@@ -104,36 +106,42 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}SimOS}{29}{subsection.4.4.4}\protected@file@percent }
 \newlabel{lst:simproc}{{4.10}{29}{TODO}{lstlisting.4.10}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.10}TODO}{29}{lstlisting.4.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{29}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{30}{section.4.5}\protected@file@percent }
 \newlabel{lst:config}{{4.11}{30}{TODO}{lstlisting.4.11}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.11}TODO}{30}{lstlisting.4.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}What about a Disassembler?}{30}{subsection.4.5.1}\protected@file@percent }
-\newlabel{lst:disass}{{4.12}{30}{TODO}{lstlisting.4.12}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.12}TODO}{30}{lstlisting.4.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}What about a Disassembler?}{31}{subsection.4.5.1}\protected@file@percent }
+\newlabel{lst:disass}{{4.12}{31}{TODO}{lstlisting.4.12}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.12}TODO}{31}{lstlisting.4.12}\protected@file@percent }
 \newlabel{line:desc}{{9}{31}{TODO}{lstnumber.4.12.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Further Analysis}{31}{section.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Further Analysis}{32}{section.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Solving the Challenges}{32}{subsection.4.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{VMWHERE}{32}{section*.13}\protected@file@percent }
 \@writefile{lof}{\setforeignlanguage {english}}
 \@writefile{lot}{\setforeignlanguage {english}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces TODO}}{32}{figure.4.3}\protected@file@percent }
-\newlabel{fig:cfg_bytecode}{{4.3}{32}{TODO}{figure.4.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Solving the Challenges}{33}{subsection.4.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{VMWHERE}{33}{section*.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces TODO}}{33}{figure.4.3}\protected@file@percent }
+\newlabel{fig:cfg_bytecode}{{4.3}{33}{TODO}{figure.4.3}{}}
 \newlabel{lst:vmwhere_check}{{4.13}{33}{TODO}{lstlisting.4.13}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.13}TODO}{33}{lstlisting.4.13}\protected@file@percent }
 \newlabel{line:vmwhere_check_imm}{{1}{33}{TODO}{lstnumber.4.13.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{VMCASTLE}{33}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{VMCASTLE}{34}{section*.14}\protected@file@percent }
 \newlabel{item:one}{{1}{34}{VMCASTLE}{Item.7}{}}
 \newlabel{item:two}{{2}{34}{VMCASTLE}{Item.8}{}}
 \newlabel{item:three}{{3}{34}{VMCASTLE}{Item.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Discussion}{34}{section.4.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.1}angr vs Miasm}{34}{subsection.4.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Discussion}{35}{section.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.1}angr vs Miasm}{35}{subsection.4.7.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.7.2}Difficulties and Shortcomings}{35}{subsection.4.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.3}Future Directions}{35}{subsection.4.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions}{36}{chapter.5}\protected@file@percent }
+\newlabel{sec:shortcomings}{{4.7.2}{35}{Difficulties and Shortcomings}{subsection.4.7.2}{}}
+\newlabel{lst:vex_cond_jmp}{{4.14}{37}{TODO}{lstlisting.4.14}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.14}TODO}{37}{lstlisting.4.14}\protected@file@percent }
+\newlabel{line:trickery}{{20}{37}{TODO}{lstnumber.4.14.20}{}}
+\newlabel{lst:cond_jmp}{{4.15}{37}{TODO}{lstlisting.4.15}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.15}TODO}{37}{lstlisting.4.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.3}Future Directions}{37}{subsection.4.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions}{40}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@setckpt{content}{
-\setcounter{page}{37}
+\setcounter{page}{41}
 \setcounter{equation}{0}
 \setcounter{enumi}{3}
 \setcounter{enumii}{0}
@@ -163,7 +171,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{37}
+\setcounter{instcount}{46}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}

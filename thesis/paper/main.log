@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Arch Linux)  (format=lualatex 2024.6.10)  14 JUN 2024 15:56
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Arch Linux)  (format=lualatex 2024.6.10)  15 JUN 2024 10:25
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1112,13 +1112,6 @@ Package biblatex Warning: The following entry could not be found
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                TODO tim blog
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                miasm
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
@@ -1369,12 +1362,12 @@ LaTeX Info: Redefining \ttfamily on input line 157.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images/logo-ub.png, id=184, 145.2627pt x 179.35005pt>
+<./images/logo-ub.png, id=188, 145.2627pt x 179.35005pt>
 File: ./images/logo-ub.png Graphic file (type png)
 <use ./images/logo-ub.png>
 Package luatex.def Info: ./images/logo-ub.png  used on input line 9.
 (luatex.def)             Requested size: 96.73788pt x 119.44142pt.
-<./images/logo-fmi.png, id=185, 97.5645pt x 113.004pt>
+<./images/logo-fmi.png, id=189, 97.5645pt x 113.004pt>
 File: ./images/logo-fmi.png Graphic file (type png)
 <use ./images/logo-fmi.png>
 Package luatex.def Info: ./images/logo-fmi.png  used on input line 26.
@@ -1481,7 +1474,7 @@ Chapter 2.
 [6
 
 ]
-<./images/wanacry.png, id=278, 451.6875pt x 341.02406pt>
+<./images/wanacry.png, id=283, 451.6875pt x 341.02406pt>
 File: ./images/wanacry.png Graphic file (type png)
 <use ./images/wanacry.png>
 Package luatex.def Info: ./images/wanacry.png  used on input line 41.
@@ -1492,18 +1485,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7] [8<./images/wanacry.png>]
 
-LaTeX Warning: Citation 'TODO' on page 9 undefined on input line 72.
+LaTeX Warning: Citation 'TODO' on page 9 undefined on input line 73.
 
 
-LaTeX Warning: Citation 'TODO' on page 9 undefined on input line 72.
+LaTeX Warning: Citation 'TODO' on page 9 undefined on input line 73.
 
 [9]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 85.
+nput line 86.
  [10] [11] [12] [13]
 
 LaTeX Warning: Reference `code:fizzbuzz-1' on page 14 undefined on input line 1
-79.
+87.
 
 (./code/fizz-buzz.tex) [14] [15] [16]
 Chapter 3.
@@ -1511,88 +1504,94 @@ Chapter 3.
 
 ]
 Chapter 4.
-
-LaTeX Warning: Citation 'TODO' on page 18 undefined on input line 249.
-
-
-LaTeX Warning: Citation 'TODO' on page 18 undefined on input line 254.
-
 [18
 
 ]
 
-LaTeX Warning: Citation 'TODO' on page 19 undefined on input line 274.
+LaTeX Warning: Citation 'miasm' on page 19 undefined on input line 270.
 
-
-LaTeX Warning: Citation 'TODO tim blog' on page 19 undefined on input line 274.
-
-
-<./images/cfg_vmwhere.png, id=459, 1723.1878pt x 650.43pt>
+<./images/cfg_vmwhere.png, id=478, 1723.1878pt x 650.43pt>
 File: ./images/cfg_vmwhere.png Graphic file (type png)
 <use ./images/cfg_vmwhere.png>
-Package luatex.def Info: ./images/cfg_vmwhere.png  used on input line 283.
+Package luatex.def Info: ./images/cfg_vmwhere.png  used on input line 279.
 (luatex.def)             Requested size: 455.24411pt x 171.83711pt.
-[19<./images/cfg_vmwhere.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19]
 
 LaTeX Warning: Reference `indirect_call_vmcastle' on page 20 undefined on input
- line 317.
+ line 313.
 
-[20]
+[20<./images/cfg_vmwhere.png>] [21]
 
-LaTeX Warning: Citation 'miasm' on page 21 undefined on input line 364.
+LaTeX Warning: Citation 'miasm' on page 22 undefined on input line 360.
 
-[21] [22] [23] [24]
-<./images/angr.png, id=586, 2438.35968pt x 1608.76031pt>
+[22] [23] [24] [25]
+<./images/angr.png, id=618, 2438.35968pt x 1608.76031pt>
 File: ./images/angr.png Graphic file (type png)
 <use ./images/angr.png>
-Package luatex.def Info: ./images/angr.png  used on input line 425.
+Package luatex.def Info: ./images/angr.png  used on input line 422.
 (luatex.def)             Requested size: 409.71692pt x 270.31898pt.
  (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 )
-[25] [26<./images/angr.png>]
+[26<./images/angr.png>]
 
-LaTeX Warning: Reference `TODO' on page 27 undefined on input line 462.
-
-
-LaTeX Warning: Reference `TODO' on page 27 undefined on input line 462.
-
-
-LaTeX Warning: Reference `TODO' on page 27 undefined on input line 468.
+LaTeX Warning: Reference `angr_ex' on page 27 undefined on input line 459.
 
 [27] [28] [29] [30] [31]
-<./images/cfg.png, id=739, 753.5653pt x 839.38594pt>
+<./images/cfg.png, id=766, 753.5653pt x 839.38594pt>
 File: ./images/cfg.png Graphic file (type png)
 <use ./images/cfg.png>
-Package luatex.def Info: ./images/cfg.png  used on input line 571.
+Package luatex.def Info: ./images/cfg.png  used on input line 568.
 (luatex.def)             Requested size: 364.19667pt x 405.6672pt.
 
 
-LaTeX Warning: Reference `TODO' on page 32 undefined on input line 576.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32<./images/cfg.png>] [33]
 
-LaTeX Warning: Reference `TODO' on page 34 undefined on input line 606.
+LaTeX Warning: Reference `TODO' on page 32 undefined on input line 573.
 
-[34] [35]
+[32] [33<./images/cfg.png>]
+
+LaTeX Warning: Reference `TODO' on page 34 undefined on input line 603.
+
+[34]
+
+LaTeX Warning: Reference `miasm1' on page 35 undefined on input line 622.
+
+[35]
+
+LaTeX Warning: Reference `lst:cond_jump' on page 36 undefined on input line 624
+.
+
+
+Overfull \hbox (3.76344pt too wide) in paragraph at lines 624--625
+\TU/lmr/m/n/12 with con-di-tion-als. This hap-pened be-cause there is no re-li-a
+ble method which the []
+ []
+
+[36] [37] [38] [39]
 Chapter 5.
-) [36
+) [40
 
-] (./main.acr [37
-
-
+] (./main.acr [41
 
 
-]) (./main.gls [38]) [39
 
 
-] (./main.lol)
+]) (./main.gls [42]) [43
+
+
+] (./main.lol [44
+
+])
 \tf@lol=\write9
 
 \openout9 = main.lol
- [40
-
-] (./main.lof
+ [45]
+(./main.lof
 LaTeX Info: Redefining \rmfamily on input line 3.
 LaTeX Info: Redefining \sffamily on input line 3.
 LaTeX Info: Redefining \ttfamily on input line 3.
@@ -1609,10 +1608,9 @@ LaTeX Info: Redefining \ttfamily on input line 11.
 \tf@lof=\write10
 
 \openout10 = main.lof
+ [46
 
-[41
-
-] [42
+] [47
 
 ]
 Overfull \hbox (8.34657pt too wide) in paragraph at lines 200--200
@@ -1621,7 +1619,7 @@ Overfull \hbox (8.34657pt too wide) in paragraph at lines 200--200
 : / / valgrind .
  []
 
-[43] [44] (./main.aux (./0-title.aux) (./abstract.aux) (./content.aux))
+[48] [49] (./main.aux (./0-title.aux) (./abstract.aux) (./content.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1630,17 +1628,8 @@ L3 programming layer <2024-02-20>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 7E9812A0F26C51094AA81C0601C9774B;6401
-(rerunfilecheck)             After:  B52CCFE3CEE33626F13A565E2641ED40;6487.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: B52CCFE3CEE33626F13A565E2641ED40;6487.
 
 Package biblatex Warning: Please rerun LaTeX.
 
@@ -1650,14 +1639,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 38209 strings out of 476447
- 381683,2373549 words of node,token memory allocated
- 837 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 26 attribute, 82 glue_spec
-, 26 attribute_list, 1 write, 19 pdf_action nodes
-   avail lists: 1:3,2:3947,3:458,4:5064,5:5331,6:81,7:14617,8:93,9:15209,10:46,1
-1:1111
- 59197 multiletter control sequences out of 65536+600000
+ 38316 strings out of 476447
+ 381700,2373549 words of node,token memory allocated
+ 962 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 38 attribute, 83 glue_spec
+, 38 attribute_list, 1 write, 31 pdf_action nodes
+   avail lists: 1:3,2:4806,3:456,4:5652,5:5713,6:74,7:15357,8:93,9:16855,10:46,1
+1:1086
+ 59261 multiletter control sequences out of 65536+600000
  50 fonts using 12420007 bytes
  91i,12n,101p,2485b,3662s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></usr/share
@@ -1668,10 +1657,10 @@ ype/public/lm/lmmono10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/
 lm/lmroman12-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman1
 2-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf
 ></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (44 pages, 1176461 bytes).
+Output written on main.pdf (49 pages, 1195244 bytes).
 
-PDF statistics: 972 PDF objects out of 1000 (max. 8388607)
- 880 compressed objects within 9 object streams
- 373 named destinations out of 1000 (max. 131072)
- 361 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1096 PDF objects out of 1200 (max. 8388607)
+ 993 compressed objects within 10 object streams
+ 416 named destinations out of 1000 (max. 131072)
+ 369 words of extra memory for PDF output out of 10000 (max. 100000000)
 

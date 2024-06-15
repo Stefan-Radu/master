@@ -170,8 +170,6 @@ puts("WROOONG!"WROOONG!)
 exit(1 <no return ...>)
 \end{lstlisting}
 
-\subsection{Fuzzing}
-
 \subsection{Dynamic Taint analysis}
 
 Dynamic Taint analysis is a technique used to track data flow from sources to sinks. In order to achieve this goal, data considered important is given a label (\emph{a taint}), based on a \emph{taint introduction policy}. Typically, we would taint untrusted user input or data arriving over the network. This \emph{tainted} data is propagated through the system based on execution and how the code interacts with the data at the opcode level. When an operation is performed on tainted data, memory locations used during the respective operation are also tainted, based on a \emph{taint propagation policy}. Some memory areas, or code sections are also marked as \emph{sinks}. When tainted data arrived at a sink, the path it took through the code can be traced back. In the context of malware analysis, the flow of tainted data is valuable, as it gives valuable insights about the ways the malware interacts with the user and the operating system. Taint analysis is also valuable for exploit detection, and was initially used specifically for this goal. By tainting untrusted user input one can detect unusual data flows and detect attempts at exploiting a system. In such cases, a \emph{taint checking policy} might be used to determine further behaviour (e.g. halting execution) \cite{da_survey_2019} \cite{all_about_taint_2010}.
@@ -179,6 +177,8 @@ Dynamic Taint analysis is a technique used to track data flow from sources to si
 \section{Other Approaches}
 
 \subsection{Symbolic Execution}
+
+% TODO asta e la static analysis teoretic
 
 \gls{SE} is a powerful program analysis technique, and one of the core techniques which the idea of this paper is based on. As such, we will cover \gls{SE} in more detail compared to the other dynamic analysis approaches.
 
@@ -237,18 +237,60 @@ A very common way to try and evade signature-based detection is to encrypt the m
 
 \subsubsection{Virtual Machines}
 
+
 \cite{malware_obf}
 % TODO it is important to note that techniques are not singluar and can, and often are, combined
 
 
 % TODO figure out if this fits better in the next chapter (I think yes)
+% TODO JUST PUT A SECTION IN THE NEXT CHAPTER
+% TODO might be worth a chapter describing virtual machines and sht, but we'll see
+% TODO the correct term seems to be virtualisation-based obfuscation
+
+% TODO for getting info on VMs and other techniques: LOKI: Hardening Code Obfuscation Against Automated Attacks
 
 \Glspl{VM} 
 
+% ------------------------------------------------------------------------------
 
-\chapter{SOTA - VM-based deobfuscation} % TODO Could be named "related work"
+\chapter{State of the Art}
+
+% TODO fix this sht here 
+
+%There have been public a number of academic works describing various approaches to analysing protections based on virtualisation-based obfuscation. As also mentioned in one of these works by Salwan et al. \cite{symbolic_deobf_2018}, these approaches can be grouped together in categories. There are manual and (semi) manual approaches, which usually rely on an skilled reverse engineer to analyse the \gls{VM} interpretor and its bytecode. There are (semi) automatic approaches, where static and dynamic analysis techniques are applied in order to \emph{filter out} the non-essential parts of the code, and to recover the unprotected code form the result. Other approaches use Program Synthesis in order to automatically deobfuscate arithmetic and \gls{VM} handlers % TODO, in a common programming language. THIS IS KINDA SHTTT
+
+% chronological order -> chronological classification if there is any separation - and i think there is !!
+
+In these chapter, cover the main contributions of recent pieces of work. At the end of the chapter we will discuss how the state of the art compares with our approach.
+
+\section{Virtualization-based Obfuscation}
+
+\section{Semi-Manual Approaches}
+
+One of the first academic works on the topic roots back to 2009, when Rolles \cite{rolles2009unpacking} published a systematic approach to tackling virtualisation-based obfuscation. The authors describe a multi-step strategy to recover the original source code from the protected program. They start with analysing the \gls{VM} interpretor in order to recover the semantics of the handlers. They use this information in order to construct an \gls{IR} which to lift the \gls{VM} bytecode into, as well as a translator which takes care of the translation automatically. As mentioned by the authors, this step must be executed by a professional reverse engineer, and must be performed once for each virtualisation scheme which is to be analysed. They process with identifying the exact location in the code where control is passed to the \gls{VM} interpretor. The multiple steps that follow in the process involve building the disassembler, disassembling the bytecode. On the resulting bytecode is simplified using compiler optimisation techniques, and finally the code is translated into \cc{x86} \gls{ISA}, with the end goal of recovering code as close to the original as possible. The strategy proposed in this work is very effective, but requires significant reverse engineering effort.
+
+\section{Semi-Automated Approaches}
+
+Sharif et al introduce in 2009 the Rotalumé framework \ref{sharif2009}, which they claim to be the first work aiming to automatically deobfuscate virtualised malware. In their prototype, they execute chosen samples using the using QEMU \cite{qemu}, in order to capture its execution trace in a protected environment. Using the execution trace, they were able to automatically detect the bytecode buffers and extract the syntax and semantics of the bytecode, by applying data-flow and taint analysis. The Rotalumé framework is able to construct the \gls{CFG} of the program encoded in the bytecode, an important element of following analysis.
+
+In 2015, Yadegari et al. proposed a generic approach to deobfuscating programs \cite{yadegari2015}. They do not make any assumptions about the nature of the obfuscation, but claim their method is effective against a wide array of obfuscation techniques, including virtualisation. They identify the obfuscation process with a series of semantic-preserving transformation which make the original code harder to understand. From this, it immediately follows that the opposite process, that of deobfuscation involves applying a series of semantic-preserving transformation that simplify the code and make it easier to understand. In their work, the authors apply bit-level taint analysis in order to determine the relevant code. They also apply determine data dependency in the program. Base on the extracted information they were able to apply the previously mentioned concepts of code simplification, strictly on the sets of instructions involved in the flow of data from input to output. They were able to recover \glspl{CFG} similar to those of the original code before obfuscation.
+
+Taking a similar approach to \ref{yadegari2015}, SEEAD was proposed by Tang et al. in 2017. The authors have the same goal of proposing a generic deobfuscation tool, so the also make little to no assumptions about the type of obfuscation applied. This approach aims to address a common shortcoming in previous attempts based on dynamic analysis: code coverage, or rather the lack there of. In order to improve code coverage they use a code exploration technique, which guides execution on differing paths across multiple executions. In order to reduce overhead and analyse only the execution paths that are directly related to input data, they also use taint analysis, but also introduce the use of control dependency analysis. The authors claim that increased code coverage will expose hidden behaviours. Their experiments showed that SEEAD is capable of recovering the original logic from the sample obfuscated binaries, which also includes the \gls{CFG}.
+
+Salwan et al. introduce at the end of 2018 a deobfuscation tool targeting the Tigress C Obfuscator \cite{tigress}. They propose using a mix of taint analysis, symbolic execution, but also compiler optimizations through the LLVM \cite{llvm} tool-set. Their approach involves a multi-step process. In the first step, they identify an input source in the program, which they call a seed. Following that, they use dynamic taint analysis in order to filter out code which does not interact, either directly or indirectly with the seed. The sub-trace resulted in the previous step is then used in conjunction with symbolic execution in order obtain generic a symbolic of the trace. The forth step consists of determining a way in which the tainted path can be reached. Since there is the possibility of discovering new seeds, the previous steps are repeated until there is no seed left to be processed. In the final step, the identifies symbolic paths are converted into LLVM \gls{IR}. The \gls{IR} will be optimised using the LLVM framework, and then compiled for one of the supported architectures, in order to complete the deobfuscation process.
+
+\section{Program Synthesis}
+
+Blazytko et al. came up in 2017 with Synthia \cite{blazytko2017}, a tool which aims eliminate virtualization-based obfuscation through semantics synthesis of the \gls{VM} handlers. Similar to previous approaches, they extract execution traces from the obfuscated program. The traces are split into \emph{windows}, and each window is fuzzed. The result of the fuzzing step is a set of input-output pair, which depict the semantics of the trace window. They used the Monte Carlo Tree Search (MCTS) in order to build expressions with the same semantics as the resulting input-output pairs, in combination with SMT solvers in order to simplify the trace. Their results suggest that Synthia can extract the semantics from arithmetic \gls{VM} instruction handlers, and it can simplify \gls{MBA} expressions as well.
+
+
+\section{Discussion}
+
+% TODO poate mai merge adaugat si ceva din survey??
 
 % there is no project building on top trying to further enhance manual analysis. there are many projects which propose impressive and innovative ideas. However, we were not able to find one that went past the research prototype phase.
+
+% ------------------------------------------------------------------------------
 
 \chapter{Our approach}
 
@@ -356,6 +398,8 @@ After getting a high-level overview, we continue the analysis with a mix of stat
 
 \subsection{Automatic handler analysis using Miasm}
 \label{sec:miasm}
+
+% There is a cool paper that does this, from 2018. cite it. and also mention that @ in miasm IR stands for derefferencing. and also that the output is miasm IR.
 
 This is a short digression from the main topic, to discuss a technique which could prove very useful when analysing obfuscated code in general. We have seen this technique mentioned in multiple places including the Miasm blog in an article about reverse engineering the ZeusVM malware \cite{zeusvm_miasm}, as well as in multiple workshops by Tim Blazytko, such as \cite{tim_miasm}. It involves using Miasm \cite{miasm}, a powerful reverse engineering framework, in order to automatically parse all \gls{VM} handlers and output their semantics in a clear and structured way. 
 
@@ -676,12 +720,13 @@ Our proposed approach can be a very effective way of tackling \gls{VM}-based obf
 
 Considering the shortcomings mentioned in the previous Section \ref{sec:shortcomings}, we would like to contribute directly to the angr project. We would like to propose some changes to the \cc{pyvex} component, in particular to improve the \cc{ite} method from the \cc{Instruction} class. We consider that implementing these changes would contribute significantly to streamlining the process of writing the implementation of a non-trivial \gls{VM} handler.
 
+% TODO use the term ISA and IR more instead of disassembly
 angr, in its current state, provides two decompilation routes for a \gls{BB}: via capstone and via VEX. In our case, since there is obviously no capstone module for a custom \gls{VM} architecture, we can only see the VEX assembly code, which is useful in many cases, but is rather verbose and hard to read. angr exposes a shallow, but sill very useable disassembly layer, separate from capstone. It is the exact layer that we tapped into in order to provide the disassembler through \cc{arch-genesis}. We would like to propose some changes to the angr engine, such that when one instruments a binary file that is not supported by capstone, a disassembly output is still provided via the previously mentioned, already existing layer. This change would have a positive impact in the overall process of instrumenting a custom architecture with angr.
 
-% TODO for the below, check if its been done before and reference that here!!!! - After SOTA
+% TODO s-a facut deja !! pune referinte
 A more ambitious goal would be to think about recovering the source code in its original form before obfuscation. As we have previously seen when we discussed about decompilation \ref{sec:reverse_engineering}, this is not entirely possible, due to the varying levels of information loss during the compilation process and obfuscation process. Instead, we can hope to achieve similar code with the same semantics. The advantages of a system which would enable such a transformation are immediate: reverse engineers and analysts would be able to use the large tool-set that they are already used to in order to analyse bytecode written for a custom architecture. This is clearly not an easy task, as we would need a transpiler from the custom architecture to \cc{x64}, for instance. Coming up with a transpiler for every embedded \gls{VM} that we encounter is obviously not realistic. What we can do it to look again at \glspl{IR}. LLVM \cite{llvm} is an \gls{IR} based on a very powerful infrastructure. What we would need is a way to generate the equivalent LLVM \gls{IR} to the target \gls{VM} bytecode. To get there, we could for instance use LLVM bindings in a language such as python. Generating LLVM is known to be difficult, so we could instead implement the \gls{VM} instruction semantics in VEX, and build a generic VEX to LLVM transpiler instead.
 
-% TODO vezi daca nu s-a facut asta deja??
+% FIXME s-a facut deja !! pune referinte
 The part of the process which we could not automate in our project, is also the most difficult and time consuming: implementing the logic of each function handler. We would like to further build onto the ideas from Section \ref{sec:miasm}, regarding the automatic analysis of the bytecode semantics via symbolic execution. We believe that a comprehensive and cleanly structured symbolic execution trace of each function handler could serve as the basis for an automatic VEX generator. We could integrate this generator with angr, and have fully automated version of our current project. We could also consider building similar generator for the LLVM \gls{IR}. We could then use the output of this generator exactly as described in the previous step, to compile the bytecode to a common architecture and continue the analysis from there.
 
 \chapter{Conclusions}
@@ -690,7 +735,6 @@ The part of the process which we could not automate in our project, is also the 
 %* Future directions
 %   * llvm transpiler from VEX, then compile to c and open in ghidra
 
-% TODO everything is available on github
 % TODO title case everywhere
 % TODO other things to add:
     %* blocks
@@ -698,6 +742,7 @@ The part of the process which we could not automate in our project, is also the 
     %* CFG
 % TODO set vspace / margin before listings and figures as it's very crammed
 % TODO 0-9 numbers should be written as letters, not digits
-% TODO explain WHY we chose to work with the ctf challenges - they're a good example of easy - to medium vms to decipher
 
 % TODO cite pyvex
+% TODO a cleanly labeled bytecode example
+% TODO dynamic symbolic execution === Concolic execution

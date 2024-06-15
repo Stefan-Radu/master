@@ -238,6 +238,22 @@
       \verb https://en.wikipedia.org/w/index.php?title=WannaCry_ransomware_attack&oldid=1227800240
       \endverb
     \endentry
+    \entry{cutter}{misc}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cutter}
+      \field{month}{5}
+      \field{note}{[Online; accessed 15. Jun. 2024]}
+      \field{title}{{Cutter}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://cutter.re
+      \endverb
+      \verb{url}
+      \verb https://cutter.re
+      \endverb
+    \endentry
     \entry{ghidra}{misc}{}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
@@ -251,6 +267,22 @@
       \endverb
       \verb{url}
       \verb https://ghidra-sre.org
+      \endverb
+    \endentry
+    \entry{ictf2023}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{6}
+      \field{note}{[Online; accessed 15. Jun. 2024]}
+      \field{title}{{ImaginaryCTF-2023-Challenges}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/ImaginaryCTF/ImaginaryCTF-2023-Challenges
+      \endverb
+      \verb{url}
+      \verb https://github.com/ImaginaryCTF/ImaginaryCTF-2023-Challenges
       \endverb
     \endentry
     \entry{qsynth}{inproceedings}{}
@@ -533,6 +565,21 @@
       \endverb
       \keyw{Filters;Runtime;Information analysis;Testing;Computerized monitoring;Performance analysis;Information security;Reactive power;Privacy;Heuristic algorithms;taint analysis;symbolic execution;dynamic analysis}
     \endentry
+    \entry{llvm}{misc}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 14. Jun. 2024]}
+      \field{title}{{The LLVM Compiler Infrastructure Project}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://llvm.org
+      \endverb
+      \verb{url}
+      \verb https://llvm.org
+      \endverb
+    \endentry
     \entry{toml}{misc}{}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
@@ -546,6 +593,22 @@
       \endverb
       \verb{url}
       \verb https://toml.io/en
+      \endverb
+    \endentry
+    \entry{uiu2023}{misc}{}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{6}
+      \field{note}{[Online; accessed 15. Jun. 2024]}
+      \field{title}{{UIUCTF-2023-Public}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://github.com/sigpwny/UIUCTF-2023-Public
+      \endverb
+      \verb{url}
+      \verb https://github.com/sigpwny/UIUCTF-2023-Public
       \endverb
     \endentry
     \entry{valgrind}{misc}{}
@@ -692,7 +755,6 @@
     \endentry
   \enddatalist
   \missing{TODO}
-  \missing{TODO tim blog}
   \missing{miasm}
 \endrefsection
 \endinput
