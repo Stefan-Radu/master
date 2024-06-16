@@ -1,19 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[85] biber:340> INFO - === Sat Jun 15, 2024, 10:25:37
-[102] Biber.pm:419> INFO - Reading 'main.bcf'
-[166] Biber.pm:979> INFO - Found 33 citekeys in bib section 0
-[184] Biber.pm:4419> INFO - Processing section 0
-[196] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[198] bibtex.pm:1713> INFO - LaTeX decoding ...
-[235] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[380] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[381] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[381] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[381] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[410] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[417] bbl.pm:763> INFO - Output to main.bbl
-[418] Biber.pm:131> WARN - legacy month field 'sep' in entry 'da_survey_2019' is not an integer - this will probably not sort properly.
-[418] Biber.pm:131> WARN - I didn't find a database entry for 'TODO' (section 0)
-[418] Biber.pm:131> WARN - I didn't find a database entry for 'miasm' (section 0)
-[418] Biber.pm:133> INFO - WARNINGS: 3
+[92] biber:340> INFO - === Sun Jun 16, 2024, 10:38:16
+[109] Biber.pm:419> INFO - Reading 'main.bcf'
+[184] Biber.pm:979> INFO - Found 44 citekeys in bib section 0
+[203] Biber.pm:4419> INFO - Processing section 0
+[215] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[218] bibtex.pm:1713> INFO - LaTeX decoding ...
+[276] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[483] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[483] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[483] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[483] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[526] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[537] bbl.pm:763> INFO - Output to main.bbl
+[538] Biber.pm:131> WARN - legacy month field 'sep' in entry 'da_survey_2019' is not an integer - this will probably not sort properly.
+[538] Biber.pm:131> WARN - legacy month field 'may' in entry 'survey_symbolic_2018' is not an integer - this will probably not sort properly.
+[538] Biber.pm:133> INFO - WARNINGS: 2

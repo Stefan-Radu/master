@@ -66,6 +66,69 @@
       \verb https://www.schneier.com/blog/archives/2024/04/backdoor-in-xz-utils-that-almost-happened.html
       \endverb
     \endentry
+    \entry{survey_symbolic_2018}{article}{}
+      \name{author}{5}{}{%
+        {{hash=22a28bd4c4375f650b7bc5ca7e1def0b}{%
+           family={Baldoni},
+           familyi={B\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=838313855b1318a89487737723f117a9}{%
+           family={Coppa},
+           familyi={C\bibinitperiod},
+           given={Emilio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=cacdd27cffa43475e5cc3c1b2ba5f4cb}{%
+           family={D’elia},
+           familyi={D\bibinitperiod},
+           given={Daniele\bibnamedelima Cono},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=0d818aa3e968cd8759e8d31211dc6382}{%
+           family={Demetrescu},
+           familyi={D\bibinitperiod},
+           given={Camil},
+           giveni={C\bibinitperiod}}}%
+        {{hash=988d2602b6318807e4481ff5c673bbd5}{%
+           family={Finocchi},
+           familyi={F\bibinitperiod},
+           given={Irene},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{e61bf9b5a1d08d8f9562b57211fe1ff7}
+      \strng{fullhash}{0efa45ce2ef5183f884f16dd29f71523}
+      \strng{bibnamehash}{0efa45ce2ef5183f884f16dd29f71523}
+      \strng{authorbibnamehash}{0efa45ce2ef5183f884f16dd29f71523}
+      \strng{authornamehash}{e61bf9b5a1d08d8f9562b57211fe1ff7}
+      \strng{authorfullhash}{0efa45ce2ef5183f884f16dd29f71523}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many security and software testing applications require checking whether certain properties of a program hold for any possible usage scenario. For instance, a tool for identifying software vulnerabilities may need to rule out the existence of any backdoor to bypass a program’s authentication. One approach would be to test the program using different, possibly random inputs. As the backdoor may only be hit for very specific program workloads, automated exploration of the space of possible inputs is of the essence. Symbolic execution provides an elegant solution to the problem, by systematically exploring many possible execution paths at the same time without necessarily requiring concrete inputs. Rather than taking on fully specified input values, the technique abstractly represents them as symbols, resorting to constraint solvers to construct actual instances that would cause property violations. Symbolic execution has been incubated in dozens of tools developed over the past four decades, leading to major practical breakthroughs in a number of prominent software reliability applications. The goal of this survey is to provide an overview of the main ideas, challenges, and solutions developed in the area, distilling them for a broad audience.}
+      \field{issn}{0360-0300}
+      \field{journaltitle}{ACM Comput. Surv.}
+      \field{month}{5}
+      \field{number}{3}
+      \field{title}{A Survey of Symbolic Execution Techniques}
+      \field{volume}{51}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.1145/3182657
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3182657
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3182657
+      \endverb
+      \keyw{static analysis,software testing,concolic execution,Symbolic execution}
+    \endentry
     \entry{concept_of_da_1999}{inproceedings}{}
       \name{author}{1}{}{%
         {{hash=0bab8231c87d1dd0fdffe7d7eeee7908}{%
@@ -99,6 +162,75 @@
       \field{pages}{216\bibrangedash 234}
       \range{pages}{19}
     \endentry
+    \entry{blazytko2017}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=75793961fc24655ee197ea2cc1c7de1b}{%
+           family={Blazytko},
+           familyi={B\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=42393a15a3e54c87a28e6a926f0fac01}{%
+           family={Contag},
+           familyi={C\bibinitperiod},
+           given={Moritz},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7e9d240bc31f30aebf67ea4335271375}{%
+           family={Aschermann},
+           familyi={A\bibinitperiod},
+           given={Cornelius},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6e1ecd611c7129ad7a6eb6a9a98f11f6}{%
+           family={Holz},
+           familyi={H\bibinitperiod},
+           given={Thorsten},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a01ea9acd68e47d3dd2a4ebafa75d77}
+      \strng{fullhash}{b5b57514116d9b177bb7f9126645896a}
+      \strng{bibnamehash}{b5b57514116d9b177bb7f9126645896a}
+      \strng{authorbibnamehash}{b5b57514116d9b177bb7f9126645896a}
+      \strng{authornamehash}{7a01ea9acd68e47d3dd2a4ebafa75d77}
+      \strng{authorfullhash}{b5b57514116d9b177bb7f9126645896a}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{26th USENIX Security Symposium (USENIX Security 17)}
+      \field{title}{Syntia: Synthesizing the semantics of obfuscated code}
+      \field{year}{2017}
+      \field{pages}{643\bibrangedash 659}
+      \range{pages}{17}
+    \endentry
+    \entry{syscall}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=735572cb595e277e983bc2058339b009}{%
+           family={Brennan},
+           familyi={B\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{735572cb595e277e983bc2058339b009}
+      \strng{fullhash}{735572cb595e277e983bc2058339b009}
+      \strng{bibnamehash}{735572cb595e277e983bc2058339b009}
+      \strng{authorbibnamehash}{735572cb595e277e983bc2058339b009}
+      \strng{authornamehash}{735572cb595e277e983bc2058339b009}
+      \strng{authorfullhash}{735572cb595e277e983bc2058339b009}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Stephen Brennan's Blog}
+      \field{month}{11}
+      \field{note}{[Online; accessed 16. Jun. 2024]}
+      \field{title}{{Tutorial - Write a System Call - Stephen Brennan}}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://brennan.io/2016/11/14/kernel-dev-ep3
+      \endverb
+      \verb{url}
+      \verb https://brennan.io/2016/11/14/kernel-dev-ep3
+      \endverb
+    \endentry
     \entry{capstone}{misc}{}
       \name{author}{1}{}{%
         {{hash=c1d9154a79ca8fda7bd0cecddc25d17f}{%
@@ -126,7 +258,35 @@
       \verb https://www.capstone-engine.org
       \endverb
     \endentry
-    \entry{wiki_malware}{misc}{}
+    \entry{tigress}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=028cbd59b46688ed431f75f79cace82e}{%
+           family={Collberg},
+           familyi={C\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{028cbd59b46688ed431f75f79cace82e}
+      \strng{fullhash}{028cbd59b46688ed431f75f79cace82e}
+      \strng{bibnamehash}{028cbd59b46688ed431f75f79cace82e}
+      \strng{authorbibnamehash}{028cbd59b46688ed431f75f79cace82e}
+      \strng{authornamehash}{028cbd59b46688ed431f75f79cace82e}
+      \strng{authorfullhash}{028cbd59b46688ed431f75f79cace82e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 15. Jun. 2024]}
+      \field{title}{{The Tigress C Obfuscator}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://tigress.wtf
+      \endverb
+      \verb{url}
+      \verb https://tigress.wtf
+      \endverb
+    \endentry
+    \entry{crackme}{misc}{}
       \name{author}{1}{}{%
         {{hash=3a6de00f5a66ceb09c099e969c33bc67}{%
            family={{Contributors to Wikimedia projects}},
@@ -139,6 +299,34 @@
       \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
       \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{[Online; accessed 16. Jun. 2024]}
+      \field{title}{{Crackme - Wikipedia}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/w/index.php?title=Crackme&oldid=1220283524
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/w/index.php?title=Crackme&oldid=1220283524
+      \endverb
+    \endentry
+    \entry{wiki_malware}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3a6de00f5a66ceb09c099e969c33bc67}{%
+           family={{Contributors to Wikimedia projects}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{fullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{bibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authorbibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
+      \field{extraname}{2}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -166,7 +354,7 @@
       \strng{authorbibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -194,7 +382,7 @@
       \strng{authorbibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -222,7 +410,7 @@
       \strng{authorbibnamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authornamehash}{3a6de00f5a66ceb09c099e969c33bc67}
       \strng{authorfullhash}{3a6de00f5a66ceb09c099e969c33bc67}
-      \field{extraname}{4}
+      \field{extraname}{5}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -254,6 +442,21 @@
       \verb https://cutter.re
       \endverb
     \endentry
+    \entry{fuzzing}{misc}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 16. Jun. 2024]}
+      \field{title}{{Fuzzing {$\vert$} OWASP Foundation}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://owasp.org/www-community/Fuzzing
+      \endverb
+      \verb{url}
+      \verb https://owasp.org/www-community/Fuzzing
+      \endverb
+    \endentry
     \entry{ghidra}{misc}{}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
@@ -267,6 +470,21 @@
       \endverb
       \verb{url}
       \verb https://ghidra-sre.org
+      \endverb
+    \endentry
+    \entry{ida}{misc}{}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{note}{[Online; accessed 16. Jun. 2024]}
+      \field{title}{{Hex Rays - State-of-the-art binary code analysis solutions}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://hex-rays.com/ida-pro
+      \endverb
+      \verb{url}
+      \verb https://hex-rays.com/ida-pro
       \endverb
     \endentry
     \entry{ictf2023}{misc}{}
@@ -459,6 +677,22 @@
       \endverb
       \keyw{malware,evasion,detection,behavioral analysis,Dynamic analysis}
     \endentry
+    \entry{miasm}{misc}{}
+      \field{sortinit}{m}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{6}
+      \field{note}{[Online; accessed 12. Jun. 2024]}
+      \field{title}{{miasm}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/cea-sec/miasm
+      \endverb
+      \verb{url}
+      \verb https://github.com/cea-sec/miasm
+      \endverb
+    \endentry
     \entry{msynth}{misc}{}
       \field{sortinit}{m}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
@@ -475,6 +709,36 @@
       \verb https://github.com/mrphrazer/msynth
       \endverb
     \endentry
+    \entry{objdump}{misc}{}
+      \field{sortinit}{o}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 16. Jun. 2024]}
+      \field{title}{{objdump(1) - Linux manual page}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://man7.org/linux/man-pages/man1/objdump.1.html
+      \endverb
+      \verb{url}
+      \verb https://man7.org/linux/man-pages/man1/objdump.1.html
+      \endverb
+    \endentry
+    \entry{qemu}{misc}{}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 15. Jun. 2024]}
+      \field{title}{{QEMU}}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb https://www.qemu.org
+      \endverb
+      \verb{url}
+      \verb https://www.qemu.org
+      \endverb
+    \endentry
     \entry{crusu_relabs}{misc}{}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
@@ -489,6 +753,31 @@
       \verb{url}
       \verb https://cs.unibuc.ro/~crusu/re/labs.html
       \endverb
+    \endentry
+    \entry{rolles2009unpacking}{article}{}
+      \name{author}{1}{}{%
+        {{hash=692ce13010a392e2dfff3eb76df42fa7}{%
+           family={Rolles},
+           familyi={R\bibinitperiod},
+           given={Rolf},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{692ce13010a392e2dfff3eb76df42fa7}
+      \strng{fullhash}{692ce13010a392e2dfff3eb76df42fa7}
+      \strng{bibnamehash}{692ce13010a392e2dfff3eb76df42fa7}
+      \strng{authorbibnamehash}{692ce13010a392e2dfff3eb76df42fa7}
+      \strng{authornamehash}{692ce13010a392e2dfff3eb76df42fa7}
+      \strng{authorfullhash}{692ce13010a392e2dfff3eb76df42fa7}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{WOOT}
+      \field{title}{Unpacking Virtualization Obfuscators.}
+      \field{volume}{9}
+      \field{year}{2009}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
     \endentry
     \entry{andromeda}{article}{}
       \name{author}{2}{}{%
@@ -564,6 +853,27 @@
       \verb 10.1109/SP.2010.26
       \endverb
       \keyw{Filters;Runtime;Information analysis;Testing;Computerized monitoring;Performance analysis;Information security;Reactive power;Privacy;Heuristic algorithms;taint analysis;symbolic execution;dynamic analysis}
+    \endentry
+    \entry{smt}{inproceedings}{}
+      \list{location}{1}{%
+        {Bellevue, WA}%
+      }
+      \list{publisher}{1}{%
+        {USENIX Association}%
+      }
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{6th USENIX Workshop on Offensive Technologies (WOOT 12)}
+      \field{month}{8}
+      \field{title}{{SMT} Solvers in Software Security}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://www.usenix.org/conference/woot12/workshop-program/presentation/Vanegue
+      \endverb
+      \verb{url}
+      \verb https://www.usenix.org/conference/woot12/workshop-program/presentation/Vanegue
+      \endverb
     \endentry
     \entry{llvm}{misc}{}
       \field{sortinit}{T}
@@ -690,37 +1000,63 @@
       \verb https://synthesis.to/2021/10/21/vm_based_obfuscation.html
       \endverb
     \endentry
-    \entry{malware_obf}{inproceedings}{}
-      \name{author}{2}{}{%
-        {{hash=a31096762b5ffeda6e1ec00626db3c2a}{%
-           family={You},
+    \entry{yadegari2015}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=1abf0f085b962dec2a3fdfb887414d4c}{%
+           family={Yadegari},
            familyi={Y\bibinitperiod},
-           given={Ilsun},
-           giveni={I\bibinitperiod}}}%
-        {{hash=12ffd1a743dbd6c7b1df471c96b56b1f}{%
-           family={Yim},
-           familyi={Y\bibinitperiod},
-           given={Kangbin},
-           giveni={K\bibinitperiod}}}%
+           given={Babak},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a1178047a63364329c0bf1b2db152485}{%
+           family={Johannesmeyer},
+           familyi={J\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=9e55c5d69e3f8cd9799204c550ae5de9}{%
+           family={Whitely},
+           familyi={W\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=74cb3e5fb2e4f290ff5ab99d8dcf6e1e}{%
+           family={Debray},
+           familyi={D\bibinitperiod},
+           given={Saumya},
+           giveni={S\bibinitperiod}}}%
       }
       \list{organization}{1}{%
         {IEEE}%
       }
-      \strng{namehash}{36e3ff6f5261fcd60d84508b04719103}
-      \strng{fullhash}{36e3ff6f5261fcd60d84508b04719103}
-      \strng{bibnamehash}{36e3ff6f5261fcd60d84508b04719103}
-      \strng{authorbibnamehash}{36e3ff6f5261fcd60d84508b04719103}
-      \strng{authornamehash}{36e3ff6f5261fcd60d84508b04719103}
-      \strng{authorfullhash}{36e3ff6f5261fcd60d84508b04719103}
+      \strng{namehash}{b8ecd7ce95fc63a7e132baf71b91fae3}
+      \strng{fullhash}{950ca4733f816d47fd5096bb701171fa}
+      \strng{bibnamehash}{950ca4733f816d47fd5096bb701171fa}
+      \strng{authorbibnamehash}{950ca4733f816d47fd5096bb701171fa}
+      \strng{authornamehash}{b8ecd7ce95fc63a7e132baf71b91fae3}
+      \strng{authorfullhash}{950ca4733f816d47fd5096bb701171fa}
       \field{sortinit}{Y}
       \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{2010 International conference on broadband, wireless computing, communication and applications}
-      \field{title}{Malware obfuscation techniques: A brief survey}
-      \field{year}{2010}
-      \field{pages}{297\bibrangedash 300}
-      \range{pages}{4}
+      \field{booktitle}{2015 IEEE Symposium on Security and Privacy}
+      \field{title}{A generic approach to automatic deobfuscation of executable code}
+      \field{year}{2015}
+      \field{pages}{674\bibrangedash 691}
+      \range{pages}{18}
+    \endentry
+    \entry{z3}{misc}{}
+      \field{sortinit}{z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GitHub}
+      \field{month}{6}
+      \field{note}{[Online; accessed 16. Jun. 2024]}
+      \field{title}{{z3}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/Z3Prover/z3
+      \endverb
+      \verb{url}
+      \verb https://github.com/Z3Prover/z3
+      \endverb
     \endentry
     \entry{zeusvm}{misc}{}
       \field{sortinit}{Z}
@@ -754,8 +1090,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{TODO}
-  \missing{miasm}
 \endrefsection
 \endinput
 

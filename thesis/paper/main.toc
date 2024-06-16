@@ -15,50 +15,47 @@
 \contentsline {subsubsection}{Trojan}{7}{section*.3}%
 \contentsline {subsubsection}{Worm / Virus}{7}{section*.4}%
 \contentsline {subsubsection}{Ransomware}{7}{section*.5}%
-\contentsline {subsubsection}{Bot and Botnets}{7}{section*.6}%
+\contentsline {subsubsection}{Bots and Botnets}{7}{section*.6}%
 \contentsline {subsection}{\numberline {2.1.2}Relevance}{8}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}Reverse Engineering}{8}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Static Analysis}{9}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Dynamic Analysis}{11}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Debugging}{11}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.1}Debugging}{12}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Function Call Analysis}{12}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Fuzzing}{13}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Dynamic Taint analysis}{13}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Other Approaches}{14}{section.2.5}%
+\contentsline {subsection}{\numberline {2.4.3}Dynamic Taint analysis}{13}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Mixed Techniques}{14}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Symbolic Execution}{14}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Concolic Execution}{15}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}Obfuscation Techniques}{15}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Classification}{15}{subsection.2.6.1}%
-\contentsline {subsubsection}{Classical Techniques}{15}{section*.7}%
-\contentsline {subsubsection}{Classical Techniques}{16}{section*.8}%
-\contentsline {subsubsection}{Opaque Predicates}{16}{section*.9}%
-\contentsline {subsubsection}{Mixed Boolean-Arithmetic}{16}{section*.10}%
-\contentsline {subsubsection}{Control-Flow Flattening}{16}{section*.11}%
-\contentsline {subsubsection}{Virtual Machines}{16}{section*.12}%
-\contentsline {chapter}{\numberline {3}SOTA - VM-based deobfuscation}{17}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Our approach}{18}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Overview}{18}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Assumptions}{19}{subsection.4.1.1}%
-\contentsline {section}{\numberline {4.2}Understanding the VM}{19}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Static Analysis}{19}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Automatic handler analysis using Miasm}{22}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Summary of Analysis}{24}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Building an angr architecture plugin}{25}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}A new entry in the Arch database}{26}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Extending the Loader}{27}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Building a Lifter}{28}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}SimOS}{29}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{30}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}What about a Disassembler?}{31}{subsection.4.5.1}%
-\contentsline {section}{\numberline {4.6}Further Analysis}{32}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Solving the Challenges}{32}{subsection.4.6.1}%
-\contentsline {subsubsection}{VMWHERE}{32}{section*.13}%
-\contentsline {subsubsection}{VMCASTLE}{34}{section*.14}%
-\contentsline {section}{\numberline {4.7}Discussion}{35}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}angr vs Miasm}{35}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Difficulties and Shortcomings}{35}{subsection.4.7.2}%
-\contentsline {subsection}{\numberline {4.7.3}Future Directions}{37}{subsection.4.7.3}%
-\contentsline {chapter}{\numberline {5}Conclusions}{40}{chapter.5}%
-\contentsline {chapter}{Acronyms}{41}{section*.15}%
-\contentsline {chapter}{Glossary}{43}{section*.17}%
-\contentsline {chapter}{Bibliography}{47}{chapter*.21}%
+\contentsline {subsection}{\numberline {2.5.2}Concolic Execution}{16}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Obfuscation Techniques}{16}{section.2.6}%
+\contentsline {chapter}{\numberline {3}State of the Art}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Virtualization-based Obfuscation}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Semi-Manual Approaches}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Semi-Automated Approaches}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Program Synthesis}{19}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Discussion}{19}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Our approach}{20}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overview}{20}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Assumptions}{21}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Understanding the VM}{21}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Static Analysis}{21}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Automatic handler analysis using Miasm}{24}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Summary of Analysis}{26}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Building an angr architecture plugin}{28}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}A new entry in the Arch database}{29}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Extending the Loader}{29}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Building a Lifter}{30}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}SimOS}{31}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{32}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}What about a Disassembler?}{33}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Further Analysis}{34}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Solving the Challenges}{35}{subsection.4.6.1}%
+\contentsline {subsubsection}{VMWHERE}{35}{section*.7}%
+\contentsline {subsubsection}{VMCASTLE}{36}{section*.8}%
+\contentsline {section}{\numberline {4.7}Discussion}{37}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}angr vs Miasm}{37}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Difficulties and Shortcomings}{38}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Future Directions}{39}{subsection.4.7.3}%
+\contentsline {chapter}{\numberline {5}Conclusions}{42}{chapter.5}%
+\contentsline {chapter}{Acronyms}{43}{section*.9}%
+\contentsline {chapter}{Glossary}{45}{section*.11}%
+\contentsline {chapter}{Bibliography}{49}{chapter*.15}%

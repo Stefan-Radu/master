@@ -99,7 +99,7 @@ keywords = {static analysis, software testing, concolic execution, Symbolic exec
 	url = {https://github.com/Dulanaka/Zeus_Malware_Analysis_Case_Study}
 }
 
-@misc{mism,
+@misc{miasm,
 	title = {{miasm}},
 	journal = {GitHub},
 	year = {2024},
@@ -197,21 +197,21 @@ keywords = {static analysis, software testing, concolic execution, Symbolic exec
 	url = {https://blogs.blackberry.com/en/2020/05/threat-spotlight-andromeda}
 }
 
-@inproceedings{malware_obf,
-  title={Malware obfuscation techniques: A brief survey},
-  author={You, Ilsun and Yim, Kangbin},
-  booktitle={2010 International conference on broadband, wireless computing, communication and applications},
-  pages={297--300},
-  year={2010},
-  organization={IEEE}
-}
-
 @misc{mba_deobf,
 	title = {{Practical MBA Deobfuscation with msynth}},
 	year = {2021},
 	month = jun,
 	note = {[Online; accessed 12. Jun. 2024]},
 	url = {https://synthesis.to/2021/11/11/practical_mba_deobfuscation.html}
+}
+
+@inproceedings{zhou2007,
+  title={Information hiding in software with mixed boolean-arithmetic transforms},
+  author={Zhou, Yongxin and Main, Alec and Gu, Yuan X and Johnson, Harold},
+  booktitle={International Workshop on Information Security Applications},
+  pages={61--75},
+  year={2007},
+  organization={Springer}
 }
 
 @misc{msynth,
@@ -382,7 +382,7 @@ keywords = {static analysis, software testing, concolic execution, Symbolic exec
   organization={IEEE}
 }
 
-@misc{quemu,
+@misc{qemu,
 	title = {{QEMU}},
 	year = {2009},
 	month = jun,
@@ -399,6 +399,23 @@ keywords = {static analysis, software testing, concolic execution, Symbolic exec
   organization={IEEE}
 }
 
+@misc{slawan2018,
+	title = {{Tigress{$\_$}protection}},
+    author={ Jonathan Salwan, Sebastien Bardin, and Marie-Laure Potet}
+	journal = {GitHub},
+	year = {2018},
+	note = {[Online; accessed 16. Jun. 2024]},
+	url = {https://github.com/JonathanSalwan/Tigress_protection}
+}
+
+@inproceedings{tang2017seead,
+  title={Seead: A semantic-based approach for automatic binary code de-obfuscation},
+  author={Tang, Zhanyong and Kuang, Kaiyuan and Wang, Lei and Xue, Chao and Gong, Xiaoqing and Chen, Xiaojiang and Fang, Dingyi and Liu, Jie and Wang, Zheng},
+  booktitle={2017 IEEE Trustcom/BigDataSE/ICESS},
+  pages={261--268},
+  year={2017},
+  organization={IEEE}
+}
 
 @inproceedings{liang2018,
   title={Deobfuscation of virtualization-obfuscated code through symbolic execution and compilation optimization},
@@ -409,9 +426,9 @@ keywords = {static analysis, software testing, concolic execution, Symbolic exec
   organization={Springer}
 }
 
-@misc{Tigress,
+@misc{tigress,
 	title = {{The Tigress C Obfuscator}},
-    author= {Christian Collberg}
+    author= {Christian Collberg},
 	year = {2023},
 	note = {[Online; accessed 15. Jun. 2024]},
 	url = {https://tigress.wtf}
@@ -423,4 +440,80 @@ keywords = {static analysis, software testing, concolic execution, Symbolic exec
   booktitle={26th USENIX Security Symposium (USENIX Security 17)},
   pages={643--659},
   year={2017}
+}
+
+@misc{objdump,
+	title = {{objdump(1) - Linux manual page}},
+	year = {2024},
+	month = jun,
+	note = {[Online; accessed 16. Jun. 2024]},
+	url = {https://man7.org/linux/man-pages/man1/objdump.1.html}
+}
+
+@misc{ida,
+	title = {{Hex Rays - State-of-the-art binary code analysis solutions}},
+	year = {2024},
+	month = may,
+	note = {[Online; accessed 16. Jun. 2024]},
+	url = {https://hex-rays.com/ida-pro}
+}
+
+@misc{z3,
+	title = {{z3}},
+	journal = {GitHub},
+	year = {2024},
+	month = jun,
+	note = {[Online; accessed 16. Jun. 2024]},
+	url = {https://github.com/Z3Prover/z3}
+}
+
+@misc{crackme,
+	author = {{Contributors to Wikimedia projects}},
+	title = {{Crackme - Wikipedia}},
+	year = {2024},
+	month = apr,
+	note = {[Online; accessed 16. Jun. 2024]},
+	url = {https://en.wikipedia.org/w/index.php?title=Crackme&oldid=1220283524}
+}
+
+@misc{syscall,
+	author = {Brennan, Stephen},
+	title = {{Tutorial - Write a System Call - Stephen Brennan}},
+	journal = {Stephen Brennan's Blog},
+	year = {2016},
+	month = nov,
+	note = {[Online; accessed 16. Jun. 2024]},
+	url = {https://brennan.io/2016/11/14/kernel-dev-ep3}
+}
+
+@inproceedings{smt,
+title = {{SMT} Solvers in Software Security},
+booktitle = {6th USENIX Workshop on Offensive Technologies (WOOT 12)},
+year = {2012},
+address = {Bellevue, WA},
+url = {https://www.usenix.org/conference/woot12/workshop-program/presentation/Vanegue},
+publisher = {USENIX Association},
+month = aug
+}
+
+@misc{fuzzing,
+	title = {{Fuzzing {$\vert$} OWASP Foundation}},
+	year = {2024},
+	month = jun,
+	note = {[Online; accessed 16. Jun. 2024]},
+	url = {https://owasp.org/www-community/Fuzzing}
+}
+
+@book{dang2014practical,
+  title={Practical reverse engineering: x86, x64, ARM, Windows kernel, reversing tools, and obfuscation},
+  author={Dang, Bruce and Gazet, Alexandre and Bachaalany, Elias},
+  year={2014},
+  publisher={John Wiley \& Sons}
+}
+
+@techreport{collberg1997taxonomy,
+  title={A taxonomy of obfuscating transformations},
+  author={Collberg, Christian and Thomborson, Clark and Low, Douglas},
+  year={1997},
+  institution={Department of Computer Science, The University of Auckland, New Zealand}
 }
