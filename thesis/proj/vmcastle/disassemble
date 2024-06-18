@@ -1,0 +1,8 @@
+#! /usr/bin/env python3
+
+from vmcastle.arch import ArchVMCASTLE
+from vmcastle.lifter import disassemble
+import sys
+
+arch = ArchVMCASTLE()
+print(disassemble(sys.argv[1], arch))

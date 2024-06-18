@@ -1,0 +1,5497 @@
+0x0000:  push_imm b' '
+0x0002:  pop_reg r2
+0x0004:  print_reg r2
+0x0006:  push_imm b' '
+0x0008:  pop_reg ac
+0x000a:  print_reg ac
+0x000c:  push_imm b' '
+0x000e:  pop_reg ac
+0x0010:  print_reg ac
+0x0012:  push_imm b' '
+0x0014:  pop_reg ac
+0x0016:  print_reg ac
+0x0018:  push_imm b' '
+0x001a:  pop_reg ac
+0x001c:  print_reg ac
+0x001e:  push_imm b' '
+0x0020:  pop_reg r1
+0x0022:  print_reg r1
+0x0024:  push_imm b' '
+0x0026:  pop_reg r2
+0x0028:  print_reg r2
+0x002a:  push_imm b' '
+0x002c:  pop_reg r1
+0x002e:  print_reg r1
+0x0030:  push_imm b' '
+0x0032:  pop_reg r3
+0x0034:  print_reg r3
+0x0036:  push_imm b' '
+0x0038:  pop_reg r3
+0x003a:  print_reg r3
+0x003c:  push_imm b' '
+0x003e:  pop_reg r2
+0x0040:  print_reg r2
+0x0042:  push_imm b' '
+0x0044:  pop_reg r2
+0x0046:  print_reg r2
+0x0048:  push_imm b' '
+0x004a:  pop_reg r3
+0x004c:  print_reg r3
+0x004e:  push_imm b' '
+0x0050:  pop_reg r2
+0x0052:  print_reg r2
+0x0054:  push_imm b' '
+0x0056:  pop_reg r2
+0x0058:  print_reg r2
+0x005a:  push_imm b' '
+0x005c:  pop_reg r1
+0x005e:  print_reg r1
+0x0060:  push_imm b' '
+0x0062:  pop_reg r2
+0x0064:  print_reg r2
+0x0066:  push_imm b' '
+0x0068:  pop_reg r1
+0x006a:  print_reg r1
+0x006c:  push_imm b' '
+0x006e:  pop_reg r1
+0x0070:  print_reg r1
+0x0072:  push_imm b' '
+0x0074:  pop_reg r1
+0x0076:  print_reg r1
+0x0078:  push_imm b' '
+0x007a:  pop_reg r3
+0x007c:  print_reg r3
+0x007e:  push_imm b' '
+0x0080:  pop_reg ac
+0x0082:  print_reg ac
+0x0084:  push_imm b' '
+0x0086:  pop_reg ac
+0x0088:  print_reg ac
+0x008a:  push_imm b' '
+0x008c:  pop_reg r3
+0x008e:  print_reg r3
+0x0090:  push_imm b' '
+0x0092:  pop_reg ac
+0x0094:  print_reg ac
+0x0096:  push_imm b' '
+0x0098:  pop_reg r2
+0x009a:  print_reg r2
+0x009c:  push_imm b' '
+0x009e:  pop_reg r3
+0x00a0:  print_reg r3
+0x00a2:  push_imm b' '
+0x00a4:  pop_reg r2
+0x00a6:  print_reg r2
+0x00a8:  push_imm b' '
+0x00aa:  pop_reg r3
+0x00ac:  print_reg r3
+0x00ae:  push_imm b' '
+0x00b0:  pop_reg r3
+0x00b2:  print_reg r3
+0x00b4:  push_imm b' '
+0x00b6:  pop_reg r3
+0x00b8:  print_reg r3
+0x00ba:  push_imm b' '
+0x00bc:  pop_reg ac
+0x00be:  print_reg ac
+0x00c0:  push_imm b' '
+0x00c2:  pop_reg r2
+0x00c4:  print_reg r2
+0x00c6:  push_imm b' '
+0x00c8:  pop_reg r1
+0x00ca:  print_reg r1
+0x00cc:  push_imm b'|'
+0x00ce:  pop_reg ac
+0x00d0:  print_reg ac
+0x00d2:  push_imm b'>'
+0x00d4:  pop_reg r2
+0x00d6:  print_reg r2
+0x00d8:  push_imm b'>'
+0x00da:  pop_reg ac
+0x00dc:  print_reg ac
+0x00de:  push_imm b'>'
+0x00e0:  pop_reg r2
+0x00e2:  print_reg r2
+0x00e4:  push_imm b'\n'
+0x00e6:  pop_reg r1
+0x00e8:  print_reg r1
+0x00ea:  push_imm b' '
+0x00ec:  pop_reg r2
+0x00ee:  print_reg r2
+0x00f0:  push_imm b' '
+0x00f2:  pop_reg r1
+0x00f4:  print_reg r1
+0x00f6:  push_imm b' '
+0x00f8:  pop_reg r2
+0x00fa:  print_reg r2
+0x00fc:  push_imm b' '
+0x00fe:  pop_reg r2
+0x0100:  print_reg r2
+0x0102:  push_imm b' '
+0x0104:  pop_reg ac
+0x0106:  print_reg ac
+0x0108:  push_imm b' '
+0x010a:  pop_reg ac
+0x010c:  print_reg ac
+0x010e:  push_imm b' '
+0x0110:  pop_reg ac
+0x0112:  print_reg ac
+0x0114:  push_imm b' '
+0x0116:  pop_reg ac
+0x0118:  print_reg ac
+0x011a:  push_imm b' '
+0x011c:  pop_reg r1
+0x011e:  print_reg r1
+0x0120:  push_imm b' '
+0x0122:  pop_reg r1
+0x0124:  print_reg r1
+0x0126:  push_imm b' '
+0x0128:  pop_reg r1
+0x012a:  print_reg r1
+0x012c:  push_imm b' '
+0x012e:  pop_reg ac
+0x0130:  print_reg ac
+0x0132:  push_imm b' '
+0x0134:  pop_reg ac
+0x0136:  print_reg ac
+0x0138:  push_imm b' '
+0x013a:  pop_reg r2
+0x013c:  print_reg r2
+0x013e:  push_imm b' '
+0x0140:  pop_reg r2
+0x0142:  print_reg r2
+0x0144:  push_imm b' '
+0x0146:  pop_reg ac
+0x0148:  print_reg ac
+0x014a:  push_imm b' '
+0x014c:  pop_reg r1
+0x014e:  print_reg r1
+0x0150:  push_imm b' '
+0x0152:  pop_reg r1
+0x0154:  print_reg r1
+0x0156:  push_imm b' '
+0x0158:  pop_reg r1
+0x015a:  print_reg r1
+0x015c:  push_imm b' '
+0x015e:  pop_reg ac
+0x0160:  print_reg ac
+0x0162:  push_imm b' '
+0x0164:  pop_reg r2
+0x0166:  print_reg r2
+0x0168:  push_imm b' '
+0x016a:  pop_reg ac
+0x016c:  print_reg ac
+0x016e:  push_imm b' '
+0x0170:  pop_reg ac
+0x0172:  print_reg ac
+0x0174:  push_imm b' '
+0x0176:  pop_reg r1
+0x0178:  print_reg r1
+0x017a:  push_imm b' '
+0x017c:  pop_reg r1
+0x017e:  print_reg r1
+0x0180:  push_imm b' '
+0x0182:  pop_reg r1
+0x0184:  print_reg r1
+0x0186:  push_imm b' '
+0x0188:  pop_reg r1
+0x018a:  print_reg r1
+0x018c:  push_imm b' '
+0x018e:  pop_reg r1
+0x0190:  print_reg r1
+0x0192:  push_imm b' '
+0x0194:  pop_reg ac
+0x0196:  print_reg ac
+0x0198:  push_imm b' '
+0x019a:  pop_reg ac
+0x019c:  print_reg ac
+0x019e:  push_imm b' '
+0x01a0:  pop_reg ac
+0x01a2:  print_reg ac
+0x01a4:  push_imm b' '
+0x01a6:  pop_reg r3
+0x01a8:  print_reg r3
+0x01aa:  push_imm b' '
+0x01ac:  pop_reg ac
+0x01ae:  print_reg ac
+0x01b0:  push_imm b' '
+0x01b2:  pop_reg r1
+0x01b4:  print_reg r1
+0x01b6:  push_imm b'|'
+0x01b8:  pop_reg r2
+0x01ba:  print_reg r2
+0x01bc:  push_imm b'\n'
+0x01be:  pop_reg r1
+0x01c0:  print_reg r1
+0x01c2:  push_imm b' '
+0x01c4:  pop_reg r2
+0x01c6:  print_reg r2
+0x01c8:  push_imm b' '
+0x01ca:  pop_reg r2
+0x01cc:  print_reg r2
+0x01ce:  push_imm b' '
+0x01d0:  pop_reg r2
+0x01d2:  print_reg r2
+0x01d4:  push_imm b' '
+0x01d6:  pop_reg ac
+0x01d8:  print_reg ac
+0x01da:  push_imm b' '
+0x01dc:  pop_reg ac
+0x01de:  print_reg ac
+0x01e0:  push_imm b' '
+0x01e2:  pop_reg r1
+0x01e4:  print_reg r1
+0x01e6:  push_imm b' '
+0x01e8:  pop_reg r3
+0x01ea:  print_reg r3
+0x01ec:  push_imm b' '
+0x01ee:  pop_reg r1
+0x01f0:  print_reg r1
+0x01f2:  push_imm b' '
+0x01f4:  pop_reg r1
+0x01f6:  print_reg r1
+0x01f8:  push_imm b' '
+0x01fa:  pop_reg ac
+0x01fc:  print_reg ac
+0x01fe:  push_imm b' '
+0x0200:  pop_reg r1
+0x0202:  print_reg r1
+0x0204:  push_imm b' '
+0x0206:  pop_reg r2
+0x0208:  print_reg r2
+0x020a:  push_imm b' '
+0x020c:  pop_reg ac
+0x020e:  print_reg ac
+0x0210:  push_imm b' '
+0x0212:  pop_reg r3
+0x0214:  print_reg r3
+0x0216:  push_imm b' '
+0x0218:  pop_reg r2
+0x021a:  print_reg r2
+0x021c:  push_imm b' '
+0x021e:  pop_reg r3
+0x0220:  print_reg r3
+0x0222:  push_imm b' '
+0x0224:  pop_reg r1
+0x0226:  print_reg r1
+0x0228:  push_imm b' '
+0x022a:  pop_reg r1
+0x022c:  print_reg r1
+0x022e:  push_imm b' '
+0x0230:  pop_reg ac
+0x0232:  print_reg ac
+0x0234:  push_imm b' '
+0x0236:  pop_reg ac
+0x0238:  print_reg ac
+0x023a:  push_imm b'|'
+0x023c:  pop_reg r1
+0x023e:  print_reg r1
+0x0240:  push_imm b'>'
+0x0242:  pop_reg r3
+0x0244:  print_reg r3
+0x0246:  push_imm b'>'
+0x0248:  pop_reg r1
+0x024a:  print_reg r1
+0x024c:  push_imm b'>'
+0x024e:  pop_reg ac
+0x0250:  print_reg ac
+0x0252:  push_imm b' '
+0x0254:  pop_reg r3
+0x0256:  print_reg r3
+0x0258:  push_imm b' '
+0x025a:  pop_reg r1
+0x025c:  print_reg r1
+0x025e:  push_imm b' '
+0x0260:  pop_reg ac
+0x0262:  print_reg ac
+0x0264:  push_imm b' '
+0x0266:  pop_reg ac
+0x0268:  print_reg ac
+0x026a:  push_imm b' '
+0x026c:  pop_reg ac
+0x026e:  print_reg ac
+0x0270:  push_imm b' '
+0x0272:  pop_reg ac
+0x0274:  print_reg ac
+0x0276:  push_imm b'_'
+0x0278:  pop_reg ac
+0x027a:  print_reg ac
+0x027c:  push_imm b' '
+0x027e:  pop_reg ac
+0x0280:  print_reg ac
+0x0282:  push_imm b' '
+0x0284:  pop_reg ac
+0x0286:  print_reg ac
+0x0288:  push_imm b'_'
+0x028a:  pop_reg r1
+0x028c:  print_reg r1
+0x028e:  push_imm b'|'
+0x0290:  pop_reg r1
+0x0292:  print_reg r1
+0x0294:  push_imm b'_'
+0x0296:  pop_reg r1
+0x0298:  print_reg r1
+0x029a:  push_imm b' '
+0x029c:  pop_reg ac
+0x029e:  print_reg ac
+0x02a0:  push_imm b' '
+0x02a2:  pop_reg ac
+0x02a4:  print_reg ac
+0x02a6:  push_imm b'_'
+0x02a8:  pop_reg r1
+0x02aa:  print_reg r1
+0x02ac:  push_imm b' '
+0x02ae:  pop_reg r1
+0x02b0:  print_reg r1
+0x02b2:  push_imm b' '
+0x02b4:  pop_reg r1
+0x02b6:  print_reg r1
+0x02b8:  push_imm b' '
+0x02ba:  pop_reg r1
+0x02bc:  print_reg r1
+0x02be:  push_imm b' '
+0x02c0:  pop_reg r3
+0x02c2:  print_reg r3
+0x02c4:  push_imm b' '
+0x02c6:  pop_reg r3
+0x02c8:  print_reg r3
+0x02ca:  push_imm b' '
+0x02cc:  pop_reg r2
+0x02ce:  print_reg r2
+0x02d0:  push_imm b' '
+0x02d2:  pop_reg r3
+0x02d4:  print_reg r3
+0x02d6:  push_imm b' '
+0x02d8:  pop_reg ac
+0x02da:  print_reg ac
+0x02dc:  push_imm b' '
+0x02de:  pop_reg r3
+0x02e0:  print_reg r3
+0x02e2:  push_imm b'|'
+0x02e4:  pop_reg r1
+0x02e6:  print_reg r1
+0x02e8:  push_imm b'>'
+0x02ea:  pop_reg r1
+0x02ec:  print_reg r1
+0x02ee:  push_imm b'>'
+0x02f0:  pop_reg ac
+0x02f2:  print_reg ac
+0x02f4:  push_imm b'>'
+0x02f6:  pop_reg r2
+0x02f8:  print_reg r2
+0x02fa:  push_imm b'\n'
+0x02fc:  pop_reg r1
+0x02fe:  print_reg r1
+0x0300:  push_imm b' '
+0x0302:  pop_reg ac
+0x0304:  print_reg ac
+0x0306:  push_imm b' '
+0x0308:  pop_reg r2
+0x030a:  print_reg r2
+0x030c:  push_imm b' '
+0x030e:  pop_reg r1
+0x0310:  print_reg r1
+0x0312:  push_imm b' '
+0x0314:  pop_reg r3
+0x0316:  print_reg r3
+0x0318:  push_imm b' '
+0x031a:  pop_reg r2
+0x031c:  print_reg r2
+0x031e:  push_imm b' '
+0x0320:  pop_reg r2
+0x0322:  print_reg r2
+0x0324:  push_imm b' '
+0x0326:  pop_reg ac
+0x0328:  print_reg ac
+0x032a:  push_imm b' '
+0x032c:  pop_reg r1
+0x032e:  print_reg r1
+0x0330:  push_imm b' '
+0x0332:  pop_reg r1
+0x0334:  print_reg r1
+0x0336:  push_imm b' '
+0x0338:  pop_reg r2
+0x033a:  print_reg r2
+0x033c:  push_imm b' '
+0x033e:  pop_reg ac
+0x0340:  print_reg ac
+0x0342:  push_imm b' '
+0x0344:  pop_reg r1
+0x0346:  print_reg r1
+0x0348:  push_imm b' '
+0x034a:  pop_reg r1
+0x034c:  print_reg r1
+0x034e:  push_imm b' '
+0x0350:  pop_reg r2
+0x0352:  print_reg r2
+0x0354:  push_imm b' '
+0x0356:  pop_reg r3
+0x0358:  print_reg r3
+0x035a:  push_imm b' '
+0x035c:  pop_reg r3
+0x035e:  print_reg r3
+0x0360:  push_imm b' '
+0x0362:  pop_reg ac
+0x0364:  print_reg ac
+0x0366:  push_imm b' '
+0x0368:  pop_reg r3
+0x036a:  print_reg r3
+0x036c:  push_imm b' '
+0x036e:  pop_reg r3
+0x0370:  print_reg r3
+0x0372:  push_imm b' '
+0x0374:  pop_reg ac
+0x0376:  print_reg ac
+0x0378:  push_imm b'|'
+0x037a:  pop_reg ac
+0x037c:  print_reg ac
+0x037e:  push_imm b' '
+0x0380:  pop_reg r2
+0x0382:  print_reg r2
+0x0384:  push_imm b' '
+0x0386:  pop_reg r1
+0x0388:  print_reg r1
+0x038a:  push_imm b' '
+0x038c:  pop_reg ac
+0x038e:  print_reg ac
+0x0390:  push_imm b' '
+0x0392:  pop_reg r3
+0x0394:  print_reg r3
+0x0396:  push_imm b' '
+0x0398:  pop_reg r1
+0x039a:  print_reg r1
+0x039c:  push_imm b' '
+0x039e:  pop_reg r3
+0x03a0:  print_reg r3
+0x03a2:  push_imm b' '
+0x03a4:  pop_reg ac
+0x03a6:  print_reg ac
+0x03a8:  push_imm b' '
+0x03aa:  pop_reg r2
+0x03ac:  print_reg r2
+0x03ae:  push_imm b'|'
+0x03b0:  pop_reg r2
+0x03b2:  print_reg r2
+0x03b4:  push_imm b';'
+0x03b6:  pop_reg r2
+0x03b8:  print_reg r2
+0x03ba:  push_imm b'|'
+0x03bc:  pop_reg ac
+0x03be:  print_reg ac
+0x03c0:  push_imm b' '
+0x03c2:  pop_reg r3
+0x03c4:  print_reg r3
+0x03c6:  push_imm b'|'
+0x03c8:  pop_reg r2
+0x03ca:  print_reg r2
+0x03cc:  push_imm b';'
+0x03ce:  pop_reg r3
+0x03d0:  print_reg r3
+0x03d2:  push_imm b'|'
+0x03d4:  pop_reg r1
+0x03d6:  print_reg r1
+0x03d8:  push_imm b' '
+0x03da:  pop_reg r3
+0x03dc:  print_reg r3
+0x03de:  push_imm b'|'
+0x03e0:  pop_reg ac
+0x03e2:  print_reg ac
+0x03e4:  push_imm b';'
+0x03e6:  pop_reg r1
+0x03e8:  print_reg r1
+0x03ea:  push_imm b'|'
+0x03ec:  pop_reg ac
+0x03ee:  print_reg ac
+0x03f0:  push_imm b' '
+0x03f2:  pop_reg r1
+0x03f4:  print_reg r1
+0x03f6:  push_imm b' '
+0x03f8:  pop_reg r2
+0x03fa:  print_reg r2
+0x03fc:  push_imm b' '
+0x03fe:  pop_reg r1
+0x0400:  print_reg r1
+0x0402:  push_imm b' '
+0x0404:  pop_reg ac
+0x0406:  print_reg ac
+0x0408:  push_imm b' '
+0x040a:  pop_reg r2
+0x040c:  print_reg r2
+0x040e:  push_imm b' '
+0x0410:  pop_reg r3
+0x0412:  print_reg r3
+0x0414:  push_imm b' '
+0x0416:  pop_reg r2
+0x0418:  print_reg r2
+0x041a:  push_imm b' '
+0x041c:  pop_reg r3
+0x041e:  print_reg r3
+0x0420:  push_imm b'|'
+0x0422:  pop_reg r2
+0x0424:  print_reg r2
+0x0426:  push_imm b'\n'
+0x0428:  pop_reg ac
+0x042a:  print_reg ac
+0x042c:  push_imm b' '
+0x042e:  pop_reg r2
+0x0430:  print_reg r2
+0x0432:  push_imm b' '
+0x0434:  pop_reg ac
+0x0436:  print_reg ac
+0x0438:  push_imm b' '
+0x043a:  pop_reg ac
+0x043c:  print_reg ac
+0x043e:  push_imm b' '
+0x0440:  pop_reg r3
+0x0442:  print_reg r3
+0x0444:  push_imm b' '
+0x0446:  pop_reg r2
+0x0448:  print_reg r2
+0x044a:  push_imm b' '
+0x044c:  pop_reg ac
+0x044e:  print_reg ac
+0x0450:  push_imm b' '
+0x0452:  pop_reg r2
+0x0454:  print_reg r2
+0x0456:  push_imm b' '
+0x0458:  pop_reg r1
+0x045a:  print_reg r1
+0x045c:  push_imm b' '
+0x045e:  pop_reg r2
+0x0460:  print_reg r2
+0x0462:  push_imm b' '
+0x0464:  pop_reg r1
+0x0466:  print_reg r1
+0x0468:  push_imm b' '
+0x046a:  pop_reg ac
+0x046c:  print_reg ac
+0x046e:  push_imm b' '
+0x0470:  pop_reg r1
+0x0472:  print_reg r1
+0x0474:  push_imm b' '
+0x0476:  pop_reg r1
+0x0478:  print_reg r1
+0x047a:  push_imm b' '
+0x047c:  pop_reg r1
+0x047e:  print_reg r1
+0x0480:  push_imm b' '
+0x0482:  pop_reg r2
+0x0484:  print_reg r2
+0x0486:  push_imm b' '
+0x0488:  pop_reg r2
+0x048a:  print_reg r2
+0x048c:  push_imm b'_'
+0x048e:  pop_reg ac
+0x0490:  print_reg ac
+0x0492:  push_imm b' '
+0x0494:  pop_reg ac
+0x0496:  print_reg ac
+0x0498:  push_imm b' '
+0x049a:  pop_reg r1
+0x049c:  print_reg r1
+0x049e:  push_imm b'_'
+0x04a0:  pop_reg r3
+0x04a2:  print_reg r3
+0x04a4:  push_imm b'|'
+0x04a6:  pop_reg r2
+0x04a8:  print_reg r2
+0x04aa:  push_imm b'_'
+0x04ac:  pop_reg r1
+0x04ae:  print_reg r1
+0x04b0:  push_imm b' '
+0x04b2:  pop_reg r3
+0x04b4:  print_reg r3
+0x04b6:  push_imm b' '
+0x04b8:  pop_reg ac
+0x04ba:  print_reg ac
+0x04bc:  push_imm b'_'
+0x04be:  pop_reg ac
+0x04c0:  print_reg ac
+0x04c2:  push_imm b' '
+0x04c4:  pop_reg r1
+0x04c6:  print_reg r1
+0x04c8:  push_imm b' '
+0x04ca:  pop_reg r3
+0x04cc:  print_reg r3
+0x04ce:  push_imm b' '
+0x04d0:  pop_reg ac
+0x04d2:  print_reg ac
+0x04d4:  push_imm b' '
+0x04d6:  pop_reg r2
+0x04d8:  print_reg r2
+0x04da:  push_imm b'\\'
+0x04dc:  pop_reg r2
+0x04de:  print_reg r2
+0x04e0:  push_imm b'\\'
+0x04e2:  pop_reg r2
+0x04e4:  print_reg r2
+0x04e6:  push_imm b'.'
+0x04e8:  pop_reg r3
+0x04ea:  print_reg r3
+0x04ec:  push_imm b' '
+0x04ee:  pop_reg r1
+0x04f0:  print_reg r1
+0x04f2:  push_imm b' '
+0x04f4:  pop_reg r3
+0x04f6:  print_reg r3
+0x04f8:  push_imm b' '
+0x04fa:  pop_reg r3
+0x04fc:  print_reg r3
+0x04fe:  push_imm b' '
+0x0500:  pop_reg r2
+0x0502:  print_reg r2
+0x0504:  push_imm b'.'
+0x0506:  pop_reg r3
+0x0508:  print_reg r3
+0x050a:  push_imm b' '
+0x050c:  pop_reg ac
+0x050e:  print_reg ac
+0x0510:  push_imm b' '
+0x0512:  pop_reg r1
+0x0514:  print_reg r1
+0x0516:  push_imm b'/'
+0x0518:  pop_reg r1
+0x051a:  print_reg r1
+0x051c:  push_imm b' '
+0x051e:  pop_reg r3
+0x0520:  print_reg r3
+0x0522:  push_imm b' '
+0x0524:  pop_reg r1
+0x0526:  print_reg r1
+0x0528:  push_imm b' '
+0x052a:  pop_reg r2
+0x052c:  print_reg r2
+0x052e:  push_imm b' '
+0x0530:  pop_reg r1
+0x0532:  print_reg r1
+0x0534:  push_imm b'_'
+0x0536:  pop_reg r3
+0x0538:  print_reg r3
+0x053a:  push_imm b' '
+0x053c:  pop_reg r2
+0x053e:  print_reg r2
+0x0540:  push_imm b' '
+0x0542:  pop_reg r3
+0x0544:  print_reg r3
+0x0546:  push_imm b'_'
+0x0548:  pop_reg ac
+0x054a:  print_reg ac
+0x054c:  push_imm b'|'
+0x054e:  pop_reg ac
+0x0550:  print_reg ac
+0x0552:  push_imm b'_'
+0x0554:  pop_reg ac
+0x0556:  print_reg ac
+0x0558:  push_imm b' '
+0x055a:  pop_reg r2
+0x055c:  print_reg r2
+0x055e:  push_imm b' '
+0x0560:  pop_reg r3
+0x0562:  print_reg r3
+0x0564:  push_imm b'_'
+0x0566:  pop_reg r3
+0x0568:  print_reg r3
+0x056a:  push_imm b'\n'
+0x056c:  pop_reg r2
+0x056e:  print_reg r2
+0x0570:  push_imm b' '
+0x0572:  pop_reg r2
+0x0574:  print_reg r2
+0x0576:  push_imm b' '
+0x0578:  pop_reg r1
+0x057a:  print_reg r1
+0x057c:  push_imm b' '
+0x057e:  pop_reg ac
+0x0580:  print_reg ac
+0x0582:  push_imm b' '
+0x0584:  pop_reg r1
+0x0586:  print_reg r1
+0x0588:  push_imm b' '
+0x058a:  pop_reg r3
+0x058c:  print_reg r3
+0x058e:  push_imm b' '
+0x0590:  pop_reg r3
+0x0592:  print_reg r3
+0x0594:  push_imm b' '
+0x0596:  pop_reg r1
+0x0598:  print_reg r1
+0x059a:  push_imm b' '
+0x059c:  pop_reg r3
+0x059e:  print_reg r3
+0x05a0:  push_imm b' '
+0x05a2:  pop_reg r1
+0x05a4:  print_reg r1
+0x05a6:  push_imm b' '
+0x05a8:  pop_reg ac
+0x05aa:  print_reg ac
+0x05ac:  push_imm b' '
+0x05ae:  pop_reg r1
+0x05b0:  print_reg r1
+0x05b2:  push_imm b' '
+0x05b4:  pop_reg r2
+0x05b6:  print_reg r2
+0x05b8:  push_imm b' '
+0x05ba:  pop_reg ac
+0x05bc:  print_reg ac
+0x05be:  push_imm b' '
+0x05c0:  pop_reg ac
+0x05c2:  print_reg ac
+0x05c4:  push_imm b' '
+0x05c6:  pop_reg r3
+0x05c8:  print_reg r3
+0x05ca:  push_imm b'|'
+0x05cc:  pop_reg r3
+0x05ce:  print_reg r3
+0x05d0:  push_imm b';'
+0x05d2:  pop_reg r2
+0x05d4:  print_reg r2
+0x05d6:  push_imm b'|'
+0x05d8:  pop_reg ac
+0x05da:  print_reg ac
+0x05dc:  push_imm b'_'
+0x05de:  pop_reg ac
+0x05e0:  print_reg ac
+0x05e2:  push_imm b'|'
+0x05e4:  pop_reg r3
+0x05e6:  print_reg r3
+0x05e8:  push_imm b';'
+0x05ea:  pop_reg r1
+0x05ec:  print_reg r1
+0x05ee:  push_imm b'|'
+0x05f0:  pop_reg r3
+0x05f2:  print_reg r3
+0x05f4:  push_imm b'_'
+0x05f6:  pop_reg ac
+0x05f8:  print_reg ac
+0x05fa:  push_imm b'|'
+0x05fc:  pop_reg r1
+0x05fe:  print_reg r1
+0x0600:  push_imm b';'
+0x0602:  pop_reg r2
+0x0604:  print_reg r2
+0x0606:  push_imm b'|'
+0x0608:  pop_reg ac
+0x060a:  print_reg ac
+0x060c:  push_imm b' '
+0x060e:  pop_reg r1
+0x0610:  print_reg r1
+0x0612:  push_imm b' '
+0x0614:  pop_reg r1
+0x0616:  print_reg r1
+0x0618:  push_imm b' '
+0x061a:  pop_reg r2
+0x061c:  print_reg r2
+0x061e:  push_imm b' '
+0x0620:  pop_reg r3
+0x0622:  print_reg r3
+0x0624:  push_imm b'\\'
+0x0626:  pop_reg ac
+0x0628:  print_reg ac
+0x062a:  push_imm b'\\'
+0x062c:  pop_reg r3
+0x062e:  print_reg r3
+0x0630:  push_imm b':'
+0x0632:  pop_reg r2
+0x0634:  print_reg r2
+0x0636:  push_imm b'.'
+0x0638:  pop_reg r2
+0x063a:  print_reg r2
+0x063c:  push_imm b' '
+0x063e:  pop_reg r1
+0x0640:  print_reg r1
+0x0642:  push_imm b','
+0x0644:  pop_reg r1
+0x0646:  print_reg r1
+0x0648:  push_imm b' '
+0x064a:  pop_reg ac
+0x064c:  print_reg ac
+0x064e:  push_imm b' '
+0x0650:  pop_reg r3
+0x0652:  print_reg r3
+0x0654:  push_imm b'/'
+0x0656:  pop_reg r2
+0x0658:  print_reg r2
+0x065a:  push_imm b' '
+0x065c:  pop_reg ac
+0x065e:  print_reg ac
+0x0660:  push_imm b' '
+0x0662:  pop_reg r1
+0x0664:  print_reg r1
+0x0666:  push_imm b' '
+0x0668:  pop_reg r3
+0x066a:  print_reg r3
+0x066c:  push_imm b' '
+0x066e:  pop_reg r1
+0x0670:  print_reg r1
+0x0672:  push_imm b'|'
+0x0674:  pop_reg r1
+0x0676:  print_reg r1
+0x0678:  push_imm b';'
+0x067a:  pop_reg r1
+0x067c:  print_reg r1
+0x067e:  push_imm b'|'
+0x0680:  pop_reg ac
+0x0682:  print_reg ac
+0x0684:  push_imm b'_'
+0x0686:  pop_reg r1
+0x0688:  print_reg r1
+0x068a:  push_imm b'|'
+0x068c:  pop_reg r3
+0x068e:  print_reg r3
+0x0690:  push_imm b';'
+0x0692:  pop_reg r3
+0x0694:  print_reg r3
+0x0696:  push_imm b'|'
+0x0698:  pop_reg ac
+0x069a:  print_reg ac
+0x069c:  push_imm b'_'
+0x069e:  pop_reg r3
+0x06a0:  print_reg r3
+0x06a2:  push_imm b'|'
+0x06a4:  pop_reg ac
+0x06a6:  print_reg ac
+0x06a8:  push_imm b';'
+0x06aa:  pop_reg r3
+0x06ac:  print_reg r3
+0x06ae:  push_imm b'|'
+0x06b0:  pop_reg r3
+0x06b2:  print_reg r3
+0x06b4:  push_imm b'\n'
+0x06b6:  pop_reg r2
+0x06b8:  print_reg r2
+0x06ba:  push_imm b' '
+0x06bc:  pop_reg r3
+0x06be:  print_reg r3
+0x06c0:  push_imm b' '
+0x06c2:  pop_reg r3
+0x06c4:  print_reg r3
+0x06c6:  push_imm b' '
+0x06c8:  pop_reg r1
+0x06ca:  print_reg r1
+0x06cc:  push_imm b' '
+0x06ce:  pop_reg r2
+0x06d0:  print_reg r2
+0x06d2:  push_imm b' '
+0x06d4:  pop_reg r3
+0x06d6:  print_reg r3
+0x06d8:  push_imm b' '
+0x06da:  pop_reg r1
+0x06dc:  print_reg r1
+0x06de:  push_imm b' '
+0x06e0:  pop_reg ac
+0x06e2:  print_reg ac
+0x06e4:  push_imm b' '
+0x06e6:  pop_reg r2
+0x06e8:  print_reg r2
+0x06ea:  push_imm b' '
+0x06ec:  pop_reg r3
+0x06ee:  print_reg r3
+0x06f0:  push_imm b' '
+0x06f2:  pop_reg r3
+0x06f4:  print_reg r3
+0x06f6:  push_imm b' '
+0x06f8:  pop_reg ac
+0x06fa:  print_reg ac
+0x06fc:  push_imm b' '
+0x06fe:  pop_reg r2
+0x0700:  print_reg r2
+0x0702:  push_imm b' '
+0x0704:  pop_reg r3
+0x0706:  print_reg r3
+0x0708:  push_imm b' '
+0x070a:  pop_reg ac
+0x070c:  print_reg ac
+0x070e:  push_imm b' '
+0x0710:  pop_reg r2
+0x0712:  print_reg r2
+0x0714:  push_imm b'\\'
+0x0716:  pop_reg r3
+0x0718:  print_reg r3
+0x071a:  push_imm b'\\'
+0x071c:  pop_reg r2
+0x071e:  print_reg r2
+0x0720:  push_imm b'.'
+0x0722:  pop_reg r3
+0x0724:  print_reg r3
+0x0726:  push_imm b'.'
+0x0728:  pop_reg ac
+0x072a:  print_reg ac
+0x072c:  push_imm b' '
+0x072e:  pop_reg ac
+0x0730:  print_reg ac
+0x0732:  push_imm b' '
+0x0734:  pop_reg r1
+0x0736:  print_reg r1
+0x0738:  push_imm b' '
+0x073a:  pop_reg r2
+0x073c:  print_reg r2
+0x073e:  push_imm b' '
+0x0740:  pop_reg r1
+0x0742:  print_reg r1
+0x0744:  push_imm b' '
+0x0746:  pop_reg r1
+0x0748:  print_reg r1
+0x074a:  push_imm b' '
+0x074c:  pop_reg r2
+0x074e:  print_reg r2
+0x0750:  push_imm b'/'
+0x0752:  pop_reg r1
+0x0754:  print_reg r1
+0x0756:  push_imm b' '
+0x0758:  pop_reg ac
+0x075a:  print_reg ac
+0x075c:  push_imm b' '
+0x075e:  pop_reg r3
+0x0760:  print_reg r3
+0x0762:  push_imm b' '
+0x0764:  pop_reg ac
+0x0766:  print_reg ac
+0x0768:  push_imm b' '
+0x076a:  pop_reg r3
+0x076c:  print_reg r3
+0x076e:  push_imm b'|'
+0x0770:  pop_reg r3
+0x0772:  print_reg r3
+0x0774:  push_imm b'|'
+0x0776:  pop_reg r1
+0x0778:  print_reg r1
+0x077a:  push_imm b';'
+0x077c:  pop_reg r1
+0x077e:  print_reg r1
+0x0780:  push_imm b' '
+0x0782:  pop_reg r3
+0x0784:  print_reg r3
+0x0786:  push_imm b' '
+0x0788:  pop_reg r3
+0x078a:  print_reg r3
+0x078c:  push_imm b' '
+0x078e:  pop_reg r3
+0x0790:  print_reg r3
+0x0792:  push_imm b'.'
+0x0794:  pop_reg r3
+0x0796:  print_reg r3
+0x0798:  push_imm b' '
+0x079a:  pop_reg ac
+0x079c:  print_reg ac
+0x079e:  push_imm b'|'
+0x07a0:  pop_reg ac
+0x07a2:  print_reg ac
+0x07a4:  push_imm b' '
+0x07a6:  pop_reg ac
+0x07a8:  print_reg ac
+0x07aa:  push_imm b' '
+0x07ac:  pop_reg r3
+0x07ae:  print_reg r3
+0x07b0:  push_imm b' '
+0x07b2:  pop_reg r1
+0x07b4:  print_reg r1
+0x07b6:  push_imm b' '
+0x07b8:  pop_reg ac
+0x07ba:  print_reg ac
+0x07bc:  push_imm b'\\'
+0x07be:  pop_reg r2
+0x07c0:  print_reg r2
+0x07c2:  push_imm b'\\'
+0x07c4:  pop_reg r1
+0x07c6:  print_reg r1
+0x07c8:  push_imm b'.'
+0x07ca:  pop_reg r3
+0x07cc:  print_reg r3
+0x07ce:  push_imm b' '
+0x07d0:  pop_reg r1
+0x07d2:  print_reg r1
+0x07d4:  push_imm b' '
+0x07d6:  pop_reg r2
+0x07d8:  print_reg r2
+0x07da:  push_imm b' '
+0x07dc:  pop_reg r1
+0x07de:  print_reg r1
+0x07e0:  push_imm b' '
+0x07e2:  pop_reg ac
+0x07e4:  print_reg ac
+0x07e6:  push_imm b'.'
+0x07e8:  pop_reg r1
+0x07ea:  print_reg r1
+0x07ec:  push_imm b' '
+0x07ee:  pop_reg r3
+0x07f0:  print_reg r3
+0x07f2:  push_imm b' '
+0x07f4:  pop_reg ac
+0x07f6:  print_reg ac
+0x07f8:  push_imm b'/'
+0x07fa:  pop_reg r3
+0x07fc:  print_reg r3
+0x07fe:  push_imm b'\n'
+0x0800:  pop_reg r1
+0x0802:  print_reg r1
+0x0804:  push_imm b' '
+0x0806:  pop_reg r3
+0x0808:  print_reg r3
+0x080a:  push_imm b' '
+0x080c:  pop_reg r1
+0x080e:  print_reg r1
+0x0810:  push_imm b' '
+0x0812:  pop_reg ac
+0x0814:  print_reg ac
+0x0816:  push_imm b' '
+0x0818:  pop_reg r3
+0x081a:  print_reg r3
+0x081c:  push_imm b' '
+0x081e:  pop_reg ac
+0x0820:  print_reg ac
+0x0822:  push_imm b' '
+0x0824:  pop_reg r3
+0x0826:  print_reg r3
+0x0828:  push_imm b' '
+0x082a:  pop_reg r1
+0x082c:  print_reg r1
+0x082e:  push_imm b' '
+0x0830:  pop_reg r1
+0x0832:  print_reg r1
+0x0834:  push_imm b' '
+0x0836:  pop_reg r2
+0x0838:  print_reg r2
+0x083a:  push_imm b' '
+0x083c:  pop_reg r2
+0x083e:  print_reg r2
+0x0840:  push_imm b' '
+0x0842:  pop_reg r3
+0x0844:  print_reg r3
+0x0846:  push_imm b' '
+0x0848:  pop_reg r3
+0x084a:  print_reg r3
+0x084c:  push_imm b' '
+0x084e:  pop_reg ac
+0x0850:  print_reg ac
+0x0852:  push_imm b' '
+0x0854:  pop_reg r1
+0x0856:  print_reg r1
+0x0858:  push_imm b' '
+0x085a:  pop_reg r1
+0x085c:  print_reg r1
+0x085e:  push_imm b' '
+0x0860:  pop_reg r3
+0x0862:  print_reg r3
+0x0864:  push_imm b'\\'
+0x0866:  pop_reg r3
+0x0868:  print_reg r3
+0x086a:  push_imm b'\\'
+0x086c:  pop_reg ac
+0x086e:  print_reg ac
+0x0870:  push_imm b'.'
+0x0872:  pop_reg r1
+0x0874:  print_reg r1
+0x0876:  push_imm b' '
+0x0878:  pop_reg r3
+0x087a:  print_reg r3
+0x087c:  push_imm b' '
+0x087e:  pop_reg r3
+0x0880:  print_reg r3
+0x0882:  push_imm b','
+0x0884:  pop_reg ac
+0x0886:  print_reg ac
+0x0888:  push_imm b' '
+0x088a:  pop_reg r1
+0x088c:  print_reg r1
+0x088e:  push_imm b' '
+0x0890:  pop_reg ac
+0x0892:  print_reg ac
+0x0894:  push_imm b'/'
+0x0896:  pop_reg r3
+0x0898:  print_reg r3
+0x089a:  push_imm b' '
+0x089c:  pop_reg r1
+0x089e:  print_reg r1
+0x08a0:  push_imm b' '
+0x08a2:  pop_reg r1
+0x08a4:  print_reg r1
+0x08a6:  push_imm b' '
+0x08a8:  pop_reg r3
+0x08aa:  print_reg r3
+0x08ac:  push_imm b' '
+0x08ae:  pop_reg r3
+0x08b0:  print_reg r3
+0x08b2:  push_imm b' '
+0x08b4:  pop_reg r1
+0x08b6:  print_reg r1
+0x08b8:  push_imm b'|'
+0x08ba:  pop_reg ac
+0x08bc:  print_reg ac
+0x08be:  push_imm b'|'
+0x08c0:  pop_reg r1
+0x08c2:  print_reg r1
+0x08c4:  push_imm b':'
+0x08c6:  pop_reg r3
+0x08c8:  print_reg r3
+0x08ca:  push_imm b' '
+0x08cc:  pop_reg r2
+0x08ce:  print_reg r2
+0x08d0:  push_imm b' '
+0x08d2:  pop_reg r2
+0x08d4:  print_reg r2
+0x08d6:  push_imm b'.'
+0x08d8:  pop_reg ac
+0x08da:  print_reg ac
+0x08dc:  push_imm b' '
+0x08de:  pop_reg r3
+0x08e0:  print_reg r3
+0x08e2:  push_imm b' '
+0x08e4:  pop_reg r2
+0x08e6:  print_reg r2
+0x08e8:  push_imm b'|'
+0x08ea:  pop_reg r1
+0x08ec:  print_reg r1
+0x08ee:  push_imm b' '
+0x08f0:  pop_reg r2
+0x08f2:  print_reg r2
+0x08f4:  push_imm b' '
+0x08f6:  pop_reg r1
+0x08f8:  print_reg r1
+0x08fa:  push_imm b' '
+0x08fc:  pop_reg r1
+0x08fe:  print_reg r1
+0x0900:  push_imm b' '
+0x0902:  pop_reg r2
+0x0904:  print_reg r2
+0x0906:  push_imm b' '
+0x0908:  pop_reg r3
+0x090a:  print_reg r3
+0x090c:  push_imm b'\\'
+0x090e:  pop_reg r1
+0x0910:  print_reg r1
+0x0912:  push_imm b'\\'
+0x0914:  pop_reg r3
+0x0916:  print_reg r3
+0x0918:  push_imm b':'
+0x091a:  pop_reg r1
+0x091c:  print_reg r1
+0x091e:  push_imm b' '
+0x0920:  pop_reg r3
+0x0922:  print_reg r3
+0x0924:  push_imm b' '
+0x0926:  pop_reg ac
+0x0928:  print_reg ac
+0x092a:  push_imm b'.'
+0x092c:  pop_reg r3
+0x092e:  print_reg r3
+0x0930:  push_imm b' '
+0x0932:  pop_reg ac
+0x0934:  print_reg ac
+0x0936:  push_imm b' '
+0x0938:  pop_reg r2
+0x093a:  print_reg r2
+0x093c:  push_imm b'/'
+0x093e:  pop_reg r2
+0x0940:  print_reg r2
+0x0942:  push_imm b'\n'
+0x0944:  pop_reg r1
+0x0946:  print_reg r1
+0x0948:  push_imm b' '
+0x094a:  pop_reg r2
+0x094c:  print_reg r2
+0x094e:  push_imm b' '
+0x0950:  pop_reg ac
+0x0952:  print_reg ac
+0x0954:  push_imm b' '
+0x0956:  pop_reg r2
+0x0958:  print_reg r2
+0x095a:  push_imm b' '
+0x095c:  pop_reg r3
+0x095e:  print_reg r3
+0x0960:  push_imm b' '
+0x0962:  pop_reg r2
+0x0964:  print_reg r2
+0x0966:  push_imm b' '
+0x0968:  pop_reg r3
+0x096a:  print_reg r3
+0x096c:  push_imm b' '
+0x096e:  pop_reg r3
+0x0970:  print_reg r3
+0x0972:  push_imm b' '
+0x0974:  pop_reg r3
+0x0976:  print_reg r3
+0x0978:  push_imm b' '
+0x097a:  pop_reg r3
+0x097c:  print_reg r3
+0x097e:  push_imm b' '
+0x0980:  pop_reg r3
+0x0982:  print_reg r3
+0x0984:  push_imm b' '
+0x0986:  pop_reg r3
+0x0988:  print_reg r3
+0x098a:  push_imm b' '
+0x098c:  pop_reg ac
+0x098e:  print_reg ac
+0x0990:  push_imm b' '
+0x0992:  pop_reg ac
+0x0994:  print_reg ac
+0x0996:  push_imm b' '
+0x0998:  pop_reg r3
+0x099a:  print_reg r3
+0x099c:  push_imm b' '
+0x099e:  pop_reg r3
+0x09a0:  print_reg r3
+0x09a2:  push_imm b' '
+0x09a4:  pop_reg r3
+0x09a6:  print_reg r3
+0x09a8:  push_imm b' '
+0x09aa:  pop_reg ac
+0x09ac:  print_reg ac
+0x09ae:  push_imm b'|'
+0x09b0:  pop_reg r3
+0x09b2:  print_reg r3
+0x09b4:  push_imm b'|'
+0x09b6:  pop_reg r2
+0x09b8:  print_reg r2
+0x09ba:  push_imm b':'
+0x09bc:  pop_reg r2
+0x09be:  print_reg r2
+0x09c0:  push_imm b' '
+0x09c2:  pop_reg r3
+0x09c4:  print_reg r3
+0x09c6:  push_imm b' '
+0x09c8:  pop_reg ac
+0x09ca:  print_reg ac
+0x09cc:  push_imm b' '
+0x09ce:  pop_reg r3
+0x09d0:  print_reg r3
+0x09d2:  push_imm b'|'
+0x09d4:  pop_reg r2
+0x09d6:  print_reg r2
+0x09d8:  push_imm b'_'
+0x09da:  pop_reg ac
+0x09dc:  print_reg ac
+0x09de:  push_imm b' '
+0x09e0:  pop_reg r3
+0x09e2:  print_reg r3
+0x09e4:  push_imm b' '
+0x09e6:  pop_reg r3
+0x09e8:  print_reg r3
+0x09ea:  push_imm b' '
+0x09ec:  pop_reg r2
+0x09ee:  print_reg r2
+0x09f0:  push_imm b'_'
+0x09f2:  pop_reg r3
+0x09f4:  print_reg r3
+0x09f6:  push_imm b' '
+0x09f8:  pop_reg r2
+0x09fa:  print_reg r2
+0x09fc:  push_imm b'|'
+0x09fe:  pop_reg r1
+0x0a00:  print_reg r1
+0x0a02:  push_imm b'|'
+0x0a04:  pop_reg r1
+0x0a06:  print_reg r1
+0x0a08:  push_imm b'_'
+0x0a0a:  pop_reg ac
+0x0a0c:  print_reg ac
+0x0a0e:  push_imm b' '
+0x0a10:  pop_reg r1
+0x0a12:  print_reg r1
+0x0a14:  push_imm b'.'
+0x0a16:  pop_reg ac
+0x0a18:  print_reg ac
+0x0a1a:  push_imm b' '
+0x0a1c:  pop_reg r1
+0x0a1e:  print_reg r1
+0x0a20:  push_imm b'_'
+0x0a22:  pop_reg r1
+0x0a24:  print_reg r1
+0x0a26:  push_imm b' '
+0x0a28:  pop_reg r2
+0x0a2a:  print_reg r2
+0x0a2c:  push_imm b'|'
+0x0a2e:  pop_reg r1
+0x0a30:  print_reg r1
+0x0a32:  push_imm b' '
+0x0a34:  pop_reg r2
+0x0a36:  print_reg r2
+0x0a38:  push_imm b'_'
+0x0a3a:  pop_reg r3
+0x0a3c:  print_reg r3
+0x0a3e:  push_imm b' '
+0x0a40:  pop_reg r1
+0x0a42:  print_reg r1
+0x0a44:  push_imm b' '
+0x0a46:  pop_reg r1
+0x0a48:  print_reg r1
+0x0a4a:  push_imm b' '
+0x0a4c:  pop_reg r2
+0x0a4e:  print_reg r2
+0x0a50:  push_imm b'_'
+0x0a52:  pop_reg r2
+0x0a54:  print_reg r2
+0x0a56:  push_imm b'|'
+0x0a58:  pop_reg r2
+0x0a5a:  print_reg r2
+0x0a5c:  push_imm b'|'
+0x0a5e:  pop_reg ac
+0x0a60:  print_reg ac
+0x0a62:  push_imm b':'
+0x0a64:  pop_reg ac
+0x0a66:  print_reg ac
+0x0a68:  push_imm b' '
+0x0a6a:  pop_reg r1
+0x0a6c:  print_reg r1
+0x0a6e:  push_imm b' '
+0x0a70:  pop_reg ac
+0x0a72:  print_reg ac
+0x0a74:  push_imm b' '
+0x0a76:  pop_reg r2
+0x0a78:  print_reg r2
+0x0a7a:  push_imm b'|'
+0x0a7c:  pop_reg r3
+0x0a7e:  print_reg r3
+0x0a80:  push_imm b'\n'
+0x0a82:  pop_reg r2
+0x0a84:  print_reg r2
+0x0a86:  push_imm b' '
+0x0a88:  pop_reg r1
+0x0a8a:  print_reg r1
+0x0a8c:  push_imm b' '
+0x0a8e:  pop_reg r3
+0x0a90:  print_reg r3
+0x0a92:  push_imm b' '
+0x0a94:  pop_reg ac
+0x0a96:  print_reg ac
+0x0a98:  push_imm b' '
+0x0a9a:  pop_reg ac
+0x0a9c:  print_reg ac
+0x0a9e:  push_imm b' '
+0x0aa0:  pop_reg r3
+0x0aa2:  print_reg r3
+0x0aa4:  push_imm b' '
+0x0aa6:  pop_reg r2
+0x0aa8:  print_reg r2
+0x0aaa:  push_imm b' '
+0x0aac:  pop_reg r2
+0x0aae:  print_reg r2
+0x0ab0:  push_imm b' '
+0x0ab2:  pop_reg r3
+0x0ab4:  print_reg r3
+0x0ab6:  push_imm b' '
+0x0ab8:  pop_reg r3
+0x0aba:  print_reg r3
+0x0abc:  push_imm b' '
+0x0abe:  pop_reg ac
+0x0ac0:  print_reg ac
+0x0ac2:  push_imm b' '
+0x0ac4:  pop_reg ac
+0x0ac6:  print_reg ac
+0x0ac8:  push_imm b' '
+0x0aca:  pop_reg r2
+0x0acc:  print_reg r2
+0x0ace:  push_imm b' '
+0x0ad0:  pop_reg r1
+0x0ad2:  print_reg r1
+0x0ad4:  push_imm b' '
+0x0ad6:  pop_reg ac
+0x0ad8:  print_reg ac
+0x0ada:  push_imm b' '
+0x0adc:  pop_reg ac
+0x0ade:  print_reg ac
+0x0ae0:  push_imm b' '
+0x0ae2:  pop_reg r1
+0x0ae4:  print_reg r1
+0x0ae6:  push_imm b' '
+0x0ae8:  pop_reg r3
+0x0aea:  print_reg r3
+0x0aec:  push_imm b'|'
+0x0aee:  pop_reg ac
+0x0af0:  print_reg ac
+0x0af2:  push_imm b'|'
+0x0af4:  pop_reg r2
+0x0af6:  print_reg r2
+0x0af8:  push_imm b':'
+0x0afa:  pop_reg r1
+0x0afc:  print_reg r1
+0x0afe:  push_imm b' '
+0x0b00:  pop_reg r3
+0x0b02:  print_reg r3
+0x0b04:  push_imm b' '
+0x0b06:  pop_reg r2
+0x0b08:  print_reg r2
+0x0b0a:  push_imm b'.'
+0x0b0c:  pop_reg ac
+0x0b0e:  print_reg ac
+0x0b10:  push_imm b'|'
+0x0b12:  pop_reg r3
+0x0b14:  print_reg r3
+0x0b16:  push_imm b'|'
+0x0b18:  pop_reg r1
+0x0b1a:  print_reg r1
+0x0b1c:  push_imm b'|'
+0x0b1e:  pop_reg r2
+0x0b20:  print_reg r2
+0x0b22:  push_imm b'_'
+0x0b24:  pop_reg r3
+0x0b26:  print_reg r3
+0x0b28:  push_imm b'|'
+0x0b2a:  pop_reg r3
+0x0b2c:  print_reg r3
+0x0b2e:  push_imm b';'
+0x0b30:  pop_reg ac
+0x0b32:  print_reg ac
+0x0b34:  push_imm b'|'
+0x0b36:  pop_reg r2
+0x0b38:  print_reg r2
+0x0b3a:  push_imm b'_'
+0x0b3c:  pop_reg ac
+0x0b3e:  print_reg ac
+0x0b40:  push_imm b'|'
+0x0b42:  pop_reg r1
+0x0b44:  print_reg r1
+0x0b46:  push_imm b';'
+0x0b48:  pop_reg r3
+0x0b4a:  print_reg r3
+0x0b4c:  push_imm b'|'
+0x0b4e:  pop_reg ac
+0x0b50:  print_reg ac
+0x0b52:  push_imm b'_'
+0x0b54:  pop_reg r3
+0x0b56:  print_reg r3
+0x0b58:  push_imm b'|'
+0x0b5a:  pop_reg r1
+0x0b5c:  print_reg r1
+0x0b5e:  push_imm b';'
+0x0b60:  pop_reg r1
+0x0b62:  print_reg r1
+0x0b64:  push_imm b'|'
+0x0b66:  pop_reg r3
+0x0b68:  print_reg r3
+0x0b6a:  push_imm b'_'
+0x0b6c:  pop_reg r2
+0x0b6e:  print_reg r2
+0x0b70:  push_imm b'|'
+0x0b72:  pop_reg r3
+0x0b74:  print_reg r3
+0x0b76:  push_imm b';'
+0x0b78:  pop_reg r1
+0x0b7a:  print_reg r1
+0x0b7c:  push_imm b'|'
+0x0b7e:  pop_reg ac
+0x0b80:  print_reg ac
+0x0b82:  push_imm b'_'
+0x0b84:  pop_reg ac
+0x0b86:  print_reg ac
+0x0b88:  push_imm b'|'
+0x0b8a:  pop_reg r1
+0x0b8c:  print_reg r1
+0x0b8e:  push_imm b';'
+0x0b90:  pop_reg r2
+0x0b92:  print_reg r2
+0x0b94:  push_imm b'|'
+0x0b96:  pop_reg r1
+0x0b98:  print_reg r1
+0x0b9a:  push_imm b'|'
+0x0b9c:  pop_reg r1
+0x0b9e:  print_reg r1
+0x0ba0:  push_imm b':'
+0x0ba2:  pop_reg ac
+0x0ba4:  print_reg ac
+0x0ba6:  push_imm b'.'
+0x0ba8:  pop_reg r3
+0x0baa:  print_reg r3
+0x0bac:  push_imm b' '
+0x0bae:  pop_reg r3
+0x0bb0:  print_reg r3
+0x0bb2:  push_imm b' '
+0x0bb4:  pop_reg ac
+0x0bb6:  print_reg ac
+0x0bb8:  push_imm b'|'
+0x0bba:  pop_reg r2
+0x0bbc:  print_reg r2
+0x0bbe:  push_imm b'\n'
+0x0bc0:  pop_reg r2
+0x0bc2:  print_reg r2
+0x0bc4:  push_imm b' '
+0x0bc6:  pop_reg r3
+0x0bc8:  print_reg r3
+0x0bca:  push_imm b' '
+0x0bcc:  pop_reg ac
+0x0bce:  print_reg ac
+0x0bd0:  push_imm b' '
+0x0bd2:  pop_reg r2
+0x0bd4:  print_reg r2
+0x0bd6:  push_imm b' '
+0x0bd8:  pop_reg ac
+0x0bda:  print_reg ac
+0x0bdc:  push_imm b' '
+0x0bde:  pop_reg ac
+0x0be0:  print_reg ac
+0x0be2:  push_imm b' '
+0x0be4:  pop_reg ac
+0x0be6:  print_reg ac
+0x0be8:  push_imm b' '
+0x0bea:  pop_reg ac
+0x0bec:  print_reg ac
+0x0bee:  push_imm b' '
+0x0bf0:  pop_reg r1
+0x0bf2:  print_reg r1
+0x0bf4:  push_imm b' '
+0x0bf6:  pop_reg ac
+0x0bf8:  print_reg ac
+0x0bfa:  push_imm b' '
+0x0bfc:  pop_reg r2
+0x0bfe:  print_reg r2
+0x0c00:  push_imm b' '
+0x0c02:  pop_reg r1
+0x0c04:  print_reg r1
+0x0c06:  push_imm b' '
+0x0c08:  pop_reg r1
+0x0c0a:  print_reg r1
+0x0c0c:  push_imm b' '
+0x0c0e:  pop_reg ac
+0x0c10:  print_reg ac
+0x0c12:  push_imm b' '
+0x0c14:  pop_reg r3
+0x0c16:  print_reg r3
+0x0c18:  push_imm b' '
+0x0c1a:  pop_reg r2
+0x0c1c:  print_reg r2
+0x0c1e:  push_imm b' '
+0x0c20:  pop_reg ac
+0x0c22:  print_reg ac
+0x0c24:  push_imm b' '
+0x0c26:  pop_reg r2
+0x0c28:  print_reg r2
+0x0c2a:  push_imm b'|'
+0x0c2c:  pop_reg ac
+0x0c2e:  print_reg ac
+0x0c30:  push_imm b'|'
+0x0c32:  pop_reg r3
+0x0c34:  print_reg r3
+0x0c36:  push_imm b':'
+0x0c38:  pop_reg r2
+0x0c3a:  print_reg r2
+0x0c3c:  push_imm b' '
+0x0c3e:  pop_reg r1
+0x0c40:  print_reg r1
+0x0c42:  push_imm b' '
+0x0c44:  pop_reg r3
+0x0c46:  print_reg r3
+0x0c48:  push_imm b' '
+0x0c4a:  pop_reg r1
+0x0c4c:  print_reg r1
+0x0c4e:  push_imm b'|'
+0x0c50:  pop_reg r2
+0x0c52:  print_reg r2
+0x0c54:  push_imm b'|'
+0x0c56:  pop_reg r2
+0x0c58:  print_reg r2
+0x0c5a:  push_imm b'.'
+0x0c5c:  pop_reg ac
+0x0c5e:  print_reg ac
+0x0c60:  push_imm b' '
+0x0c62:  pop_reg r2
+0x0c64:  print_reg r2
+0x0c66:  push_imm b' '
+0x0c68:  pop_reg r3
+0x0c6a:  print_reg r3
+0x0c6c:  push_imm b' '
+0x0c6e:  pop_reg r3
+0x0c70:  print_reg r3
+0x0c72:  push_imm b' '
+0x0c74:  pop_reg r1
+0x0c76:  print_reg r1
+0x0c78:  push_imm b'.'
+0x0c7a:  pop_reg r3
+0x0c7c:  print_reg r3
+0x0c7e:  push_imm b' '
+0x0c80:  pop_reg ac
+0x0c82:  print_reg ac
+0x0c84:  push_imm b' '
+0x0c86:  pop_reg r3
+0x0c88:  print_reg r3
+0x0c8a:  push_imm b' '
+0x0c8c:  pop_reg r1
+0x0c8e:  print_reg r1
+0x0c90:  push_imm b' '
+0x0c92:  pop_reg ac
+0x0c94:  print_reg ac
+0x0c96:  push_imm b' '
+0x0c98:  pop_reg ac
+0x0c9a:  print_reg ac
+0x0c9c:  push_imm b'.'
+0x0c9e:  pop_reg r3
+0x0ca0:  print_reg r3
+0x0ca2:  push_imm b' '
+0x0ca4:  pop_reg ac
+0x0ca6:  print_reg ac
+0x0ca8:  push_imm b' '
+0x0caa:  pop_reg ac
+0x0cac:  print_reg ac
+0x0cae:  push_imm b' '
+0x0cb0:  pop_reg r3
+0x0cb2:  print_reg r3
+0x0cb4:  push_imm b' '
+0x0cb6:  pop_reg r2
+0x0cb8:  print_reg r2
+0x0cba:  push_imm b' '
+0x0cbc:  pop_reg r1
+0x0cbe:  print_reg r1
+0x0cc0:  push_imm b' '
+0x0cc2:  pop_reg r1
+0x0cc4:  print_reg r1
+0x0cc6:  push_imm b'.'
+0x0cc8:  pop_reg r3
+0x0cca:  print_reg r3
+0x0ccc:  push_imm b' '
+0x0cce:  pop_reg r2
+0x0cd0:  print_reg r2
+0x0cd2:  push_imm b'|'
+0x0cd4:  pop_reg r1
+0x0cd6:  print_reg r1
+0x0cd8:  push_imm b'|'
+0x0cda:  pop_reg r2
+0x0cdc:  print_reg r2
+0x0cde:  push_imm b':'
+0x0ce0:  pop_reg r2
+0x0ce2:  print_reg r2
+0x0ce4:  push_imm b' '
+0x0ce6:  pop_reg r3
+0x0ce8:  print_reg r3
+0x0cea:  push_imm b' '
+0x0cec:  pop_reg ac
+0x0cee:  print_reg ac
+0x0cf0:  push_imm b'.'
+0x0cf2:  pop_reg r1
+0x0cf4:  print_reg r1
+0x0cf6:  push_imm b'|'
+0x0cf8:  pop_reg r1
+0x0cfa:  print_reg r1
+0x0cfc:  push_imm b'\n'
+0x0cfe:  pop_reg r1
+0x0d00:  print_reg r1
+0x0d02:  push_imm b' '
+0x0d04:  pop_reg ac
+0x0d06:  print_reg ac
+0x0d08:  push_imm b' '
+0x0d0a:  pop_reg r3
+0x0d0c:  print_reg r3
+0x0d0e:  push_imm b' '
+0x0d10:  pop_reg r1
+0x0d12:  print_reg r1
+0x0d14:  push_imm b' '
+0x0d16:  pop_reg r3
+0x0d18:  print_reg r3
+0x0d1a:  push_imm b' '
+0x0d1c:  pop_reg r2
+0x0d1e:  print_reg r2
+0x0d20:  push_imm b' '
+0x0d22:  pop_reg ac
+0x0d24:  print_reg ac
+0x0d26:  push_imm b' '
+0x0d28:  pop_reg r3
+0x0d2a:  print_reg r3
+0x0d2c:  push_imm b' '
+0x0d2e:  pop_reg r1
+0x0d30:  print_reg r1
+0x0d32:  push_imm b' '
+0x0d34:  pop_reg ac
+0x0d36:  print_reg ac
+0x0d38:  push_imm b' '
+0x0d3a:  pop_reg r1
+0x0d3c:  print_reg r1
+0x0d3e:  push_imm b' '
+0x0d40:  pop_reg ac
+0x0d42:  print_reg ac
+0x0d44:  push_imm b' '
+0x0d46:  pop_reg r3
+0x0d48:  print_reg r3
+0x0d4a:  push_imm b' '
+0x0d4c:  pop_reg ac
+0x0d4e:  print_reg ac
+0x0d50:  push_imm b' '
+0x0d52:  pop_reg r3
+0x0d54:  print_reg r3
+0x0d56:  push_imm b' '
+0x0d58:  pop_reg r1
+0x0d5a:  print_reg r1
+0x0d5c:  push_imm b' '
+0x0d5e:  pop_reg ac
+0x0d60:  print_reg ac
+0x0d62:  push_imm b' '
+0x0d64:  pop_reg r2
+0x0d66:  print_reg r2
+0x0d68:  push_imm b'|'
+0x0d6a:  pop_reg ac
+0x0d6c:  print_reg ac
+0x0d6e:  push_imm b'|'
+0x0d70:  pop_reg r1
+0x0d72:  print_reg r1
+0x0d74:  push_imm b':'
+0x0d76:  pop_reg ac
+0x0d78:  print_reg ac
+0x0d7a:  push_imm b' '
+0x0d7c:  pop_reg r1
+0x0d7e:  print_reg r1
+0x0d80:  push_imm b'.'
+0x0d82:  pop_reg ac
+0x0d84:  print_reg ac
+0x0d86:  push_imm b' '
+0x0d88:  pop_reg r3
+0x0d8a:  print_reg r3
+0x0d8c:  push_imm b'|'
+0x0d8e:  pop_reg r1
+0x0d90:  print_reg r1
+0x0d92:  push_imm b'|'
+0x0d94:  pop_reg r3
+0x0d96:  print_reg r3
+0x0d98:  push_imm b' '
+0x0d9a:  pop_reg ac
+0x0d9c:  print_reg ac
+0x0d9e:  push_imm b'.'
+0x0da0:  pop_reg r3
+0x0da2:  print_reg r3
+0x0da4:  push_imm b' '
+0x0da6:  pop_reg r3
+0x0da8:  print_reg r3
+0x0daa:  push_imm b' '
+0x0dac:  pop_reg r1
+0x0dae:  print_reg r1
+0x0db0:  push_imm b' '
+0x0db2:  pop_reg ac
+0x0db4:  print_reg ac
+0x0db6:  push_imm b' '
+0x0db8:  pop_reg r3
+0x0dba:  print_reg r3
+0x0dbc:  push_imm b' '
+0x0dbe:  pop_reg ac
+0x0dc0:  print_reg ac
+0x0dc2:  push_imm b'.'
+0x0dc4:  pop_reg r2
+0x0dc6:  print_reg r2
+0x0dc8:  push_imm b' '
+0x0dca:  pop_reg ac
+0x0dcc:  print_reg ac
+0x0dce:  push_imm b'.'
+0x0dd0:  pop_reg r3
+0x0dd2:  print_reg r3
+0x0dd4:  push_imm b' '
+0x0dd6:  pop_reg r2
+0x0dd8:  print_reg r2
+0x0dda:  push_imm b' '
+0x0ddc:  pop_reg r1
+0x0dde:  print_reg r1
+0x0de0:  push_imm b' '
+0x0de2:  pop_reg r3
+0x0de4:  print_reg r3
+0x0de6:  push_imm b'.'
+0x0de8:  pop_reg r3
+0x0dea:  print_reg r3
+0x0dec:  push_imm b' '
+0x0dee:  pop_reg r1
+0x0df0:  print_reg r1
+0x0df2:  push_imm b' '
+0x0df4:  pop_reg r3
+0x0df6:  print_reg r3
+0x0df8:  push_imm b','
+0x0dfa:  pop_reg r1
+0x0dfc:  print_reg r1
+0x0dfe:  push_imm b' '
+0x0e00:  pop_reg r2
+0x0e02:  print_reg r2
+0x0e04:  push_imm b' '
+0x0e06:  pop_reg r1
+0x0e08:  print_reg r1
+0x0e0a:  push_imm b' '
+0x0e0c:  pop_reg r3
+0x0e0e:  print_reg r3
+0x0e10:  push_imm b'|'
+0x0e12:  pop_reg r2
+0x0e14:  print_reg r2
+0x0e16:  push_imm b'|'
+0x0e18:  pop_reg r1
+0x0e1a:  print_reg r1
+0x0e1c:  push_imm b':'
+0x0e1e:  pop_reg r3
+0x0e20:  print_reg r3
+0x0e22:  push_imm b' '
+0x0e24:  pop_reg r1
+0x0e26:  print_reg r1
+0x0e28:  push_imm b' '
+0x0e2a:  pop_reg r2
+0x0e2c:  print_reg r2
+0x0e2e:  push_imm b' '
+0x0e30:  pop_reg ac
+0x0e32:  print_reg ac
+0x0e34:  push_imm b'|'
+0x0e36:  pop_reg ac
+0x0e38:  print_reg ac
+0x0e3a:  push_imm b' '
+0x0e3c:  pop_reg r1
+0x0e3e:  print_reg r1
+0x0e40:  push_imm b' '
+0x0e42:  pop_reg r3
+0x0e44:  print_reg r3
+0x0e46:  push_imm b' '
+0x0e48:  pop_reg r3
+0x0e4a:  print_reg r3
+0x0e4c:  push_imm b' '
+0x0e4e:  pop_reg ac
+0x0e50:  print_reg ac
+0x0e52:  push_imm b' '
+0x0e54:  pop_reg r3
+0x0e56:  print_reg r3
+0x0e58:  push_imm b' '
+0x0e5a:  pop_reg r1
+0x0e5c:  print_reg r1
+0x0e5e:  push_imm b' '
+0x0e60:  pop_reg r2
+0x0e62:  print_reg r2
+0x0e64:  push_imm b'\\'
+0x0e66:  pop_reg r1
+0x0e68:  print_reg r1
+0x0e6a:  push_imm b','
+0x0e6c:  pop_reg r1
+0x0e6e:  print_reg r1
+0x0e70:  push_imm b'/'
+0x0e72:  pop_reg r2
+0x0e74:  print_reg r2
+0x0e76:  push_imm b'\n'
+0x0e78:  pop_reg r3
+0x0e7a:  print_reg r3
+0x0e7c:  push_imm b' '
+0x0e7e:  pop_reg r1
+0x0e80:  print_reg r1
+0x0e82:  push_imm b' '
+0x0e84:  pop_reg r3
+0x0e86:  print_reg r3
+0x0e88:  push_imm b' '
+0x0e8a:  pop_reg r1
+0x0e8c:  print_reg r1
+0x0e8e:  push_imm b' '
+0x0e90:  pop_reg r1
+0x0e92:  print_reg r1
+0x0e94:  push_imm b' '
+0x0e96:  pop_reg r3
+0x0e98:  print_reg r3
+0x0e9a:  push_imm b' '
+0x0e9c:  pop_reg ac
+0x0e9e:  print_reg ac
+0x0ea0:  push_imm b' '
+0x0ea2:  pop_reg r2
+0x0ea4:  print_reg r2
+0x0ea6:  push_imm b' '
+0x0ea8:  pop_reg r1
+0x0eaa:  print_reg r1
+0x0eac:  push_imm b' '
+0x0eae:  pop_reg r2
+0x0eb0:  print_reg r2
+0x0eb2:  push_imm b' '
+0x0eb4:  pop_reg r3
+0x0eb6:  print_reg r3
+0x0eb8:  push_imm b' '
+0x0eba:  pop_reg r1
+0x0ebc:  print_reg r1
+0x0ebe:  push_imm b' '
+0x0ec0:  pop_reg r3
+0x0ec2:  print_reg r3
+0x0ec4:  push_imm b' '
+0x0ec6:  pop_reg r3
+0x0ec8:  print_reg r3
+0x0eca:  push_imm b' '
+0x0ecc:  pop_reg r2
+0x0ece:  print_reg r2
+0x0ed0:  push_imm b' '
+0x0ed2:  pop_reg r2
+0x0ed4:  print_reg r2
+0x0ed6:  push_imm b' '
+0x0ed8:  pop_reg r1
+0x0eda:  print_reg r1
+0x0edc:  push_imm b' '
+0x0ede:  pop_reg r2
+0x0ee0:  print_reg r2
+0x0ee2:  push_imm b'|'
+0x0ee4:  pop_reg r1
+0x0ee6:  print_reg r1
+0x0ee8:  push_imm b'|'
+0x0eea:  pop_reg ac
+0x0eec:  print_reg ac
+0x0eee:  push_imm b':'
+0x0ef0:  pop_reg r3
+0x0ef2:  print_reg r3
+0x0ef4:  push_imm b' '
+0x0ef6:  pop_reg r3
+0x0ef8:  print_reg r3
+0x0efa:  push_imm b' '
+0x0efc:  pop_reg ac
+0x0efe:  print_reg ac
+0x0f00:  push_imm b' '
+0x0f02:  pop_reg r3
+0x0f04:  print_reg r3
+0x0f06:  push_imm b'|'
+0x0f08:  pop_reg r3
+0x0f0a:  print_reg r3
+0x0f0c:  push_imm b'|'
+0x0f0e:  pop_reg r1
+0x0f10:  print_reg r1
+0x0f12:  push_imm b':'
+0x0f14:  pop_reg ac
+0x0f16:  print_reg ac
+0x0f18:  push_imm b' '
+0x0f1a:  pop_reg r2
+0x0f1c:  print_reg r2
+0x0f1e:  push_imm b' '
+0x0f20:  pop_reg r3
+0x0f22:  print_reg r3
+0x0f24:  push_imm b','
+0x0f26:  pop_reg r2
+0x0f28:  print_reg r2
+0x0f2a:  push_imm b' '
+0x0f2c:  pop_reg ac
+0x0f2e:  print_reg ac
+0x0f30:  push_imm b' '
+0x0f32:  pop_reg r1
+0x0f34:  print_reg r1
+0x0f36:  push_imm b'_'
+0x0f38:  pop_reg r1
+0x0f3a:  print_reg r1
+0x0f3c:  push_imm b'_'
+0x0f3e:  pop_reg r2
+0x0f40:  print_reg r2
+0x0f42:  push_imm b'_'
+0x0f44:  pop_reg r1
+0x0f46:  print_reg r1
+0x0f48:  push_imm b'_'
+0x0f4a:  pop_reg r2
+0x0f4c:  print_reg r2
+0x0f4e:  push_imm b'_'
+0x0f50:  pop_reg r1
+0x0f52:  print_reg r1
+0x0f54:  push_imm b'_'
+0x0f56:  pop_reg r1
+0x0f58:  print_reg r1
+0x0f5a:  push_imm b'_'
+0x0f5c:  pop_reg ac
+0x0f5e:  print_reg ac
+0x0f60:  push_imm b' '
+0x0f62:  pop_reg r3
+0x0f64:  print_reg r3
+0x0f66:  push_imm b' '
+0x0f68:  pop_reg ac
+0x0f6a:  print_reg ac
+0x0f6c:  push_imm b' '
+0x0f6e:  pop_reg ac
+0x0f70:  print_reg ac
+0x0f72:  push_imm b'.'
+0x0f74:  pop_reg r3
+0x0f76:  print_reg r3
+0x0f78:  push_imm b' '
+0x0f7a:  pop_reg r1
+0x0f7c:  print_reg r1
+0x0f7e:  push_imm b' '
+0x0f80:  pop_reg r2
+0x0f82:  print_reg r2
+0x0f84:  push_imm b' '
+0x0f86:  pop_reg r3
+0x0f88:  print_reg r3
+0x0f8a:  push_imm b'|'
+0x0f8c:  pop_reg r2
+0x0f8e:  print_reg r2
+0x0f90:  push_imm b'|'
+0x0f92:  pop_reg r1
+0x0f94:  print_reg r1
+0x0f96:  push_imm b':'
+0x0f98:  pop_reg r2
+0x0f9a:  print_reg r2
+0x0f9c:  push_imm b' '
+0x0f9e:  pop_reg r3
+0x0fa0:  print_reg r3
+0x0fa2:  push_imm b','
+0x0fa4:  pop_reg ac
+0x0fa6:  print_reg ac
+0x0fa8:  push_imm b' '
+0x0faa:  pop_reg r2
+0x0fac:  print_reg r2
+0x0fae:  push_imm b'|'
+0x0fb0:  pop_reg r3
+0x0fb2:  print_reg r3
+0x0fb4:  push_imm b' '
+0x0fb6:  pop_reg r3
+0x0fb8:  print_reg r3
+0x0fba:  push_imm b' '
+0x0fbc:  pop_reg r2
+0x0fbe:  print_reg r2
+0x0fc0:  push_imm b' '
+0x0fc2:  pop_reg ac
+0x0fc4:  print_reg ac
+0x0fc6:  push_imm b' '
+0x0fc8:  pop_reg r2
+0x0fca:  print_reg r2
+0x0fcc:  push_imm b' '
+0x0fce:  pop_reg ac
+0x0fd0:  print_reg ac
+0x0fd2:  push_imm b' '
+0x0fd4:  pop_reg ac
+0x0fd6:  print_reg ac
+0x0fd8:  push_imm b' '
+0x0fda:  pop_reg r2
+0x0fdc:  print_reg r2
+0x0fde:  push_imm b' '
+0x0fe0:  pop_reg r2
+0x0fe2:  print_reg r2
+0x0fe4:  push_imm b' '
+0x0fe6:  pop_reg r3
+0x0fe8:  print_reg r3
+0x0fea:  push_imm b' '
+0x0fec:  pop_reg r2
+0x0fee:  print_reg r2
+0x0ff0:  push_imm b' '
+0x0ff2:  pop_reg r2
+0x0ff4:  print_reg r2
+0x0ff6:  push_imm b' '
+0x0ff8:  pop_reg r2
+0x0ffa:  print_reg r2
+0x0ffc:  push_imm b'/'
+0x0ffe:  pop_reg r3
+0x1000:  print_reg r3
+0x1002:  push_imm b'`'
+0x1004:  pop_reg r1
+0x1006:  print_reg r1
+0x1008:  push_imm b'\\'
+0x100a:  pop_reg ac
+0x100c:  print_reg ac
+0x100e:  push_imm b'\n'
+0x1010:  pop_reg r3
+0x1012:  print_reg r3
+0x1014:  push_imm b' '
+0x1016:  pop_reg r2
+0x1018:  print_reg r2
+0x101a:  push_imm b' '
+0x101c:  pop_reg r2
+0x101e:  print_reg r2
+0x1020:  push_imm b' '
+0x1022:  pop_reg ac
+0x1024:  print_reg ac
+0x1026:  push_imm b' '
+0x1028:  pop_reg ac
+0x102a:  print_reg ac
+0x102c:  push_imm b' '
+0x102e:  pop_reg r3
+0x1030:  print_reg r3
+0x1032:  push_imm b' '
+0x1034:  pop_reg r3
+0x1036:  print_reg r3
+0x1038:  push_imm b' '
+0x103a:  pop_reg ac
+0x103c:  print_reg ac
+0x103e:  push_imm b' '
+0x1040:  pop_reg ac
+0x1042:  print_reg ac
+0x1044:  push_imm b' '
+0x1046:  pop_reg r2
+0x1048:  print_reg r2
+0x104a:  push_imm b' '
+0x104c:  pop_reg r1
+0x104e:  print_reg r1
+0x1050:  push_imm b' '
+0x1052:  pop_reg r2
+0x1054:  print_reg r2
+0x1056:  push_imm b' '
+0x1058:  pop_reg ac
+0x105a:  print_reg ac
+0x105c:  push_imm b' '
+0x105e:  pop_reg r2
+0x1060:  print_reg r2
+0x1062:  push_imm b' '
+0x1064:  pop_reg r2
+0x1066:  print_reg r2
+0x1068:  push_imm b' '
+0x106a:  pop_reg r1
+0x106c:  print_reg r1
+0x106e:  push_imm b' '
+0x1070:  pop_reg r3
+0x1072:  print_reg r3
+0x1074:  push_imm b' '
+0x1076:  pop_reg r2
+0x1078:  print_reg r2
+0x107a:  push_imm b'|'
+0x107c:  pop_reg r3
+0x107e:  print_reg r3
+0x1080:  push_imm b'|'
+0x1082:  pop_reg r3
+0x1084:  print_reg r3
+0x1086:  push_imm b':'
+0x1088:  pop_reg r3
+0x108a:  print_reg r3
+0x108c:  push_imm b' '
+0x108e:  pop_reg r3
+0x1090:  print_reg r3
+0x1092:  push_imm b' '
+0x1094:  pop_reg r3
+0x1096:  print_reg r3
+0x1098:  push_imm b' '
+0x109a:  pop_reg r3
+0x109c:  print_reg r3
+0x109e:  push_imm b'|'
+0x10a0:  pop_reg r3
+0x10a2:  print_reg r3
+0x10a4:  push_imm b'|'
+0x10a6:  pop_reg r3
+0x10a8:  print_reg r3
+0x10aa:  push_imm b' '
+0x10ac:  pop_reg ac
+0x10ae:  print_reg ac
+0x10b0:  push_imm b'.'
+0x10b2:  pop_reg r2
+0x10b4:  print_reg r2
+0x10b6:  push_imm b' '
+0x10b8:  pop_reg r1
+0x10ba:  print_reg r1
+0x10bc:  push_imm b' '
+0x10be:  pop_reg r3
+0x10c0:  print_reg r3
+0x10c2:  push_imm b' '
+0x10c4:  pop_reg r2
+0x10c6:  print_reg r2
+0x10c8:  push_imm b'/'
+0x10ca:  pop_reg ac
+0x10cc:  print_reg ac
+0x10ce:  push_imm b'+'
+0x10d0:  pop_reg ac
+0x10d2:  print_reg ac
+0x10d4:  push_imm b'+'
+0x10d6:  pop_reg r2
+0x10d8:  print_reg r2
+0x10da:  push_imm b'+'
+0x10dc:  pop_reg r2
+0x10de:  print_reg r2
+0x10e0:  push_imm b'+'
+0x10e2:  pop_reg r2
+0x10e4:  print_reg r2
+0x10e6:  push_imm b'+'
+0x10e8:  pop_reg r3
+0x10ea:  print_reg r3
+0x10ec:  push_imm b'+'
+0x10ee:  pop_reg r1
+0x10f0:  print_reg r1
+0x10f2:  push_imm b'+'
+0x10f4:  pop_reg r2
+0x10f6:  print_reg r2
+0x10f8:  push_imm b'\\'
+0x10fa:  pop_reg r3
+0x10fc:  print_reg r3
+0x10fe:  push_imm b' '
+0x1100:  pop_reg ac
+0x1102:  print_reg ac
+0x1104:  push_imm b' '
+0x1106:  pop_reg ac
+0x1108:  print_reg ac
+0x110a:  push_imm b' '
+0x110c:  pop_reg r3
+0x110e:  print_reg r3
+0x1110:  push_imm b' '
+0x1112:  pop_reg r3
+0x1114:  print_reg r3
+0x1116:  push_imm b'.'
+0x1118:  pop_reg r1
+0x111a:  print_reg r1
+0x111c:  push_imm b' '
+0x111e:  pop_reg r2
+0x1120:  print_reg r2
+0x1122:  push_imm b'|'
+0x1124:  pop_reg r3
+0x1126:  print_reg r3
+0x1128:  push_imm b'|'
+0x112a:  pop_reg ac
+0x112c:  print_reg ac
+0x112e:  push_imm b':'
+0x1130:  pop_reg r1
+0x1132:  print_reg r1
+0x1134:  push_imm b' '
+0x1136:  pop_reg r1
+0x1138:  print_reg r1
+0x113a:  push_imm b' '
+0x113c:  pop_reg ac
+0x113e:  print_reg ac
+0x1140:  push_imm b' '
+0x1142:  pop_reg r3
+0x1144:  print_reg r3
+0x1146:  push_imm b'|'
+0x1148:  pop_reg r2
+0x114a:  print_reg r2
+0x114c:  push_imm b'\n'
+0x114e:  pop_reg r3
+0x1150:  print_reg r3
+0x1152:  push_imm b' '
+0x1154:  pop_reg r3
+0x1156:  print_reg r3
+0x1158:  push_imm b' '
+0x115a:  pop_reg r2
+0x115c:  print_reg r2
+0x115e:  push_imm b' '
+0x1160:  pop_reg r3
+0x1162:  print_reg r3
+0x1164:  push_imm b' '
+0x1166:  pop_reg r1
+0x1168:  print_reg r1
+0x116a:  push_imm b' '
+0x116c:  pop_reg r1
+0x116e:  print_reg r1
+0x1170:  push_imm b' '
+0x1172:  pop_reg r2
+0x1174:  print_reg r2
+0x1176:  push_imm b' '
+0x1178:  pop_reg ac
+0x117a:  print_reg ac
+0x117c:  push_imm b' '
+0x117e:  pop_reg r3
+0x1180:  print_reg r3
+0x1182:  push_imm b' '
+0x1184:  pop_reg r2
+0x1186:  print_reg r2
+0x1188:  push_imm b' '
+0x118a:  pop_reg r1
+0x118c:  print_reg r1
+0x118e:  push_imm b' '
+0x1190:  pop_reg ac
+0x1192:  print_reg ac
+0x1194:  push_imm b' '
+0x1196:  pop_reg ac
+0x1198:  print_reg ac
+0x119a:  push_imm b' '
+0x119c:  pop_reg ac
+0x119e:  print_reg ac
+0x11a0:  push_imm b' '
+0x11a2:  pop_reg r2
+0x11a4:  print_reg r2
+0x11a6:  push_imm b' '
+0x11a8:  pop_reg r1
+0x11aa:  print_reg r1
+0x11ac:  push_imm b' '
+0x11ae:  pop_reg ac
+0x11b0:  print_reg ac
+0x11b2:  push_imm b' '
+0x11b4:  pop_reg r2
+0x11b6:  print_reg r2
+0x11b8:  push_imm b'|'
+0x11ba:  pop_reg r2
+0x11bc:  print_reg r2
+0x11be:  push_imm b'|'
+0x11c0:  pop_reg r2
+0x11c2:  print_reg r2
+0x11c4:  push_imm b':'
+0x11c6:  pop_reg r3
+0x11c8:  print_reg r3
+0x11ca:  push_imm b' '
+0x11cc:  pop_reg r2
+0x11ce:  print_reg r2
+0x11d0:  push_imm b' '
+0x11d2:  pop_reg r1
+0x11d4:  print_reg r1
+0x11d6:  push_imm b' '
+0x11d8:  pop_reg r2
+0x11da:  print_reg r2
+0x11dc:  push_imm b'|'
+0x11de:  pop_reg ac
+0x11e0:  print_reg ac
+0x11e2:  push_imm b'|'
+0x11e4:  pop_reg r2
+0x11e6:  print_reg r2
+0x11e8:  push_imm b'.'
+0x11ea:  pop_reg r2
+0x11ec:  print_reg r2
+0x11ee:  push_imm b' '
+0x11f0:  pop_reg ac
+0x11f2:  print_reg ac
+0x11f4:  push_imm b' '
+0x11f6:  pop_reg r2
+0x11f8:  print_reg r2
+0x11fa:  push_imm b' '
+0x11fc:  pop_reg r2
+0x11fe:  print_reg r2
+0x1200:  push_imm b' '
+0x1202:  pop_reg r1
+0x1204:  print_reg r1
+0x1206:  push_imm b'|'
+0x1208:  pop_reg r1
+0x120a:  print_reg r1
+0x120c:  push_imm b'+'
+0x120e:  pop_reg r1
+0x1210:  print_reg r1
+0x1212:  push_imm b'+'
+0x1214:  pop_reg r1
+0x1216:  print_reg r1
+0x1218:  push_imm b'+'
+0x121a:  pop_reg r2
+0x121c:  print_reg r2
+0x121e:  push_imm b'+'
+0x1220:  pop_reg r1
+0x1222:  print_reg r1
+0x1224:  push_imm b'+'
+0x1226:  pop_reg r3
+0x1228:  print_reg r3
+0x122a:  push_imm b'+'
+0x122c:  pop_reg ac
+0x122e:  print_reg ac
+0x1230:  push_imm b'+'
+0x1232:  pop_reg r3
+0x1234:  print_reg r3
+0x1236:  push_imm b'|'
+0x1238:  pop_reg r2
+0x123a:  print_reg r2
+0x123c:  push_imm b' '
+0x123e:  pop_reg r3
+0x1240:  print_reg r3
+0x1242:  push_imm b'.'
+0x1244:  pop_reg r3
+0x1246:  print_reg r3
+0x1248:  push_imm b' '
+0x124a:  pop_reg r2
+0x124c:  print_reg r2
+0x124e:  push_imm b' '
+0x1250:  pop_reg r3
+0x1252:  print_reg r3
+0x1254:  push_imm b' '
+0x1256:  pop_reg ac
+0x1258:  print_reg ac
+0x125a:  push_imm b' '
+0x125c:  pop_reg r3
+0x125e:  print_reg r3
+0x1260:  push_imm b'|'
+0x1262:  pop_reg ac
+0x1264:  print_reg ac
+0x1266:  push_imm b'|'
+0x1268:  pop_reg r3
+0x126a:  print_reg r3
+0x126c:  push_imm b':'
+0x126e:  pop_reg r3
+0x1270:  print_reg r3
+0x1272:  push_imm b' '
+0x1274:  pop_reg r1
+0x1276:  print_reg r1
+0x1278:  push_imm b'.'
+0x127a:  pop_reg r1
+0x127c:  print_reg r1
+0x127e:  push_imm b' '
+0x1280:  pop_reg r3
+0x1282:  print_reg r3
+0x1284:  push_imm b'|'
+0x1286:  pop_reg r3
+0x1288:  print_reg r3
+0x128a:  push_imm b'\n'
+0x128c:  pop_reg r1
+0x128e:  print_reg r1
+0x1290:  push_imm b' '
+0x1292:  pop_reg ac
+0x1294:  print_reg ac
+0x1296:  push_imm b' '
+0x1298:  pop_reg ac
+0x129a:  print_reg ac
+0x129c:  push_imm b' '
+0x129e:  pop_reg r2
+0x12a0:  print_reg r2
+0x12a2:  push_imm b' '
+0x12a4:  pop_reg r2
+0x12a6:  print_reg r2
+0x12a8:  push_imm b' '
+0x12aa:  pop_reg r1
+0x12ac:  print_reg r1
+0x12ae:  push_imm b' '
+0x12b0:  pop_reg r3
+0x12b2:  print_reg r3
+0x12b4:  push_imm b' '
+0x12b6:  pop_reg r2
+0x12b8:  print_reg r2
+0x12ba:  push_imm b' '
+0x12bc:  pop_reg r1
+0x12be:  print_reg r1
+0x12c0:  push_imm b' '
+0x12c2:  pop_reg ac
+0x12c4:  print_reg ac
+0x12c6:  push_imm b' '
+0x12c8:  pop_reg r1
+0x12ca:  print_reg r1
+0x12cc:  push_imm b' '
+0x12ce:  pop_reg ac
+0x12d0:  print_reg ac
+0x12d2:  push_imm b' '
+0x12d4:  pop_reg r3
+0x12d6:  print_reg r3
+0x12d8:  push_imm b' '
+0x12da:  pop_reg r2
+0x12dc:  print_reg r2
+0x12de:  push_imm b' '
+0x12e0:  pop_reg ac
+0x12e2:  print_reg ac
+0x12e4:  push_imm b'_'
+0x12e6:  pop_reg r3
+0x12e8:  print_reg r3
+0x12ea:  push_imm b'_'
+0x12ec:  pop_reg ac
+0x12ee:  print_reg ac
+0x12f0:  push_imm b' '
+0x12f2:  pop_reg r1
+0x12f4:  print_reg r1
+0x12f6:  push_imm b'|'
+0x12f8:  pop_reg ac
+0x12fa:  print_reg ac
+0x12fc:  push_imm b'|'
+0x12fe:  pop_reg r1
+0x1300:  print_reg r1
+0x1302:  push_imm b':'
+0x1304:  pop_reg ac
+0x1306:  print_reg ac
+0x1308:  push_imm b' '
+0x130a:  pop_reg r3
+0x130c:  print_reg r3
+0x130e:  push_imm b'.'
+0x1310:  pop_reg r1
+0x1312:  print_reg r1
+0x1314:  push_imm b' '
+0x1316:  pop_reg ac
+0x1318:  print_reg ac
+0x131a:  push_imm b'|'
+0x131c:  pop_reg ac
+0x131e:  print_reg ac
+0x1320:  push_imm b'|'
+0x1322:  pop_reg r2
+0x1324:  print_reg r2
+0x1326:  push_imm b':'
+0x1328:  pop_reg r3
+0x132a:  print_reg r3
+0x132c:  push_imm b' '
+0x132e:  pop_reg r1
+0x1330:  print_reg r1
+0x1332:  push_imm b','
+0x1334:  pop_reg r3
+0x1336:  print_reg r3
+0x1338:  push_imm b' '
+0x133a:  pop_reg ac
+0x133c:  print_reg ac
+0x133e:  push_imm b' '
+0x1340:  pop_reg ac
+0x1342:  print_reg ac
+0x1344:  push_imm b'|'
+0x1346:  pop_reg r3
+0x1348:  print_reg r3
+0x134a:  push_imm b'+'
+0x134c:  pop_reg r3
+0x134e:  print_reg r3
+0x1350:  push_imm b'+'
+0x1352:  pop_reg r3
+0x1354:  print_reg r3
+0x1356:  push_imm b'+'
+0x1358:  pop_reg r2
+0x135a:  print_reg r2
+0x135c:  push_imm b'+'
+0x135e:  pop_reg ac
+0x1360:  print_reg ac
+0x1362:  push_imm b'+'
+0x1364:  pop_reg ac
+0x1366:  print_reg ac
+0x1368:  push_imm b'+'
+0x136a:  pop_reg ac
+0x136c:  print_reg ac
+0x136e:  push_imm b'+'
+0x1370:  pop_reg ac
+0x1372:  print_reg ac
+0x1374:  push_imm b'|'
+0x1376:  pop_reg r1
+0x1378:  print_reg r1
+0x137a:  push_imm b'.'
+0x137c:  pop_reg r1
+0x137e:  print_reg r1
+0x1380:  push_imm b' '
+0x1382:  pop_reg r1
+0x1384:  print_reg r1
+0x1386:  push_imm b' '
+0x1388:  pop_reg r1
+0x138a:  print_reg r1
+0x138c:  push_imm b'.'
+0x138e:  pop_reg ac
+0x1390:  print_reg ac
+0x1392:  push_imm b' '
+0x1394:  pop_reg r1
+0x1396:  print_reg r1
+0x1398:  push_imm b'_'
+0x139a:  pop_reg r3
+0x139c:  print_reg r3
+0x139e:  push_imm b'|'
+0x13a0:  pop_reg r1
+0x13a2:  print_reg r1
+0x13a4:  push_imm b'|'
+0x13a6:  pop_reg r1
+0x13a8:  print_reg r1
+0x13aa:  push_imm b'_'
+0x13ac:  pop_reg r1
+0x13ae:  print_reg r1
+0x13b0:  push_imm b' '
+0x13b2:  pop_reg r1
+0x13b4:  print_reg r1
+0x13b6:  push_imm b' '
+0x13b8:  pop_reg ac
+0x13ba:  print_reg ac
+0x13bc:  push_imm b' '
+0x13be:  pop_reg ac
+0x13c0:  print_reg ac
+0x13c2:  push_imm b'|'
+0x13c4:  pop_reg r2
+0x13c6:  print_reg r2
+0x13c8:  push_imm b'\n'
+0x13ca:  pop_reg r3
+0x13cc:  print_reg r3
+0x13ce:  push_imm b' '
+0x13d0:  pop_reg ac
+0x13d2:  print_reg ac
+0x13d4:  push_imm b' '
+0x13d6:  pop_reg r3
+0x13d8:  print_reg r3
+0x13da:  push_imm b' '
+0x13dc:  pop_reg r2
+0x13de:  print_reg r2
+0x13e0:  push_imm b' '
+0x13e2:  pop_reg r1
+0x13e4:  print_reg r1
+0x13e6:  push_imm b' '
+0x13e8:  pop_reg r3
+0x13ea:  print_reg r3
+0x13ec:  push_imm b'_'
+0x13ee:  pop_reg r3
+0x13f0:  print_reg r3
+0x13f2:  push_imm b'_'
+0x13f4:  pop_reg r2
+0x13f6:  print_reg r2
+0x13f8:  push_imm b'_'
+0x13fa:  pop_reg ac
+0x13fc:  print_reg ac
+0x13fe:  push_imm b'_'
+0x1400:  pop_reg r2
+0x1402:  print_reg r2
+0x1404:  push_imm b'-'
+0x1406:  pop_reg r3
+0x1408:  print_reg r3
+0x140a:  push_imm b'-'
+0x140c:  pop_reg r1
+0x140e:  print_reg r1
+0x1410:  push_imm b'`'
+0x1412:  pop_reg r1
+0x1414:  print_reg r1
+0x1416:  push_imm b'~'
+0x1418:  pop_reg r3
+0x141a:  print_reg r3
+0x141c:  push_imm b' '
+0x141e:  pop_reg r1
+0x1420:  print_reg r1
+0x1422:  push_imm b' '
+0x1424:  pop_reg r3
+0x1426:  print_reg r3
+0x1428:  push_imm b' '
+0x142a:  pop_reg r3
+0x142c:  print_reg r3
+0x142e:  push_imm b' '
+0x1430:  pop_reg ac
+0x1432:  print_reg ac
+0x1434:  push_imm b"'"
+0x1436:  pop_reg r3
+0x1438:  print_reg r3
+0x143a:  push_imm b'-'
+0x143c:  pop_reg r2
+0x143e:  print_reg r2
+0x1440:  push_imm b'-'
+0x1442:  pop_reg ac
+0x1444:  print_reg ac
+0x1446:  push_imm b'~'
+0x1448:  pop_reg ac
+0x144a:  print_reg ac
+0x144c:  push_imm b'~'
+0x144e:  pop_reg r3
+0x1450:  print_reg r3
+0x1452:  push_imm b'_'
+0x1454:  pop_reg r2
+0x1456:  print_reg r2
+0x1458:  push_imm b'_'
+0x145a:  pop_reg ac
+0x145c:  print_reg ac
+0x145e:  push_imm b'|'
+0x1460:  pop_reg ac
+0x1462:  print_reg ac
+0x1464:  push_imm b'.'
+0x1466:  pop_reg r3
+0x1468:  print_reg r3
+0x146a:  push_imm b' '
+0x146c:  pop_reg r1
+0x146e:  print_reg r1
+0x1470:  push_imm b' '
+0x1472:  pop_reg r3
+0x1474:  print_reg r3
+0x1476:  push_imm b' '
+0x1478:  pop_reg ac
+0x147a:  print_reg ac
+0x147c:  push_imm b' '
+0x147e:  pop_reg r3
+0x1480:  print_reg r3
+0x1482:  push_imm b'|'
+0x1484:  pop_reg r3
+0x1486:  print_reg r3
+0x1488:  push_imm b'+'
+0x148a:  pop_reg ac
+0x148c:  print_reg ac
+0x148e:  push_imm b'+'
+0x1490:  pop_reg ac
+0x1492:  print_reg ac
+0x1494:  push_imm b'+'
+0x1496:  pop_reg r3
+0x1498:  print_reg r3
+0x149a:  push_imm b'+'
+0x149c:  pop_reg r1
+0x149e:  print_reg r1
+0x14a0:  push_imm b'+'
+0x14a2:  pop_reg r1
+0x14a4:  print_reg r1
+0x14a6:  push_imm b'_'
+0x14a8:  pop_reg r1
+0x14aa:  print_reg r1
+0x14ac:  push_imm b'_'
+0x14ae:  pop_reg ac
+0x14b0:  print_reg ac
+0x14b2:  push_imm b'|'
+0x14b4:  pop_reg r2
+0x14b6:  print_reg r2
+0x14b8:  push_imm b'-'
+0x14ba:  pop_reg r2
+0x14bc:  print_reg r2
+0x14be:  push_imm b'-'
+0x14c0:  pop_reg ac
+0x14c2:  print_reg ac
+0x14c4:  push_imm b'-'
+0x14c6:  pop_reg ac
+0x14c8:  print_reg ac
+0x14ca:  push_imm b'-'
+0x14cc:  pop_reg r3
+0x14ce:  print_reg r3
+0x14d0:  push_imm b'~'
+0x14d2:  pop_reg r2
+0x14d4:  print_reg r2
+0x14d6:  push_imm b' '
+0x14d8:  pop_reg r3
+0x14da:  print_reg r3
+0x14dc:  push_imm b' '
+0x14de:  pop_reg r2
+0x14e0:  print_reg r2
+0x14e2:  push_imm b' '
+0x14e4:  pop_reg r2
+0x14e6:  print_reg r2
+0x14e8:  push_imm b' '
+0x14ea:  pop_reg r2
+0x14ec:  print_reg r2
+0x14ee:  push_imm b'~'
+0x14f0:  pop_reg r1
+0x14f2:  print_reg r1
+0x14f4:  push_imm b'`'
+0x14f6:  pop_reg r3
+0x14f8:  print_reg r3
+0x14fa:  push_imm b'-'
+0x14fc:  pop_reg r1
+0x14fe:  print_reg r1
+0x1500:  push_imm b'-'
+0x1502:  pop_reg r3
+0x1504:  print_reg r3
+0x1506:  push_imm b'-'
+0x1508:  pop_reg ac
+0x150a:  print_reg ac
+0x150c:  push_imm b','
+0x150e:  pop_reg r2
+0x1510:  print_reg r2
+0x1512:  push_imm b' '
+0x1514:  pop_reg r3
+0x1516:  print_reg r3
+0x1518:  push_imm b' '
+0x151a:  pop_reg ac
+0x151c:  print_reg ac
+0x151e:  push_imm b' '
+0x1520:  pop_reg r3
+0x1522:  print_reg r3
+0x1524:  push_imm b' '
+0x1526:  pop_reg ac
+0x1528:  print_reg ac
+0x152a:  push_imm b' '
+0x152c:  pop_reg r3
+0x152e:  print_reg r3
+0x1530:  push_imm b' '
+0x1532:  pop_reg r2
+0x1534:  print_reg r2
+0x1536:  push_imm b' '
+0x1538:  pop_reg r3
+0x153a:  print_reg r3
+0x153c:  push_imm b' '
+0x153e:  pop_reg r1
+0x1540:  print_reg r1
+0x1542:  push_imm b' '
+0x1544:  pop_reg r2
+0x1546:  print_reg r2
+0x1548:  push_imm b' '
+0x154a:  pop_reg r3
+0x154c:  print_reg r3
+0x154e:  push_imm b' '
+0x1550:  pop_reg r2
+0x1552:  print_reg r2
+0x1554:  push_imm b' '
+0x1556:  pop_reg r3
+0x1558:  print_reg r3
+0x155a:  push_imm b' '
+0x155c:  pop_reg r2
+0x155e:  print_reg r2
+0x1560:  push_imm b' '
+0x1562:  pop_reg ac
+0x1564:  print_reg ac
+0x1566:  push_imm b'_'
+0x1568:  pop_reg ac
+0x156a:  print_reg ac
+0x156c:  push_imm b'_'
+0x156e:  pop_reg ac
+0x1570:  print_reg ac
+0x1572:  push_imm b'_'
+0x1574:  pop_reg r1
+0x1576:  print_reg r1
+0x1578:  push_imm b'\n'
+0x157a:  pop_reg ac
+0x157c:  print_reg ac
+0x157e:  push_imm b'-'
+0x1580:  pop_reg r1
+0x1582:  print_reg r1
+0x1584:  push_imm b'~'
+0x1586:  pop_reg r2
+0x1588:  print_reg r2
+0x158a:  push_imm b'-'
+0x158c:  pop_reg r3
+0x158e:  print_reg r3
+0x1590:  push_imm b'-'
+0x1592:  pop_reg ac
+0x1594:  print_reg ac
+0x1596:  push_imm b'~'
+0x1598:  pop_reg r3
+0x159a:  print_reg r3
+0x159c:  push_imm b' '
+0x159e:  pop_reg r1
+0x15a0:  print_reg r1
+0x15a2:  push_imm b' '
+0x15a4:  pop_reg r3
+0x15a6:  print_reg r3
+0x15a8:  push_imm b' '
+0x15aa:  pop_reg r2
+0x15ac:  print_reg r2
+0x15ae:  push_imm b' '
+0x15b0:  pop_reg r3
+0x15b2:  print_reg r3
+0x15b4:  push_imm b' '
+0x15b6:  pop_reg r2
+0x15b8:  print_reg r2
+0x15ba:  push_imm b' '
+0x15bc:  pop_reg r1
+0x15be:  print_reg r1
+0x15c0:  push_imm b' '
+0x15c2:  pop_reg r2
+0x15c4:  print_reg r2
+0x15c6:  push_imm b' '
+0x15c8:  pop_reg r3
+0x15ca:  print_reg r3
+0x15cc:  push_imm b' '
+0x15ce:  pop_reg ac
+0x15d0:  print_reg ac
+0x15d2:  push_imm b' '
+0x15d4:  pop_reg ac
+0x15d6:  print_reg ac
+0x15d8:  push_imm b' '
+0x15da:  pop_reg ac
+0x15dc:  print_reg ac
+0x15de:  push_imm b' '
+0x15e0:  pop_reg r3
+0x15e2:  print_reg r3
+0x15e4:  push_imm b' '
+0x15e6:  pop_reg r1
+0x15e8:  print_reg r1
+0x15ea:  push_imm b' '
+0x15ec:  pop_reg r2
+0x15ee:  print_reg r2
+0x15f0:  push_imm b' '
+0x15f2:  pop_reg ac
+0x15f4:  print_reg ac
+0x15f6:  push_imm b' '
+0x15f8:  pop_reg r1
+0x15fa:  print_reg r1
+0x15fc:  push_imm b' '
+0x15fe:  pop_reg r1
+0x1600:  print_reg r1
+0x1602:  push_imm b' '
+0x1604:  pop_reg r2
+0x1606:  print_reg r2
+0x1608:  push_imm b' '
+0x160a:  pop_reg r1
+0x160c:  print_reg r1
+0x160e:  push_imm b'~'
+0x1610:  pop_reg ac
+0x1612:  print_reg ac
+0x1614:  push_imm b'-'
+0x1616:  pop_reg r2
+0x1618:  print_reg r2
+0x161a:  push_imm b'-'
+0x161c:  pop_reg ac
+0x161e:  print_reg ac
+0x1620:  push_imm b'-'
+0x1622:  pop_reg r3
+0x1624:  print_reg r3
+0x1626:  push_imm b'_'
+0x1628:  pop_reg ac
+0x162a:  print_reg ac
+0x162c:  push_imm b'_'
+0x162e:  pop_reg r2
+0x1630:  print_reg r2
+0x1632:  push_imm b'|'
+0x1634:  pop_reg ac
+0x1636:  print_reg ac
+0x1638:  push_imm b','
+0x163a:  pop_reg r1
+0x163c:  print_reg r1
+0x163e:  push_imm b'-'
+0x1640:  pop_reg r3
+0x1642:  print_reg r3
+0x1644:  push_imm b'-'
+0x1646:  pop_reg ac
+0x1648:  print_reg ac
+0x164a:  push_imm b'~'
+0x164c:  pop_reg ac
+0x164e:  print_reg ac
+0x1650:  push_imm b"'"
+0x1652:  pop_reg r1
+0x1654:  print_reg r1
+0x1656:  push_imm b' '
+0x1658:  pop_reg r3
+0x165a:  print_reg r3
+0x165c:  push_imm b' '
+0x165e:  pop_reg r1
+0x1660:  print_reg r1
+0x1662:  push_imm b' '
+0x1664:  pop_reg r3
+0x1666:  print_reg r3
+0x1668:  push_imm b' '
+0x166a:  pop_reg r1
+0x166c:  print_reg r1
+0x166e:  push_imm b' '
+0x1670:  pop_reg r1
+0x1672:  print_reg r1
+0x1674:  push_imm b' '
+0x1676:  pop_reg ac
+0x1678:  print_reg ac
+0x167a:  push_imm b' '
+0x167c:  pop_reg ac
+0x167e:  print_reg ac
+0x1680:  push_imm b' '
+0x1682:  pop_reg r2
+0x1684:  print_reg r2
+0x1686:  push_imm b' '
+0x1688:  pop_reg r3
+0x168a:  print_reg r3
+0x168c:  push_imm b' '
+0x168e:  pop_reg r1
+0x1690:  print_reg r1
+0x1692:  push_imm b' '
+0x1694:  pop_reg ac
+0x1696:  print_reg ac
+0x1698:  push_imm b' '
+0x169a:  pop_reg r1
+0x169c:  print_reg r1
+0x169e:  push_imm b' '
+0x16a0:  pop_reg r1
+0x16a2:  print_reg r1
+0x16a4:  push_imm b' '
+0x16a6:  pop_reg r3
+0x16a8:  print_reg r3
+0x16aa:  push_imm b' '
+0x16ac:  pop_reg ac
+0x16ae:  print_reg ac
+0x16b0:  push_imm b' '
+0x16b2:  pop_reg ac
+0x16b4:  print_reg ac
+0x16b6:  push_imm b' '
+0x16b8:  pop_reg r1
+0x16ba:  print_reg r1
+0x16bc:  push_imm b' '
+0x16be:  pop_reg r3
+0x16c0:  print_reg r3
+0x16c2:  push_imm b'~'
+0x16c4:  pop_reg r2
+0x16c6:  print_reg r2
+0x16c8:  push_imm b'~'
+0x16ca:  pop_reg r1
+0x16cc:  print_reg r1
+0x16ce:  push_imm b'-'
+0x16d0:  pop_reg r2
+0x16d2:  print_reg r2
+0x16d4:  push_imm b'-'
+0x16d6:  pop_reg ac
+0x16d8:  print_reg ac
+0x16da:  push_imm b'-'
+0x16dc:  pop_reg r2
+0x16de:  print_reg r2
+0x16e0:  push_imm b'-'
+0x16e2:  pop_reg r2
+0x16e4:  print_reg r2
+0x16e6:  push_imm b'_'
+0x16e8:  pop_reg r2
+0x16ea:  print_reg r2
+0x16ec:  push_imm b'_'
+0x16ee:  pop_reg ac
+0x16f0:  print_reg ac
+0x16f2:  push_imm b'_'
+0x16f4:  pop_reg r2
+0x16f6:  print_reg r2
+0x16f8:  push_imm b'_'
+0x16fa:  pop_reg ac
+0x16fc:  print_reg ac
+0x16fe:  push_imm b'_'
+0x1700:  pop_reg r1
+0x1702:  print_reg r1
+0x1704:  push_imm b'-'
+0x1706:  pop_reg r3
+0x1708:  print_reg r3
+0x170a:  push_imm b'~'
+0x170c:  pop_reg ac
+0x170e:  print_reg ac
+0x1710:  push_imm b"'"
+0x1712:  pop_reg r2
+0x1714:  print_reg r2
+0x1716:  push_imm b' '
+0x1718:  pop_reg r1
+0x171a:  print_reg r1
+0x171c:  push_imm b' '
+0x171e:  pop_reg r2
+0x1720:  print_reg r2
+0x1722:  push_imm b' '
+0x1724:  pop_reg ac
+0x1726:  print_reg ac
+0x1728:  push_imm b'`'
+0x172a:  pop_reg ac
+0x172c:  print_reg ac
+0x172e:  push_imm b'~'
+0x1730:  pop_reg r1
+0x1732:  print_reg r1
+0x1734:  push_imm b'-'
+0x1736:  pop_reg r2
+0x1738:  print_reg r2
+0x173a:  push_imm b'-'
+0x173c:  pop_reg r2
+0x173e:  print_reg r2
+0x1740:  push_imm b'-'
+0x1742:  pop_reg r2
+0x1744:  print_reg r2
+0x1746:  push_imm b'-'
+0x1748:  pop_reg r3
+0x174a:  print_reg r3
+0x174c:  push_imm b'~'
+0x174e:  pop_reg r2
+0x1750:  print_reg r2
+0x1752:  push_imm b'~'
+0x1754:  pop_reg ac
+0x1756:  print_reg ac
+0x1758:  push_imm b'\n'
+0x175a:  pop_reg r1
+0x175c:  print_reg r1
+0x175e:  push_imm b'W'
+0x1760:  pop_reg r1
+0x1762:  print_reg r1
+0x1764:  push_imm b'h'
+0x1766:  pop_reg r1
+0x1768:  print_reg r1
+0x176a:  push_imm b'a'
+0x176c:  pop_reg r3
+0x176e:  print_reg r3
+0x1770:  push_imm b't'
+0x1772:  pop_reg r3
+0x1774:  print_reg r3
+0x1776:  push_imm b' '
+0x1778:  pop_reg ac
+0x177a:  print_reg ac
+0x177c:  push_imm b'i'
+0x177e:  pop_reg r1
+0x1780:  print_reg r1
+0x1782:  push_imm b's'
+0x1784:  pop_reg ac
+0x1786:  print_reg ac
+0x1788:  push_imm b' '
+0x178a:  pop_reg r3
+0x178c:  print_reg r3
+0x178e:  push_imm b't'
+0x1790:  pop_reg r1
+0x1792:  print_reg r1
+0x1794:  push_imm b'h'
+0x1796:  pop_reg ac
+0x1798:  print_reg ac
+0x179a:  push_imm b'e'
+0x179c:  pop_reg r3
+0x179e:  print_reg r3
+0x17a0:  push_imm b' '
+0x17a2:  pop_reg r2
+0x17a4:  print_reg r2
+0x17a6:  push_imm b'f'
+0x17a8:  pop_reg ac
+0x17aa:  print_reg ac
+0x17ac:  push_imm b'l'
+0x17ae:  pop_reg ac
+0x17b0:  print_reg ac
+0x17b2:  push_imm b'a'
+0x17b4:  pop_reg r2
+0x17b6:  print_reg r2
+0x17b8:  push_imm b'g'
+0x17ba:  pop_reg r1
+0x17bc:  print_reg r1
+0x17be:  push_imm b'?'
+0x17c0:  pop_reg r3
+0x17c2:  print_reg r3
+0x17c4:  push_imm b' '
+0x17c6:  pop_reg ac
+0x17c8:  print_reg ac ----------------------------------- Print "enter flag: "
+0x17ca:  push_imm b'\xff'
+0x17cc:  pop_reg r3 ----- r3 = 0xff
+0x17ce:  push_imm b'\n'
+0x17d0:  pop_reg r2 ----- r2 = 0x10
+0x17d2:  read_reg r1 ---- r1 = getchar()
+0x17d4:  push_reg r1 | push the value in the register on the stack
+0x17d6:  cmp  | compare R1 and R2; set AC
+0x17d8:  push_imm b'\xf4'
+0x17da:  pop_reg r1
+0x17dc:  push_imm b'\x00'
+0x17de:  pop_reg r2
+0x17e0:  push_imm b'\xf4'
+0x17e2:  pop_reg r3
+0x17e4:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x17e6:  pop_reg r2 ----------- we get here if read char is == '\n'
+0x17e8:  pop_reg r2
+0x17ea:  push_imm b'\t'
+0x17ec:  pop_reg r1
+0x17ee:  add  | ac = r1 + r2
+0x17f0:  push_reg ac | push the value in the register on the stack
+0x17f2:  pop_reg r1
+0x17f4:  push_imm b'2'
+0x17f6:  pop_reg r2
+0x17f8:  mul  | ac = r1 * r2
+0x17fa:  push_imm b'\x00'
+0x17fc:  stack top() = 6700
+0x187a:  pop_reg r2
+0x187c:  push_reg ac | push the value in the register on the stack
+0x187e:  pop_reg r1
+0x1880:  cmp  | compare R1 and R2; set AC
+0x1882:  push_imm b'\x00'
+0x1884:  stack top() = 68
+0x1902:  pop_reg r2
+0x1904:  push_imm b'\x00'
+0x1906:  pop_reg r1
+0x1908:  push_imm b'\x00'
+0x190a:  pop_reg r3
+0x190c:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x190e:  push_imm b'\x00'
+0x1910:  pop_reg r2
+0x1912:  push_imm b'\x00'
+0x1914:  stack top() = 61440
+0x1992:  pop_reg r1
+0x1994:  jmp_reg r1
+0x1996:  pop_reg r2
+0x1998:  push_imm b'('
+0x199a:  pop_reg r1
+0x199c:  add  | ac = r1 + r2
+0x199e:  push_reg ac | push the value in the register on the stack
+0x19a0:  pop_reg r1
+0x19a2:  push_imm b'+'
+0x19a4:  pop_reg r2
+0x19a6:  mul  | ac = r1 * r2
+0x19a8:  push_imm b'\x00'
+0x19aa:  stack top() = 4042
+0x1a28:  pop_reg r2
+0x1a2a:  push_reg ac | push the value in the register on the stack
+0x1a2c:  pop_reg r1
+0x1a2e:  cmp  | compare R1 and R2; set AC
+0x1a30:  push_imm b'\x00'
+0x1a32:  stack top() = 68
+0x1ab0:  pop_reg r2
+0x1ab2:  push_imm b'\x00'
+0x1ab4:  pop_reg r1
+0x1ab6:  push_imm b'\x00'
+0x1ab8:  pop_reg r3
+0x1aba:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x1abc:  push_imm b'\x00'
+0x1abe:  pop_reg r2
+0x1ac0:  push_imm b'\x00'
+0x1ac2:  stack top() = 61440
+0x1b40:  pop_reg r1
+0x1b42:  jmp_reg r1
+0x1b44:  pop_reg r2
+0x1b46:  push_imm b'?'
+0x1b48:  pop_reg r1
+0x1b4a:  add  | ac = r1 + r2
+0x1b4c:  push_reg ac | push the value in the register on the stack
+0x1b4e:  pop_reg r1
+0x1b50:  push_imm b'5'
+0x1b52:  pop_reg r2
+0x1b54:  mul  | ac = r1 * r2
+0x1b56:  push_imm b'\x00'
+0x1b58:  stack top() = 5883
+0x1bd6:  pop_reg r2
+0x1bd8:  push_reg ac | push the value in the register on the stack
+0x1bda:  pop_reg r1
+0x1bdc:  cmp  | compare R1 and R2; set AC
+0x1bde:  push_imm b'\x00'
+0x1be0:  stack top() = 68
+0x1c5e:  pop_reg r2
+0x1c60:  push_imm b'\x00'
+0x1c62:  pop_reg r1
+0x1c64:  push_imm b'\x00'
+0x1c66:  pop_reg r3
+0x1c68:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x1c6a:  push_imm b'\x00'
+0x1c6c:  pop_reg r2
+0x1c6e:  push_imm b'\x00'
+0x1c70:  stack top() = 61440
+0x1cee:  pop_reg r1
+0x1cf0:  jmp_reg r1
+0x1cf2:  pop_reg r2
+0x1cf4:  push_imm b'\x11'
+0x1cf6:  pop_reg r1
+0x1cf8:  add  | ac = r1 + r2
+0x1cfa:  push_reg ac | push the value in the register on the stack
+0x1cfc:  pop_reg r1
+0x1cfe:  push_imm b'*'
+0x1d00:  pop_reg r2
+0x1d02:  mul  | ac = r1 * r2
+0x1d04:  push_imm b'\x00'
+0x1d06:  stack top() = 4788
+0x1d84:  pop_reg r2
+0x1d86:  push_reg ac | push the value in the register on the stack
+0x1d88:  pop_reg r1
+0x1d8a:  cmp  | compare R1 and R2; set AC
+0x1d8c:  push_imm b'\x00'
+0x1d8e:  stack top() = 68
+0x1e0c:  pop_reg r2
+0x1e0e:  push_imm b'\x00'
+0x1e10:  pop_reg r1
+0x1e12:  push_imm b'\x00'
+0x1e14:  pop_reg r3
+0x1e16:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x1e18:  push_imm b'\x00'
+0x1e1a:  pop_reg r2
+0x1e1c:  push_imm b'\x00'
+0x1e1e:  stack top() = 61440
+0x1e9c:  pop_reg r1
+0x1e9e:  jmp_reg r1
+0x1ea0:  pop_reg r2
+0x1ea2:  push_imm b'$'
+0x1ea4:  pop_reg r1
+0x1ea6:  add  | ac = r1 + r2
+0x1ea8:  push_reg ac | push the value in the register on the stack
+0x1eaa:  pop_reg r1
+0x1eac:  push_imm b'4'
+0x1eae:  pop_reg r2
+0x1eb0:  mul  | ac = r1 * r2
+0x1eb2:  push_imm b'\x00'
+0x1eb4:  stack top() = 7124
+0x1f32:  pop_reg r2
+0x1f34:  push_reg ac | push the value in the register on the stack
+0x1f36:  pop_reg r1
+0x1f38:  cmp  | compare R1 and R2; set AC
+0x1f3a:  push_imm b'\x00'
+0x1f3c:  stack top() = 68
+0x1fba:  pop_reg r2
+0x1fbc:  push_imm b'\x00'
+0x1fbe:  pop_reg r1
+0x1fc0:  push_imm b'\x00'
+0x1fc2:  pop_reg r3
+0x1fc4:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x1fc6:  push_imm b'\x00'
+0x1fc8:  pop_reg r2
+0x1fca:  push_imm b'\x00'
+0x1fcc:  stack top() = 61440
+0x204a:  pop_reg r1
+0x204c:  jmp_reg r1
+0x204e:  pop_reg r2
+0x2050:  push_imm b'9'
+0x2052:  pop_reg r1
+0x2054:  add  | ac = r1 + r2
+0x2056:  push_reg ac | push the value in the register on the stack
+0x2058:  pop_reg r1
+0x205a:  push_imm b'J'
+0x205c:  pop_reg r2
+0x205e:  mul  | ac = r1 * r2
+0x2060:  push_imm b'\x00'
+0x2062:  stack top() = 8140
+0x20e0:  pop_reg r2
+0x20e2:  push_reg ac | push the value in the register on the stack
+0x20e4:  pop_reg r1
+0x20e6:  cmp  | compare R1 and R2; set AC
+0x20e8:  push_imm b'\x00'
+0x20ea:  stack top() = 68
+0x2168:  pop_reg r2
+0x216a:  push_imm b'\x00'
+0x216c:  pop_reg r1
+0x216e:  push_imm b'\x00'
+0x2170:  pop_reg r3
+0x2172:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x2174:  push_imm b'\x00'
+0x2176:  pop_reg r2
+0x2178:  push_imm b'\x00'
+0x217a:  stack top() = 61440
+0x21f8:  pop_reg r1
+0x21fa:  jmp_reg r1
+0x21fc:  pop_reg r2
+0x21fe:  push_imm b'\t'
+0x2200:  pop_reg r1
+0x2202:  add  | ac = r1 + r2
+0x2204:  push_reg ac | push the value in the register on the stack
+0x2206:  pop_reg r1
+0x2208:  push_imm b'G'
+0x220a:  pop_reg r2
+0x220c:  mul  | ac = r1 * r2
+0x220e:  push_imm b'\x00'
+0x2210:  stack top() = 7810
+0x228e:  pop_reg r2
+0x2290:  push_reg ac | push the value in the register on the stack
+0x2292:  pop_reg r1
+0x2294:  cmp  | compare R1 and R2; set AC
+0x2296:  push_imm b'\x00'
+0x2298:  stack top() = 68
+0x2316:  pop_reg r2
+0x2318:  push_imm b'\x00'
+0x231a:  pop_reg r1
+0x231c:  push_imm b'\x00'
+0x231e:  pop_reg r3
+0x2320:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x2322:  push_imm b'\x00'
+0x2324:  pop_reg r2
+0x2326:  push_imm b'\x00'
+0x2328:  stack top() = 61440
+0x23a6:  pop_reg r1
+0x23a8:  jmp_reg r1
+0x23aa:  pop_reg r2
+0x23ac:  push_imm b'\n'
+0x23ae:  pop_reg r1
+0x23b0:  add  | ac = r1 + r2
+0x23b2:  push_reg ac | push the value in the register on the stack
+0x23b4:  pop_reg r1
+0x23b6:  push_imm b'2'
+0x23b8:  pop_reg r2
+0x23ba:  mul  | ac = r1 * r2
+0x23bc:  push_imm b'\x00'
+0x23be:  stack top() = 5350
+0x243c:  pop_reg r2
+0x243e:  push_reg ac | push the value in the register on the stack
+0x2440:  pop_reg r1
+0x2442:  cmp  | compare R1 and R2; set AC
+0x2444:  push_imm b'\x00'
+0x2446:  stack top() = 68
+0x24c4:  pop_reg r2
+0x24c6:  push_imm b'\x00'
+0x24c8:  pop_reg r1
+0x24ca:  push_imm b'\x00'
+0x24cc:  pop_reg r3
+0x24ce:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x24d0:  push_imm b'\x00'
+0x24d2:  pop_reg r2
+0x24d4:  push_imm b'\x00'
+0x24d6:  stack top() = 61440
+0x2554:  pop_reg r1
+0x2556:  jmp_reg r1
+0x2558:  pop_reg r2
+0x255a:  push_imm b'\x0e'
+0x255c:  pop_reg r1
+0x255e:  add  | ac = r1 + r2
+0x2560:  push_reg ac | push the value in the register on the stack
+0x2562:  pop_reg r1
+0x2564:  push_imm b'*'
+0x2566:  pop_reg r2
+0x2568:  mul  | ac = r1 * r2
+0x256a:  push_imm b'\x00'
+0x256c:  stack top() = 2772
+0x25ea:  pop_reg r2
+0x25ec:  push_reg ac | push the value in the register on the stack
+0x25ee:  pop_reg r1
+0x25f0:  cmp  | compare R1 and R2; set AC
+0x25f2:  push_imm b'\x00'
+0x25f4:  stack top() = 68
+0x2672:  pop_reg r2
+0x2674:  push_imm b'\x00'
+0x2676:  pop_reg r1
+0x2678:  push_imm b'\x00'
+0x267a:  pop_reg r3
+0x267c:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x267e:  push_imm b'\x00'
+0x2680:  pop_reg r2
+0x2682:  push_imm b'\x00'
+0x2684:  stack top() = 61440
+0x2702:  pop_reg r1
+0x2704:  jmp_reg r1
+0x2706:  pop_reg r2
+0x2708:  push_imm b'<'
+0x270a:  pop_reg r1
+0x270c:  add  | ac = r1 + r2
+0x270e:  push_reg ac | push the value in the register on the stack
+0x2710:  pop_reg r1
+0x2712:  push_imm b't'
+0x2714:  pop_reg r2
+0x2716:  mul  | ac = r1 * r2
+0x2718:  push_imm b'\x00'
+0x271a:  stack top() = 12876
+0x2798:  pop_reg r2
+0x279a:  push_reg ac | push the value in the register on the stack
+0x279c:  pop_reg r1
+0x279e:  cmp  | compare R1 and R2; set AC
+0x27a0:  push_imm b'\x00'
+0x27a2:  stack top() = 68
+0x2820:  pop_reg r2
+0x2822:  push_imm b'\x00'
+0x2824:  pop_reg r1
+0x2826:  push_imm b'\x00'
+0x2828:  pop_reg r3
+0x282a:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x282c:  push_imm b'\x00'
+0x282e:  pop_reg r2
+0x2830:  push_imm b'\x00'
+0x2832:  stack top() = 61440
+0x28b0:  pop_reg r1
+0x28b2:  jmp_reg r1
+0x28b4:  pop_reg r2
+0x28b6:  push_imm b'.'
+0x28b8:  pop_reg r1
+0x28ba:  add  | ac = r1 + r2
+0x28bc:  push_reg ac | push the value in the register on the stack
+0x28be:  pop_reg r1
+0x28c0:  push_imm b'D'
+0x28c2:  pop_reg r2
+0x28c4:  mul  | ac = r1 * r2
+0x28c6:  push_imm b'\x00'
+0x28c8:  stack top() = 6460
+0x2946:  pop_reg r2
+0x2948:  push_reg ac | push the value in the register on the stack
+0x294a:  pop_reg r1
+0x294c:  cmp  | compare R1 and R2; set AC
+0x294e:  push_imm b'\x00'
+0x2950:  stack top() = 68
+0x29ce:  pop_reg r2
+0x29d0:  push_imm b'\x00'
+0x29d2:  pop_reg r1
+0x29d4:  push_imm b'\x00'
+0x29d6:  pop_reg r3
+0x29d8:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x29da:  push_imm b'\x00'
+0x29dc:  pop_reg r2
+0x29de:  push_imm b'\x00'
+0x29e0:  stack top() = 61440
+0x2a5e:  pop_reg r1
+0x2a60:  jmp_reg r1
+0x2a62:  pop_reg r2
+0x2a64:  push_imm b'5'
+0x2a66:  pop_reg r1
+0x2a68:  add  | ac = r1 + r2
+0x2a6a:  push_reg ac | push the value in the register on the stack
+0x2a6c:  pop_reg r1
+0x2a6e:  push_imm b'E'
+0x2a70:  pop_reg r2
+0x2a72:  mul  | ac = r1 * r2
+0x2a74:  push_imm b'\x00'
+0x2a76:  stack top() = 7038
+0x2af4:  pop_reg r2
+0x2af6:  push_reg ac | push the value in the register on the stack
+0x2af8:  pop_reg r1
+0x2afa:  cmp  | compare R1 and R2; set AC
+0x2afc:  push_imm b'\x00'
+0x2afe:  stack top() = 68
+0x2b7c:  pop_reg r2
+0x2b7e:  push_imm b'\x00'
+0x2b80:  pop_reg r1
+0x2b82:  push_imm b'\x00'
+0x2b84:  pop_reg r3
+0x2b86:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x2b88:  push_imm b'\x00'
+0x2b8a:  pop_reg r2
+0x2b8c:  push_imm b'\x00'
+0x2b8e:  stack top() = 61440
+0x2c0c:  pop_reg r1
+0x2c0e:  jmp_reg r1
+0x2c10:  pop_reg r2
+0x2c12:  push_imm b'\x17'
+0x2c14:  pop_reg r1
+0x2c16:  add  | ac = r1 + r2
+0x2c18:  push_reg ac | push the value in the register on the stack
+0x2c1a:  pop_reg r1
+0x2c1c:  push_imm b'k'
+0x2c1e:  pop_reg r2
+0x2c20:  mul  | ac = r1 * r2
+0x2c22:  push_imm b'\x00'
+0x2c24:  stack top() = 7918
+0x2ca2:  pop_reg r2
+0x2ca4:  push_reg ac | push the value in the register on the stack
+0x2ca6:  pop_reg r1
+0x2ca8:  cmp  | compare R1 and R2; set AC
+0x2caa:  push_imm b'\x00'
+0x2cac:  stack top() = 68
+0x2d2a:  pop_reg r2
+0x2d2c:  push_imm b'\x00'
+0x2d2e:  pop_reg r1
+0x2d30:  push_imm b'\x00'
+0x2d32:  pop_reg r3
+0x2d34:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x2d36:  push_imm b'\x00'
+0x2d38:  pop_reg r2
+0x2d3a:  push_imm b'\x00'
+0x2d3c:  stack top() = 61440
+0x2dba:  pop_reg r1
+0x2dbc:  jmp_reg r1
+0x2dbe:  pop_reg r2
+0x2dc0:  push_imm b'\x02'
+0x2dc2:  pop_reg r1
+0x2dc4:  add  | ac = r1 + r2
+0x2dc6:  push_reg ac | push the value in the register on the stack
+0x2dc8:  pop_reg r1
+0x2dca:  push_imm b'0'
+0x2dcc:  pop_reg r2
+0x2dce:  mul  | ac = r1 * r2
+0x2dd0:  push_imm b'\x00'
+0x2dd2:  stack top() = 2496
+0x2e50:  pop_reg r2
+0x2e52:  push_reg ac | push the value in the register on the stack
+0x2e54:  pop_reg r1
+0x2e56:  cmp  | compare R1 and R2; set AC
+0x2e58:  push_imm b'\x00'
+0x2e5a:  stack top() = 68
+0x2ed8:  pop_reg r2
+0x2eda:  push_imm b'\x00'
+0x2edc:  pop_reg r1
+0x2ede:  push_imm b'\x00'
+0x2ee0:  pop_reg r3
+0x2ee2:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x2ee4:  push_imm b'\x00'
+0x2ee6:  pop_reg r2
+0x2ee8:  push_imm b'\x00'
+0x2eea:  stack top() = 61440
+0x2f68:  pop_reg r1
+0x2f6a:  jmp_reg r1
+0x2f6c:  pop_reg r2
+0x2f6e:  push_imm b'1'
+0x2f70:  pop_reg r1
+0x2f72:  add  | ac = r1 + r2
+0x2f74:  push_reg ac | push the value in the register on the stack
+0x2f76:  pop_reg r1
+0x2f78:  push_imm b't'
+0x2f7a:  pop_reg r2
+0x2f7c:  mul  | ac = r1 * r2
+0x2f7e:  push_imm b'\x00'
+0x2f80:  stack top() = 17400
+0x2ffe:  pop_reg r2
+0x3000:  push_reg ac | push the value in the register on the stack
+0x3002:  pop_reg r1
+0x3004:  cmp  | compare R1 and R2; set AC
+0x3006:  push_imm b'\x00'
+0x3008:  stack top() = 68
+0x3086:  pop_reg r2
+0x3088:  push_imm b'\x00'
+0x308a:  pop_reg r1
+0x308c:  push_imm b'\x00'
+0x308e:  pop_reg r3
+0x3090:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x3092:  push_imm b'\x00'
+0x3094:  pop_reg r2
+0x3096:  push_imm b'\x00'
+0x3098:  stack top() = 61440
+0x3116:  pop_reg r1
+0x3118:  jmp_reg r1
+0x311a:  pop_reg r2
+0x311c:  push_imm b'#'
+0x311e:  pop_reg r1
+0x3120:  add  | ac = r1 + r2
+0x3122:  push_reg ac | push the value in the register on the stack
+0x3124:  pop_reg r1
+0x3126:  push_imm b'9'
+0x3128:  pop_reg r2
+0x312a:  mul  | ac = r1 * r2
+0x312c:  push_imm b'\x00'
+0x312e:  stack top() = 4788
+0x31ac:  pop_reg r2
+0x31ae:  push_reg ac | push the value in the register on the stack
+0x31b0:  pop_reg r1
+0x31b2:  cmp  | compare R1 and R2; set AC
+0x31b4:  push_imm b'\x00'
+0x31b6:  stack top() = 68
+0x3234:  pop_reg r2
+0x3236:  push_imm b'\x00'
+0x3238:  pop_reg r1
+0x323a:  push_imm b'\x00'
+0x323c:  pop_reg r3
+0x323e:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x3240:  push_imm b'\x00'
+0x3242:  pop_reg r2
+0x3244:  push_imm b'\x00'
+0x3246:  stack top() = 61440
+0x32c4:  pop_reg r1
+0x32c6:  jmp_reg r1
+0x32c8:  pop_reg r2
+0x32ca:  push_imm b'3'
+0x32cc:  pop_reg r1
+0x32ce:  add  | ac = r1 + r2
+0x32d0:  push_reg ac | push the value in the register on the stack
+0x32d2:  pop_reg r1
+0x32d4:  push_imm b'\n'
+0x32d6:  pop_reg r2
+0x32d8:  mul  | ac = r1 * r2
+0x32da:  push_imm b'\x00'
+0x32dc:  stack top() = 1050
+0x335a:  pop_reg r2
+0x335c:  push_reg ac | push the value in the register on the stack
+0x335e:  pop_reg r1
+0x3360:  cmp  | compare R1 and R2; set AC
+0x3362:  push_imm b'\x00'
+0x3364:  stack top() = 68
+0x33e2:  pop_reg r2
+0x33e4:  push_imm b'\x00'
+0x33e6:  pop_reg r1
+0x33e8:  push_imm b'\x00'
+0x33ea:  pop_reg r3
+0x33ec:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x33ee:  push_imm b'\x00'
+0x33f0:  pop_reg r2
+0x33f2:  push_imm b'\x00'
+0x33f4:  stack top() = 61440
+0x3472:  pop_reg r1
+0x3474:  jmp_reg r1
+0x3476:  pop_reg r2
+0x3478:  push_imm b'/'
+0x347a:  pop_reg r1
+0x347c:  add  | ac = r1 + r2
+0x347e:  push_reg ac | push the value in the register on the stack
+0x3480:  pop_reg r1
+0x3482:  push_imm b's'
+0x3484:  pop_reg r2
+0x3486:  mul  | ac = r1 * r2
+0x3488:  push_imm b'\x00'
+0x348a:  stack top() = 11500
+0x3508:  pop_reg r2
+0x350a:  push_reg ac | push the value in the register on the stack
+0x350c:  pop_reg r1
+0x350e:  cmp  | compare R1 and R2; set AC
+0x3510:  push_imm b'\x00'
+0x3512:  stack top() = 68
+0x3590:  pop_reg r2
+0x3592:  push_imm b'\x00'
+0x3594:  pop_reg r1
+0x3596:  push_imm b'\x00'
+0x3598:  pop_reg r3
+0x359a:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x359c:  push_imm b'\x00'
+0x359e:  pop_reg r2
+0x35a0:  push_imm b'\x00'
+0x35a2:  stack top() = 61440
+0x3620:  pop_reg r1
+0x3622:  jmp_reg r1
+0x3624:  pop_reg r2
+0x3626:  push_imm b','
+0x3628:  pop_reg r1
+0x362a:  add  | ac = r1 + r2
+0x362c:  push_reg ac | push the value in the register on the stack
+0x362e:  pop_reg r1
+0x3630:  push_imm b'*'
+0x3632:  pop_reg r2
+0x3634:  mul  | ac = r1 * r2
+0x3636:  push_imm b'\x00'
+0x3638:  stack top() = 4200
+0x36b6:  pop_reg r2
+0x36b8:  push_reg ac | push the value in the register on the stack
+0x36ba:  pop_reg r1
+0x36bc:  cmp  | compare R1 and R2; set AC
+0x36be:  push_imm b'\x00'
+0x36c0:  stack top() = 68
+0x373e:  pop_reg r2
+0x3740:  push_imm b'\x00'
+0x3742:  pop_reg r1
+0x3744:  push_imm b'\x00'
+0x3746:  pop_reg r3
+0x3748:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x374a:  push_imm b'\x00'
+0x374c:  pop_reg r2
+0x374e:  push_imm b'\x00'
+0x3750:  stack top() = 61440
+0x37ce:  pop_reg r1
+0x37d0:  jmp_reg r1
+0x37d2:  pop_reg r2
+0x37d4:  push_imm b'('
+0x37d6:  pop_reg r1
+0x37d8:  add  | ac = r1 + r2
+0x37da:  push_reg ac | push the value in the register on the stack
+0x37dc:  pop_reg r1
+0x37de:  push_imm b' '
+0x37e0:  pop_reg r2
+0x37e2:  mul  | ac = r1 * r2
+0x37e4:  push_imm b'\x00'
+0x37e6:  stack top() = 2976
+0x3864:  pop_reg r2
+0x3866:  push_reg ac | push the value in the register on the stack
+0x3868:  pop_reg r1
+0x386a:  cmp  | compare R1 and R2; set AC
+0x386c:  push_imm b'\x00'
+0x386e:  stack top() = 68
+0x38ec:  pop_reg r2
+0x38ee:  push_imm b'\x00'
+0x38f0:  pop_reg r1
+0x38f2:  push_imm b'\x00'
+0x38f4:  pop_reg r3
+0x38f6:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x38f8:  push_imm b'\x00'
+0x38fa:  pop_reg r2
+0x38fc:  push_imm b'\x00'
+0x38fe:  stack top() = 61440
+0x397c:  pop_reg r1
+0x397e:  jmp_reg r1
+0x3980:  pop_reg r2
+0x3982:  push_imm b'\x00'
+0x3984:  pop_reg r1
+0x3986:  add  | ac = r1 + r2
+0x3988:  push_reg ac | push the value in the register on the stack
+0x398a:  pop_reg r1
+0x398c:  push_imm b'B'
+0x398e:  pop_reg r2
+0x3990:  mul  | ac = r1 * r2
+0x3992:  push_imm b'\x00'
+0x3994:  stack top() = 3432
+0x3a12:  pop_reg r2
+0x3a14:  push_reg ac | push the value in the register on the stack
+0x3a16:  pop_reg r1
+0x3a18:  cmp  | compare R1 and R2; set AC
+0x3a1a:  push_imm b'\x00'
+0x3a1c:  stack top() = 68
+0x3a9a:  pop_reg r2
+0x3a9c:  push_imm b'\x00'
+0x3a9e:  pop_reg r1
+0x3aa0:  push_imm b'\x00'
+0x3aa2:  pop_reg r3
+0x3aa4:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x3aa6:  push_imm b'\x00'
+0x3aa8:  pop_reg r2
+0x3aaa:  push_imm b'\x00'
+0x3aac:  stack top() = 61440
+0x3b2a:  pop_reg r1
+0x3b2c:  jmp_reg r1
+0x3b2e:  pop_reg r2
+0x3b30:  push_imm b'\x15'
+0x3b32:  pop_reg r1
+0x3b34:  add  | ac = r1 + r2
+0x3b36:  push_reg ac | push the value in the register on the stack
+0x3b38:  pop_reg r1
+0x3b3a:  push_imm b'\x1d'
+0x3b3c:  pop_reg r2
+0x3b3e:  mul  | ac = r1 * r2
+0x3b40:  push_imm b'\x00'
+0x3b42:  stack top() = 3480
+0x3bc0:  pop_reg r2
+0x3bc2:  push_reg ac | push the value in the register on the stack
+0x3bc4:  pop_reg r1
+0x3bc6:  cmp  | compare R1 and R2; set AC
+0x3bc8:  push_imm b'\x00'
+0x3bca:  stack top() = 68
+0x3c48:  pop_reg r2
+0x3c4a:  push_imm b'\x00'
+0x3c4c:  pop_reg r1
+0x3c4e:  push_imm b'\x00'
+0x3c50:  pop_reg r3
+0x3c52:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x3c54:  push_imm b'\x00'
+0x3c56:  pop_reg r2
+0x3c58:  push_imm b'\x00'
+0x3c5a:  stack top() = 61440
+0x3cd8:  pop_reg r1
+0x3cda:  jmp_reg r1
+0x3cdc:  pop_reg r2
+0x3cde:  push_imm b':'
+0x3ce0:  pop_reg r1
+0x3ce2:  add  | ac = r1 + r2
+0x3ce4:  push_reg ac | push the value in the register on the stack
+0x3ce6:  pop_reg r1
+0x3ce8:  push_imm b'z'
+0x3cea:  pop_reg r2
+0x3cec:  mul  | ac = r1 * r2
+0x3cee:  push_imm b'\x00'
+0x3cf0:  stack top() = 19032
+0x3d6e:  pop_reg r2
+0x3d70:  push_reg ac | push the value in the register on the stack
+0x3d72:  pop_reg r1
+0x3d74:  cmp  | compare R1 and R2; set AC
+0x3d76:  push_imm b'\x00'
+0x3d78:  stack top() = 68
+0x3df6:  pop_reg r2
+0x3df8:  push_imm b'\x00'
+0x3dfa:  pop_reg r1
+0x3dfc:  push_imm b'\x00'
+0x3dfe:  pop_reg r3
+0x3e00:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x3e02:  push_imm b'\x00'
+0x3e04:  pop_reg r2
+0x3e06:  push_imm b'\x00'
+0x3e08:  stack top() = 61440
+0x3e86:  pop_reg r1
+0x3e88:  jmp_reg r1
+0x3e8a:  pop_reg r2
+0x3e8c:  push_imm b'\x0b'
+0x3e8e:  pop_reg r1
+0x3e90:  add  | ac = r1 + r2
+0x3e92:  push_reg ac | push the value in the register on the stack
+0x3e94:  pop_reg r1
+0x3e96:  push_imm b'I'
+0x3e98:  pop_reg r2
+0x3e9a:  mul  | ac = r1 * r2
+0x3e9c:  push_imm b'\x00'
+0x3e9e:  stack top() = 8176
+0x3f1c:  pop_reg r2
+0x3f1e:  push_reg ac | push the value in the register on the stack
+0x3f20:  pop_reg r1
+0x3f22:  cmp  | compare R1 and R2; set AC
+0x3f24:  push_imm b'\x00'
+0x3f26:  stack top() = 68
+0x3fa4:  pop_reg r2
+0x3fa6:  push_imm b'\x00'
+0x3fa8:  pop_reg r1
+0x3faa:  push_imm b'\x00'
+0x3fac:  pop_reg r3
+0x3fae:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x3fb0:  push_imm b'\x00'
+0x3fb2:  pop_reg r2
+0x3fb4:  push_imm b'\x00'
+0x3fb6:  stack top() = 61440
+0x4034:  pop_reg r1
+0x4036:  jmp_reg r1
+0x4038:  pop_reg r2
+0x403a:  push_imm b';'
+0x403c:  pop_reg r1
+0x403e:  add  | ac = r1 + r2
+0x4040:  push_reg ac | push the value in the register on the stack
+0x4042:  pop_reg r1
+0x4044:  push_imm b'x'
+0x4046:  pop_reg r2
+0x4048:  mul  | ac = r1 * r2
+0x404a:  push_imm b'\x00'
+0x404c:  stack top() = 12960
+0x40ca:  pop_reg r2
+0x40cc:  push_reg ac | push the value in the register on the stack
+0x40ce:  pop_reg r1
+0x40d0:  cmp  | compare R1 and R2; set AC
+0x40d2:  push_imm b'\x00'
+0x40d4:  stack top() = 68
+0x4152:  pop_reg r2
+0x4154:  push_imm b'\x00'
+0x4156:  pop_reg r1
+0x4158:  push_imm b'\x00'
+0x415a:  pop_reg r3
+0x415c:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x415e:  push_imm b'\x00'
+0x4160:  pop_reg r2
+0x4162:  push_imm b'\x00'
+0x4164:  stack top() = 61440
+0x41e2:  pop_reg r1
+0x41e4:  jmp_reg r1
+0x41e6:  pop_reg r2
+0x41e8:  push_imm b'!'
+0x41ea:  pop_reg r1
+0x41ec:  add  | ac = r1 + r2
+0x41ee:  push_reg ac | push the value in the register on the stack
+0x41f0:  pop_reg r1
+0x41f2:  push_imm b'x'
+0x41f4:  pop_reg r2
+0x41f6:  mul  | ac = r1 * r2
+0x41f8:  push_imm b'\x00'
+0x41fa:  stack top() = 16200
+0x4278:  pop_reg r2
+0x427a:  push_reg ac | push the value in the register on the stack
+0x427c:  pop_reg r1
+0x427e:  cmp  | compare R1 and R2; set AC
+0x4280:  push_imm b'\x00'
+0x4282:  stack top() = 68
+0x4300:  pop_reg r2
+0x4302:  push_imm b'\x00'
+0x4304:  pop_reg r1
+0x4306:  push_imm b'\x00'
+0x4308:  pop_reg r3
+0x430a:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x430c:  push_imm b'\x00'
+0x430e:  pop_reg r2
+0x4310:  push_imm b'\x00'
+0x4312:  stack top() = 61440
+0x4390:  pop_reg r1
+0x4392:  jmp_reg r1
+0x4394:  pop_reg r2
+0x4396:  push_imm b'\x13'
+0x4398:  pop_reg r1
+0x439a:  add  | ac = r1 + r2
+0x439c:  push_reg ac | push the value in the register on the stack
+0x439e:  pop_reg r1
+0x43a0:  push_imm b'y'
+0x43a2:  pop_reg r2
+0x43a4:  mul  | ac = r1 * r2
+0x43a6:  push_imm b'\x00'
+0x43a8:  stack top() = 8712
+0x4426:  pop_reg r2
+0x4428:  push_reg ac | push the value in the register on the stack
+0x442a:  pop_reg r1
+0x442c:  cmp  | compare R1 and R2; set AC
+0x442e:  push_imm b'\x00'
+0x4430:  stack top() = 68
+0x44ae:  pop_reg r2
+0x44b0:  push_imm b'\x00'
+0x44b2:  pop_reg r1
+0x44b4:  push_imm b'\x00'
+0x44b6:  pop_reg r3
+0x44b8:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x44ba:  push_imm b'\x00'
+0x44bc:  pop_reg r2
+0x44be:  push_imm b'\x00'
+0x44c0:  stack top() = 61440
+0x453e:  pop_reg r1
+0x4540:  jmp_reg r1
+0x4542:  pop_reg r2
+0x4544:  push_imm b'\x1a'
+0x4546:  pop_reg r1
+0x4548:  add  | ac = r1 + r2
+0x454a:  push_reg ac | push the value in the register on the stack
+0x454c:  pop_reg r1
+0x454e:  push_imm b'\x1f'
+0x4550:  pop_reg r2
+0x4552:  mul  | ac = r1 * r2
+0x4554:  push_imm b'\x00'
+0x4556:  stack top() = 3937
+0x45d4:  pop_reg r2
+0x45d6:  push_reg ac | push the value in the register on the stack
+0x45d8:  pop_reg r1
+0x45da:  cmp  | compare R1 and R2; set AC
+0x45dc:  push_imm b'\x00'
+0x45de:  stack top() = 68
+0x465c:  pop_reg r2
+0x465e:  push_imm b'\x00'
+0x4660:  pop_reg r1
+0x4662:  push_imm b'\x00'
+0x4664:  pop_reg r3
+0x4666:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x4668:  push_imm b'\x00'
+0x466a:  pop_reg r2
+0x466c:  push_imm b'\x00'
+0x466e:  stack top() = 61440
+0x46ec:  pop_reg r1
+0x46ee:  jmp_reg r1
+0x46f0:  pop_reg r2
+0x46f2:  push_imm b'\x08'
+0x46f4:  pop_reg r1
+0x46f6:  add  | ac = r1 + r2
+0x46f8:  push_reg ac | push the value in the register on the stack
+0x46fa:  pop_reg r1
+0x46fc:  push_imm b'B'
+0x46fe:  pop_reg r2
+0x4700:  mul  | ac = r1 * r2
+0x4702:  push_imm b'\x00'
+0x4704:  stack top() = 6930
+0x4782:  pop_reg r2
+0x4784:  push_reg ac | push the value in the register on the stack
+0x4786:  pop_reg r1
+0x4788:  cmp  | compare R1 and R2; set AC
+0x478a:  push_imm b'\x00'
+0x478c:  stack top() = 68
+0x480a:  pop_reg r2
+0x480c:  push_imm b'\x00'
+0x480e:  pop_reg r1
+0x4810:  push_imm b'\x00'
+0x4812:  pop_reg r3
+0x4814:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x4816:  push_imm b'\x00'
+0x4818:  pop_reg r2
+0x481a:  push_imm b'\x00'
+0x481c:  stack top() = 61440
+0x489a:  pop_reg r1
+0x489c:  jmp_reg r1
+0x489e:  pop_reg r2
+0x48a0:  push_imm b'&'
+0x48a2:  pop_reg r1
+0x48a4:  add  | ac = r1 + r2
+0x48a6:  push_reg ac | push the value in the register on the stack
+0x48a8:  pop_reg r1
+0x48aa:  push_imm b'X'
+0x48ac:  pop_reg r2
+0x48ae:  mul  | ac = r1 * r2
+0x48b0:  push_imm b'\x00'
+0x48b2:  stack top() = 11968
+0x4930:  pop_reg r2
+0x4932:  push_reg ac | push the value in the register on the stack
+0x4934:  pop_reg r1
+0x4936:  cmp  | compare R1 and R2; set AC
+0x4938:  push_imm b'\x00'
+0x493a:  stack top() = 68
+0x49b8:  pop_reg r2
+0x49ba:  push_imm b'\x00'
+0x49bc:  pop_reg r1
+0x49be:  push_imm b'\x00'
+0x49c0:  pop_reg r3
+0x49c2:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x49c4:  push_imm b'\x00'
+0x49c6:  pop_reg r2
+0x49c8:  push_imm b'\x00'
+0x49ca:  stack top() = 61440
+0x4a48:  pop_reg r1
+0x4a4a:  jmp_reg r1
+0x4a4c:  pop_reg r2
+0x4a4e:  push_imm b'\x13'
+0x4a50:  pop_reg r1
+0x4a52:  add  | ac = r1 + r2
+0x4a54:  push_reg ac | push the value in the register on the stack
+0x4a56:  pop_reg r1
+0x4a58:  push_imm b'N'
+0x4a5a:  pop_reg r2
+0x4a5c:  mul  | ac = r1 * r2
+0x4a5e:  push_imm b'\x00'
+0x4a60:  stack top() = 5928
+0x4ade:  pop_reg r2
+0x4ae0:  push_reg ac | push the value in the register on the stack
+0x4ae2:  pop_reg r1
+0x4ae4:  cmp  | compare R1 and R2; set AC
+0x4ae6:  push_imm b'\x00'
+0x4ae8:  stack top() = 68
+0x4b66:  pop_reg r2
+0x4b68:  push_imm b'\x00'
+0x4b6a:  pop_reg r1
+0x4b6c:  push_imm b'\x00'
+0x4b6e:  pop_reg r3
+0x4b70:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x4b72:  push_imm b'\x00'
+0x4b74:  pop_reg r2
+0x4b76:  push_imm b'\x00'
+0x4b78:  stack top() = 61440
+0x4bf6:  pop_reg r1
+0x4bf8:  jmp_reg r1
+0x4bfa:  pop_reg r2
+0x4bfc:  push_imm b'<'
+0x4bfe:  pop_reg r1
+0x4c00:  add  | ac = r1 + r2
+0x4c02:  push_reg ac | push the value in the register on the stack
+0x4c04:  pop_reg r1
+0x4c06:  push_imm b'l'
+0x4c08:  pop_reg r2
+0x4c0a:  mul  | ac = r1 * r2
+0x4c0c:  push_imm b'\x00'
+0x4c0e:  stack top() = 17280
+0x4c8c:  pop_reg r2
+0x4c8e:  push_reg ac | push the value in the register on the stack
+0x4c90:  pop_reg r1
+0x4c92:  cmp  | compare R1 and R2; set AC
+0x4c94:  push_imm b'\x00'
+0x4c96:  stack top() = 68
+0x4d14:  pop_reg r2
+0x4d16:  push_imm b'\x00'
+0x4d18:  pop_reg r1
+0x4d1a:  push_imm b'\x00'
+0x4d1c:  pop_reg r3
+0x4d1e:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x4d20:  push_imm b'\x00'
+0x4d22:  pop_reg r2
+0x4d24:  push_imm b'\x00'
+0x4d26:  stack top() = 61440
+0x4da4:  pop_reg r1
+0x4da6:  jmp_reg r1
+0x4da8:  pop_reg r2
+0x4daa:  push_imm b'\n'
+0x4dac:  pop_reg r1
+0x4dae:  add  | ac = r1 + r2
+0x4db0:  push_reg ac | push the value in the register on the stack
+0x4db2:  pop_reg r1
+0x4db4:  push_imm b'y'
+0x4db6:  pop_reg r2
+0x4db8:  mul  | ac = r1 * r2
+0x4dba:  push_imm b'\x00'
+0x4dbc:  stack top() = 13310
+0x4e3a:  pop_reg r2
+0x4e3c:  push_reg ac | push the value in the register on the stack
+0x4e3e:  pop_reg r1
+0x4e40:  cmp  | compare R1 and R2; set AC
+0x4e42:  push_imm b'\x00'
+0x4e44:  stack top() = 68
+0x4ec2:  pop_reg r2
+0x4ec4:  push_imm b'\x00'
+0x4ec6:  pop_reg r1
+0x4ec8:  push_imm b'\x00'
+0x4eca:  pop_reg r3
+0x4ecc:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x4ece:  push_imm b'\x00'
+0x4ed0:  pop_reg r2
+0x4ed2:  push_imm b'\x00'
+0x4ed4:  stack top() = 61440
+0x4f52:  pop_reg r1
+0x4f54:  jmp_reg r1
+0x4f56:  pop_reg r2
+0x4f58:  push_imm b'6'
+0x4f5a:  pop_reg r1
+0x4f5c:  add  | ac = r1 + r2
+0x4f5e:  push_reg ac | push the value in the register on the stack
+0x4f60:  pop_reg r1
+0x4f62:  push_imm b'\x1d'
+0x4f64:  pop_reg r2
+0x4f66:  mul  | ac = r1 * r2
+0x4f68:  push_imm b'\x00'
+0x4f6a:  stack top() = 4379
+0x4fe8:  pop_reg r2
+0x4fea:  push_reg ac | push the value in the register on the stack
+0x4fec:  pop_reg r1
+0x4fee:  cmp  | compare R1 and R2; set AC
+0x4ff0:  push_imm b'\x00'
+0x4ff2:  stack top() = 68
+0x5070:  pop_reg r2
+0x5072:  push_imm b'\x00'
+0x5074:  pop_reg r1
+0x5076:  push_imm b'\x00'
+0x5078:  pop_reg r3
+0x507a:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x507c:  push_imm b'\x00'
+0x507e:  pop_reg r2
+0x5080:  push_imm b'\x00'
+0x5082:  stack top() = 61440
+0x5100:  pop_reg r1
+0x5102:  jmp_reg r1
+0x5104:  pop_reg r2
+0x5106:  push_imm b'&'
+0x5108:  pop_reg r1
+0x510a:  add  | ac = r1 + r2
+0x510c:  push_reg ac | push the value in the register on the stack
+0x510e:  pop_reg r1
+0x5110:  push_imm b'\x0f'
+0x5112:  pop_reg r2
+0x5114:  mul  | ac = r1 * r2
+0x5116:  push_imm b'\x00'
+0x5118:  stack top() = 1380
+0x5196:  pop_reg r2
+0x5198:  push_reg ac | push the value in the register on the stack
+0x519a:  pop_reg r1
+0x519c:  cmp  | compare R1 and R2; set AC
+0x519e:  push_imm b'\x00'
+0x51a0:  stack top() = 68
+0x521e:  pop_reg r2
+0x5220:  push_imm b'\x00'
+0x5222:  pop_reg r1
+0x5224:  push_imm b'\x00'
+0x5226:  pop_reg r3
+0x5228:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x522a:  push_imm b'\x00'
+0x522c:  pop_reg r2
+0x522e:  push_imm b'\x00'
+0x5230:  stack top() = 61440
+0x52ae:  pop_reg r1
+0x52b0:  jmp_reg r1
+0x52b2:  pop_reg r2
+0x52b4:  push_imm b'\x16'
+0x52b6:  pop_reg r1
+0x52b8:  add  | ac = r1 + r2
+0x52ba:  push_reg ac | push the value in the register on the stack
+0x52bc:  pop_reg r1
+0x52be:  push_imm b'h'
+0x52c0:  pop_reg r2
+0x52c2:  mul  | ac = r1 * r2
+0x52c4:  push_imm b'\x00'
+0x52c6:  stack top() = 7384
+0x5344:  pop_reg r2
+0x5346:  push_reg ac | push the value in the register on the stack
+0x5348:  pop_reg r1
+0x534a:  cmp  | compare R1 and R2; set AC
+0x534c:  push_imm b'\x00'
+0x534e:  stack top() = 68
+0x53cc:  pop_reg r2
+0x53ce:  push_imm b'\x00'
+0x53d0:  pop_reg r1
+0x53d2:  push_imm b'\x00'
+0x53d4:  pop_reg r3
+0x53d6:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x53d8:  push_imm b'\x00'
+0x53da:  pop_reg r2
+0x53dc:  push_imm b'\x00'
+0x53de:  stack top() = 61440
+0x545c:  pop_reg r1
+0x545e:  jmp_reg r1
+0x5460:  pop_reg r2
+0x5462:  push_imm b'6'
+0x5464:  pop_reg r1
+0x5466:  add  | ac = r1 + r2
+0x5468:  push_reg ac | push the value in the register on the stack
+0x546a:  pop_reg r1
+0x546c:  push_imm b'\x05'
+0x546e:  pop_reg r2
+0x5470:  mul  | ac = r1 * r2
+0x5472:  push_imm b'\x00'
+0x5474:  stack top() = 555
+0x54f2:  pop_reg r2
+0x54f4:  push_reg ac | push the value in the register on the stack
+0x54f6:  pop_reg r1
+0x54f8:  cmp  | compare R1 and R2; set AC
+0x54fa:  push_imm b'\x00'
+0x54fc:  stack top() = 68
+0x557a:  pop_reg r2
+0x557c:  push_imm b'\x00'
+0x557e:  pop_reg r1
+0x5580:  push_imm b'\x00'
+0x5582:  pop_reg r3
+0x5584:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x5586:  push_imm b'\x00'
+0x5588:  pop_reg r2
+0x558a:  push_imm b'\x00'
+0x558c:  stack top() = 61440
+0x560a:  pop_reg r1
+0x560c:  jmp_reg r1
+0x560e:  pop_reg r2
+0x5610:  push_imm b'6'
+0x5612:  pop_reg r1
+0x5614:  add  | ac = r1 + r2
+0x5616:  push_reg ac | push the value in the register on the stack
+0x5618:  pop_reg r1
+0x561a:  push_imm b'9'
+0x561c:  pop_reg r2
+0x561e:  mul  | ac = r1 * r2
+0x5620:  push_imm b'\x00'
+0x5622:  stack top() = 8607
+0x56a0:  pop_reg r2
+0x56a2:  push_reg ac | push the value in the register on the stack
+0x56a4:  pop_reg r1
+0x56a6:  cmp  | compare R1 and R2; set AC
+0x56a8:  push_imm b'\x00'
+0x56aa:  stack top() = 68
+0x5728:  pop_reg r2
+0x572a:  push_imm b'\x00'
+0x572c:  pop_reg r1
+0x572e:  push_imm b'\x00'
+0x5730:  pop_reg r3
+0x5732:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x5734:  push_imm b'\x00'
+0x5736:  pop_reg r2
+0x5738:  push_imm b'\x00'
+0x573a:  stack top() = 61440
+0x57b8:  pop_reg r1
+0x57ba:  jmp_reg r1
+0x57bc:  pop_reg r2
+0x57be:  push_imm b'+'
+0x57c0:  pop_reg r1
+0x57c2:  add  | ac = r1 + r2
+0x57c4:  push_reg ac | push the value in the register on the stack
+0x57c6:  pop_reg r1
+0x57c8:  push_imm b'X'
+0x57ca:  pop_reg r2
+0x57cc:  mul  | ac = r1 * r2
+0x57ce:  push_imm b'\x00'
+0x57d0:  stack top() = 12584
+0x584e:  pop_reg r2
+0x5850:  push_reg ac | push the value in the register on the stack
+0x5852:  pop_reg r1
+0x5854:  cmp  | compare R1 and R2; set AC
+0x5856:  push_imm b'\x00'
+0x5858:  stack top() = 68
+0x58d6:  pop_reg r2
+0x58d8:  push_imm b'\x00'
+0x58da:  pop_reg r1
+0x58dc:  push_imm b'\x00'
+0x58de:  pop_reg r3
+0x58e0:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x58e2:  push_imm b'\x00'
+0x58e4:  pop_reg r2
+0x58e6:  push_imm b'\x00'
+0x58e8:  stack top() = 61440
+0x5966:  pop_reg r1
+0x5968:  jmp_reg r1
+0x596a:  pop_reg r2
+0x596c:  push_imm b'\x11'
+0x596e:  pop_reg r1
+0x5970:  add  | ac = r1 + r2
+0x5972:  push_reg ac | push the value in the register on the stack
+0x5974:  pop_reg r1
+0x5976:  push_imm b'R'
+0x5978:  pop_reg r2
+0x597a:  mul  | ac = r1 * r2
+0x597c:  push_imm b'\x00'
+0x597e:  stack top() = 5658
+0x59fc:  pop_reg r2
+0x59fe:  push_reg ac | push the value in the register on the stack
+0x5a00:  pop_reg r1
+0x5a02:  cmp  | compare R1 and R2; set AC
+0x5a04:  push_imm b'\x00'
+0x5a06:  stack top() = 68
+0x5a84:  pop_reg r2
+0x5a86:  push_imm b'\x00'
+0x5a88:  pop_reg r1
+0x5a8a:  push_imm b'\x00'
+0x5a8c:  pop_reg r3
+0x5a8e:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x5a90:  push_imm b'\x00'
+0x5a92:  pop_reg r2
+0x5a94:  push_imm b'\x00'
+0x5a96:  stack top() = 61440
+0x5b14:  pop_reg r1
+0x5b16:  jmp_reg r1
+0x5b18:  pop_reg r2
+0x5b1a:  push_imm b'\x13'
+0x5b1c:  pop_reg r1
+0x5b1e:  add  | ac = r1 + r2
+0x5b20:  push_reg ac | push the value in the register on the stack
+0x5b22:  pop_reg r1
+0x5b24:  push_imm b'\x11'
+0x5b26:  pop_reg r2
+0x5b28:  mul  | ac = r1 * r2
+0x5b2a:  push_imm b'\x00'
+0x5b2c:  stack top() = 1224
+0x5baa:  pop_reg r2
+0x5bac:  push_reg ac | push the value in the register on the stack
+0x5bae:  pop_reg r1
+0x5bb0:  cmp  | compare R1 and R2; set AC
+0x5bb2:  push_imm b'\x00'
+0x5bb4:  stack top() = 68
+0x5c32:  pop_reg r2
+0x5c34:  push_imm b'\x00'
+0x5c36:  pop_reg r1
+0x5c38:  push_imm b'\x00'
+0x5c3a:  pop_reg r3
+0x5c3c:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x5c3e:  push_imm b'\x00'
+0x5c40:  pop_reg r2
+0x5c42:  push_imm b'\x00'
+0x5c44:  stack top() = 61440
+0x5cc2:  pop_reg r1
+0x5cc4:  jmp_reg r1
+0x5cc6:  pop_reg r2
+0x5cc8:  push_imm b'\x1e'
+0x5cca:  pop_reg r1
+0x5ccc:  add  | ac = r1 + r2
+0x5cce:  push_reg ac | push the value in the register on the stack
+0x5cd0:  pop_reg r1
+0x5cd2:  push_imm b'7'
+0x5cd4:  pop_reg r2
+0x5cd6:  mul  | ac = r1 * r2
+0x5cd8:  push_imm b'\x00'
+0x5cda:  stack top() = 4785
+0x5d58:  pop_reg r2
+0x5d5a:  push_reg ac | push the value in the register on the stack
+0x5d5c:  pop_reg r1
+0x5d5e:  cmp  | compare R1 and R2; set AC
+0x5d60:  push_imm b'\x00'
+0x5d62:  stack top() = 68
+0x5de0:  pop_reg r2
+0x5de2:  push_imm b'\x00'
+0x5de4:  pop_reg r1
+0x5de6:  push_imm b'\x00'
+0x5de8:  pop_reg r3
+0x5dea:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x5dec:  push_imm b'\x00'
+0x5dee:  pop_reg r2
+0x5df0:  push_imm b'\x00'
+0x5df2:  stack top() = 61440
+0x5e70:  pop_reg r1
+0x5e72:  jmp_reg r1
+0x5e74:  pop_reg r2
+0x5e76:  push_imm b'9'
+0x5e78:  pop_reg r1
+0x5e7a:  add  | ac = r1 + r2
+0x5e7c:  push_reg ac | push the value in the register on the stack
+0x5e7e:  pop_reg r1
+0x5e80:  push_imm b'1'
+0x5e82:  pop_reg r2
+0x5e84:  mul  | ac = r1 * r2
+0x5e86:  push_imm b'\x00'
+0x5e88:  stack top() = 5390
+0x5f06:  pop_reg r2
+0x5f08:  push_reg ac | push the value in the register on the stack
+0x5f0a:  pop_reg r1
+0x5f0c:  cmp  | compare R1 and R2; set AC
+0x5f0e:  push_imm b'\x00'
+0x5f10:  stack top() = 68
+0x5f8e:  pop_reg r2
+0x5f90:  push_imm b'\x00'
+0x5f92:  pop_reg r1
+0x5f94:  push_imm b'\x00'
+0x5f96:  pop_reg r3
+0x5f98:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x5f9a:  push_imm b'\x00'
+0x5f9c:  pop_reg r2
+0x5f9e:  push_imm b'\x00'
+0x5fa0:  stack top() = 61440
+0x601e:  pop_reg r1
+0x6020:  jmp_reg r1
+0x6022:  pop_reg r2
+0x6024:  push_imm b' '
+0x6026:  pop_reg r1
+0x6028:  add  | ac = r1 + r2
+0x602a:  push_reg ac | push the value in the register on the stack
+0x602c:  pop_reg r1
+0x602e:  push_imm b'Y'
+0x6030:  pop_reg r2
+0x6032:  mul  | ac = r1 * r2
+0x6034:  push_imm b'\x00'
+0x6036:  stack top() = 11481
+0x60b4:  pop_reg r2
+0x60b6:  push_reg ac | push the value in the register on the stack
+0x60b8:  pop_reg r1
+0x60ba:  cmp  | compare R1 and R2; set AC
+0x60bc:  push_imm b'\x00'
+0x60be:  stack top() = 68
+0x613c:  pop_reg r2
+0x613e:  push_imm b'\x00'
+0x6140:  pop_reg r1
+0x6142:  push_imm b'\x00'
+0x6144:  pop_reg r3
+0x6146:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x6148:  push_imm b'\x00'
+0x614a:  pop_reg r2
+0x614c:  push_imm b'\x00'
+0x614e:  stack top() = 61440
+0x61cc:  pop_reg r1
+0x61ce:  jmp_reg r1
+0x61d0:  pop_reg r2
+0x61d2:  push_imm b'\x15'
+0x61d4:  pop_reg r1
+0x61d6:  add  | ac = r1 + r2
+0x61d8:  push_reg ac | push the value in the register on the stack
+0x61da:  pop_reg r1
+0x61dc:  push_imm b'1'
+0x61de:  pop_reg r2
+0x61e0:  mul  | ac = r1 * r2
+0x61e2:  push_imm b'\x00'
+0x61e4:  stack top() = 3773
+0x6262:  pop_reg r2
+0x6264:  push_reg ac | push the value in the register on the stack
+0x6266:  pop_reg r1
+0x6268:  cmp  | compare R1 and R2; set AC
+0x626a:  push_imm b'\x00'
+0x626c:  stack top() = 68
+0x62ea:  pop_reg r2
+0x62ec:  push_imm b'\x00'
+0x62ee:  pop_reg r1
+0x62f0:  push_imm b'\x00'
+0x62f2:  pop_reg r3
+0x62f4:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x62f6:  push_imm b'\x00'
+0x62f8:  pop_reg r2
+0x62fa:  push_imm b'\x00'
+0x62fc:  stack top() = 61440
+0x637a:  pop_reg r1
+0x637c:  jmp_reg r1
+0x637e:  pop_reg r2
+0x6380:  push_imm b'8'
+0x6382:  pop_reg r1
+0x6384:  add  | ac = r1 + r2
+0x6386:  push_reg ac | push the value in the register on the stack
+0x6388:  pop_reg r1
+0x638a:  push_imm b'\x1f'
+0x638c:  pop_reg r2
+0x638e:  mul  | ac = r1 * r2
+0x6390:  push_imm b'\x00'
+0x6392:  stack top() = 3317
+0x6410:  pop_reg r2
+0x6412:  push_reg ac | push the value in the register on the stack
+0x6414:  pop_reg r1
+0x6416:  cmp  | compare R1 and R2; set AC
+0x6418:  push_imm b'\x00'
+0x641a:  stack top() = 68
+0x6498:  pop_reg r2
+0x649a:  push_imm b'\x00'
+0x649c:  pop_reg r1
+0x649e:  push_imm b'\x00'
+0x64a0:  pop_reg r3
+0x64a2:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x64a4:  push_imm b'\x00'
+0x64a6:  pop_reg r2
+0x64a8:  push_imm b'\x00'
+0x64aa:  stack top() = 61440
+0x6528:  pop_reg r1
+0x652a:  jmp_reg r1
+0x652c:  pop_reg r2
+0x652e:  push_imm b'3'
+0x6530:  pop_reg r1
+0x6532:  add  | ac = r1 + r2
+0x6534:  push_reg ac | push the value in the register on the stack
+0x6536:  pop_reg r1
+0x6538:  push_imm b'c'
+0x653a:  pop_reg r2
+0x653c:  mul  | ac = r1 * r2
+0x653e:  push_imm b'\x00'
+0x6540:  stack top() = 10692
+0x65be:  pop_reg r2
+0x65c0:  push_reg ac | push the value in the register on the stack
+0x65c2:  pop_reg r1
+0x65c4:  cmp  | compare R1 and R2; set AC
+0x65c6:  push_imm b'\x00'
+0x65c8:  stack top() = 68
+0x6646:  pop_reg r2
+0x6648:  push_imm b'\x00'
+0x664a:  pop_reg r1
+0x664c:  push_imm b'\x00'
+0x664e:  pop_reg r3
+0x6650:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x6652:  push_imm b'\x00'
+0x6654:  pop_reg r2
+0x6656:  push_imm b'\x00'
+0x6658:  stack top() = 61440
+0x66d6:  pop_reg r1
+0x66d8:  jmp_reg r1
+0x66da:  pop_reg r2
+0x66dc:  push_imm b'+'
+0x66de:  pop_reg r1
+0x66e0:  add  | ac = r1 + r2
+0x66e2:  push_reg ac | push the value in the register on the stack
+0x66e4:  pop_reg r1
+0x66e6:  push_imm b'k'
+0x66e8:  pop_reg r2
+0x66ea:  mul  | ac = r1 * r2
+0x66ec:  push_imm b'\x00'
+0x66ee:  stack top() = 15408
+0x676c:  pop_reg r2
+0x676e:  push_reg ac | push the value in the register on the stack
+0x6770:  pop_reg r1
+0x6772:  cmp  | compare R1 and R2; set AC
+0x6774:  push_imm b'\x00'
+0x6776:  stack top() = 68
+0x67f4:  pop_reg r2
+0x67f6:  push_imm b'\x00'
+0x67f8:  pop_reg r1
+0x67fa:  push_imm b'\x00'
+0x67fc:  pop_reg r3
+0x67fe:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x6800:  push_imm b'\x00'
+0x6802:  pop_reg r2
+0x6804:  push_imm b'\x00'
+0x6806:  stack top() = 61440
+0x6884:  pop_reg r1
+0x6886:  jmp_reg r1
+0x6888:  pop_reg r2
+0x688a:  push_imm b'\x1e'
+0x688c:  pop_reg r1
+0x688e:  add  | ac = r1 + r2
+0x6890:  push_reg ac | push the value in the register on the stack
+0x6892:  pop_reg r1
+0x6894:  push_imm b'\x0b'
+0x6896:  pop_reg r2
+0x6898:  mul  | ac = r1 * r2
+0x689a:  push_imm b'\x00'
+0x689c:  stack top() = 1441
+0x691a:  pop_reg r2
+0x691c:  push_reg ac | push the value in the register on the stack
+0x691e:  pop_reg r1
+0x6920:  cmp  | compare R1 and R2; set AC
+0x6922:  push_imm b'\x00'
+0x6924:  stack top() = 68
+0x69a2:  pop_reg r2
+0x69a4:  push_imm b'\x00'
+0x69a6:  pop_reg r1
+0x69a8:  push_imm b'\x00'
+0x69aa:  pop_reg r3
+0x69ac:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x69ae:  push_imm b'\x00'
+0x69b0:  pop_reg r2
+0x69b2:  push_imm b'\x00'
+0x69b4:  stack top() = 61440
+0x6a32:  pop_reg r1
+0x6a34:  jmp_reg r1
+0x6a36:  pop_reg r2
+0x6a38:  push_imm b'\x02'
+0x6a3a:  pop_reg r1
+0x6a3c:  add  | ac = r1 + r2
+0x6a3e:  push_reg ac | push the value in the register on the stack
+0x6a40:  pop_reg r1
+0x6a42:  push_imm b'9'
+0x6a44:  pop_reg r2
+0x6a46:  mul  | ac = r1 * r2
+0x6a48:  push_imm b'\x00'
+0x6a4a:  stack top() = 5529
+0x6ac8:  pop_reg r2
+0x6aca:  push_reg ac | push the value in the register on the stack
+0x6acc:  pop_reg r1
+0x6ace:  cmp  | compare R1 and R2; set AC
+0x6ad0:  push_imm b'\x00'
+0x6ad2:  stack top() = 68
+0x6b50:  pop_reg r2
+0x6b52:  push_imm b'\x00'
+0x6b54:  pop_reg r1
+0x6b56:  push_imm b'\x00'
+0x6b58:  pop_reg r3
+0x6b5a:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x6b5c:  push_imm b'\x00'
+0x6b5e:  pop_reg r2
+0x6b60:  push_imm b'\x00'
+0x6b62:  stack top() = 61440
+0x6be0:  pop_reg r1
+0x6be2:  jmp_reg r1
+0x6be4:  pop_reg r2
+0x6be6:  push_imm b'@'
+0x6be8:  pop_reg r1
+0x6bea:  add  | ac = r1 + r2
+0x6bec:  push_reg ac | push the value in the register on the stack
+0x6bee:  pop_reg r1
+0x6bf0:  push_imm b's'
+0x6bf2:  pop_reg r2
+0x6bf4:  mul  | ac = r1 * r2
+0x6bf6:  push_imm b'\x00'
+0x6bf8:  stack top() = 18860
+0x6c76:  pop_reg r2
+0x6c78:  push_reg ac | push the value in the register on the stack
+0x6c7a:  pop_reg r1
+0x6c7c:  cmp  | compare R1 and R2; set AC
+0x6c7e:  push_imm b'\x00'
+0x6c80:  stack top() = 68
+0x6cfe:  pop_reg r2
+0x6d00:  push_imm b'\x00'
+0x6d02:  pop_reg r1
+0x6d04:  push_imm b'\x00'
+0x6d06:  pop_reg r3
+0x6d08:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x6d0a:  push_imm b'\x00'
+0x6d0c:  pop_reg r2
+0x6d0e:  push_imm b'\x00'
+0x6d10:  stack top() = 61440
+0x6d8e:  pop_reg r1
+0x6d90:  jmp_reg r1
+0x6d92:  pop_reg r2
+0x6d94:  push_imm b'.'
+0x6d96:  pop_reg r1
+0x6d98:  add  | ac = r1 + r2
+0x6d9a:  push_reg ac | push the value in the register on the stack
+0x6d9c:  pop_reg r1
+0x6d9e:  push_imm b'/'
+0x6da0:  pop_reg r2
+0x6da2:  mul  | ac = r1 * r2
+0x6da4:  push_imm b'\x00'
+0x6da6:  stack top() = 5405
+0x6e24:  pop_reg r2
+0x6e26:  push_reg ac | push the value in the register on the stack
+0x6e28:  pop_reg r1
+0x6e2a:  cmp  | compare R1 and R2; set AC
+0x6e2c:  push_imm b'\x00'
+0x6e2e:  stack top() = 68
+0x6eac:  pop_reg r2
+0x6eae:  push_imm b'\x00'
+0x6eb0:  pop_reg r1
+0x6eb2:  push_imm b'\x00'
+0x6eb4:  pop_reg r3
+0x6eb6:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x6eb8:  push_imm b'\x00'
+0x6eba:  pop_reg r2
+0x6ebc:  push_imm b'\x00'
+0x6ebe:  stack top() = 61440
+0x6f3c:  pop_reg r1
+0x6f3e:  jmp_reg r1
+0x6f40:  pop_reg r2
+0x6f42:  push_imm b'\x14'
+0x6f44:  pop_reg r1
+0x6f46:  add  | ac = r1 + r2
+0x6f48:  push_reg ac | push the value in the register on the stack
+0x6f4a:  pop_reg r1
+0x6f4c:  push_imm b'\x0b'
+0x6f4e:  pop_reg r2
+0x6f50:  mul  | ac = r1 * r2
+0x6f52:  push_imm b'\x00'
+0x6f54:  stack top() = 1045
+0x6fd2:  pop_reg r2
+0x6fd4:  push_reg ac | push the value in the register on the stack
+0x6fd6:  pop_reg r1
+0x6fd8:  cmp  | compare R1 and R2; set AC
+0x6fda:  push_imm b'\x00'
+0x6fdc:  stack top() = 68
+0x705a:  pop_reg r2
+0x705c:  push_imm b'\x00'
+0x705e:  pop_reg r1
+0x7060:  push_imm b'\x00'
+0x7062:  pop_reg r3
+0x7064:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x7066:  push_imm b'\x00'
+0x7068:  pop_reg r2
+0x706a:  push_imm b'\x00'
+0x706c:  stack top() = 61440
+0x70ea:  pop_reg r1
+0x70ec:  jmp_reg r1
+0x70ee:  pop_reg r2
+0x70f0:  push_imm b'\x1f'
+0x70f2:  pop_reg r1
+0x70f4:  add  | ac = r1 + r2
+0x70f6:  push_reg ac | push the value in the register on the stack
+0x70f8:  pop_reg r1
+0x70fa:  push_imm b'@'
+0x70fc:  pop_reg r2
+0x70fe:  mul  | ac = r1 * r2
+0x7100:  push_imm b'\x00'
+0x7102:  stack top() = 6272
+0x7180:  pop_reg r2
+0x7182:  push_reg ac | push the value in the register on the stack
+0x7184:  pop_reg r1
+0x7186:  cmp  | compare R1 and R2; set AC
+0x7188:  push_imm b'\x00'
+0x718a:  stack top() = 68
+0x7208:  pop_reg r2
+0x720a:  push_imm b'\x00'
+0x720c:  pop_reg r1
+0x720e:  push_imm b'\x00'
+0x7210:  pop_reg r3
+0x7212:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x7214:  push_imm b'\x00'
+0x7216:  pop_reg r2
+0x7218:  push_imm b'\x00'
+0x721a:  stack top() = 61440
+0x7298:  pop_reg r1
+0x729a:  jmp_reg r1
+0x729c:  pop_reg r2
+0x729e:  push_imm b'\t'
+0x72a0:  pop_reg r1
+0x72a2:  add  | ac = r1 + r2
+0x72a4:  push_reg ac | push the value in the register on the stack
+0x72a6:  pop_reg r1
+0x72a8:  push_imm b'\x7f'
+0x72aa:  pop_reg r2
+0x72ac:  mul  | ac = r1 * r2
+0x72ae:  push_imm b'\x00'
+0x72b0:  stack top() = 13462
+0x732e:  pop_reg r2
+0x7330:  push_reg ac | push the value in the register on the stack
+0x7332:  pop_reg r1
+0x7334:  cmp  | compare R1 and R2; set AC
+0x7336:  push_imm b'\x00'
+0x7338:  stack top() = 68
+0x73b6:  pop_reg r2
+0x73b8:  push_imm b'\x00'
+0x73ba:  pop_reg r1
+0x73bc:  push_imm b'\x00'
+0x73be:  pop_reg r3
+0x73c0:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x73c2:  push_imm b'\x00'
+0x73c4:  pop_reg r2
+0x73c6:  push_imm b'\x00'
+0x73c8:  stack top() = 61440
+0x7446:  pop_reg r1
+0x7448:  jmp_reg r1
+0x744a:  pop_reg r2
+0x744c:  push_imm b'%'
+0x744e:  pop_reg r1
+0x7450:  add  | ac = r1 + r2
+0x7452:  push_reg ac | push the value in the register on the stack
+0x7454:  pop_reg r1
+0x7456:  push_imm b'y'
+0x7458:  pop_reg r2
+0x745a:  mul  | ac = r1 * r2
+0x745c:  push_imm b'\x00'
+0x745e:  stack top() = 18271
+0x74dc:  pop_reg r2
+0x74de:  push_reg ac | push the value in the register on the stack
+0x74e0:  pop_reg r1
+0x74e2:  cmp  | compare R1 and R2; set AC
+0x74e4:  push_imm b'\x00'
+0x74e6:  stack top() = 68
+0x7564:  pop_reg r2
+0x7566:  push_imm b'\x00'
+0x7568:  pop_reg r1
+0x756a:  push_imm b'\x00'
+0x756c:  pop_reg r3
+0x756e:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x7570:  push_imm b'\x00'
+0x7572:  pop_reg r2
+0x7574:  push_imm b'\x00'
+0x7576:  stack top() = 61440
+0x75f4:  pop_reg r1
+0x75f6:  jmp_reg r1
+0x75f8:  pop_reg r2
+0x75fa:  push_imm b'1'
+0x75fc:  pop_reg r1
+0x75fe:  add  | ac = r1 + r2
+0x7600:  push_reg ac | push the value in the register on the stack
+0x7602:  pop_reg r1
+0x7604:  push_imm b'k'
+0x7606:  pop_reg r2
+0x7608:  mul  | ac = r1 * r2
+0x760a:  push_imm b'\x00'
+0x760c:  stack top() = 15836
+0x768a:  pop_reg r2
+0x768c:  push_reg ac | push the value in the register on the stack
+0x768e:  pop_reg r1
+0x7690:  cmp  | compare R1 and R2; set AC
+0x7692:  push_imm b'\x00'
+0x7694:  stack top() = 68
+0x7712:  pop_reg r2
+0x7714:  push_imm b'\x00'
+0x7716:  pop_reg r1
+0x7718:  push_imm b'\x00'
+0x771a:  pop_reg r3
+0x771c:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x771e:  push_imm b'\x00'
+0x7720:  pop_reg r2
+0x7722:  push_imm b'\x00'
+0x7724:  stack top() = 61440
+0x77a2:  pop_reg r1
+0x77a4:  jmp_reg r1
+0x77a6:  pop_reg r2
+0x77a8:  push_imm b'\x06'
+0x77aa:  pop_reg r1
+0x77ac:  add  | ac = r1 + r2
+0x77ae:  push_reg ac | push the value in the register on the stack
+0x77b0:  pop_reg r1
+0x77b2:  push_imm b'R'
+0x77b4:  pop_reg r2
+0x77b6:  mul  | ac = r1 * r2
+0x77b8:  push_imm b'\x00'
+0x77ba:  stack top() = 8282
+0x7838:  pop_reg r2
+0x783a:  push_reg ac | push the value in the register on the stack
+0x783c:  pop_reg r1
+0x783e:  cmp  | compare R1 and R2; set AC
+0x7840:  push_imm b'\x00'
+0x7842:  stack top() = 68
+0x78c0:  pop_reg r2
+0x78c2:  push_imm b'\x00'
+0x78c4:  pop_reg r1
+0x78c6:  push_imm b'\x00'
+0x78c8:  pop_reg r3
+0x78ca:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x78cc:  push_imm b'\x00'
+0x78ce:  pop_reg r2
+0x78d0:  push_imm b'\x00'
+0x78d2:  stack top() = 61440
+0x7950:  pop_reg r1
+0x7952:  jmp_reg r1
+0x7954:  pop_reg r2
+0x7956:  push_imm b'+'
+0x7958:  pop_reg r1
+0x795a:  add  | ac = r1 + r2
+0x795c:  push_reg ac | push the value in the register on the stack
+0x795e:  pop_reg r1
+0x7960:  push_imm b'a'
+0x7962:  pop_reg r2
+0x7964:  mul  | ac = r1 * r2
+0x7966:  push_imm b'\x00'
+0x7968:  stack top() = 15908
+0x79e6:  pop_reg r2
+0x79e8:  push_reg ac | push the value in the register on the stack
+0x79ea:  pop_reg r1
+0x79ec:  cmp  | compare R1 and R2; set AC
+0x79ee:  push_imm b'\x00'
+0x79f0:  stack top() = 68
+0x7a6e:  pop_reg r2
+0x7a70:  push_imm b'\x00'
+0x7a72:  pop_reg r1
+0x7a74:  push_imm b'\x00'
+0x7a76:  pop_reg r3
+0x7a78:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x7a7a:  push_imm b'\x00'
+0x7a7c:  pop_reg r2
+0x7a7e:  push_imm b'\x00'
+0x7a80:  stack top() = 61440
+0x7afe:  pop_reg r1
+0x7b00:  jmp_reg r1
+0x7b02:  pop_reg r2
+0x7b04:  push_imm b'4'
+0x7b06:  pop_reg r1
+0x7b08:  add  | ac = r1 + r2
+0x7b0a:  push_reg ac | push the value in the register on the stack
+0x7b0c:  pop_reg r1
+0x7b0e:  push_imm b'='
+0x7b10:  pop_reg r2
+0x7b12:  mul  | ac = r1 * r2
+0x7b14:  push_imm b'\x00'
+0x7b16:  stack top() = 9760
+0x7b94:  pop_reg r2
+0x7b96:  push_reg ac | push the value in the register on the stack
+0x7b98:  pop_reg r1
+0x7b9a:  cmp  | compare R1 and R2; set AC
+0x7b9c:  push_imm b'\x00'
+0x7b9e:  stack top() = 68
+0x7c1c:  pop_reg r2
+0x7c1e:  push_imm b'\x00'
+0x7c20:  pop_reg r1
+0x7c22:  push_imm b'\x00'
+0x7c24:  pop_reg r3
+0x7c26:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x7c28:  push_imm b'\x00'
+0x7c2a:  pop_reg r2
+0x7c2c:  push_imm b'\x00'
+0x7c2e:  stack top() = 61440
+0x7cac:  pop_reg r1
+0x7cae:  jmp_reg r1
+0x7cb0:  pop_reg r2
+0x7cb2:  push_imm b'\x0f'
+0x7cb4:  pop_reg r1
+0x7cb6:  add  | ac = r1 + r2
+0x7cb8:  push_reg ac | push the value in the register on the stack
+0x7cba:  pop_reg r1
+0x7cbc:  push_imm b'a'
+0x7cbe:  pop_reg r2
+0x7cc0:  mul  | ac = r1 * r2
+0x7cc2:  push_imm b'\x00'
+0x7cc4:  stack top() = 8827
+0x7d42:  pop_reg r2
+0x7d44:  push_reg ac | push the value in the register on the stack
+0x7d46:  pop_reg r1
+0x7d48:  cmp  | compare R1 and R2; set AC
+0x7d4a:  push_imm b'\x00'
+0x7d4c:  stack top() = 68
+0x7dca:  pop_reg r2
+0x7dcc:  push_imm b'\x00'
+0x7dce:  pop_reg r1
+0x7dd0:  push_imm b'\x00'
+0x7dd2:  pop_reg r3
+0x7dd4:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x7dd6:  push_imm b'\x00'
+0x7dd8:  pop_reg r2
+0x7dda:  push_imm b'\x00'
+0x7ddc:  stack top() = 61440
+0x7e5a:  pop_reg r1
+0x7e5c:  jmp_reg r1
+0x7e5e:  pop_reg r2
+0x7e60:  push_imm b'0'
+0x7e62:  pop_reg r1
+0x7e64:  add  | ac = r1 + r2
+0x7e66:  push_reg ac | push the value in the register on the stack
+0x7e68:  pop_reg r1
+0x7e6a:  push_imm b'k'
+0x7e6c:  pop_reg r2
+0x7e6e:  mul  | ac = r1 * r2
+0x7e70:  push_imm b'\x00'
+0x7e72:  stack top() = 14231
+0x7ef0:  pop_reg r2
+0x7ef2:  push_reg ac | push the value in the register on the stack
+0x7ef4:  pop_reg r1
+0x7ef6:  cmp  | compare R1 and R2; set AC
+0x7ef8:  push_imm b'\x00'
+0x7efa:  stack top() = 68
+0x7f78:  pop_reg r2
+0x7f7a:  push_imm b'\x00'
+0x7f7c:  pop_reg r1
+0x7f7e:  push_imm b'\x00'
+0x7f80:  pop_reg r3
+0x7f82:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x7f84:  push_imm b'\x00'
+0x7f86:  pop_reg r2
+0x7f88:  push_imm b'\x00'
+0x7f8a:  stack top() = 61440
+0x8008:  pop_reg r1
+0x800a:  jmp_reg r1
+0x800c:  pop_reg r2
+0x800e:  push_imm b'%'
+0x8010:  pop_reg r1
+0x8012:  add  | ac = r1 + r2
+0x8014:  push_reg ac | push the value in the register on the stack
+0x8016:  pop_reg r1
+0x8018:  push_imm b'`'
+0x801a:  pop_reg r2
+0x801c:  mul  | ac = r1 * r2
+0x801e:  push_imm b'\x00'
+0x8020:  stack top() = 13344
+0x809e:  pop_reg r2
+0x80a0:  push_reg ac | push the value in the register on the stack
+0x80a2:  pop_reg r1
+0x80a4:  cmp  | compare R1 and R2; set AC
+0x80a6:  push_imm b'\x00'
+0x80a8:  stack top() = 68
+0x8126:  pop_reg r2
+0x8128:  push_imm b'\x00'
+0x812a:  pop_reg r1
+0x812c:  push_imm b'\x00'
+0x812e:  pop_reg r3
+0x8130:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x8132:  push_imm b'\x00'
+0x8134:  pop_reg r2
+0x8136:  push_imm b'\x00'
+0x8138:  stack top() = 61440
+0x81b6:  pop_reg r1
+0x81b8:  jmp_reg r1
+0x81ba:  pop_reg r2
+0x81bc:  push_imm b'\x12'
+0x81be:  pop_reg r1
+0x81c0:  add  | ac = r1 + r2
+0x81c2:  push_reg ac | push the value in the register on the stack
+0x81c4:  pop_reg r1
+0x81c6:  push_imm b'\x04'
+0x81c8:  pop_reg r2
+0x81ca:  mul  | ac = r1 * r2
+0x81cc:  push_imm b'\x00'
+0x81ce:  stack top() = 532
+0x824c:  pop_reg r2
+0x824e:  push_reg ac | push the value in the register on the stack
+0x8250:  pop_reg r1
+0x8252:  cmp  | compare R1 and R2; set AC
+0x8254:  push_imm b'\x00'
+0x8256:  stack top() = 68
+0x82d4:  pop_reg r2
+0x82d6:  push_imm b'\x00'
+0x82d8:  pop_reg r1
+0x82da:  push_imm b'\x00'
+0x82dc:  pop_reg r3
+0x82de:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x82e0:  push_imm b'\x00'
+0x82e2:  pop_reg r2
+0x82e4:  push_imm b'\x00'
+0x82e6:  stack top() = 61440
+0x8364:  pop_reg r1
+0x8366:  jmp_reg r1
+0x8368:  pop_reg r2
+0x836a:  push_imm b'\x1b'
+0x836c:  pop_reg r1
+0x836e:  add  | ac = r1 + r2
+0x8370:  push_reg ac | push the value in the register on the stack
+0x8372:  pop_reg r1
+0x8374:  push_imm b'('
+0x8376:  pop_reg r2
+0x8378:  mul  | ac = r1 * r2
+0x837a:  push_imm b'\x00'
+0x837c:  stack top() = 5680
+0x83fa:  pop_reg r2
+0x83fc:  push_reg ac | push the value in the register on the stack
+0x83fe:  pop_reg r1
+0x8400:  cmp  | compare R1 and R2; set AC
+0x8402:  push_imm b'\x00'
+0x8404:  stack top() = 68
+0x8482:  pop_reg r2
+0x8484:  push_imm b'\x00'
+0x8486:  pop_reg r1
+0x8488:  push_imm b'\x00'
+0x848a:  pop_reg r3
+0x848c:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x848e:  push_imm b'\x00'
+0x8490:  pop_reg r2
+0x8492:  push_imm b'\x00'
+0x8494:  stack top() = 61440
+0x8512:  pop_reg r1
+0x8514:  jmp_reg r1
+0x8516:  pop_reg r2
+0x8518:  push_imm b'5'
+0x851a:  pop_reg r1
+0x851c:  add  | ac = r1 + r2
+0x851e:  push_reg ac | push the value in the register on the stack
+0x8520:  pop_reg r1
+0x8522:  push_imm b'e'
+0x8524:  pop_reg r2
+0x8526:  mul  | ac = r1 * r2
+0x8528:  push_imm b'\x00'
+0x852a:  stack top() = 15554
+0x85a8:  pop_reg r2
+0x85aa:  push_reg ac | push the value in the register on the stack
+0x85ac:  pop_reg r1
+0x85ae:  cmp  | compare R1 and R2; set AC
+0x85b0:  push_imm b'\x00'
+0x85b2:  stack top() = 68
+0x8630:  pop_reg r2
+0x8632:  push_imm b'\x00'
+0x8634:  pop_reg r1
+0x8636:  push_imm b'\x00'
+0x8638:  pop_reg r3
+0x863a:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x863c:  push_imm b'\x00'
+0x863e:  pop_reg r2
+0x8640:  push_imm b'\x00'
+0x8642:  stack top() = 61440
+0x86c0:  pop_reg r1
+0x86c2:  jmp_reg r1
+0x86c4:  pop_reg r2
+0x86c6:  push_imm b'\x08'
+0x86c8:  pop_reg r1
+0x86ca:  add  | ac = r1 + r2
+0x86cc:  push_reg ac | push the value in the register on the stack
+0x86ce:  pop_reg r1
+0x86d0:  push_imm b'\x07'
+0x86d2:  pop_reg r2
+0x86d4:  mul  | ac = r1 * r2
+0x86d6:  push_imm b'\x00'
+0x86d8:  stack top() = 749
+0x8756:  pop_reg r2
+0x8758:  push_reg ac | push the value in the register on the stack
+0x875a:  pop_reg r1
+0x875c:  cmp  | compare R1 and R2; set AC
+0x875e:  push_imm b'\x00'
+0x8760:  stack top() = 68
+0x87de:  pop_reg r2
+0x87e0:  push_imm b'\x00'
+0x87e2:  pop_reg r1
+0x87e4:  push_imm b'\x00'
+0x87e6:  pop_reg r3
+0x87e8:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x87ea:  push_imm b'\x00'
+0x87ec:  pop_reg r2
+0x87ee:  push_imm b'\x00'
+0x87f0:  stack top() = 61440
+0x886e:  pop_reg r1
+0x8870:  jmp_reg r1
+0x8872:  pop_reg r2
+0x8874:  push_imm b'\x17'
+0x8876:  pop_reg r1
+0x8878:  add  | ac = r1 + r2
+0x887a:  push_reg ac | push the value in the register on the stack
+0x887c:  pop_reg r1
+0x887e:  push_imm b'@'
+0x8880:  pop_reg r2
+0x8882:  mul  | ac = r1 * r2
+0x8884:  push_imm b'\x00'
+0x8886:  stack top() = 7808
+0x8904:  pop_reg r2
+0x8906:  push_reg ac | push the value in the register on the stack
+0x8908:  pop_reg r1
+0x890a:  cmp  | compare R1 and R2; set AC
+0x890c:  push_imm b'\x00'
+0x890e:  stack top() = 68
+0x898c:  pop_reg r2
+0x898e:  push_imm b'\x00'
+0x8990:  pop_reg r1
+0x8992:  push_imm b'\x00'
+0x8994:  pop_reg r3
+0x8996:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x8998:  push_imm b'\x00'
+0x899a:  pop_reg r2
+0x899c:  push_imm b'\x00'
+0x899e:  stack top() = 61440
+0x8a1c:  pop_reg r1
+0x8a1e:  jmp_reg r1
+0x8a20:  pop_reg r2
+0x8a22:  push_imm b'\x10'
+0x8a24:  pop_reg r1
+0x8a26:  add  | ac = r1 + r2
+0x8a28:  push_reg ac | push the value in the register on the stack
+0x8a2a:  pop_reg r1
+0x8a2c:  push_imm b'1'
+0x8a2e:  pop_reg r2
+0x8a30:  mul  | ac = r1 * r2
+0x8a32:  push_imm b'\x00'
+0x8a34:  stack top() = 4949
+0x8ab2:  pop_reg r2
+0x8ab4:  push_reg ac | push the value in the register on the stack
+0x8ab6:  pop_reg r1
+0x8ab8:  cmp  | compare R1 and R2; set AC
+0x8aba:  push_imm b'\x00'
+0x8abc:  stack top() = 68
+0x8b3a:  pop_reg r2
+0x8b3c:  push_imm b'\x00'
+0x8b3e:  pop_reg r1
+0x8b40:  push_imm b'\x00'
+0x8b42:  pop_reg r3
+0x8b44:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x8b46:  push_imm b'\x00'
+0x8b48:  pop_reg r2
+0x8b4a:  push_imm b'\x00'
+0x8b4c:  stack top() = 61440
+0x8bca:  pop_reg r1
+0x8bcc:  jmp_reg r1
+0x8bce:  pop_reg r2
+0x8bd0:  push_imm b'9'
+0x8bd2:  pop_reg r1
+0x8bd4:  add  | ac = r1 + r2
+0x8bd6:  push_reg ac | push the value in the register on the stack
+0x8bd8:  pop_reg r1
+0x8bda:  push_imm b','
+0x8bdc:  pop_reg r2
+0x8bde:  mul  | ac = r1 * r2
+0x8be0:  push_imm b'\x00'
+0x8be2:  stack top() = 7568
+0x8c60:  pop_reg r2
+0x8c62:  push_reg ac | push the value in the register on the stack
+0x8c64:  pop_reg r1
+0x8c66:  cmp  | compare R1 and R2; set AC
+0x8c68:  push_imm b'\x00'
+0x8c6a:  stack top() = 68
+0x8ce8:  pop_reg r2
+0x8cea:  push_imm b'\x00'
+0x8cec:  pop_reg r1
+0x8cee:  push_imm b'\x00'
+0x8cf0:  pop_reg r3
+0x8cf2:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x8cf4:  push_imm b'\x00'
+0x8cf6:  pop_reg r2
+0x8cf8:  push_imm b'\x00'
+0x8cfa:  stack top() = 61440
+0x8d78:  pop_reg r1
+0x8d7a:  jmp_reg r1
+0x8d7c:  pop_reg r2
+0x8d7e:  push_imm b'\x13'
+0x8d80:  pop_reg r1
+0x8d82:  add  | ac = r1 + r2
+0x8d84:  push_reg ac | push the value in the register on the stack
+0x8d86:  pop_reg r1
+0x8d88:  push_imm b'S'
+0x8d8a:  pop_reg r2
+0x8d8c:  mul  | ac = r1 * r2
+0x8d8e:  push_imm b'\x00'
+0x8d90:  stack top() = 9462
+0x8e0e:  pop_reg r2
+0x8e10:  push_reg ac | push the value in the register on the stack
+0x8e12:  pop_reg r1
+0x8e14:  cmp  | compare R1 and R2; set AC
+0x8e16:  push_imm b'\x00'
+0x8e18:  stack top() = 68
+0x8e96:  pop_reg r2
+0x8e98:  push_imm b'\x00'
+0x8e9a:  pop_reg r1
+0x8e9c:  push_imm b'\x00'
+0x8e9e:  pop_reg r3
+0x8ea0:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x8ea2:  push_imm b'\x00'
+0x8ea4:  pop_reg r2
+0x8ea6:  push_imm b'\x00'
+0x8ea8:  stack top() = 61440
+0x8f26:  pop_reg r1
+0x8f28:  jmp_reg r1
+0x8f2a:  pop_reg r2
+0x8f2c:  push_imm b'%'
+0x8f2e:  pop_reg r1
+0x8f30:  add  | ac = r1 + r2
+0x8f32:  push_reg ac | push the value in the register on the stack
+0x8f34:  pop_reg r1
+0x8f36:  push_imm b'<'
+0x8f38:  pop_reg r2
+0x8f3a:  mul  | ac = r1 * r2
+0x8f3c:  push_imm b'\x00'
+0x8f3e:  stack top() = 8760
+0x8fbc:  pop_reg r2
+0x8fbe:  push_reg ac | push the value in the register on the stack
+0x8fc0:  pop_reg r1
+0x8fc2:  cmp  | compare R1 and R2; set AC
+0x8fc4:  push_imm b'\x00'
+0x8fc6:  stack top() = 68
+0x9044:  pop_reg r2
+0x9046:  push_imm b'\x00'
+0x9048:  pop_reg r1
+0x904a:  push_imm b'\x00'
+0x904c:  pop_reg r3
+0x904e:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x9050:  push_imm b'\x00'
+0x9052:  pop_reg r2
+0x9054:  push_imm b'\x00'
+0x9056:  stack top() = 61440
+0x90d4:  pop_reg r1
+0x90d6:  jmp_reg r1
+0x90d8:  pop_reg r2
+0x90da:  push_imm b'?'
+0x90dc:  pop_reg r1
+0x90de:  add  | ac = r1 + r2
+0x90e0:  push_reg ac | push the value in the register on the stack
+0x90e2:  pop_reg r1
+0x90e4:  push_imm b'\t'
+0x90e6:  pop_reg r2
+0x90e8:  mul  | ac = r1 * r2
+0x90ea:  push_imm b'\x00'
+0x90ec:  stack top() = 1629
+0x916a:  pop_reg r2
+0x916c:  push_reg ac | push the value in the register on the stack
+0x916e:  pop_reg r1
+0x9170:  cmp  | compare R1 and R2; set AC
+0x9172:  push_imm b'\x00'
+0x9174:  stack top() = 68
+0x91f2:  pop_reg r2
+0x91f4:  push_imm b'\x00'
+0x91f6:  pop_reg r1
+0x91f8:  push_imm b'\x00'
+0x91fa:  pop_reg r3
+0x91fc:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x91fe:  push_imm b'\x00'
+0x9200:  pop_reg r2
+0x9202:  push_imm b'\x00'
+0x9204:  stack top() = 61440
+0x9282:  pop_reg r1
+0x9284:  jmp_reg r1
+0x9286:  pop_reg r2
+0x9288:  push_imm b'\x1d'
+0x928a:  pop_reg r1
+0x928c:  add  | ac = r1 + r2
+0x928e:  push_reg ac | push the value in the register on the stack
+0x9290:  pop_reg r1
+0x9292:  push_imm b'\\'
+0x9294:  pop_reg r2
+0x9296:  mul  | ac = r1 * r2
+0x9298:  push_imm b'\x00'
+0x929a:  stack top() = 13800
+0x9318:  pop_reg r2
+0x931a:  push_reg ac | push the value in the register on the stack
+0x931c:  pop_reg r1
+0x931e:  cmp  | compare R1 and R2; set AC
+0x9320:  push_imm b'\x00'
+0x9322:  stack top() = 68
+0x93a0:  pop_reg r2
+0x93a2:  push_imm b'\x00'
+0x93a4:  pop_reg r1
+0x93a6:  push_imm b'\x00'
+0x93a8:  pop_reg r3
+0x93aa:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x93ac:  push_imm b'\x00'
+0x93ae:  pop_reg r2
+0x93b0:  push_imm b'\x00'
+0x93b2:  stack top() = 61440
+0x9430:  pop_reg r1
+0x9432:  jmp_reg r1
+0x9434:  pop_reg r2
+0x9436:  push_imm b'\x0f'
+0x9438:  pop_reg r1
+0x943a:  add  | ac = r1 + r2
+0x943c:  push_reg ac | push the value in the register on the stack
+0x943e:  pop_reg r1
+0x9440:  push_imm b'X'
+0x9442:  pop_reg r2
+0x9444:  mul  | ac = r1 * r2
+0x9446:  push_imm b'\x00'
+0x9448:  stack top() = 9944
+0x94c6:  pop_reg r2
+0x94c8:  push_reg ac | push the value in the register on the stack
+0x94ca:  pop_reg r1
+0x94cc:  cmp  | compare R1 and R2; set AC
+0x94ce:  push_imm b'\x00'
+0x94d0:  stack top() = 68
+0x954e:  pop_reg r2
+0x9550:  push_imm b'\x00'
+0x9552:  pop_reg r1
+0x9554:  push_imm b'\x00'
+0x9556:  pop_reg r3
+0x9558:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x955a:  push_imm b'\x00'
+0x955c:  pop_reg r2
+0x955e:  push_imm b'\x00'
+0x9560:  stack top() = 61440
+0x95de:  pop_reg r1
+0x95e0:  jmp_reg r1
+0x95e2:  pop_reg r2
+0x95e4:  push_imm b'<'
+0x95e6:  pop_reg r1
+0x95e8:  add  | ac = r1 + r2
+0x95ea:  push_reg ac | push the value in the register on the stack
+0x95ec:  pop_reg r1
+0x95ee:  push_imm b'H'
+0x95f0:  pop_reg r2
+0x95f2:  mul  | ac = r1 * r2
+0x95f4:  push_imm b'\x00'
+0x95f6:  stack top() = 11304
+0x9674:  pop_reg r2
+0x9676:  push_reg ac | push the value in the register on the stack
+0x9678:  pop_reg r1
+0x967a:  cmp  | compare R1 and R2; set AC
+0x967c:  push_imm b'\x00'
+0x967e:  stack top() = 68
+0x96fc:  pop_reg r2
+0x96fe:  push_imm b'\x00'
+0x9700:  pop_reg r1
+0x9702:  push_imm b'\x00'
+0x9704:  pop_reg r3
+0x9706:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x9708:  push_imm b'\x00'
+0x970a:  pop_reg r2
+0x970c:  push_imm b'\x00'
+0x970e:  stack top() = 61440
+0x978c:  pop_reg r1
+0x978e:  jmp_reg r1
+0x9790:  pop_reg r2
+0x9792:  push_imm b'\x18'
+0x9794:  pop_reg r1
+0x9796:  add  | ac = r1 + r2
+0x9798:  push_reg ac | push the value in the register on the stack
+0x979a:  pop_reg r1
+0x979c:  push_imm b'`'
+0x979e:  pop_reg r2
+0x97a0:  mul  | ac = r1 * r2
+0x97a2:  push_imm b'\x00'
+0x97a4:  stack top() = 11712
+0x9822:  pop_reg r2
+0x9824:  push_reg ac | push the value in the register on the stack
+0x9826:  pop_reg r1
+0x9828:  cmp  | compare R1 and R2; set AC
+0x982a:  push_imm b'\x00'
+0x982c:  stack top() = 68
+0x98aa:  pop_reg r2
+0x98ac:  push_imm b'\x00'
+0x98ae:  pop_reg r1
+0x98b0:  push_imm b'\x00'
+0x98b2:  pop_reg r3
+0x98b4:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x98b6:  push_imm b'\x00'
+0x98b8:  pop_reg r2
+0x98ba:  push_imm b'\x00'
+0x98bc:  stack top() = 61440
+0x993a:  pop_reg r1
+0x993c:  jmp_reg r1
+0x993e:  pop_reg r2
+0x9940:  push_imm b'='
+0x9942:  pop_reg r1
+0x9944:  add  | ac = r1 + r2
+0x9946:  push_reg ac | push the value in the register on the stack
+0x9948:  pop_reg r1
+0x994a:  push_imm b'\x14'
+0x994c:  pop_reg r2
+0x994e:  mul  | ac = r1 * r2
+0x9950:  push_imm b'\x00'
+0x9952:  stack top() = 3680
+0x99d0:  pop_reg r2
+0x99d2:  push_reg ac | push the value in the register on the stack
+0x99d4:  pop_reg r1
+0x99d6:  cmp  | compare R1 and R2; set AC
+0x99d8:  push_imm b'\x00'
+0x99da:  stack top() = 68
+0x9a58:  pop_reg r2
+0x9a5a:  push_imm b'\x00'
+0x9a5c:  pop_reg r1
+0x9a5e:  push_imm b'\x00'
+0x9a60:  pop_reg r3
+0x9a62:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x9a64:  push_imm b'\x00'
+0x9a66:  pop_reg r2
+0x9a68:  push_imm b'\x00'
+0x9a6a:  stack top() = 61440
+0x9ae8:  pop_reg r1
+0x9aea:  jmp_reg r1
+0x9aec:  pop_reg r2
+0x9aee:  push_imm b'\x12'
+0x9af0:  pop_reg r1
+0x9af2:  add  | ac = r1 + r2
+0x9af4:  push_reg ac | push the value in the register on the stack
+0x9af6:  pop_reg r1
+0x9af8:  push_imm b'f'
+0x9afa:  pop_reg r2
+0x9afc:  mul  | ac = r1 * r2
+0x9afe:  push_imm b'\x00'
+0x9b00:  stack top() = 12240
+0x9b7e:  pop_reg r2
+0x9b80:  push_reg ac | push the value in the register on the stack
+0x9b82:  pop_reg r1
+0x9b84:  cmp  | compare R1 and R2; set AC
+0x9b86:  push_imm b'\x00'
+0x9b88:  stack top() = 68
+0x9c06:  pop_reg r2
+0x9c08:  push_imm b'\x00'
+0x9c0a:  pop_reg r1
+0x9c0c:  push_imm b'\x00'
+0x9c0e:  pop_reg r3
+0x9c10:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x9c12:  push_imm b'\x00'
+0x9c14:  pop_reg r2
+0x9c16:  push_imm b'\x00'
+0x9c18:  stack top() = 61440
+0x9c96:  pop_reg r1
+0x9c98:  jmp_reg r1
+0x9c9a:  pop_reg r2
+0x9c9c:  push_imm b'@'
+0x9c9e:  pop_reg r1
+0x9ca0:  add  | ac = r1 + r2
+0x9ca2:  push_reg ac | push the value in the register on the stack
+0x9ca4:  pop_reg r1
+0x9ca6:  push_imm b'\x02'
+0x9ca8:  pop_reg r2
+0x9caa:  mul  | ac = r1 * r2
+0x9cac:  push_imm b'\x00'
+0x9cae:  stack top() = 360
+0x9d2c:  pop_reg r2
+0x9d2e:  push_reg ac | push the value in the register on the stack
+0x9d30:  pop_reg r1
+0x9d32:  cmp  | compare R1 and R2; set AC
+0x9d34:  push_imm b'\x00'
+0x9d36:  stack top() = 68
+0x9db4:  pop_reg r2
+0x9db6:  push_imm b'\x00'
+0x9db8:  pop_reg r1
+0x9dba:  push_imm b'\x00'
+0x9dbc:  pop_reg r3
+0x9dbe:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x9dc0:  push_imm b'\x00'
+0x9dc2:  pop_reg r2
+0x9dc4:  push_imm b'\x00'
+0x9dc6:  stack top() = 61440
+0x9e44:  pop_reg r1
+0x9e46:  jmp_reg r1
+0x9e48:  pop_reg r2
+0x9e4a:  push_imm b'%'
+0x9e4c:  pop_reg r1
+0x9e4e:  add  | ac = r1 + r2
+0x9e50:  push_reg ac | push the value in the register on the stack
+0x9e52:  pop_reg r1
+0x9e54:  push_imm b'\x19'
+0x9e56:  pop_reg r2
+0x9e58:  mul  | ac = r1 * r2
+0x9e5a:  push_imm b'\x00'
+0x9e5c:  stack top() = 3400
+0x9eda:  pop_reg r2
+0x9edc:  push_reg ac | push the value in the register on the stack
+0x9ede:  pop_reg r1
+0x9ee0:  cmp  | compare R1 and R2; set AC
+0x9ee2:  push_imm b'\x00'
+0x9ee4:  stack top() = 68
+0x9f62:  pop_reg r2
+0x9f64:  push_imm b'\x00'
+0x9f66:  pop_reg r1
+0x9f68:  push_imm b'\x00'
+0x9f6a:  pop_reg r3
+0x9f6c:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0x9f6e:  push_imm b'\x00'
+0x9f70:  pop_reg r2
+0x9f72:  push_imm b'\x00'
+0x9f74:  stack top() = 61440
+0x9ff2:  pop_reg r1
+0x9ff4:  jmp_reg r1
+0x9ff6:  pop_reg r2
+0x9ff8:  push_imm b'\x11'
+0x9ffa:  pop_reg r1
+0x9ffc:  add  | ac = r1 + r2
+0x9ffe:  push_reg ac | push the value in the register on the stack
+0xa000:  pop_reg r1
+0xa002:  push_imm b'_'
+0xa004:  pop_reg r2
+0xa006:  mul  | ac = r1 * r2
+0xa008:  push_imm b'\x00'
+0xa00a:  stack top() = 11590
+0xa088:  pop_reg r2
+0xa08a:  push_reg ac | push the value in the register on the stack
+0xa08c:  pop_reg r1
+0xa08e:  cmp  | compare R1 and R2; set AC
+0xa090:  push_imm b'\x00'
+0xa092:  stack top() = 68
+0xa110:  pop_reg r2
+0xa112:  push_imm b'\x00'
+0xa114:  pop_reg r1
+0xa116:  push_imm b'\x00'
+0xa118:  pop_reg r3
+0xa11a:  jmp_cond  | jump with reg offset, based on AC | AC < 0: +R1 | AC == 0: +R2 | AC > 0: +R3
+0xa11c:  push_imm b'\x00'
+0xa11e:  pop_reg r2
+0xa120:  push_imm b'\x00'
+0xa122:  stack top() = 61440
+0xa1a0:  pop_reg r1
+0xa1a2:  jmp_reg r1
+0xa1a4:  push_imm b'Y'
+0xa1a6:  pop_reg r3
+0xa1a8:  print_reg r3
+0xa1aa:  push_imm b'o'
+0xa1ac:  pop_reg ac
+0xa1ae:  print_reg ac
+0xa1b0:  push_imm b'u'
+0xa1b2:  pop_reg r1
+0xa1b4:  print_reg r1
+0xa1b6:  push_imm b' '
+0xa1b8:  pop_reg ac
+0xa1ba:  print_reg ac
+0xa1bc:  push_imm b'w'
+0xa1be:  pop_reg ac
+0xa1c0:  print_reg ac
+0xa1c2:  push_imm b'i'
+0xa1c4:  pop_reg r1
+0xa1c6:  print_reg r1
+0xa1c8:  push_imm b'n'
+0xa1ca:  pop_reg r2
+0xa1cc:  print_reg r2
+0xa1ce:  push_imm b'!'
+0xa1d0:  pop_reg r2
+0xa1d2:  print_reg r2
+0xa1d4:  push_imm b'\n'
+0xa1d6:  pop_reg r1
+0xa1d8:  print_reg r1
+0xa1da:  exit  | exit program
+0x2a1dc:  push_imm b'Y'
+0x2a1de:  pop_reg r1
+0x2a1e0:  print_reg r1
+0x2a1e2:  push_imm b'o'
+0x2a1e4:  pop_reg r2
+0x2a1e6:  print_reg r2
+0x2a1e8:  push_imm b'u'
+0x2a1ea:  pop_reg r3
+0x2a1ec:  print_reg r3
+0x2a1ee:  push_imm b' '
+0x2a1f0:  pop_reg r1
+0x2a1f2:  print_reg r1
+0x2a1f4:  push_imm b'l'
+0x2a1f6:  pop_reg r3
+0x2a1f8:  print_reg r3
+0x2a1fa:  push_imm b'o'
+0x2a1fc:  pop_reg r2
+0x2a1fe:  print_reg r2
+0x2a200:  push_imm b's'
+0x2a202:  pop_reg r1
+0x2a204:  print_reg r1
+0x2a206:  push_imm b'e'
+0x2a208:  pop_reg r1
+0x2a20a:  print_reg r1
+0x2a20c:  push_imm b'!'
+0x2a20e:  pop_reg r2
+0x2a210:  print_reg r2
+0x2a212:  push_imm b'\n'
+0x2a214:  pop_reg r2
+0x2a216:  print_reg r2
+0x2a218:  exit  | exit program

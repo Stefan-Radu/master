@@ -1,0 +1,236 @@
+#=============================================
+
+# This is the config file for the
+# 2023 uiuctf vmwhere VM
+
+#=============================================
+
+[arch]
+
+name = "vmcastle"
+alias_names = ["VMCASTLE"]
+
+bits = 32
+endness = "LE" # should be in [ LE, BE, ANY ]
+instruction_alignment = 2
+ip_offset = 0
+sp_offset = 1
+stack_change = 4
+stack_size = 1024
+stack_end= 0x5840
+stack_alignment = 4
+syscall_reg = 'sysnum'
+
+#=============================================
+
+[arch.register_list.ip]
+alias_names = ['pc']
+size = 4
+vex_offset=0
+
+[arch.register_list.sp]
+size = 4
+vex_offset=4
+
+[arch.register_list.sysnum]
+size=4
+vex_offset=8
+
+[arch.register_list.ip_at_syscall]
+size=4
+vex_offset=16
+
+[arch.register_list.r1]
+size=4
+vex_offset=20
+
+[arch.register_list.r2]
+size=4
+vex_offset=24
+
+[arch.register_list.r3]
+size=4
+vex_offset=28
+
+[arch.register_list.ac]
+size=4
+vex_offset=32
+
+[arch.register_list.reg_no]
+size=1
+vex_offset=36
+
+#=============================================
+
+## -------------------------
+
+[lifter]
+
+[lifter.types]
+PTR_TYPE = 'int_32'
+STACK_ENTRY_TYPE = 'int_32'
+
+[lifter.disassemble_functions]
+
+generic = '''
+arg = self.rawbits[2:]
+if arg:
+    arg = int(self.rawbits[2:], 16)
+    arg = hex(arg)
+return self.addr, self.name, [arg], self.description'''
+
+push = '''
+arg = bytes.fromhex(self.rawbits[2:])
+return self.addr, self.name, [arg], self.description'''
+
+jmp = '''
+arg = int(self.rawbits[2:], 16)
+if arg & (0x8000):
+    offset = arg - 0xffff - 1
+else:
+    offset = arg
+jmp = self.addr + 3 + offset
+return self.addr, self.name, [hex(jmp), jmp, offset], self.description'''
+
+reg = '''
+r = int(self.data('r'))
+reg = get_reg(r)
+return self.addr, self.name, [reg], self.description'''
+
+[lifter.defaults]
+
+disassemble = 'generic'
+
+[lifter.opcodes]
+
+[lifter.opcodes.nop]
+bin_format = [ [ 'x', 16],  ]
+description = 'nop. just nothing'
+behavior = '''log.error('this shouldn't exist anymore')'''
+
+[lifter.opcodes.exit]
+bin_format = [ 117, [ 'x', 8] ]
+description = 'exit program'
+behavior = '''
+self.jump(None, self.constant(self.addr, PTR_TYPE), jumpkind=JumpKind.Exit)'''
+
+[[lifter.opcodes.exit.override]]
+
+method_name = 'parse'
+args = [ 'bitstream' ]
+behavior = '''
+self.last_instruction = False
+data = Instruction.parse(self, bitstream)
+try:
+    bitstream.peek(16)
+except bitstring.ReadError:
+    # We ran off the end!
+    self.last_instruction = True
+return data '''
+# TODO add options for all overrides
+
+[lifter.opcodes.pop_reg]
+bin_format = [ 102, ['r', 8] ]
+description = 'pop the top of the stack in the specified register'
+behavior = '''
+r = int(self.data['r'], 2)
+reg = get_reg(r)
+
+sp = self.get(SP_REG, PTR_TYPE)
+top = self.load(sp, STACK_ENTRY_TYPE)
+self.put(top, reg)
+self.put((sp - 1) % 0x400, SP_REG)'''
+disassemble='reg'
+
+[lifter.opcodes.push_reg]
+bin_format = [ 103, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.push_imm]
+bin_format = [ 104, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.add]
+bin_format = [ 105, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.sub]
+bin_format = [ 106, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.mul]
+bin_format = [ 107, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.div]
+bin_format = [ 108, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.mod]
+bin_format = [ 109, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.jmp_reg]
+bin_format = [ 110, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.jmp_cond]
+bin_format = [ 111, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.cmp]
+bin_format = [ 112, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.print_reg]
+bin_format = [ 113, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.read_reg]
+bin_format = [ 114, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.stack_top_itshl]
+bin_format = [ 115, ['r', 8] ]
+behavior = ''
+
+[lifter.opcodes.stack_top_itadd]
+bin_format = [ 116, ['r', 8] ]
+behavior = ''
+
+[loader]
+offset = 0
+entry_point = 0
+base_addr = 0x000000
+header = ''
+
+## -------------------------
+
+[simos]
+
+fp_args = []
+syscall_args = [ 'reg_no' ]
+return_addr = [ 'ip_at_syscall', 8 ]
+syscall_addr_alignment = 8
+
+[[simos.syscalls]]
+
+syscall_no = 0
+name = 'ReadByte'
+behavior = '''
+tmp = self.state.posix.fd[0].read_data(1)
+# get reg
+self.state.regs.reg = tmp'''
+description = 'Reads a byte from stdin into the specified register'
+
+[[simos.syscalls]]
+
+syscall_no = 1
+name = 'WriteByte'
+behavior = '''
+# get reg
+tmp = self.state.regs.reg
+self.state.posix.fd[1].write_data(tmp, 1)'''
+description = 'Write a byte to stdout from the specified register'
+
+[simos.init]
