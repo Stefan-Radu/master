@@ -95,55 +95,55 @@
 \newlabel{lst:angr_ex}{{4.7}{32}{A minimal angr code sample. We load a program into \cc {p}, create a simulation manager, symbolically execute the program until we reach the desired address \cc {0xcafebabe}, and finally print the input which determined this execution path}{lstlisting.4.7}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.7}A minimal angr code sample. We load a program into \lstinline [mathescape]{p}, create a simulation manager, symbolically execute the program until we reach the desired address \lstinline [mathescape]{0xcafebabe}, and finally print the input which determined this execution path.}{32}{lstlisting.4.7}\protected@file@percent }
 \newlabel{line:project}{{2}{32}{A minimal angr code sample. We load a program into \cc {p}, create a simulation manager, symbolically execute the program until we reach the desired address \cc {0xcafebabe}, and finally print the input which determined this execution path}{lstnumber.4.7.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}A new entry in the Arch database}{32}{subsection.4.4.1}\protected@file@percent }
 \@writefile{lof}{\setforeignlanguage {english}}
 \@writefile{lot}{\setforeignlanguage {english}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagram describing the components of the angr framework and how they interact. Binary code is loaded by the CLE module. The loaded information is lifted into VEX \gls {IR} through the PyVEX module. Symbolic execution is achieved through the SimEngine. Syscalls and external library calls are relayed through the SimOS module. Claripy takes care of modeling the symbolic state and constraint solving during execution, using an \gls {SMT} solver. Information about the target's architecture is provided to all mentioned components by the Archinfo module. \blx@tocontentsinit {0}\cite {angr} }}{33}{figure.4.2}\protected@file@percent }
 \newlabel{fig:angr}{{4.2}{33}{Diagram describing the components of the angr framework and how they interact. Binary code is loaded by the CLE module. The loaded information is lifted into VEX \gls {IR} through the PyVEX module. Symbolic execution is achieved through the SimEngine. Syscalls and external library calls are relayed through the SimOS module. Claripy takes care of modeling the symbolic state and constraint solving during execution, using an \gls {SMT} solver. Information about the target's architecture is provided to all mentioned components by the Archinfo module. \cite {angr}}{figure.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Extending the Arch Database}{33}{subsection.4.4.1}\protected@file@percent }
 \newlabel{lst:angr_arch}{{4.8}{33}{Implementation of an Archinfo module extension for the \cc {vmwhere} sample. A list of registers, bit-width, endian-ness and module name are explicitly specified}{lstlisting.4.8}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.8}Implementation of an Archinfo module extension for the \lstinline [mathescape]{vmwhere} sample. A list of registers, bit-width, endian-ness and module name are explicitly specified.}{33}{lstlisting.4.8}\protected@file@percent }
 \newlabel{line:reg_arch}{{15}{34}{Implementation of an Archinfo module extension for the \cc {vmwhere} sample. A list of registers, bit-width, endian-ness and module name are explicitly specified}{lstnumber.4.8.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Extending the Loader}{34}{subsection.4.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Building a Lifter}{34}{subsection.4.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Writing a Loader}{34}{subsection.4.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Writing a Lifter}{34}{subsection.4.4.3}\protected@file@percent }
 \newlabel{lst:instruction}{{4.9}{35}{Implementation of a conditional jump instruction, as part of the lifter module}{lstlisting.4.9}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.9}Implementation of a conditional jump instruction, as part of the lifter module.}{35}{lstlisting.4.9}\protected@file@percent }
 \newlabel{line:instruction0}{{7}{35}{Implementation of a conditional jump instruction, as part of the lifter module}{lstnumber.4.9.7}{}}
 \newlabel{line:instruction1}{{9}{35}{Implementation of a conditional jump instruction, as part of the lifter module}{lstnumber.4.9.9}{}}
 \newlabel{line:instruction2}{{10}{35}{Implementation of a conditional jump instruction, as part of the lifter module}{lstnumber.4.9.10}{}}
 \newlabel{line:instruction3}{{13}{35}{Implementation of a conditional jump instruction, as part of the lifter module}{lstnumber.4.9.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}SimOS}{36}{subsection.4.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Writing a SimOS}{36}{subsection.4.4.4}\protected@file@percent }
 \newlabel{lst:simproc}{{4.10}{36}{A short example of SimProcedure implementing a write instruction}{lstlisting.4.10}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.10}A short example of SimProcedure implementing a write instruction.}{36}{lstlisting.4.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{36}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{37}{section.4.5}\protected@file@percent }
 \newlabel{lst:config}{{4.11}{37}{Section of the a config file used as input for the \cc {arch-genesis} tool. The section contains a partial list of instructions (opcodes), loader details, as well as information essential for the syscall calling convention}{lstlisting.4.11}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {4.11}Section of the a config file used as input for the \lstinline [mathescape]{arch-genesis} tool. The section contains a partial list of instructions (opcodes), loader details, as well as information essential for the syscall calling convention.}{37}{lstlisting.4.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}What about a Disassembler?}{38}{subsection.4.5.1}\protected@file@percent }
-\newlabel{lst:disass}{{4.12}{38}{Example of a custom \gls {IR}, output of the disassembler generated with the \cc {arch-genesis} tool. The disassembly output is obtained from bytecode from the \cc {vmwhere} sample}{lstlisting.4.12}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.12}Example of a custom \gls {IR}, output of the disassembler generated with the \lstinline [mathescape]{arch-genesis} tool. The disassembly output is obtained from bytecode from the \lstinline [mathescape]{vmwhere} sample.}{38}{lstlisting.4.12}\protected@file@percent }
-\newlabel{line:desc}{{9}{38}{Example of a custom \gls {IR}, output of the disassembler generated with the \cc {arch-genesis} tool. The disassembly output is obtained from bytecode from the \cc {vmwhere} sample}{lstnumber.4.12.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Disassembler}{38}{subsection.4.5.1}\protected@file@percent }
+\newlabel{lst:disass}{{4.12}{38}{Disassembly from a section of bytecode extracted from the \cc {vmcastle} sample. The disassembler itself is generated with the \cc {arch-genesis} tool}{lstlisting.4.12}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.12}Disassembly from a section of bytecode extracted from the \lstinline [mathescape]{vmcastle} sample. The disassembler itself is generated with the \lstinline [mathescape]{arch-genesis} tool.}{38}{lstlisting.4.12}\protected@file@percent }
+\newlabel{line:desc}{{9}{38}{Disassembly from a section of bytecode extracted from the \cc {vmcastle} sample. The disassembler itself is generated with the \cc {arch-genesis} tool}{lstnumber.4.12.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.6}Further Analysis}{39}{section.4.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Solving the Challenges}{39}{subsection.4.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{VMWHERE}{39}{section*.7}\protected@file@percent }
 \@writefile{lof}{\setforeignlanguage {english}}
 \@writefile{lot}{\setforeignlanguage {english}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \gls {CFG} generated with a custom algorithm from the bytecode of the \lstinline [mathescape]{vmwhere} sample.}}{40}{figure.4.3}\protected@file@percent }
-\newlabel{fig:cfg_bytecode}{{4.3}{40}{\gls {CFG} generated with a custom algorithm from the bytecode of the \cc {vmwhere} sample}{figure.4.3}{}}
-\newlabel{lst:vmwhere_check}{{4.13}{40}{Disassembly of \cc {vmwhere} bytecode performing an equality check, based on an immediate value pushed on the stack}{lstlisting.4.13}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.13}Disassembly of \lstinline [mathescape]{vmwhere} bytecode performing an equality check, based on an immediate value pushed on the stack.}{40}{lstlisting.4.13}\protected@file@percent }
-\newlabel{line:vmwhere_check_imm}{{1}{40}{Disassembly of \cc {vmwhere} bytecode performing an equality check, based on an immediate value pushed on the stack}{lstnumber.4.13.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces A portion of the recovered \gls {CFG} of the \lstinline [mathescape]{vmwhere} sample. We notice circled in green an inlined function which applies a number of transformation to an input value read from \lstinline [mathescape]{stdin}.}}{40}{figure.4.3}\protected@file@percent }
+\newlabel{fig:cfg_bytecode}{{4.3}{40}{A portion of the recovered \gls {CFG} of the \cc {vmwhere} sample. We notice circled in green an inlined function which applies a number of transformation to an input value read from \cc {stdin}}{figure.4.3}{}}
+\newlabel{lst:vmwhere_check}{{4.13}{40}{Disassembly of \cc {vmwhere} bytecode, which performs a bitwise-xor operation on the top two values on top of the stack, and then a bitwise-or operation on the previous result, and the value at the bottom of the stack}{lstlisting.4.13}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.13}Disassembly of \lstinline [mathescape]{vmwhere} bytecode, which performs a bitwise-xor operation on the top two values on top of the stack, and then a bitwise-or operation on the previous result, and the value at the bottom of the stack.}{40}{lstlisting.4.13}\protected@file@percent }
+\newlabel{line:vmwhere_check_imm}{{1}{40}{Disassembly of \cc {vmwhere} bytecode, which performs a bitwise-xor operation on the top two values on top of the stack, and then a bitwise-or operation on the previous result, and the value at the bottom of the stack}{lstnumber.4.13.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{VMCASTLE}{41}{section*.8}\protected@file@percent }
 \newlabel{item:one}{{1}{41}{VMCASTLE}{Item.10}{}}
 \newlabel{item:two}{{2}{41}{VMCASTLE}{Item.11}{}}
 \newlabel{item:three}{{3}{41}{VMCASTLE}{Item.12}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.7}Discussion}{42}{section.4.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.7.1}angr vs Miasm}{42}{subsection.4.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.2}Difficulties and Shortcomings}{42}{subsection.4.7.2}\protected@file@percent }
-\newlabel{sec:shortcomings}{{4.7.2}{42}{Difficulties and Shortcomings}{subsection.4.7.2}{}}
-\newlabel{lst:vex_cond_jmp}{{4.14}{44}{Implementation of a conditional jump instruction. Here we hightlight difficulties encountered while implementing conditionals}{lstlisting.4.14}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.14}Implementation of a conditional jump instruction. Here we hightlight difficulties encountered while implementing conditionals.}{44}{lstlisting.4.14}\protected@file@percent }
-\newlabel{line:trickery}{{20}{44}{Implementation of a conditional jump instruction. Here we hightlight difficulties encountered while implementing conditionals}{lstnumber.4.14.20}{}}
-\newlabel{lst:cond_jmp}{{4.15}{44}{Decompilation of the instruction handler number $111$ from \cc {vmwhere} sample}{lstlisting.4.15}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.15}Decompilation of the instruction handler number $111$ from \lstinline [mathescape]{vmwhere} sample.}{44}{lstlisting.4.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.2}Difficulties and Shortcomings}{43}{subsection.4.7.2}\protected@file@percent }
+\newlabel{sec:shortcomings}{{4.7.2}{43}{Difficulties and Shortcomings}{subsection.4.7.2}{}}
+\newlabel{lst:cond_jmp}{{4.14}{44}{\raggedright Cleaned-up decompilation, extracted from Ghidra, of the instruction handler number $111$ from the \cc {vmwhere} embedded \gls {VM}. It performs a conditional jump, based on the value of the \cc {AC} register}{lstlisting.4.14}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.14}\raggedright  Cleaned-up decompilation, extracted from Ghidra, of the instruction handler number $111$ from the \lstinline [mathescape]{vmwhere} embedded \gls {VM}. It performs a conditional jump, based on the value of the \lstinline [mathescape]{AC} register.}{44}{lstlisting.4.14}\protected@file@percent }
+\newlabel{lst:vex_cond_jmp}{{4.15}{44}{\raggedright Python code which lifts bytecode encoding the conditional jump instruction from Listing \ref {lst:cond_jmp} into VEX IR}{lstlisting.4.15}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.15}\raggedright  Python code which lifts bytecode encoding the conditional jump instruction from Listing \ref {lst:cond_jmp} into VEX IR.}{44}{lstlisting.4.15}\protected@file@percent }
+\newlabel{line:trickery}{{20}{44}{\raggedright Python code which lifts bytecode encoding the conditional jump instruction from Listing \ref {lst:cond_jmp} into VEX IR}{lstnumber.4.15.20}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.7.3}Future Directions}{45}{subsection.4.7.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions}{47}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -287,7 +287,7 @@
 \setcounter{lstnumber}{1}
 \setcounter{section@level}{2}
 \setcounter{Item}{12}
-\setcounter{Hfootnote}{2}
+\setcounter{Hfootnote}{3}
 \setcounter{bookmark@seq@number}{47}
 \setcounter{@pps}{0}
 \setcounter{@ppsavesec}{0}

@@ -47,21 +47,23 @@
 \contentsline {subsection}{\numberline {4.2.2}Automatic Code Summarisation using Miasm}{28}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Summary of Analysis}{30}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Building an angr Architecture Plugin}{32}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}A new entry in the Arch database}{32}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Extending the Loader}{34}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Building a Lifter}{34}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}SimOS}{36}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{36}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}What about a Disassembler?}{38}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.4.1}Extending the Arch Database}{33}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Writing a Loader}{34}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Writing a Lifter}{34}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Writing a SimOS}{36}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Plugin Generation - arch-genesis}{37}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Disassembler}{38}{subsection.4.5.1}%
 \contentsline {section}{\numberline {4.6}Further Analysis}{39}{section.4.6}%
 \contentsline {subsection}{\numberline {4.6.1}Solving the Challenges}{39}{subsection.4.6.1}%
 \contentsline {subsubsection}{VMWHERE}{39}{section*.7}%
 \contentsline {subsubsection}{VMCASTLE}{41}{section*.8}%
 \contentsline {section}{\numberline {4.7}Discussion}{42}{section.4.7}%
 \contentsline {subsection}{\numberline {4.7.1}angr vs Miasm}{42}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Difficulties and Shortcomings}{42}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.2}Difficulties and Shortcomings}{43}{subsection.4.7.2}%
 \contentsline {subsection}{\numberline {4.7.3}Future Directions}{45}{subsection.4.7.3}%
 \contentsline {chapter}{\numberline {5}Conclusions}{47}{chapter.5}%
 \contentsline {chapter}{\textenglish {Acronyms}}{48}{section*.9}%
 \contentsline {chapter}{\textenglish {Glossary}}{50}{section*.11}%
-\contentsline {chapter}{Bibliography}{54}{chapter*.15}%
+\contentsline {chapter}{Bibliography}{55}{chapter*.15}%
+\contentsline {chapter}{Appendix \numberline {A}}{60}{appendix.1.A}%
+\contentsline {chapter}{Appendices}{60}{section*.16}%

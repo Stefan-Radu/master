@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Arch Linux)  (format=lualatex 2024.6.18)  18 JUN 2024 17:53
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Arch Linux)  (format=lualatex 2024.6.18)  18 JUN 2024 20:30
  restricted system commands enabled.
 **main
 (./main.tex
@@ -1104,52 +1104,52 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 \glo@main@file=\write5
 
 \openout5 = main.glo
-Package glossaries Info: Writing glossary file main.glo on input line 153.
+Package glossaries Info: Writing glossary file main.glo on input line 150.
 \glo@acronym@file=\write6
 
 \openout6 = main.acn
-Package glossaries Info: Writing glossary file main.acn on input line 153.
+Package glossaries Info: Writing glossary file main.acn on input line 150.
  (./glossary.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'polyglossia' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'american'.
 
-(./main.aux (./0-title.aux) (./abstract.aux) (./content.aux))
+(./main.aux (./0-title.aux) (./abstract.aux) (./content.aux) (./appendix.aux))
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Info: Redefining \rmfamily on input line 156.
-LaTeX Info: Redefining \sffamily on input line 156.
-LaTeX Info: Redefining \ttfamily on input line 156.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Info: Redefining \rmfamily on input line 153.
+LaTeX Info: Redefining \sffamily on input line 153.
+LaTeX Info: Redefining \ttfamily on input line 153.
 Package biblatex Info: Trying to load language 'romanian'...
 Package biblatex Info: ... file 'romanian.lbx' found.
- (./romanian.lbx
+
+(./romanian.lbx
 File: romanian.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'american'...
 Package biblatex Info: ... file 'american.lbx' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/lbx/american.lbx
+ (/usr/share/texmf-dist/tex/latex/biblatex/lbx/american.lbx
 File: american.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -1172,8 +1172,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 156.
-Package biblatex Info: Reference segment=0 on input line 156.
+Package biblatex Info: Reference section=0 on input line 153.
+Package biblatex Info: Reference segment=0 on input line 153.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1232,26 +1232,26 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count495
-Package hyperref Info: Link coloring ON on input line 156.
+Package hyperref Info: Link coloring ON on input line 153.
  (./main.out)
 (./main.out)
 \@outlinefile=\write7
 
 \openout7 = main.out
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 156.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 153.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 156.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 153.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 156.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 153.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 156.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 153.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 156.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 153.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 156.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 153.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 156.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 153.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1295,16 +1295,16 @@ e=dflt;mathfontdimen=xetex;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 156.
+(Font)              `operators' in the math version `normal' on input line 153.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 156.
+ line 153.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 156.
+(Font)              `operators' in the math version `bold' on input line 153.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 156.
+t line 153.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1330,15 +1330,15 @@ e=dflt;mathfontdimen=xetex;mathfontdimen=tex2;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 156.
+(Font)              `symbols' in the math version `normal' on input line 153.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 156.
+t line 153.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 156.
+(Font)              `symbols' in the math version `bold' on input line 153.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 156.
+t line 153.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1365,22 +1365,22 @@ e=dflt;mathfontdimen=xetex;mathfontdimen=tex3;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-56.
+53.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 156.
+t line 153.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 156
+(Font)              `largesymbols' in the math version `bold' on input line 153
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 156.
+t line 153.
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-56.
+53.
  (/usr/share/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Info: Redefining \rmfamily on input line 156.
-LaTeX Info: Redefining \sffamily on input line 156.
-LaTeX Info: Redefining \ttfamily on input line 156.
+LaTeX Info: Redefining \rmfamily on input line 153.
+LaTeX Info: Redefining \sffamily on input line 153.
+LaTeX Info: Redefining \ttfamily on input line 153.
 
 \openout2 = 0-title.aux
 
@@ -1417,12 +1417,12 @@ LaTeX Info: Redefining \ttfamily on input line 156.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images/logo-ub.png, id=205, 145.2627pt x 179.35005pt>
+<./images/logo-ub.png, id=209, 145.2627pt x 179.35005pt>
 File: ./images/logo-ub.png Graphic file (type png)
 <use ./images/logo-ub.png>
 Package luatex.def Info: ./images/logo-ub.png  used on input line 9.
 (luatex.def)             Requested size: 96.73788pt x 119.44142pt.
-<./images/logo-fmi.png, id=206, 97.5645pt x 113.004pt>
+<./images/logo-fmi.png, id=210, 97.5645pt x 113.004pt>
 File: ./images/logo-fmi.png Graphic file (type png)
 <use ./images/logo-fmi.png>
 Package luatex.def Info: ./images/logo-fmi.png  used on input line 26.
@@ -1574,7 +1574,7 @@ Chapter 2.
 [7
 
 ]
-<./images/wanacry.png, id=312, 451.6875pt x 341.02406pt>
+<./images/wanacry.png, id=317, 451.6875pt x 341.02406pt>
 File: ./images/wanacry.png Graphic file (type png)
 <use ./images/wanacry.png>
 Package luatex.def Info: ./images/wanacry.png  used on input line 71.
@@ -1584,14 +1584,14 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 115.
  [12] [13] [14]
 (./code/fizz-buzz.tex) [15]
-<./images/SE.png, id=495, 1536.49031pt x 821.31844pt>
+<./images/SE.png, id=500, 1536.49031pt x 821.31844pt>
 File: ./images/SE.png Graphic file (type png)
 <use ./images/SE.png>
 Package luatex.def Info: ./images/SE.png  used on input line 223.
 (luatex.def)             Requested size: 455.24411pt x 243.33954pt.
  [16<./images/SE.png>] [17] [18]
 Chapter 3.
-<./images/dispatch.png, id=534, 396.7322pt x 261.97874pt>
+<./images/dispatch.png, id=539, 396.7322pt x 261.97874pt>
 File: ./images/dispatch.png Graphic file (type png)
 <use ./images/dispatch.png>
 Package luatex.def Info: ./images/dispatch.png  used on input line 265.
@@ -1603,25 +1603,25 @@ Chapter 4.
 [24
 
 ]
-<./images/cfg_vmwhere.png, id=612, 1723.1878pt x 650.43pt>
+<./images/cfg_vmwhere.png, id=618, 1723.1878pt x 650.43pt>
 File: ./images/cfg_vmwhere.png Graphic file (type png)
 <use ./images/cfg_vmwhere.png>
-Package luatex.def Info: ./images/cfg_vmwhere.png  used on input line 331.
+Package luatex.def Info: ./images/cfg_vmwhere.png  used on input line 333.
 (luatex.def)             Requested size: 455.24411pt x 171.83711pt.
  [25] [26<./images/cfg_vmwhere.png>] [27] [28] [29] [30] [31]
-<./images/angr.png, id=758, 2438.35968pt x 1608.76031pt>
+<./images/angr.png, id=765, 2438.35968pt x 1608.76031pt>
 File: ./images/angr.png Graphic file (type png)
 <use ./images/angr.png>
-Package luatex.def Info: ./images/angr.png  used on input line 477.
+Package luatex.def Info: ./images/angr.png  used on input line 479.
 (luatex.def)             Requested size: 409.71692pt x 270.31898pt.
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) [32] [33<./images/angr.png>] [34] [35] [36] [37] [38]
-<./images/cfg.png, id=915, 753.5653pt x 839.38594pt>
+<./images/cfg.png, id=922, 753.5653pt x 839.38594pt>
 File: ./images/cfg.png Graphic file (type png)
 <use ./images/cfg.png>
-Package luatex.def Info: ./images/cfg.png  used on input line 633.
+Package luatex.def Info: ./images/cfg.png  used on input line 635.
 (luatex.def)             Requested size: 364.19667pt x 405.6672pt.
  [39] [40<./images/cfg.png>] [41] [42] [43]
 [44] [45] [46]
@@ -1689,60 +1689,76 @@ LaTeX Info: Redefining \ttfamily on input line 15.
 \openout10 = main.lof
  [53
 
-] [54
+] [54] [55
 
 ]
-Overfull \hbox (83.6379pt too wide) in paragraph at lines 199--199
+Overfull \hbox (83.6379pt too wide) in paragraph at lines 194--194
 \TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/12 https : / / github . co
 m / corkami / pics / blob / 28cb0226093ed57b348723bc473cea0162dad366 /
  []
 
 
-Overfull \hbox (1.67862pt too wide) in paragraph at lines 199--199
+Overfull \hbox (1.67862pt too wide) in paragraph at lines 194--194
 []\TU/lmr/m/it/12 ImaginaryCTF-2023-Challenges\TU/lmr/m/n/12 . [On-line; ac-cess
 ed 15. Jun. 2024]. 2024. \TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/
 12 https :
  []
 
-[55] [56]
-Overfull \hbox (3.34656pt too wide) in paragraph at lines 199--199
+[56] [57]
+Overfull \hbox (3.34656pt too wide) in paragraph at lines 194--194
 []\TU/lmr/m/it/12 UIUCTF-2023-Public\TU/lmr/m/n/12 . [On-line; ac-cessed 15. Jun
 . 2024]. 2023. \TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/12 https : / / github .
  []
 
-[57]
-Overfull \hbox (1.35852pt too wide) in paragraph at lines 199--199
+[58]
+Overfull \hbox (1.35852pt too wide) in paragraph at lines 194--194
 []\TU/lmr/m/it/12 VM-Pro-tect Soft-ware\TU/lmr/m/n/12 . [On-line; ac-cessed 16. Jun. 2024]. 2024. \TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/12 https : / / vmpsoft .
  []
 
 
-Overfull \hbox (4.16359pt too wide) in paragraph at lines 199--199
+Overfull \hbox (4.16359pt too wide) in paragraph at lines 194--194
 []\TU/lmr/m/n/12 Babak Yade-gari, Brian Jo-han-nes-meyer, Ben Whitely, and Saumy
 a De-bray. “  A generic
  []
 
-[58] (./main.aux (./0-title.aux) (./abstract.aux) (./content.aux))
+[59]
+\openout2 = appendix.aux
+ (./appendix.tex
+Appendix A.
+[60
+
+
+
+]) [61] (./main.aux (./0-title.aux) (./abstract.aux) (./content.aux)
+(./appendix.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E9925421704E3AB435CC5D63A1CE4B6C;7203.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: A3A1A98CF9C2097F84ABD604C377312D;7216
+(rerunfilecheck)             After:  4614F5C8AAB99D4DA01FF57BDE058047;7312.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 39301 strings out of 476447
- 381700,2373549 words of node,token memory allocated
- 1241 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 6 glue, 4 kern, 1 glyph, 64 attribute, 83 glue_spec
-, 64 attribute_list, 1 write, 54 pdf_action nodes
-   avail lists: 1:2,2:5018,3:444,4:6423,5:6826,6:88,7:16318,8:105,9:19925,10:46,
-11:1235
- 60152 multiletter control sequences out of 65536+600000
- 67 fonts using 19977387 bytes
+ 39450 strings out of 476447
+ 381696,2373549 words of node,token memory allocated
+ 1291 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 glyph, 70 attribute, 83 glue_spec
+, 70 attribute_list, 3 write, 55 pdf_action nodes
+   avail lists: 1:2,2:4994,3:442,4:5677,5:5776,6:87,7:15872,8:105,9:16933,10:46,
+11:1124
+ 60239 multiletter control sequences out of 65536+600000
+ 67 fonts using 19977311 bytes
  91i,12n,101p,2485b,4098s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></usr/share
 /texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf
@@ -1755,10 +1771,10 @@ tf></usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/sh
 are/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-
 dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (58 pages, 1460008 bytes).
+Output written on main.pdf (61 pages, 1467843 bytes).
 
-PDF statistics: 1367 PDF objects out of 1440 (max. 8388607)
- 1235 compressed objects within 13 object streams
- 458 named destinations out of 1000 (max. 131072)
- 401 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1438 PDF objects out of 1440 (max. 8388607)
+ 1301 compressed objects within 14 object streams
+ 503 named destinations out of 1000 (max. 131072)
+ 409 words of extra memory for PDF output out of 10000 (max. 100000000)
 

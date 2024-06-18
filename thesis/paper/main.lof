@@ -13,5 +13,6 @@
 \setforeignlanguage {english}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Diagram describing the components of the angr framework and how they interact. Binary code is loaded by the CLE module. The loaded information is lifted into VEX \gls {IR} through the PyVEX module. Symbolic execution is achieved through the SimEngine. Syscalls and external library calls are relayed through the SimOS module. Claripy takes care of modeling the symbolic state and constraint solving during execution, using an \gls {SMT} solver. Information about the target's architecture is provided to all mentioned components by the Archinfo module. \blx@tocontentsinit {0}\cite {angr} }}{33}{figure.4.2}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \gls {CFG} generated with a custom algorithm from the bytecode of the \lstinline [mathescape]{vmwhere} sample.}}{40}{figure.4.3}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A portion of the recovered \gls {CFG} of the \lstinline [mathescape]{vmwhere} sample. We notice circled in green an inlined function which applies a number of transformation to an input value read from \lstinline [mathescape]{stdin}.}}{40}{figure.4.3}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
