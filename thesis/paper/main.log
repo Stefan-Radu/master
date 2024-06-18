@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Arch Linux)  (format=lualatex 2024.6.10)  16 JUN 2024 10:39
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Arch Linux)  (format=lualatex 2024.6.18)  18 JUN 2024 17:53
  restricted system commands enabled.
 **main
 (./main.tex
@@ -96,13 +96,93 @@ eX
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/02/07 v24.2 The Babel package
+
+(/usr/share/texmf-dist/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@dumylang=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@nohyphenation=\language3
+\l@vietnamese=\language4
+\l@hebrew=\language5
+\l@croatian=\language6
+\l@danish=\language7
+\l@dutch=\language8
+\l@estonian=\language9
+\l@finnish=\language10
+\l@schoolfinnish=\language11
+\l@friulan=\language12
+\l@hungarian=\language13
+\l@icelandic=\language14
+\l@irish=\language15
+\l@kurmanji=\language16
+\l@classiclatin=\language17
+\l@latin=\language18
+\l@liturgicallatin=\language19
+\l@latvian=\language20
+\l@lithuanian=\language21
+\l@macedonian=\language22
+\l@bokmal=\language23
+\l@nynorsk=\language24
+\l@occitan=\language25
+\l@piedmontese=\language26
+\l@romanian=\language27
+\l@romansh=\language28
+\l@slovenian=\language29
+\l@swedish=\language30
+\l@turkish=\language31
+\l@uppersorbian=\language32
+\l@welsh=\language33
+\l@german-x-2024-02-28=\language34
+\l@ngerman-x-2024-02-28=\language35
+\l@german=\language36
+\l@ngerman=\language37
+\l@swissgerman=\language38
+\babelcatcodetablenum=\catcodetable14
+\bbl@pattcodes=\catcodetable15
+)
+\babel@savecnt=\count273
+\U@D=\dimen143
+\l@unhyphenated=\language39
+
+(/usr/share/texmf-dist/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+)
+(/usr/share/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
+)
+(/usr/share/texmf-dist/tex/generic/babel-romanian/romanian.ldf
+Language: romanian 2021/04/04 v1.2m Romanian support from the babel system
+
+(/usr/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ro.tex
+UTF-8 Romanian hyphenation patterns
+(/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ro.tex))))
+(/usr/share/texmf-dist/tex/generic/babel/locale/ro/babel-romanian.tex
+Package babel Info: Importing font and identification data for romanian
+(babel)             from babel-ro.ini. Reported on input line 11.
+)
+(/usr/share/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
 (/usr/share/texmf-dist/tex/latex/polyglossia/polyglossia.sty
 Package: polyglossia 2024/03/07 v2.1 Modern multilingual typesetting with XeLaT
 eX and LuaLaTeX
 
 (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count273
+\etb@tempcnta=\count274
 )
 (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
@@ -113,7 +193,7 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@tempa@toks=\toks18
 
 (/usr/share/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count274
+\XKV@depth=\count275
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
@@ -124,10 +204,10 @@ Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX
 
 (/usr/share/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
 Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
-\@catcodetablestackcnt=\count275
+\@catcodetablestackcnt=\count276
 )
-\CatcodeTableOther=\catcodetable14
-\CatcodeTableExpl=\catcodetable15
+\CatcodeTableOther=\catcodetable16
+\CatcodeTableExpl=\catcodetable17
 )
 Lua module: polyglossia 2013/05/11 1.3 Polyglossia
 (/usr/share/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
@@ -164,23 +244,23 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks21
-\ex@=\dimen143
+\ex@=\dimen144
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen144
+\pmbraise@=\dimen145
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count276
+\inf@bad=\count277
 LaTeX Info: Redefining \frac on input line 236.
-\uproot@=\count277
-\leftroot@=\count278
+\uproot@=\count278
+\leftroot@=\count279
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count279
-\DOTSCASE@=\count280
+\classnum@=\count280
+\DOTSCASE@=\count281
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -190,30 +270,30 @@ LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen145
+\big@size=\dimen146
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count281
+\macc@depth=\count282
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count282
+\c@MaxMatrixCols=\count283
 \dotsspace@=\muskip16
-\c@parentequation=\count283
-\dspbrk@lvl=\count284
+\c@parentequation=\count284
+\dspbrk@lvl=\count285
 \tag@help=\toks22
-\row@=\count285
-\column@=\count286
-\maxfields@=\count287
+\row@=\count286
+\column@=\count287
+\maxfields@=\count288
 \andhelp@=\toks23
-\eqnshift@=\dimen146
-\alignsep@=\dimen147
-\tagshift@=\dimen148
-\tagwidth@=\dimen149
-\totwidth@=\dimen150
-\lineht@=\dimen151
+\eqnshift@=\dimen147
+\alignsep@=\dimen148
+\tagshift@=\dimen149
+\tagwidth@=\dimen150
+\totwidth@=\dimen151
+\lineht@=\dimen152
 \@envbody=\toks24
 \multlinegap=\skip51
 \multlinetaggap=\skip52
@@ -223,7 +303,7 @@ LaTeX Info: Redefining \] on input line 2954.
 )
 (/usr/share/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count288
+\c@su@anzahl=\count289
 )
 (/usr/share/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2019/09/27 v2.32 (NLCT)
@@ -234,19 +314,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/share/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count289
+\actioncount=\count290
 )
 (/usr/share/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count290
-\FP@xia=\count291
-\FP@xib=\count292
-\FP@xfa=\count293
-\FP@xfb=\count294
-\FP@rega=\count295
-\FP@regb=\count296
-\FP@regs=\count297
-\FP@times=\count298
+\FP@xs=\count291
+\FP@xia=\count292
+\FP@xib=\count293
+\FP@xfa=\count294
+\FP@xfb=\count295
+\FP@rega=\count296
+\FP@regb=\count297
+\FP@regs=\count298
+\FP@times=\count299
 )
 (/usr/share/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -265,7 +345,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/share/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count299
+\FPseed=\count300
 )
 (/usr/share/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -277,32 +357,37 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks26
-\@dtl@tmpcount=\count300
+\@dtl@tmpcount=\count301
 \dtl@tmplength=\skip53
-\dtl@sortresult=\count301
-\@dtl@numgrpsepcount=\count302
-\@dtl@datatype=\count303
-\dtl@codeA=\count304
-\dtl@codeB=\count305
-\@dtl@foreach@level=\count306
+\dtl@sortresult=\count302
+\@dtl@numgrpsepcount=\count303
+\@dtl@datatype=\count304
+\dtl@codeA=\count305
+\dtl@codeB=\count306
+\@dtl@foreach@level=\count307
 )
 (/usr/share/texmf-dist/tex/latex/tracklang/tracklang.sty
 Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
 
-(/usr/share/texmf-dist/tex/generic/tracklang/tracklang.tex)
+(/usr/share/texmf-dist/tex/generic/tracklang/tracklang.tex))
 
-Package tracklang Warning: Can't detect polyglossia main language. It may not h
-ave been set yet on input line 211.
+Package glossaries Warning: No language module detected for `romanian'.
+(glossaries)                Language modules need to be installed separately.
+(glossaries)                Please check on CTAN for a bundle called
+(glossaries)                `glossaries-romanian' or similar.
 
+(/usr/share/texmf-dist/tex/latex/glossaries-english/glossaries-english.ldf
+File: glossaries-english.ldf 2014/11/23 v1.0
 )
-\gls@level=\count307
+\gls@level=\count308
 \@gls@tmpb=\toks27
 \gls@tmplen=\skip54
 \glskeylisttok=\toks28
 \glslabeltok=\toks29
 \glsshorttok=\toks30
 \glslongtok=\toks31
- (/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
+
+(/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
 Package: glossary-hypernav 2023/09/29 v4.53 (NLCT)
 )
 (/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
@@ -318,17 +403,17 @@ Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \LTright=\skip57
 \LTpre=\skip58
 \LTpost=\skip59
-\LTchunksize=\count308
-\LTcapwidth=\dimen152
+\LTchunksize=\count309
+\LTcapwidth=\dimen153
 \LT@head=\box54
 \LT@firsthead=\box55
 \LT@foot=\box56
 \LT@lastfoot=\box57
 \LT@gbox=\box58
-\LT@cols=\count309
-\LT@rows=\count310
-\c@LT@tables=\count311
-\c@LT@chunks=\count312
+\LT@cols=\count310
+\LT@rows=\count311
+\c@LT@tables=\count312
+\c@LT@chunks=\count313
 \LT@p@ftn=\toks32
 )
 \glsdescwidth=\skip60
@@ -339,36 +424,26 @@ Package: glossary-super 2023/09/29 v4.53 (NLCT)
 
 (/usr/share/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
-\c@tracingst=\count313
-\ST@wd=\dimen153
+\c@tracingst=\count314
+\ST@wd=\dimen154
 \ST@rightskip=\skip62
 \ST@leftskip=\skip63
 \ST@parfillskip=\skip64
-\ST@pageleft=\dimen154
-\ST@headht=\dimen155
-\ST@tailht=\dimen156
-\ST@pagesofar=\dimen157
-\ST@pboxht=\dimen158
-\ST@lineht=\dimen159
-\ST@prevht=\dimen160
-\ST@toadd=\dimen161
-\ST@dimen=\dimen162
+\ST@pageleft=\dimen155
+\ST@headht=\dimen156
+\ST@tailht=\dimen157
+\ST@pagesofar=\dimen158
+\ST@pboxht=\dimen159
+\ST@lineht=\dimen160
+\ST@prevht=\dimen161
+\ST@toadd=\dimen162
+\ST@dimen=\dimen163
 \ST@pbox=\box59
 ))
 (/usr/share/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2023/09/29 v4.53 (NLCT)
 \glstreeindent=\skip65
 ))
-(/usr/share/texmf-dist/tex/latex/lipsum/lipsum.sty
-(/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2024-02-18 LaTeX2e option processing using LaTeX3 keys
-)
-Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count314
-\l__lipsum_a_int=\count315
-\l__lipsum_b_int=\count316
-
-(/usr/share/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
 (/usr/share/texmf-dist/tex/latex/polyglossia/gloss-english.ldf
 File: gloss-english.ldf polyglossia: module for English
 Package polyglossia Info: Option: English, variant=american.
@@ -377,26 +452,15 @@ Package polyglossia Info: Default language is english.
 
 (/usr/share/texmf-dist/tex/latex/polyglossia/gloss-romanian.ldf
 File: gloss-romanian.ldf polyglossia: module for Romanian
-
-Module polyglossia Warning: Language romanian not found in language.dat.lua on i
-nput line 13
-Module polyglossia Warning: Language romanian not found in language.dat.lua on i
-nput line 13
-
-Package polyglossia Warning: No hyphenation patterns were loaded for `romanian'
-
-(polyglossia)                I will use \language=\l@nohyphenation instead on i
-nput line 13.
-
-\l@romanian = a dialect from \language\l@nohyphenation 
-) (/usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
+)
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
-\csq@reset=\count317
-\csq@gtype=\count318
-\csq@glevel=\count319
-\csq@qlevel=\count320
-\csq@maxlvl=\count321
-\csq@tshold=\count322
+\csq@reset=\count315
+\csq@gtype=\count316
+\csq@glevel=\count317
+\csq@qlevel=\count318
+\csq@maxlvl=\count319
+\csq@tshold=\count320
 \csq@ltx@everypar=\toks33
 
 (/usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -436,7 +500,7 @@ Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
 (/usr/share/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count323
+\lrq@indent=\count321
 
 (/usr/share/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -445,49 +509,49 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count324
-\c@listtotal=\count325
-\c@listcount=\count326
-\c@liststart=\count327
-\c@liststop=\count328
-\c@citecount=\count329
-\c@citetotal=\count330
-\c@multicitecount=\count331
-\c@multicitetotal=\count332
-\c@instcount=\count333
-\c@maxnames=\count334
-\c@minnames=\count335
-\c@maxitems=\count336
-\c@minitems=\count337
-\c@citecounter=\count338
-\c@maxcitecounter=\count339
-\c@savedcitecounter=\count340
-\c@uniquelist=\count341
-\c@uniquename=\count342
-\c@refsection=\count343
-\c@refsegment=\count344
-\c@maxextratitle=\count345
-\c@maxextratitleyear=\count346
-\c@maxextraname=\count347
-\c@maxextradate=\count348
-\c@maxextraalpha=\count349
-\c@abbrvpenalty=\count350
-\c@highnamepenalty=\count351
-\c@lownamepenalty=\count352
-\c@maxparens=\count353
-\c@parenlevel=\count354
-\blx@tempcnta=\count355
-\blx@tempcntb=\count356
-\blx@tempcntc=\count357
-\c@blx@maxsection=\count358
-\blx@maxsegment@0=\count359
-\blx@notetype=\count360
-\blx@parenlevel@text=\count361
-\blx@parenlevel@foot=\count362
-\blx@sectionciteorder@0=\count363
-\blx@sectionciteorderinternal@0=\count364
-\blx@entrysetcounter=\count365
-\blx@biblioinstance=\count366
+\c@tabx@nest=\count322
+\c@listtotal=\count323
+\c@listcount=\count324
+\c@liststart=\count325
+\c@liststop=\count326
+\c@citecount=\count327
+\c@citetotal=\count328
+\c@multicitecount=\count329
+\c@multicitetotal=\count330
+\c@instcount=\count331
+\c@maxnames=\count332
+\c@minnames=\count333
+\c@maxitems=\count334
+\c@minitems=\count335
+\c@citecounter=\count336
+\c@maxcitecounter=\count337
+\c@savedcitecounter=\count338
+\c@uniquelist=\count339
+\c@uniquename=\count340
+\c@refsection=\count341
+\c@refsegment=\count342
+\c@maxextratitle=\count343
+\c@maxextratitleyear=\count344
+\c@maxextraname=\count345
+\c@maxextradate=\count346
+\c@maxextraalpha=\count347
+\c@abbrvpenalty=\count348
+\c@highnamepenalty=\count349
+\c@lownamepenalty=\count350
+\c@maxparens=\count351
+\c@parenlevel=\count352
+\blx@tempcnta=\count353
+\blx@tempcntb=\count354
+\blx@tempcntc=\count355
+\c@blx@maxsection=\count356
+\blx@maxsegment@0=\count357
+\blx@notetype=\count358
+\blx@parenlevel@text=\count359
+\blx@parenlevel@foot=\count360
+\blx@sectionciteorder@0=\count361
+\blx@sectionciteorderinternal@0=\count362
+\blx@entrysetcounter=\count363
+\blx@biblioinstance=\count364
 \labelnumberwidth=\skip66
 \labelalphawidth=\skip67
 \biblabelsep=\skip68
@@ -496,12 +560,12 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \bibinitsep=\skip71
 \bibparsep=\skip72
 \bibhang=\skip73
-\blx@bcfin=\read2
+\blx@bcfin=\read3
 \blx@bcfout=\write3
-\blx@langwohyphens=\language2
-\c@mincomprange=\count367
-\c@maxcomprange=\count368
-\c@mincompwidth=\count369
+\blx@langwohyphens=\language40
+\c@mincomprange=\count365
+\c@maxcomprange=\count366
+\c@mincompwidth=\count367
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -510,74 +574,74 @@ File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count370
-\c@savedafterword=\count371
-\c@annotator=\count372
-\c@savedannotator=\count373
-\c@author=\count374
-\c@savedauthor=\count375
-\c@bookauthor=\count376
-\c@savedbookauthor=\count377
-\c@commentator=\count378
-\c@savedcommentator=\count379
-\c@editor=\count380
-\c@savededitor=\count381
-\c@editora=\count382
-\c@savededitora=\count383
-\c@editorb=\count384
-\c@savededitorb=\count385
-\c@editorc=\count386
-\c@savededitorc=\count387
-\c@foreword=\count388
-\c@savedforeword=\count389
-\c@holder=\count390
-\c@savedholder=\count391
-\c@introduction=\count392
-\c@savedintroduction=\count393
-\c@namea=\count394
-\c@savednamea=\count395
-\c@nameb=\count396
-\c@savednameb=\count397
-\c@namec=\count398
-\c@savednamec=\count399
-\c@translator=\count400
-\c@savedtranslator=\count401
-\c@shortauthor=\count402
-\c@savedshortauthor=\count403
-\c@shorteditor=\count404
-\c@savedshorteditor=\count405
-\c@labelname=\count406
-\c@savedlabelname=\count407
-\c@institution=\count408
-\c@savedinstitution=\count409
-\c@lista=\count410
-\c@savedlista=\count411
-\c@listb=\count412
-\c@savedlistb=\count413
-\c@listc=\count414
-\c@savedlistc=\count415
-\c@listd=\count416
-\c@savedlistd=\count417
-\c@liste=\count418
-\c@savedliste=\count419
-\c@listf=\count420
-\c@savedlistf=\count421
-\c@location=\count422
-\c@savedlocation=\count423
-\c@organization=\count424
-\c@savedorganization=\count425
-\c@origlocation=\count426
-\c@savedoriglocation=\count427
-\c@origpublisher=\count428
-\c@savedorigpublisher=\count429
-\c@publisher=\count430
-\c@savedpublisher=\count431
-\c@language=\count432
-\c@savedlanguage=\count433
-\c@origlanguage=\count434
-\c@savedoriglanguage=\count435
-\c@pageref=\count436
-\c@savedpageref=\count437
+\c@afterword=\count368
+\c@savedafterword=\count369
+\c@annotator=\count370
+\c@savedannotator=\count371
+\c@author=\count372
+\c@savedauthor=\count373
+\c@bookauthor=\count374
+\c@savedbookauthor=\count375
+\c@commentator=\count376
+\c@savedcommentator=\count377
+\c@editor=\count378
+\c@savededitor=\count379
+\c@editora=\count380
+\c@savededitora=\count381
+\c@editorb=\count382
+\c@savededitorb=\count383
+\c@editorc=\count384
+\c@savededitorc=\count385
+\c@foreword=\count386
+\c@savedforeword=\count387
+\c@holder=\count388
+\c@savedholder=\count389
+\c@introduction=\count390
+\c@savedintroduction=\count391
+\c@namea=\count392
+\c@savednamea=\count393
+\c@nameb=\count394
+\c@savednameb=\count395
+\c@namec=\count396
+\c@savednamec=\count397
+\c@translator=\count398
+\c@savedtranslator=\count399
+\c@shortauthor=\count400
+\c@savedshortauthor=\count401
+\c@shorteditor=\count402
+\c@savedshorteditor=\count403
+\c@labelname=\count404
+\c@savedlabelname=\count405
+\c@institution=\count406
+\c@savedinstitution=\count407
+\c@lista=\count408
+\c@savedlista=\count409
+\c@listb=\count410
+\c@savedlistb=\count411
+\c@listc=\count412
+\c@savedlistc=\count413
+\c@listd=\count414
+\c@savedlistd=\count415
+\c@liste=\count416
+\c@savedliste=\count417
+\c@listf=\count418
+\c@savedlistf=\count419
+\c@location=\count420
+\c@savedlocation=\count421
+\c@organization=\count422
+\c@savedorganization=\count423
+\c@origlocation=\count424
+\c@savedoriglocation=\count425
+\c@origpublisher=\count426
+\c@savedorigpublisher=\count427
+\c@publisher=\count428
+\c@savedpublisher=\count429
+\c@language=\count430
+\c@savedlanguage=\count431
+\c@origlanguage=\count432
+\c@savedoriglanguage=\count433
+\c@pageref=\count434
+\c@savedpageref=\count435
 \shorthandwidth=\skip74
 \shortjournalwidth=\skip75
 \shortserieswidth=\skip76
@@ -607,19 +671,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/share/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-\c@textcitecount=\count438
-\c@textcitetotal=\count439
-\c@textcitemaxnames=\count440
-\c@biburlbigbreakpenalty=\count441
-\c@biburlbreakpenalty=\count442
-\c@biburlnumpenalty=\count443
-\c@biburlucpenalty=\count444
-\c@biburllcpenalty=\count445
+\c@textcitecount=\count436
+\c@textcitetotal=\count437
+\c@textcitemaxnames=\count438
+\c@biburlbigbreakpenalty=\count439
+\c@biburlbreakpenalty=\count440
+\c@biburlnumpenalty=\count441
+\c@biburlucpenalty=\count442
+\c@biburllcpenalty=\count443
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count446
+\c@smartand=\count444
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -631,8 +695,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count447
-\c@bbx:relatedtotal=\count448
+\c@bbx:relatedcount=\count445
+\c@bbx:relatedtotal=\count446
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -677,17 +741,17 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count449
-\Gm@cntv=\count450
-\c@Gm@tempcnt=\count451
-\Gm@bindingoffset=\dimen163
-\Gm@wd@mp=\dimen164
-\Gm@odd@mp=\dimen165
-\Gm@even@mp=\dimen166
-\Gm@layoutwidth=\dimen167
-\Gm@layoutheight=\dimen168
-\Gm@layouthoffset=\dimen169
-\Gm@layoutvoffset=\dimen170
+\Gm@cnth=\count447
+\Gm@cntv=\count448
+\c@Gm@tempcnt=\count449
+\Gm@bindingoffset=\dimen164
+\Gm@wd@mp=\dimen165
+\Gm@odd@mp=\dimen166
+\Gm@even@mp=\dimen167
+\Gm@layoutwidth=\dimen168
+\Gm@layoutheight=\dimen169
+\Gm@layouthoffset=\dimen170
+\Gm@layoutvoffset=\dimen171
 \Gm@dimlist=\toks35
 )
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -707,30 +771,30 @@ Package graphics Info: Driver file: luatex.def on input line 107.
 (/usr/share/texmf-dist/tex/latex/graphics-def/luatex.def
 File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen171
-\Gin@req@width=\dimen172
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count452
+\lst@mode=\count450
 \lst@gtempboxa=\box60
 \lst@token=\toks36
-\lst@length=\count453
-\lst@currlwidth=\dimen173
-\lst@column=\count454
-\lst@pos=\count455
-\lst@lostspace=\dimen174
-\lst@width=\dimen175
-\lst@newlines=\count456
-\lst@lineno=\count457
-\lst@maxwidth=\dimen176
+\lst@length=\count451
+\lst@currlwidth=\dimen174
+\lst@column=\count452
+\lst@pos=\count453
+\lst@lostspace=\dimen175
+\lst@width=\dimen176
+\lst@newlines=\count454
+\lst@lineno=\count455
+\lst@maxwidth=\dimen177
 
 (/usr/share/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-\c@lstnumber=\count458
-\lst@skipnumbers=\count459
+\c@lstnumber=\count456
+\lst@skipnumbers=\count457
 \lst@framebox=\box61
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
@@ -762,11 +826,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count460
+\c@section@level=\count458
 )
-\@linkdim=\dimen177
-\Hy@linkcounter=\count461
-\Hy@pagecounter=\count462
+\@linkdim=\dimen178
+\Hy@linkcounter=\count459
+\Hy@pagecounter=\count460
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
@@ -774,7 +838,7 @@ File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count463
+\Hy@SavedSpaceFactor=\count461
 
 (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
@@ -787,9 +851,9 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count464
+\c@Hy@tempcnt=\count462
 LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen178
+\XeTeXLinkMargin=\dimen179
 
 (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -798,9 +862,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count465
-\Field@Width=\dimen179
-\Fld@charsize=\dimen180
+\Fld@menulength=\count463
+\Field@Width=\dimen180
+\Fld@charsize=\dimen181
 Package hyperref Info: Hyper figures OFF on input line 6063.
 Package hyperref Info: Link nesting OFF on input line 6068.
 Package hyperref Info: Hyper index ON on input line 6071.
@@ -813,9 +877,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count466
-\c@Item=\count467
-\c@Hfootnote=\count468
+\Hy@abspage=\count464
+\c@Item=\count465
+\c@Hfootnote=\count466
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
@@ -831,8 +895,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count469
-\c@bookmark@seq@number=\count470
+\Fld@listcount=\count467
+\c@bookmark@seq@number=\count468
 
 (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
@@ -850,31 +914,31 @@ Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
 
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count471
-\calc@Bcount=\count472
-\calc@Adimen=\dimen181
-\calc@Bdimen=\dimen182
+\calc@Acount=\count469
+\calc@Bcount=\count470
+\calc@Adimen=\dimen182
+\calc@Bdimen=\dimen183
 \calc@Askip=\skip89
 \calc@Bskip=\skip90
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count473
+\calc@Ccount=\count471
 \calc@Cskip=\skip91
 )
 (/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count474
-\l_MT_multwidth_dim=\dimen183
+\g_MT_multlinerow_int=\count472
+\l_MT_multwidth_dim=\dimen184
 \origjot=\skip92
-\l_MT_shortvdotswithinadjustabove_dim=\dimen184
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen185
-\l_MT_above_intertext_sep=\dimen186
-\l_MT_below_intertext_sep=\dimen187
-\l_MT_above_shortintertext_sep=\dimen188
-\l_MT_below_shortintertext_sep=\dimen189
+\l_MT_shortvdotswithinadjustabove_dim=\dimen185
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen186
+\l_MT_above_intertext_sep=\dimen187
+\l_MT_below_intertext_sep=\dimen188
+\l_MT_above_shortintertext_sep=\dimen189
+\l_MT_below_shortintertext_sep=\dimen190
 \xmathstrut@box=\box62
-\xmathstrut@dim=\dimen190
+\xmathstrut@dim=\dimen191
 )
 (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math.sty
 Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
@@ -883,6 +947,9 @@ Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaL
 aTeX
 
+(/usr/share/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2024-02-18 LaTeX2e option processing using LaTeX3 keys
+)
 (/usr/share/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 
@@ -895,17 +962,17 @@ Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting wit
 h LuaLaTeX
 Lua module: lualatex-math 2013/08/03 1.3 Patches for mathematics typesetting wit
 h LuaLaTeX)
-\g__um_fam_int=\count475
-\g__um_fonts_used_int=\count476
-\l__um_primecount_int=\count477
+\g__um_fam_int=\count473
+\g__um_fonts_used_int=\count474
+\l__um_primecount_int=\count475
 \g__um_primekern_muskip=\muskip22
 
 (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
 (/usr/share/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count478
-\c@@ppsavesec=\count479
-\c@@ppsaveapp=\count480
+\c@@pps=\count476
+\c@@ppsavesec=\count477
+\c@@ppsaveapp=\count478
 )
 (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
@@ -953,24 +1020,24 @@ Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 ))
 (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count481
+\c@tracingmulticols=\count479
 \mult@box=\box64
-\multicol@leftmargin=\dimen191
-\c@unbalance=\count482
-\c@collectmore=\count483
-\doublecol@number=\count484
-\multicoltolerance=\count485
-\multicolpretolerance=\count486
-\full@width=\dimen192
-\page@free=\dimen193
-\premulticols=\dimen194
-\postmulticols=\dimen195
+\multicol@leftmargin=\dimen192
+\c@unbalance=\count480
+\c@collectmore=\count481
+\doublecol@number=\count482
+\multicoltolerance=\count483
+\multicolpretolerance=\count484
+\full@width=\dimen193
+\page@free=\dimen194
+\premulticols=\dimen195
+\postmulticols=\dimen196
 \multicolsep=\skip102
 \multicolbaselineskip=\skip103
 \partial@page=\box65
 \last@line=\box66
 \mc@boxedresult=\box67
-\maxbalancingoverflow=\dimen196
+\maxbalancingoverflow=\dimen197
 \mult@rightbox=\box68
 \mult@grightbox=\box69
 \mult@firstbox=\box70
@@ -1011,15 +1078,15 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box105
 \@tempa=\box106
 \@tempa=\box107
-\c@minrows=\count487
-\c@columnbadness=\count488
-\c@finalcolumnbadness=\count489
-\last@try=\dimen197
-\multicolovershoot=\dimen198
-\multicolundershoot=\dimen199
+\c@minrows=\count485
+\c@columnbadness=\count486
+\c@finalcolumnbadness=\count487
+\last@try=\dimen198
+\multicolovershoot=\dimen199
+\multicolundershoot=\dimen256
 \mult@nat@firstbox=\box108
 \colbreak@box=\box109
-\mc@col@check@num=\count490
+\mc@col@check@num=\count488
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
@@ -1037,11 +1104,11 @@ LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 \glo@main@file=\write5
 
 \openout5 = main.glo
-Package glossaries Info: Writing glossary file main.glo on input line 154.
+Package glossaries Info: Writing glossary file main.glo on input line 153.
 \glo@acronym@file=\write6
 
 \openout6 = main.acn
-Package glossaries Info: Writing glossary file main.acn on input line 154.
+Package glossaries Info: Writing glossary file main.acn on input line 153.
  (./glossary.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'polyglossia' package.
@@ -1051,26 +1118,29 @@ Package csquotes Info: Redefining alias 'default' -> 'american'.
 (./main.aux (./0-title.aux) (./abstract.aux) (./content.aux))
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Info: Redefining \rmfamily on input line 156.
+LaTeX Info: Redefining \sffamily on input line 156.
+LaTeX Info: Redefining \ttfamily on input line 156.
 Package biblatex Info: Trying to load language 'romanian'...
 Package biblatex Info: ... file 'romanian.lbx' found.
  (./romanian.lbx
@@ -1102,8 +1172,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 157.
-Package biblatex Info: Reference segment=0 on input line 157.
+Package biblatex Info: Reference section=0 on input line 156.
+Package biblatex Info: Reference segment=0 on input line 156.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1141,16 +1211,16 @@ Package biblatex Info: Reference segment=0 on input line 157.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count491
-\scratchdimen=\dimen256
+\scratchcounter=\count489
+\scratchdimen=\dimen257
 \scratchbox=\box110
-\nofMPsegments=\count492
-\nofMParguments=\count493
+\nofMPsegments=\count490
+\nofMParguments=\count491
 \everyMPshowfont=\toks37
-\MPscratchCnt=\count494
-\MPscratchDim=\dimen257
-\MPnumerator=\count495
-\makeMPintoPDFobject=\count496
+\MPscratchCnt=\count492
+\MPscratchDim=\dimen258
+\MPnumerator=\count493
+\makeMPintoPDFobject=\count494
 \everyMPtoPDFconversion=\toks38
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1161,27 +1231,27 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count497
-Package hyperref Info: Link coloring ON on input line 157.
+\c@lstlisting=\count495
+Package hyperref Info: Link coloring ON on input line 156.
  (./main.out)
 (./main.out)
 \@outlinefile=\write7
 
 \openout7 = main.out
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 157.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 157.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 157.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 157.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 157.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 157.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 156.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 157.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 156.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1225,16 +1295,16 @@ e=dflt;mathfontdimen=xetex;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 157.
+(Font)              `operators' in the math version `normal' on input line 156.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 157.
+ line 156.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 157.
+(Font)              `operators' in the math version `bold' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 157.
+t line 156.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1260,15 +1330,15 @@ e=dflt;mathfontdimen=xetex;mathfontdimen=tex2;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 157.
+(Font)              `symbols' in the math version `normal' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 157.
+t line 156.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 157.
+(Font)              `symbols' in the math version `bold' on input line 156.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 157.
+t line 156.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1295,22 +1365,22 @@ e=dflt;mathfontdimen=xetex;mathfontdimen=tex3;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-57.
+56.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 157.
+t line 156.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 157
+(Font)              `largesymbols' in the math version `bold' on input line 156
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 157.
+t line 156.
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-57.
+56.
  (/usr/share/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Info: Redefining \rmfamily on input line 157.
-LaTeX Info: Redefining \sffamily on input line 157.
-LaTeX Info: Redefining \ttfamily on input line 157.
+LaTeX Info: Redefining \rmfamily on input line 156.
+LaTeX Info: Redefining \sffamily on input line 156.
+LaTeX Info: Redefining \ttfamily on input line 156.
 
 \openout2 = 0-title.aux
 
@@ -1347,12 +1417,12 @@ LaTeX Info: Redefining \ttfamily on input line 157.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images/logo-ub.png, id=200, 145.2627pt x 179.35005pt>
+<./images/logo-ub.png, id=205, 145.2627pt x 179.35005pt>
 File: ./images/logo-ub.png Graphic file (type png)
 <use ./images/logo-ub.png>
 Package luatex.def Info: ./images/logo-ub.png  used on input line 9.
 (luatex.def)             Requested size: 96.73788pt x 119.44142pt.
-<./images/logo-fmi.png, id=201, 97.5645pt x 113.004pt>
+<./images/logo-fmi.png, id=206, 97.5645pt x 113.004pt>
 File: ./images/logo-fmi.png Graphic file (type png)
 <use ./images/logo-fmi.png>
 Package luatex.def Info: ./images/logo-fmi.png  used on input line 26.
@@ -1401,19 +1471,37 @@ es/logo-fmi.png>])
 
 \openout2 = abstract.aux
  (./abstract.tex
+LaTeX Info: Redefining \rmfamily on input line 2.
+LaTeX Info: Redefining \sffamily on input line 2.
+LaTeX Info: Redefining \ttfamily on input line 2.
 LaTeX Info: Redefining \rmfamily on input line 3.
 LaTeX Info: Redefining \sffamily on input line 3.
 LaTeX Info: Redefining \ttfamily on input line 3.
-LaTeX Info: Redefining \rmfamily on input line 4.
-LaTeX Info: Redefining \sffamily on input line 4.
-LaTeX Info: Redefining \ttfamily on input line 4.
-LaTeX Info: Redefining \rmfamily on input line 6.
-LaTeX Info: Redefining \sffamily on input line 6.
-LaTeX Info: Redefining \ttfamily on input line 6.
+
+Overfull \hbox (1.89375pt too wide) in paragraph at lines 6--7
+[]\TU/lmr/m/n/12 În aceas-tă lu-cra-re, ne pro-pu-nem să in-te-grăm, în pro
+-ce-sul de in-gi-ne-rie in-ver-să a malware-
+ []
+
 LaTeX Info: Redefining \rmfamily on input line 7.
 LaTeX Info: Redefining \sffamily on input line 7.
 LaTeX Info: Redefining \ttfamily on input line 7.
- [2
+LaTeX Info: Redefining \rmfamily on input line 7.
+LaTeX Info: Redefining \sffamily on input line 7.
+LaTeX Info: Redefining \ttfamily on input line 7.
+LaTeX Info: Redefining \rmfamily on input line 10.
+LaTeX Info: Redefining \sffamily on input line 10.
+LaTeX Info: Redefining \ttfamily on input line 10.
+LaTeX Info: Redefining \rmfamily on input line 11.
+LaTeX Info: Redefining \sffamily on input line 11.
+LaTeX Info: Redefining \ttfamily on input line 11.
+LaTeX Info: Redefining \rmfamily on input line 15.
+LaTeX Info: Redefining \sffamily on input line 15.
+LaTeX Info: Redefining \ttfamily on input line 15.
+LaTeX Info: Redefining \rmfamily on input line 15.
+LaTeX Info: Redefining \sffamily on input line 15.
+LaTeX Info: Redefining \ttfamily on input line 15.
+[2
 
 
 
@@ -1436,17 +1524,44 @@ LaTeX Info: Redefining \ttfamily on input line 4.
 LaTeX Info: Redefining \rmfamily on input line 5.
 LaTeX Info: Redefining \sffamily on input line 5.
 LaTeX Info: Redefining \ttfamily on input line 5.
+LaTeX Info: Redefining \rmfamily on input line 6.
+LaTeX Info: Redefining \sffamily on input line 6.
+LaTeX Info: Redefining \ttfamily on input line 6.
+LaTeX Info: Redefining \rmfamily on input line 7.
+LaTeX Info: Redefining \sffamily on input line 7.
+LaTeX Info: Redefining \ttfamily on input line 7.
+LaTeX Info: Redefining \rmfamily on input line 8.
+LaTeX Info: Redefining \sffamily on input line 8.
+LaTeX Info: Redefining \ttfamily on input line 8.
+LaTeX Info: Redefining \rmfamily on input line 9.
+LaTeX Info: Redefining \sffamily on input line 9.
+LaTeX Info: Redefining \ttfamily on input line 9.
+LaTeX Info: Redefining \rmfamily on input line 10.
+LaTeX Info: Redefining \sffamily on input line 10.
+LaTeX Info: Redefining \ttfamily on input line 10.
  [3
 
 
 
 
-])
+]
+LaTeX Info: Redefining \rmfamily on input line 65.
+LaTeX Info: Redefining \sffamily on input line 65.
+LaTeX Info: Redefining \ttfamily on input line 65.
+LaTeX Info: Redefining \rmfamily on input line 65.
+LaTeX Info: Redefining \sffamily on input line 65.
+LaTeX Info: Redefining \ttfamily on input line 65.
+LaTeX Info: Redefining \rmfamily on input line 66.
+LaTeX Info: Redefining \sffamily on input line 66.
+LaTeX Info: Redefining \ttfamily on input line 66.
+LaTeX Info: Redefining \rmfamily on input line 66.
+LaTeX Info: Redefining \sffamily on input line 66.
+LaTeX Info: Redefining \ttfamily on input line 66.
+)
 \tf@toc=\write8
 
 \openout8 = main.toc
-
-[4]
+ [4]
 \openout2 = content.aux
  (./content.tex
 Chapter 1.
@@ -1454,207 +1569,196 @@ Chapter 1.
 
 
 
-]
+] [6]
 Chapter 2.
-[6
+[7
 
 ]
-<./images/wanacry.png, id=299, 451.6875pt x 341.02406pt>
+<./images/wanacry.png, id=312, 451.6875pt x 341.02406pt>
 File: ./images/wanacry.png Graphic file (type png)
 <use ./images/wanacry.png>
-Package luatex.def Info: ./images/wanacry.png  used on input line 48.
+Package luatex.def Info: ./images/wanacry.png  used on input line 71.
 (luatex.def)             Requested size: 364.19667pt x 274.98431pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7] [8<./images/wanacry.png>] [9] [10]
+ [8] [9<./images/wanacry.png>] [10] [11]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 92.
- [11] [12] [13] (./code/fizz-buzz.tex)
-[14]
-
-LaTeX Warning: Reference `fig:see' on page 15 undefined on input line 200.
-
-<./images/SE.png, id=485, 1536.49031pt x 821.31844pt>
+nput line 115.
+ [12] [13] [14]
+(./code/fizz-buzz.tex) [15]
+<./images/SE.png, id=495, 1536.49031pt x 821.31844pt>
 File: ./images/SE.png Graphic file (type png)
 <use ./images/SE.png>
-Package luatex.def Info: ./images/SE.png  used on input line 204.
+Package luatex.def Info: ./images/SE.png  used on input line 223.
 (luatex.def)             Requested size: 455.24411pt x 243.33954pt.
-[15<./images/SE.png>] [16]
+ [16<./images/SE.png>] [17] [18]
 Chapter 3.
+<./images/dispatch.png, id=534, 396.7322pt x 261.97874pt>
+File: ./images/dispatch.png Graphic file (type png)
+<use ./images/dispatch.png>
+Package luatex.def Info: ./images/dispatch.png  used on input line 265.
+(luatex.def)             Requested size: 318.66948pt x 210.43474pt.
+[19
 
-LaTeX Warning: Reference `sharif2009' on page 17 undefined on input line 265.
-
-[17
-
-]
-
-LaTeX Warning: Reference `yadegari2015' on page 18 undefined on input line 269.
-
-
-[18]
-Overfull \hbox (2.78233pt too wide) in paragraph at lines 275--276
-\TU/lmr/m/n/12 Blazytko et al. came up in 2017 with Syn-thia [[][]6[][]], a tool
- which aims elim-i-nate virtualization-
- []
-
-[19]
+] [20<./images/dispatch.png>] [21] [22] [23]
 Chapter 4.
-[20
+[24
 
 ]
-<./images/cfg_vmwhere.png, id=546, 1723.1878pt x 650.43pt>
+<./images/cfg_vmwhere.png, id=612, 1723.1878pt x 650.43pt>
 File: ./images/cfg_vmwhere.png Graphic file (type png)
 <use ./images/cfg_vmwhere.png>
-Package luatex.def Info: ./images/cfg_vmwhere.png  used on input line 319.
+Package luatex.def Info: ./images/cfg_vmwhere.png  used on input line 331.
 (luatex.def)             Requested size: 455.24411pt x 171.83711pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[21] [22<./images/cfg_vmwhere.png>] [23] [24] [25] [26] [27]
-<./images/angr.png, id=691, 2438.35968pt x 1608.76031pt>
+ [25] [26<./images/cfg_vmwhere.png>] [27] [28] [29] [30] [31]
+<./images/angr.png, id=758, 2438.35968pt x 1608.76031pt>
 File: ./images/angr.png Graphic file (type png)
 <use ./images/angr.png>
-Package luatex.def Info: ./images/angr.png  used on input line 466.
+Package luatex.def Info: ./images/angr.png  used on input line 477.
 (luatex.def)             Requested size: 409.71692pt x 270.31898pt.
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
-) [28<./images/angr.png>]
-
-LaTeX Warning: Reference `angr_ex' on page 29 undefined on input line 503.
-
-[29] [30] [31] [32] [33]
-<./images/cfg.png, id=835, 753.5653pt x 839.38594pt>
+) [32] [33<./images/angr.png>] [34] [35] [36] [37] [38]
+<./images/cfg.png, id=915, 753.5653pt x 839.38594pt>
 File: ./images/cfg.png Graphic file (type png)
 <use ./images/cfg.png>
-Package luatex.def Info: ./images/cfg.png  used on input line 622.
+Package luatex.def Info: ./images/cfg.png  used on input line 633.
 (luatex.def)             Requested size: 364.19667pt x 405.6672pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Reference `TODO' on page 34 undefined on input line 627.
-
-[34] [35<./images/cfg.png>]
-
-LaTeX Warning: Reference `TODO' on page 36 undefined on input line 657.
-
-[36] [37]
-
-LaTeX Warning: Reference `miasm1' on page 38 undefined on input line 676.
-
-
-LaTeX Warning: Reference `lst:cond_jump' on page 38 undefined on input line 678
-.
-
-
-Overfull \hbox (3.76344pt too wide) in paragraph at lines 678--679
-\TU/lmr/m/n/12 with con-di-tion-als. This hap-pened be-cause there is no re-li-a
-ble method which the []
- []
-
-[38] [39] [40] [41]
+ [39] [40<./images/cfg.png>] [41] [42] [43]
+[44] [45] [46]
 Chapter 5.
-) [42
+) [47
 
-] (./main.acr [43
+] (./main.acr
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textenglish' on input line 1.
+
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
+[48
 
 
 
 
-]) (./main.gls [44]) [45
+]) (./main.gls [49]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textenglish' on input line 1.
+
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
+) [50
 
 
-] (./main.lol [46
+] (./main.lol [51
 
 ])
 \tf@lol=\write9
 
 \openout9 = main.lol
- [47]
-(./main.lof
+ [52] (./main.lof
 LaTeX Info: Redefining \rmfamily on input line 3.
 LaTeX Info: Redefining \sffamily on input line 3.
 LaTeX Info: Redefining \ttfamily on input line 3.
 LaTeX Info: Redefining \rmfamily on input line 5.
 LaTeX Info: Redefining \sffamily on input line 5.
 LaTeX Info: Redefining \ttfamily on input line 5.
-LaTeX Info: Redefining \rmfamily on input line 9.
-LaTeX Info: Redefining \sffamily on input line 9.
-LaTeX Info: Redefining \ttfamily on input line 9.
+LaTeX Info: Redefining \rmfamily on input line 8.
+LaTeX Info: Redefining \sffamily on input line 8.
+LaTeX Info: Redefining \ttfamily on input line 8.
 LaTeX Info: Redefining \rmfamily on input line 11.
 LaTeX Info: Redefining \sffamily on input line 11.
 LaTeX Info: Redefining \ttfamily on input line 11.
 LaTeX Info: Redefining \rmfamily on input line 13.
 LaTeX Info: Redefining \sffamily on input line 13.
 LaTeX Info: Redefining \ttfamily on input line 13.
+LaTeX Info: Redefining \rmfamily on input line 15.
+LaTeX Info: Redefining \sffamily on input line 15.
+LaTeX Info: Redefining \ttfamily on input line 15.
 )
 \tf@lof=\write10
 
 \openout10 = main.lof
- [48
+ [53
 
-] [49
+] [54
 
-] [50]
-Overfull \hbox (8.34657pt too wide) in paragraph at lines 200--200
-[]\TU/lmr/m/it/12 Val-grind Home\TU/lmr/m/n/12 . [On-line; ac-cessed 13. Jun. 20
-24]. June 2024. \TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/12 https 
-: / / valgrind .
+]
+Overfull \hbox (83.6379pt too wide) in paragraph at lines 199--199
+\TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/12 https : / / github . co
+m / corkami / pics / blob / 28cb0226093ed57b348723bc473cea0162dad366 /
  []
 
-[51]
-Overfull \hbox (4.16359pt too wide) in paragraph at lines 200--200
+
+Overfull \hbox (1.67862pt too wide) in paragraph at lines 199--199
+[]\TU/lmr/m/it/12 ImaginaryCTF-2023-Challenges\TU/lmr/m/n/12 . [On-line; ac-cess
+ed 15. Jun. 2024]. 2024. \TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/
+12 https :
+ []
+
+[55] [56]
+Overfull \hbox (3.34656pt too wide) in paragraph at lines 199--199
+[]\TU/lmr/m/it/12 UIUCTF-2023-Public\TU/lmr/m/n/12 . [On-line; ac-cessed 15. Jun
+. 2024]. 2023. \TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/12 https : / / github .
+ []
+
+[57]
+Overfull \hbox (1.35852pt too wide) in paragraph at lines 199--199
+[]\TU/lmr/m/it/12 VM-Pro-tect Soft-ware\TU/lmr/m/n/12 . [On-line; ac-cessed 16. Jun. 2024]. 2024. \TU/lmr/m/sc/12 url\TU/lmr/m/n/12 : [][]$\TU/lmtt/m/n/12 https : / / vmpsoft .
+ []
+
+
+Overfull \hbox (4.16359pt too wide) in paragraph at lines 199--199
 []\TU/lmr/m/n/12 Babak Yade-gari, Brian Jo-han-nes-meyer, Ben Whitely, and Saumy
 a De-bray. “  A generic
  []
 
-[52] (./main.aux (./0-title.aux) (./abstract.aux) (./content.aux))
+[58] (./main.aux (./0-title.aux) (./abstract.aux) (./content.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 333B5F67CA319731B9AEB29663D38028;7009.
+(rerunfilecheck)             Checksum: E9925421704E3AB435CC5D63A1CE4B6C;7203.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 38470 strings out of 476447
- 381693,2373549 words of node,token memory allocated
- 1064 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 48 attribute, 83 glue_spec
-, 48 attribute_list, 1 write, 39 pdf_action nodes
-   avail lists: 1:2,2:4907,3:464,4:6003,5:5982,6:78,7:16006,8:93,9:17573,10:46,1
-1:1160
- 59393 multiletter control sequences out of 65536+600000
- 67 fonts using 19977539 bytes
- 91i,12n,101p,2485b,3662s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 39301 strings out of 476447
+ 381700,2373549 words of node,token memory allocated
+ 1241 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 6 glue, 4 kern, 1 glyph, 64 attribute, 83 glue_spec
+, 64 attribute_list, 1 write, 54 pdf_action nodes
+   avail lists: 1:2,2:5018,3:444,4:6423,5:6826,6:88,7:16318,8:105,9:19925,10:46,
+11:1235
+ 60152 multiletter control sequences out of 65536+600000
+ 67 fonts using 19977387 bytes
+ 91i,12n,101p,2485b,4098s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></usr/share
 /texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share/texmf
 -dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/share/texmf-dist/
 fonts/opentype/public/lm/lmroman6-regular.otf></usr/share/texmf-dist/fonts/opent
-ype/public/lm/lmmono10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/
-lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman
-7-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.o
-tf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf></usr/sh
+ype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public
+/lm/lmroman7-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman
+8-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.o
+tf></usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/sh
 are/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-
 dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (52 pages, 1397127 bytes).
+Output written on main.pdf (58 pages, 1460008 bytes).
 
-PDF statistics: 1226 PDF objects out of 1440 (max. 8388607)
- 1105 compressed objects within 12 object streams
- 435 named destinations out of 1000 (max. 131072)
- 393 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1367 PDF objects out of 1440 (max. 8388607)
+ 1235 compressed objects within 13 object streams
+ 458 named destinations out of 1000 (max. 131072)
+ 401 words of extra memory for PDF output out of 10000 (max. 100000000)
 

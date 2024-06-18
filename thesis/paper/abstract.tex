@@ -1,10 +1,18 @@
 \begin{abstractpage}
+    \begin{abstract}{romanian}
+    \selectlanguage{romanian}
+        Atacurile cibernetice s-au întețit în ultima perioadă, iar unul dintre pericolele principale, atât pentru companii, cât și pentru utilizatori, este infectarea cu malware. Ingineria inversă este una dintre metodele principale aplicate de către cei care asigură protecția împotriva malware. Profesioniștii în domeniu, trebuie să studieze și să înțeleagă comportamentul instanțelor de malware pe care le descoperă, pentru a putea îmbunătății sistemele de apărare cu noi informații. Această sarcină este foarte dificilă, din cauza multiplelor straturi de obfuscare care sunt introduse de autorii de malware, pentru a înlesni înțelegerea logii din spatele programului. Deși tehnicile obfuscare au evoluat considerabil în ultimii ani, una dintre cele mai greu de contracarat rămâne obfuscarea bazată pe virtualizare.
 
-\begin{abstract}{english}
-\end{abstract}
+        În această lucrare, ne propunem să integrăm, în procesul de inginerie inversă a malware-urilor obfuscate prin virtualizare, un framework pentru analiza binarelor, numit angr. Pentru a realiza acest lucru, am creat \cc{arch-genesis}, un utilitar care simplifică procesul de construire al unui plugin pentru angr, care permite utilizarea functionalităților de analiză ale framework-ului lui, direct pe bytecode-ul unei mașini virtuale non-standard. Vom descrie arhitectura și funcționalitățile utilitarului nostru, precum și cum îl putem folosi pentru contracararea obfuscării bazate pe virtualizare.
+    \end{abstract}
 
-\begin{abstract}{romanian}
-\end{abstract}
+
+    \begin{abstract}{english}
+    \selectlanguage{english}
+        Cybercrime is on the rise, and one of the main threats to companies as well as end users is being infected with malware. Reverse engineers are one of the core pillars of the defending side, being tasked with studying and documenting these malicious pieces of software. Their job is very difficult, because they often have to bypass multiple complex layers of obfuscation, which make understanding the behaviour of the program take a lot more effort. In Despite obfuscation techniques continuing to evolve, virtualisation-based obfuscation remains one of the most difficult to overcome techniques.
+
+        In this thesis, we work on integrating angr, a popular binary analysis framework, in the current workflow for reverse engineering virtualisation-based obfuscation. As part of our work, we propose \cc{arch-genesis} a tool which streamlines the process of building a angr plugins for a custom Virtual Machine architecture. Such plugins bridge the gap between the unknown architecture and the suite of features that angr offers to its users. We cover the architecture of our tool, its functionalities, as well as the analysis process while using it.
+    \end{abstract}
 
 \end{abstractpage}
 

@@ -27,37 +27,31 @@
 }
 
 \newglossaryentrywithacronym{CTF}{Capture the Flag}{ 
-    Security Competition. % TODO say more here
+    In the context of security, CTFs are competitions where the participating teams attempt to exploit purpusefully vulnerable applications, in order to find text strings commonly known as ``flags'' and earn points
 }
 
 \newglossaryentrywithacronym{ELF}{Executable and Linkable Format}{ 
-    Linux executable file format. % TODO say more here
+    ELF is a standardised file format, which originated in the Unix echosystem, used for binary executable files. It is adopted by multiple operating systems including: Linux, Solatris, BSDs, and many others \cite{corkami_elf}
 }
 
 \newglossaryentrywithacronym{CFG}{Control Flow Graph}{ 
-    TODO ....    % TODO say something here
+    A CFG is a directed graph, modeling potential execution of a computer program. A set of maximal basic blocks (see \gls{BB}) constitutes the set of vertices. There is an edge in the graph between vertex $A$ and vertex $B$, if it is possible for the code associated with $B$ to be executed right after the execution of the code associated with vertex $A$ \cite{application_cfg}
 }
 
 \newglossaryentrywithacronym{ISA}{Instruction Set Architecture}{ 
-    TODO ....    % TODO say something here
+    ``An Instruction Set Architecture (ISA) is part of the abstract model of a computer that defines how the CPU is controlled by the software. The ISA acts as an interface between the hardware and the software, specifying both what the processor is capable of doing as well as how it gets done.'' \cite{arm_isa}
 }
 
 \newglossaryentrywithacronym{BF}{Brainf*ck}{ 
-    TODO ....    % TODO say something here
+    Brainf*ck is a very famous esoteric programming language, known for its minimalis syntax which consists of only the following eight instructions: \cc{+ \_ < > . ; [ ]}
 }
 
 \newglossaryentrywithacronym{IR}{Intermediate Representation}{ 
-    TODO ....    % TODO say something here
-}
-
-\newglossaryentrywithacronym{SB}{Simple Block}{ 
-    TODO ....    % TODO say something here
-    TODO this should be basic block? so BB
+    An IR is an abstract, fully encompassing, structure capable of expressing the operations which can be performed on a target (virtual) machine. IRs are commonly used during the compilation process, in order to facilitate further transformations \cite{ir_compilers}
 }
 
 \newglossaryentrywithacronym{BB}{Basic Block}{ 
-    TODO ....    % TODO say something here
-    TODO this should be basic block? so BB
+    A basic block is a (typically) maximal sequence of instructions that ``are guaranteed to execute together''. Any branch incoming to a basic block will end at its entry point. Any branch outgoing from a basic block will start from its exit point \cite{application_cfg}
 }
 
 \newacro{CC}{Command and Control}
@@ -67,7 +61,7 @@
 \newacro{PI}{Propriatery Information}
 \newacro{SOTA}{State of the Art}
 \newacro{VM}{Virtual Machine}
-\newacro{NSA}{National Security Agency} % TODO check
+\newacro{NSA}{National Security Agency}
 \newacro{UI}{User Interface}
 \newacro{stdin}{standard input}
 \newacro{IP}{Instruction Pointer}
@@ -78,4 +72,4 @@
 \newacro{CPU}{Central Processing Unit}
 \newacro{SMT}{Satisfiability Modulo Theories}
 \newacro{DSE}{Dynamic Symbolic Execution}
-\newacro{MBA}{Mixed Boolean-Arithmetic}{ 
+\newacro{MBA}{Mixed Boolean-Arithmetic}
