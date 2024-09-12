@@ -2,39 +2,41 @@
 
 \section{Context}
 
-In the past few years, the internet has become a significantly more hostile space. With cybercrime on the rise, the subject of malware, and its detrimental impact on businesses and society as whole, is more relevant than ever before. 
+In the past years, the internet has become a significantly more hostile space. With cybercrime on the rise, the subject of malware, and its detrimental impact on businesses and society as whole, is more relevant than ever before. 
+
+Malware attacks, which are one of the most damaging types of cybercrime, can target governments, corporations, public figures, or individuals. Multiple sources, including a report from the World Economic Forum \cite{wef_cybercrime}, suggest that cybercrime continues to rise both in numbers as well as in damage. The estimated costs of cybercrime in 2023, at a global scale, are of \$11.5 trillion, and these numbers are expected to more than double in the next five years. Because of this, malware, and particularly the subject of malware analysis, are evermore relevant. Analysing malware, and in particular the protection schemes built around malware is a very important topic, and the main subject of this work.
 
 In order to analyse, understand and mitigate malware, professionals use various reverse engineering techniques and tools. However, obfuscation is often used by cybercriminals that develop malware, in order to make reverse engineering as hard as possible. There have been a wide range of obfuscation techniques developed over the years. The target of this thesis is a technique called \emph{virtualization-based} obfuscation, which has been regarded for over a decade as one of the most difficult to reverse engineer obfuscation schemes available \cite{dang2014practical}.
 
-Various approaches have been proposed over the years on the topic of defeating virtualisation-based obfuscation. Some of these include manual analysis of the \gls{VM}, and others include automated or semi-automated approaches based on dynamic taint analysis, symbolic execution, compiler optimisation techniques, etc. The goals of the proposals differ as well. Some of them manage to recover a semantically equivalent version of the protected code, while others claim to recover the \gls{CFG} of the original program. Only a few of the approaches work directly on the bytecode, most of them aiming to strip away the obfuscation layer in an automated manner.
+Various approaches have been proposed over the years, on the topic of defeating virtualisation-based obfuscation. Some of these include manual analysis of the \gls{VM} \cite{rolles2009unpacking}, and others include automated or semi-automated approaches based on dynamic taint analysis, symbolic execution, compiler optimisation techniques, etc. \cite{tang2017seead} \cite{symbolic_deobf_2018}. The goals of the proposals differ as well. Some of them manage to recover a semantically equivalent version of the protected code \cite{symbolic_deobf_2018}, while others claim to recover the \gls{CFG} of the original program \cite{yadegari2015}. Only a few of the approaches work directly on the bytecode \cite{sharif2009}, most of them aiming to strip away the obfuscation layer in an automated manner.
 
 \section{Contribution}
 
 We believe that there is a significant need for new techniques integrating modern and promising frameworks in the process of analysing obfuscated code. We propose using angr in order to run a wide range of analyses directly on the bytecode of the custom \gls{VM}. To achieve this, we need an intermediate layer that bridges the gap between the powerful execution engine in angr and the unknown architecture that we are targeting. In this work, we describe how we approached building this intermediate layer, in the form of angr plugins. We also propose a tool that simplifies the process of building such a plugin. We apply our tools in order to analyse two samples obfuscated using virtualisation-based obfuscation.
 
-The main contributions in this paper are:
+The main contributions in this dissertation are:
 
 \begin{itemize}
     \item Providing a concise, yet comprehensive, overview of the current state of the art on the topic of virtualisation-based obfuscation;
-    \item The description of a new approach to reverse engineering bytecode of software obfuscated through virtualisation, based on the angr framework;
-    \item The development of the \cc{arch-genesis} tool, which streamlines the generation of angr plugins, and can automatically generate a disassembler for the target bytecode;
-    \item The description of the analysis process on two samples, using the developed tool.
+    \item Describing a new approach to reverse engineering bytecode of software obfuscated through virtualisation, based on the angr framework;
+    \item Developing the \cc{arch-genesis} tool, which streamlines the generation of angr plugins, and which can automatically generate a disassembler for the target bytecode;
+    \item Describing the analysis process on two samples, using the developed tool.
 \end{itemize}
 
 \section{Outline}
 
-The remainder of the paper is structured as follows:
+The remainder of the dissertation is structured as follows:
 
 \begin{itemize}
-    \item In Chapter 2 we give a technical background for the topics covered in the paper. We cover malware, reverse engineering techniques including static, dynamic and mixed analysis approaches and obfuscation techniques;
-    \item In Chapter 3, we start by giving a technical overview of the virtualisation-based obfuscation technique. We present the state of the art on the subject, and compare our work with previous approaches;
+    \item In Chapter 2 we give a technical background for the topics covered in the dissertation. We cover malware, reverse engineering techniques including static, dynamic and mixed analysis approaches, obfuscation techniques and the VEX intermediate representation;
+    \item In Chapter 3, we start by giving a technical overview of the virtualisation-based obfuscation technique. We then present the state of the art on the subject, and compare our work with previous approaches;
     \item In Chapter 4, we present our contribution. We discuss our idea, the analysis techniques we employed, the implementation, and results. We end with a discussion on shortcomings and future directions;
     \item We express our conclusions in Chapter 5.
 \end{itemize}
 
 \chapter{Background}
 
-In this chapter we will cover various concepts which will be relevant throughout this paper. We will start with defining what malware is, types of malware and their relevance. We continue by discussing \gls{RE} and the different approaches to program analysis. We end the chapter with obfuscation techniques, which are meant to make \gls{RE} harder, and introduce the main topic of this work: virtualisation-based obfuscation.
+In this chapter we will cover various concepts which will be relevant throughout this dissertation. We start with defining what malware is, types of malware and their relevance. We continue by discussing \gls{RE} and the different approaches to program analysis. We discuss obfuscation techniques, which are meant to make \gls{RE} harder, and introduce the main topic of this work: virtualisation-based obfuscation. We end the chapter with a short overview of the VEX \gls{IR}, a core aspect of our proposed solution.
 
 \section{Malware}
 
@@ -42,13 +44,13 @@ The word \emph{malware} is a blend word shortening the phrase ``\textbf{mal}icio
 
 \subsection{Classification}
 
-Malware is typically grouped by its behaviour and/or purpose and could fall under one or more of the labels in the following non-exhaustive list: backdoor, bot(net), dropper, fileless, ransomware, rootkit, spyware, trojan, virus, worm, etc \cite{wiki_malware}, \cite{zeusvm}. We will shortly cover the most relevant ones as follows.
+Malware is typically grouped by its behaviour and/or purpose and could fall under one or more of the labels in the following non-exhaustive list: backdoor, bot(net), dropper, fileless, ransomware, rootkit, spyware, trojan, virus, worm, etc. \cite{wiki_malware}, \cite{zeusvm}. We will shortly cover the most relevant ones as follows.
 
 \subsubsection{Backdoor}
 
 A Backdoor is an umbrella term for software that enables bad actors to obtain persistent, unauthorised access to a victim's computer, typically with them being unaware of the situation. Backdoor software is  interesting because they can either be delivered through a Trojan, a worm, or another similarly purposed malware, but they can also be the result of vulnerabilities existing in legitimate software, that already exist on the victim's computer. 
 
-What is more, there is also a combined scenario, where a backdoor is intentionally inserted into legitimate software. This can be done, for instance, by a bad actor hiding their intention. A prominent recent example of this comes from the 2024 discovery of the XZ Utils backdoor \cite{xz_backdoor}.
+What is more, there is also a combined scenario, where a backdoor is intentionally inserted into legitimate software. This can be done, for instance, by a bad actor hiding their intention. A prominent example of this comes from the 2024 discovery of the XZ Utils backdoor \cite{xz_backdoor}.
 
 \subsubsection{Trojan}
 
@@ -58,13 +60,13 @@ The payload of a Trojan can be anything. It often is another type of malware, ca
 
 \subsubsection{Worm / Virus}
 
-Worms and Viruses are similar in the sense that these are both standalone malware that have the capacity to spread through a network, and to infect other victims. A Virus (inspired by the biological term) will inject itself into seemingly harmless programs, that upon execution will further spread the infection. 
+Worms and Viruses are similar in the sense that these are both stand-alone malware that have the capacity to spread through a network, and to infect other victims. A Virus (inspired by the biological term) will inject itself into seemingly harmless programs, that upon execution will further spread the infection. 
 
 Worms differ from Viruses in the sense that a virus requires the victim to execute the infected software in order for it to spread, whereas a Worm does not. Worms can spread without user intervention and without modifying other files on the system \cite{wiki_malware}. An example of such a piece of malware is the infamous Stuxnet virus \cite{stuxnet}.
 
 \subsubsection{Ransomware}
 
-Ransomware is a type of malware that, once it has infected a computer, restricts access to information on that particular machine, and then asks for a ransom from the victim, in exchange for the locked up information. Most commonly, a form of encryption is applied to the restricted data, which in properly executed attacks cannot be recovered without the encryption key. Typically, ransomware is delivered via a Trojan, but this is not always the case. The infamous \emph{WannaCry} ransomware was a \emph{worm} which spread through the network without user intervention \cite{wiki_wannacry}, \cite{wiki_ransomware}. As it can be seen in Figure \ref{fig:wannacry}, the attackers will ask for hard to trace digital currencies, such as Bitcoin in this case.
+Ransomware is a type of malware that, once it has infected a computer, restricts access to information on that particular machine, and then asks for a ransom from the victim, in exchange for the locked up information. Most commonly, a form of encryption is applied to the restricted data, which in properly executed attacks cannot be recovered without the encryption key. Typically, ransomware is delivered via a Trojan, but this is not always the case. The infamous \emph{WannaCry} ransomware was a \emph{worm} which spread through the network without user intervention \cite{wiki_wannacry}, \cite{wiki_ransomware}. As it can be seen in Figure \ref{fig:wannacry}, the attackers typically ask for hard to trace digital currencies, such as Bitcoin in this case.
 
 \begin{figure}[ht]
     \centering
@@ -77,36 +79,34 @@ Ransomware is a type of malware that, once it has infected a computer, restricts
 
 A Bot is a computer infected by a specific type of malware which enables its victim to be remotely controlled. Such malware is spread with the goal of infecting as many targets as possible. The infected machines are added to a common pool, called a \emph{botnet}, which can be orchestrated from a \gls{CC} centre to perform other malicious activities on a bigger scale. The Andromeda botnet is an example of such malware \cite{andromeda} \cite{kaspersky_malware_types}.
 
-\subsection{Relevance}
-
-Malware attacks, also referred to with the broader term of cybercrime, can target governments, corporations, public figures, or individuals. Multiple sources, including a report from the World Economic Forum \cite{wef_cybercrime}, suggest that cybercrime continues to rise both in numbers as well as in damage. The estimated costs of cybercrime in 2023, at a global scale, are of \$11.5 trillion, and these numbers are expected to more than double in the next 5 years. Because of this, malware, and particularly the subject of malware analysis, are evermore relevant. Analysing malware, and in particular the protection schemes built around malware is a very important topic, and the main subject of this work.
-
 \section{Reverse Engineering}
 \label{sec:reverse_engineering}
 
-As stated on \emph{Wikipedia}: \emph{``\gls{RE} is a process or method through which one attempts to understand through deductive reasoning how a previously made device, process, system, or piece of software accomplishes a task with very little (if any) insight into exactly how it does so''} \cite{re_wiki}. It is analogous to scientific research performed on man-made products.
+As stated on \emph{Wikipedia}: \emph{``\gls{RE} is a process or method through which one attempts to understand through deductive reasoning how a previously made device, process, system, or piece of software accomplishes a task, with very little (if any) insight into exactly how it does so''} \cite{re_wiki}. It is analogous to scientific research performed on man-made products.
 
-In this work we will focus on reverse engineering pieces of software in the context of performing security research or malware analysis. Typically, in such contexts, the goal is to understand the behaviour of a piece of software, without having access to its source code. Depending on the type of analysis, a security researcher applying reverse engineering techniques might have different approaches. 
+In this work we will focus on reverse engineering pieces of software in the context of security research or malware analysis. Typically, in such contexts, the goal is to understand the behaviour of a piece of software, without having access to its source code. However, depending on the type of analysis, a reverse engineer might have different approaches. 
 
-They might focus on gaining a comprehensive understanding of specific parts of the software in order to identify weaknesses, or more commonly named \emph{vulnerabilities}. This analysis could be restricted to specific parts because for multiple reasons which include, but are not limited to: the full program being too big to justify performing a full analysis, or the existence of prior knowledge which gives higher priority to the analysis of certain code regions. With the knowledge obtained from RE, the researcher can identify and prove the existence of attack vectors on a system that is running this software. They might then write a report which covers the risks that the entities running the software are exposed to, describing the findings in detail, and exemplifying how an attacker might abuse the discovered vulnerabilities. The end goal of this sequence of steps enhance the security of the product.
+They might focus on gaining a comprehensive understanding of specific parts of the software in order to identify weaknesses, or more commonly named \emph{vulnerabilities}. This analysis could be restricted to specific parts for multiple reasons which include, but are not limited to: the full program being too big to justify performing a full analysis, or the existence of prior knowledge which gives higher priority to the analysis of certain code regions. With the knowledge obtained from \gls{RE}, the researcher can identify and prove the existence of attack vectors on a system that is running this software. They might then write a report which covers the risks that the entities running the software are exposed to, describing the findings in detail, and exemplifying how an attacker might abuse the discovered vulnerabilities. The end goal of this sequence of steps is to enhance the security of the analysed product.
 
 In other instances, the engineers might perform a full and comprehensive analysis of piece of software. This is typically done when dealing with malware. The malware analyst will first try to determine if the piece of software is in fact malicious or not. If the code is malicious, it is important to determine its behaviour, how it interacts with the system, or with outside entities (possibly by creating network traffic). During this process, analysts might study and document novel techniques employed by attackers. They might also integrate the newly found malware into a detection system to prevent future uses of the respective malware \cite{malware_crowdstrike}.
 
-Regardless of the goal, RE falls into, or somewhere in between two broad categories which determine the typical approach and the tooling used: \textbf{static analysis} and \textbf{dynamic analysis}.
+Regardless of the goal, \gls{RE} falls into, or somewhere in between two broad categories which determine the typical approach and the tooling used: \textbf{static analysis} and \textbf{dynamic analysis}.
 
 \section{Static Analysis}
 
-Static analysis represents the multitude of techniques used to analyse a program without executing it. These techniques range in difficulty and complexity starting from reading source code, to reading assembly, attempting to decompile binaries, and ultimately using very advanced tools and theoretical knowledge such as \gls{SE} \footnote{Albeit, it is debatable if \gls{SE} can be considered static or dynamic analysis. We will, consider it a mixed approach, and discuss it accordingly.} engines, SMT solvers \cite{z3} or formal methods.
+Static analysis represents the multitude of techniques used to analyse a program without executing it. These techniques range in difficulty and complexity, starting with source code auditing, to reading assembly, attempting to decompile binaries, and ultimately using very advanced tools and theoretical knowledge such as \gls{SE} \footnote{Albeit, it is debatable if \gls{SE} can be considered static or dynamic analysis. We will, consider it a mixed approach, and discuss it accordingly.} engines, SMT solvers \cite{z3} or formal methods.
 
-In its most basic form, static analysis is equivalent with reading the source code in order to understand what the program does. However, in the context of this paper, we are dealing with binary files, compiled to machine code. The source code is not available to us, so we must resort to other analysis techniques. One option is to convert the machine code into the human readable form, called assembly. The process is known as machine code disassembly. Assembly code is typically very hard to understand for humans, but from it the logic of the program can be successfully recovered, given enough time and effort. 
+In its most basic form, static analysis is equivalent with reading the source code in order to understand what the program does. However, in the context of this dissertation, we are dealing with binary files, resulted from compiling code to machine code. We assume that the source code is not available to us, so we must resort to other analysis techniques. One option is to convert the machine code into the human readable form, called assembly. The process is known as machine code disassembly. Assembly code is typically very hard to understand for humans, but given enough time and effort, the logic of the program can be successfully recovered from it. 
 
-One advantage of static analysis through reading assembly is that the entry barrier is not high in terms of the tooling required. A very basic tool such as \cc{objdump} \cite{objdump} can be enough for simple programs, but most likely a more feature rich tool such as \cc{radare2}/\cc{cutter} \cite{cutter} might be more suitable, as these are able to display basic blocks and how all such \gls{BB} relate to each other and form the \glspl{CFG}.
+One advantage of static analysis through reading assembly is that the entry barrier is not high in terms of the tooling required. A very basic tool such as \cc{objdump} \cite{objdump} can be enough for simple programs, but most likely a more feature rich tool such as \cc{radare2}/\cc{cutter} \cite{cutter} are more suitable, as these can display \glspl{BB} and how all such \gls{BB} relate to each other and form the \gls{CFG}.
 
-Reverse engineers typically default to more advanced static analysis tools, such as IDA or Ghidra \cite{ida}, \cite{ghidra}. These tools feature a suite of functionalities, out of which, probably the most prominent is the \emph{decompiler}. Compilation is the process of converting source code into machine code. Decompilation is the opposite: the process of converting machine code, back into source code. 
+Reverse engineers default to advanced static analysis tools, such as IDA or Ghidra \cite{ida}, \cite{ghidra}. On one hand, IDA is the industry standard of \gls{RE} and as a complete package it is an expensive piece of software. On the other hand, Ghidra is a \gls{RE} framework, developed by the \gls{NSA}, which was open-sourced in March 2019 \cite{Newman2019Mar}. Despite its dated looks and non-friendly \gls{UI}, Ghidra's powerful set of features and the fact that it is free to use by anyone, made it gain considerable popularity in the reverse engineering community.
 
-Compared to the disassembly process, which is deterministic and corresponds exactly to the assembly process, the decompilation process will almost never yield back the original source code. This is the case because a lot of information useful to programmers, but useless for the \gls{CPU} is lost during the compilation process. This information includes, but is not limited to: variable and function names, type information, custom defined data types such as structures, or specific language features. This is why decompilers will always output an approximation of the original code. 
+\label{sec:ghidra}
 
-Let us consider a concrete example and consider Listings \ref{code:decompilation-original}, \ref{code:decompilation-1}, \ref{code:decompilation-2}. Listing \ref{code:decompilation-original} contains the implementation of the function \cc{add}, which takes the end of linked list and a value, and creates a new node in the list with that value, also taking the necessary steps to update the list accordingly. The code is part of a slightly larger \cc{C} program, which we compiled and imported into Ghidra. Looking at Listing \ref{code:decompilation-1} we can see the decompilation of the exact code in the previously mentioned listing. 
+Both IDA and Ghidra feature a large suite of functionalities, out of which, probably the most prominent is the \emph{decompiler}. Compilation is the process of converting source code into machine code. Decompilation is the opposite: the process of converting machine code, back into source code. Compared to the disassembly process, which is deterministic and corresponds exactly to the assembly process, the decompilation process will almost never yield back the original source code. This is the case because a lot of information useful to programmers, but useless for the \gls{OS} or the \gls{CPU} is lost during the compilation process. This information includes, but is not limited to: variable and function names, type information, custom defined data types such as structures, or specific language features. This is why decompilers will always output an approximation of the original code. 
+
+Let us consider a concrete example in Listings \ref{code:decompilation-original}, \ref{code:decompilation-1} and \ref{code:decompilation-2}. Listing \ref{code:decompilation-original} contains the implementation of the function \cc{add}, which takes the end of linked list and a value, and creates a new node in the list with that value, also taking the necessary steps to update the list accordingly. The code is part of a slightly larger \cc{C} program, which we compiled and imported into Ghidra. Looking at Listing \ref{code:decompilation-1} we can see the decompilation of the code referenced in the previously mentioned Listing. 
 
 It is immediately obvious that the type information related to \cc{node} structure is completely lost and that the original function was inlined by the compiler. As a result, the decompilation is an obfuscated version of the original code. This is a well known fact and advanced tools such as Ghidra offer various features, which a reverse engineer can utilise in order to remove part of the obfuscation. Listing \ref{code:decompilation-2} contains the same segment of decompiled code after a minimal amount of manual intervention, which includes: variable renaming, custom type creation and type updates. Clearly, it is a lot more human readable and bears a closer resemblance to the original code in Listing \ref{code:decompilation-original}. 
 
@@ -166,13 +166,13 @@ Dynamic analysis is an umbrella term which covers many powerful techniques used 
 
 Debugging is a very well known technique, especially popular among developers who use it mainly to identify bugs or errors in their code. However, it is also a very effective and reliable form of analysing unknown programs (e.g. malware). Also called \emph{single stepping}, it involves using a tool called a \emph{debugger}, in order to run the program one instruction at a time. After each instruction, the analyst can inspect the state of the registers, the memory and what instructions follow. This process can also help in determining any relevant changes in the operating system itself, caused or related to the debugged program.
 
-Debuggers use the CPU's trap flag in order to trigger an interrupt after each instruction, or only certain desired instructions. The interrupt causes a context switch from the execution of the debugged program to the debugger. To continue execution, the trap flag is set again and the context switches back to the program. The high number of context switches means that debugging is a very resource intensive analysis technique. It is also very easy to detect by the running malware, which can check the state of the trap flag and hide its behaviour in case it is debugged \cite{da_survey_2019}.
+Debuggers use the CPU's trap flag in order to trigger an interrupt after each instruction, or certain desired instructions. The interrupt causes a context switch from the execution of the debugged program to the debugger. To continue the execution, the trap flag is set again and the context is switched back to the program. The high number of context switches means that debugging is a very resource intensive analysis technique. It is also very easy to detect by the running malware, which can check the state of the trap flag and hide its behaviour in case it is being debugged \cite{da_survey_2019}.
 
 \subsection{Function Call Analysis}
 
-Any type of meaningful action that a program can make, will ultimately rely on \glspl{syscall} \cite{syscall}. It can be the case that these \glspl{syscall} are performed through function calls from an external library, such as the standard \cc{libc} library, or from an internally defined function. Analysing function calls, the state of the program before, during and after the function call, as well as the parameters used can provide valuable information about the behaviour of the analysed program. 
+Any type of meaningful action that a program can make, will ultimately rely on System Calls (syscalls) \cite{syscall}. It can be the case that these syscalls are performed through function calls from an external library, such as the standard \cc{libc} library, or from an internally defined function. Analysing function calls, the state of the program before, during and after the function call, as well as the parameters used can provide valuable information about the behaviour of the analysed program. 
 
-Techniques for approaching this goal vary. For instance, we could use command line programs such as \cc{strace}, or \cc{ltrace}, which track \glspl{syscall} and library calls respectively. 
+Techniques for approaching this goal vary. For instance, we could use command line programs such as \cc{strace}, or \cc{ltrace}, which track syscalls and library calls respectively. 
 
 We could also use more advanced techniques, such as function hooking. An analyst can extract more information from a function call by \emph{hooking} (i.e. linking) a piece of code to the targeted function. What will happen is that upon the function call, the \emph{hooked} code will also run. The hooked code can simply print debugging messages to inform the analyst that the function has just been called, or access the state of the program at that time and save it for further inspection. \cite{da_survey_2019}
 
@@ -200,21 +200,22 @@ exit(1 <no return ...>)
 
 \subsection{Dynamic Taint Analysis}
 
-Dynamic Taint analysis is a technique used to track data flow from sources to sinks. In order to achieve this goal, data considered important is given a label (\emph{a taint}), based on a \emph{taint introduction policy}. Typically, we would taint untrusted user input or data arriving over the network. This \emph{tainted} data is propagated through the system based on execution and how the code interacts with the data at the opcode level. When an operation is performed on tainted data, memory locations used during the respective operation are also tainted, based on a \emph{taint propagation policy}. Some memory areas, or code sections are also marked as \emph{sinks}. When tainted data arrives at a sink, the path it took through the code can be traced back. 
+Dynamic Taint Analysis is a technique used to track data flow from sources to sinks. In order to achieve this goal, data considered important is given a label (\emph{a taint}), based on a \emph{taint introduction policy}. Typically, we would taint untrusted user input or data arriving over the network. This \emph{tainted} data is propagated through the system based on execution and how the code interacts with the data at the opcode level. When an operation is performed on tainted data, memory locations used during the respective operation are also tainted, based on a \emph{taint propagation policy}. Some memory areas, or code sections are also marked as \emph{sinks}. When tainted data arrives at a sink, the path it took through the code can be traced back. 
 
 In the context of malware analysis, the flow of tainted data is valuable because it gives valuable insights about the ways the malware interacts with the user and the operating system. Taint analysis is also valuable for exploit detection, and was initially used specifically for this goal. By tainting untrusted user input one can detect unusual data flows and detect attempts at exploiting a system. In such cases, a \emph{taint checking policy} might be used to determine further behaviour (e.g. halting execution) \cite{da_survey_2019} \cite{all_about_taint_2010}.
 
 \section{Mixed Analysis Techniques}
 
 \subsection{Symbolic Execution}
+\label{sec:se}
 
-\gls{SE} is a powerful program analysis technique, and one of the core techniques which the idea of this paper is based on. As such, we will cover \gls{SE} in more detail compared to the other analysis approaches.
+\gls{SE} is a powerful program analysis technique, and one of the core techniques which the idea of this dissertation is based on. As such, we will cover \gls{SE} in more detail compared to the other analysis approaches.
 
-\gls{SE} is typically discussed in relation with \emph{\gls{CE}}. \gls{CE} is the formal term for what we refer to as normal program execution. That is, executing a program with a concrete input until the end of a single execution path. When every possible external value (user input, response from a system call, return value of a function), or internal value (memory and registers) has a concrete value, we're dealing with \gls{CE}. Let us consider Listing \ref{lst:fizzbuzz}. The value of the argument \cc{c} is given by the caller of the function \cc{fizzbuzz}. If we consider a concrete value of $7$ for \cc{c}, we expect the program to print the same value $7$ at the standard output, as consequence of executing Line \ref{code:fizzbuzz-1}. We can test this hypothesis by running the program, passing the respective value to the function and inspecting the printed value. This is concrete execution.
+\gls{SE} is typically discussed in relation with \emph{\gls{CE}}. \gls{CE} is the formal term for what we refer to as normal program execution. That is, executing a program with a concrete input until the end of a single execution path. When every possible external value (user input, response from a system call, return value of a function), or internal value (memory and registers) has a concrete value, we're dealing with \gls{CE}. Let us consider Listing \ref{lst:fizzbuzz}. The value of the argument \cc{c} is given by the caller of the function \cc{fizzbuzz}. If we consider a concrete value of $7$ for \cc{c}, we expect the program to print the same value $7$ at the standard output, as consequence of executing Line \ref{code:fizzbuzz-1}. We can test this hypothesis by running the program, passing the value $7$ to the function and inspecting the result. This is concrete execution.
 
-\lstinputlisting[language=c, label={lst:fizzbuzz}, caption={A trivial code example of a function taking a one-byte argument and having different output to \cc{stdout}, based on that argument. The example is meant to showcase \gls{SE}. A visual representation of symbolically executing this piece of code can be seen in Figure \ref{fig:se}.}]{./code/fizz-buzz.tex}
+\lstinputlisting[language=c, label={lst:fizzbuzz}, caption={A trivial code example of a function taking a one-byte argument and giving different outputs to \cc{stdout}, based on that argument. The example is meant to showcase \gls{SE}. A visual representation of symbolically executing this piece of code can be seen in Figure \ref{fig:se}.}]{./code/fizz-buzz.tex}
 
-In contrast with \gls{CE}, with \gls{SE} we can explore all possible paths of execution (or part of them). Moreover, for each path there will be an associated logical formula, which precisely describes the values of the inputs which will lead the execution on that specific path. Formulas associated with paths are obtained by applying \emph{constraints}, to what are known as symbolic values, which replace certain, or all concrete values in \gls{SE}.
+In contrast with \gls{CE}, with \gls{SE} we can explore all possible paths of execution (or part of them). Moreover, for each path there will be an associated logical formula, which precisely describes the set of inputs which would lead the execution on that specific path. Formulas associated with paths are obtained by applying \emph{constraints}, to what are known as symbolic values, which replace certain, or all concrete values in \gls{SE}.
 
 Initially, the symbolic values are unconstrained, meaning that they can represent any possible input value associated with their designated type. The program is emulated in a controlled environment by a \gls{SE} engine. The \gls{SE} engine keeps track of symbols (variables and memory) and adds constraints to these, based on what conditionals are encountered. Execution starts with an initial symbolic state. As the program executes, each conditional branch splits the symbolic state into two and adds new constraints to the state associated with each branch. Figure \ref{fig:se} is a visual representation of what symbolically executing Listing \ref{lst:fizzbuzz} would look like. One can notice each execution path, the results and the constraints applied to argument $c$ that lead on that respective path.
 
@@ -240,11 +241,45 @@ Obfuscation is an umbrella term for a set of techniques that are very widely emp
 
 There are a number of well documented obfuscation techniques, which have been observed in the wild time and time again. Obfuscation can be categorised into data-flow obfuscation, control-flow obfuscation and mixed obfuscation \cite{dang2014practical}. We will shortly cover some obfuscation schemes which are relevant in the context of this work.
 
-\emph{Constant unfolding} is applied to a constant value, replacing it in the obfuscated code with a complex sequence of operations that compute the original value at runtime. Similarly, \emph{pattern-based} obfuscation consists of replacing co-located instructions with a more complex set of instructions that bear the same semantics. \emph{Dead code insertion} is another common technique which is based on the insertion of sequences of instructions with no semantic effect to the state of the program. Executing those does effectively nothing. \gls{MBA}, is one of the most sophisticated obfuscation techniques, is used on both constants and expressions. \glspl{MBA} encodes expressions into semantically equivalent ones, using a combination of logical and arithmetic operations, and are notoriously hard to simplify \cite{zhou2007} \cite{mba_deobf}. All techniques mentioned above fall in the data-flow obfuscation category \cite{dang2014practical}.
+\emph{Constant unfolding} is applied to a constant value, replacing it in the obfuscated code with a complex sequence of operations that compute the original value at runtime. Similarly, \emph{pattern-based} obfuscation consists of replacing co-located instructions with a more complex set of instructions that bear the same semantics. \emph{Dead code insertion} is another common technique which is based on the insertion of sequences of instructions with no semantic effect to the state of the program. Executing those does effectively nothing. \gls{MBA}, which is one of the most sophisticated obfuscation techniques, is used on both constants and expressions. \glspl{MBA} encodes expressions into semantically equivalent ones, using a combination of logical and arithmetic operations, and are notoriously hard to simplify \cite{zhou2007} \cite{mba_deobf}. All techniques mentioned above fall in the data-flow obfuscation category \cite{dang2014practical}.
 
 Reverse engineers rely strongly on assumptions about how compilers translate source code into machine code, and learn to recognize certain patterns: \cc{call} instructions are used only for switching control to a function, indirect jumps are used only in specific and predictable situations, such as \cc{switch} statements, temporally related code is grouped together, etc. Control flow obfuscation aims to invalidate these assumptions. Function \emph{inlining} and \emph{outlining} are used to degenerate the original \gls{CFG} and turn it into a nonsensical structure. The locality of temporally related code can be affected by reordering instruction blocks and introducing unconditional jumps (in order to preserve semantics). \emph{Junk code}, which is code that is never executed, can be included in order to pollute the \gls{CFG}. Building on this idea, \emph{opaque predicates} \cite{collberg1997taxonomy}, which are boolean expressions that can only evaluate to either true or false, can be used to add branches leading to \emph{junk code}, into the \gls{CFG} \cite{dang2014practical}.
 
-The most complex obfuscation schemes uses a mix of data-flow and control-flow obfuscation. \gls{CFG} flattening is a technique that completely alters the control flow of a program. It is typically applied locally, on the body of a function, and works by replacing all control structures with a switch statement, called a \emph{dispatcher}. Virtualisation, or the use of embedded \glspl{VM}, is one of the most complex and difficult to \gls{RE} types of obfuscation. It is conceptually similar with the previously mentioned \gls{CFG} flattening technique (see Figure \ref{fig:cfg_vmwhere}), but differs in the sense that virtualisation is applied to both control flow and the data-flow of the program. Because they come with a significant computational overhead, virtualisation is typically applied only to certain parts of the program. Virtualisation-based obfuscation is the main topic of this work and will be covered in more detail in the following chapter.
+The most complex obfuscation schemes uses a mix of data-flow and control-flow obfuscation. \gls{CFG} flattening is a technique that completely alters the control flow of a program. It is typically applied locally, on the body of a function, and works by replacing all control structures with a switch statement, called a \emph{dispatcher}. Virtualisation, or the use of embedded \glspl{VM}, is one of the most complex and difficult to reverse engineer types of obfuscation. It is conceptually similar with the previously mentioned \gls{CFG} flattening technique (see Figure \ref{fig:cfg_vmwhere}), but differs in the sense that virtualisation is applied to both control flow and the data-flow of the program. Because they come with a significant computational overhead, virtualisation is typically applied only to certain parts of the program. Virtualisation-based obfuscation is the main topic of this work and will be covered in more detail in the following chapter.
+
+\section{VEX - Intermediate Representation}
+\label{sec:vex}
+
+An \gls{IR} is a generalised and structured representation of all possible actions that can be performed via \gls{CPU} instructions. Typically, \glspl{IR} are intermediaries between hardware-specific or platform-specific source code, and further processing that needs to be done on that source code.
+
+VEX is the \gls{IR} developed and used for the Valgrind \cite{valgrind} binary instrumentation framework, which specialises in detecting memory corruption issues, profiling, etc. VEX was also adopted for the \cc{angr} \cite{angr} binary analysis toolkit, which is one of the core elements of this dissertation. The main reasoning behind using an \gls{IR} in the context of \cc{angr} was to easily support a multitude of architectures. If the source code to be analysed can be converted (lifted) into the \gls{IR}, any analysis developed for the \gls{IR} can be transitively applied to the source code. Not only does VEX supports all major architectures, but it also offers an open-source library to interface with it, is well documented and intended by design to be used for program analysis \cite{why_vex}. 
+
+An aspect of VEX that makes it particularly suited for program analysis is that it is semantically transparent, in the sense that it does not hide any side effects that instructions might have (e.g. implicit modifications to flags made explicit). It also abstracts away register naming conventions which differ among architectures, and the manner in which memory is accessed. \cite{angr_ir} 
+
+VEX \gls{IR} code is grouped into \glspl{IRSB}, which correspond to extended basic blocks in the target architecture. Each block can have multiple exits and is comprised of \gls{IR} Statements, which describe changes to the program state, such as changes to memory or registers. State changes are performed by using \gls{IR} expressions, which can be constants or results of computations (arithmetic computations, but also values read from memory or registers). \gls{IR} operations are applied to modify \gls{IR} expressions, which in turn result in other \gls{IR} expressions. These include arithmetic, logical, or bitwise transformations, etc. Lastly, what ties everything together are the temporary values, which are used as internal registers in VEX. Temporary values are unlimited, numbered starting from \cc{t0} and strongly typed. \cite{angr_ir} \cite{vex_ir}
+
+To exemplify how typical assembly looks like when lifted into VEX, let us consider the following snippet from a function prologue in Intel x86\_64: \cc{push rbp; mov rbp, rsp}. The value of old base pointer is pushed onto the stack and the stack pointer's value is saved as the current base pointer. These two assembly instructions are transformed into VEX \gls{IR} statements and shown in Listing \ref{lst:vex}.
+
+\begin{lstlisting}[language={c}, label={lst:vex}, caption={VEX \gls{IR} corresponding to the \cc{push rbp; mov rbp, rsp} instruction sequence in Intel x86\_64. Each machine instruction is split into muliple, transparent, VEX statements. Each original machine instruction is delimited by an IMark, which specifies the address of the original instruction, and its length in bytes.}]
+------ IMark(0x525cc4, 1, 0) ------
+// load value of rbp as int_64 into t0
+t0 = GET:I64(rbp)
+// load value of rsp as int_64 into t20
+t20 = GET:I64(rsp)
+// subtract 8 out of t19 (side effect of push)
+t19 = Sub64(t20,0x0000000000000008)
+// store value of t19 back into rsp
+PUT(rsp) = t19
+// store t0 (previous rbp) on the new address on the stack
+STle(t19) = t0
+------ IMark(0x525cc5, 3, 0) ------
+// store the value in t19 (new rsp) into rbp
+PUT(rbp) = t19
+// advance the instruction pointer
+PUT(rip) = 0x0000000000525cc8
+\end{lstlisting}
+
+In Chapter \ref{ch:our_approach}, we show how custom bytecode can be lifted into VEX and analysed through the angr framework.
 
 \chapter{State of the Art}
 
@@ -254,22 +289,22 @@ In this chapter, we discuss various approaches to recovering code obfuscated thr
 
 Virtualisation-based Obfuscation is one of the strongest protections employed by current obfuscation tools. Analogous to system-level \glspl{VM}, used to emulate the multitude of hardware components that comprise an entire system, in the context of obfuscation, \glspl{VM} only emulate a custom-made \gls{ISA}. 
 
-Due to its complexity, virtualisation adds a significant runtime overhead. Thus, it is common that only very specific and sensitive functionality of the original program (e.g. a hashing function) is virtualised.
+Due to its complexity, virtualisation adds a significant runtime overhead. Thus, it is common that only very specific and sensitive functionality of the original program (e.g. a hashing function) is virtualised \cite{kochberger2021sok}.
 
 \subsection{Internals}
 
-The end goal of virtualisation-based obfuscation is to transpile the targeted piece code, from its native architecture (e.g. ARM64) into a non-standard custom-made architecture. The translated code is encoded as \emph{bytecode} according to the \gls{VM} \gls{ISA} specification, and is embedded in the target binary file. The resulting bytecode can obviously not be executed by the \gls{CPU}. Thus, a custom interpretor for the bytecode must also be embedded alongside the bytecode into the original binary.
+The end goal of virtualisation-based obfuscation is to transpile the targeted segment of code, from its native architecture (e.g. ARM64) into a non-standard custom-made architecture. The translated code is encoded as \emph{bytecode} according to the \gls{VM} \gls{ISA} specification, and is embedded in the target binary file. The resulting bytecode can obviously not be executed by the \gls{CPU}. Thus, a custom interpretor for the bytecode must also be embedded alongside the bytecode into the original binary.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.7\textwidth]{./images/dispatch}
-    \caption{A high-level abstraction of the inner workings of an embedded \gls{VM} interpretor. Execution begins in the VM entry, where context is switched from the native context to the virtualised context. Then a fetch-decode-execute loop follows. Instructions encoded as bytecode are fetched from the memory and then decoded. Control is switched to a corresponding function handler, identified based on the decoded information. This loop is commonly known as the dispatcher, which continues execution until all the bytecode is processed. \cite{blazytko2017}}
+    \caption{A high-level abstraction of the inner workings of an embedded \gls{VM} interpretor. Execution begins in the VM entry, where context is switched from the native context to the virtualised context. Then a fetch-decode-execute loop follows. Instructions encoded as bytecode are fetched from memory and then decoded. Control is switched to a corresponding function handler, identified based on the decoded information. This loop is commonly known as the dispatcher, which continues execution until all the bytecode is processed. \cite{blazytko2017}}
     \label{fig:dispatch}
 \end{figure}
 
-The embedded interpretor is made-up of multiple components. The first component, called the \emph{\gls{VM} entry}, performs the context switch from normal execution to virtualised execution. In this step, virtual registers (e.g. virtual \gls{IP} or \gls{SP}) and memory locations used in the \gls{VM} context are initialised. The next component is the \emph{dispatcher} which performs a fetch-decode-execute loop, as depicted in Figure \ref{fig:dispatch}. Each iteration, a new bytecode sequence is fetched from memory and decoded. Afterwards, control is passed to the corresponding function handler, either directly, through an indirect jump, or through a dispatch table stored in memory. This is decided based on the information extracted in the decoding process. 
+The embedded interpretor is made-up of multiple components. The first component, called the \emph{\gls{VM} entry}, performs the context switch from normal execution to virtualised execution. In this step, virtual registers (e.g. the virtual \gls{IP} or \gls{SP}) and memory locations used in the \gls{VM} context are initialised. The next component is the \emph{dispatcher} which performs a fetch-decode-execute loop, as depicted in Figure \ref{fig:dispatch}. Each iteration, a new bytecode sequence is fetched from memory and decoded. Afterwards, control is passed to the corresponding function handler, which holds the logic which should execute for the respective bytecode sequence. Control is passed either directly, through an indirect jump, or through a dispatch table stored in memory. The jump destination is determined based on information extracted in the decoding process. 
 
-After an instruction finishes execution, control is passed back to the dispatcher and the process repeats with the next instruction. After all instructions encoded in the bytecode have been executed, the dispatcher loop terminates, typically after executing an \emph{exit} instruction. Finally, in the \emph{vm exit} step, the native context is restored, and control is passed back to the native execution. Software protection solutions that use virtualisation-based obfuscation include, but are not limited to: VMProtect \cite{vmprotect}, Themida \cite{themida} and The Tigress C Obfuscator \cite{tigress}. 
+After an instruction finishes execution, control is passed back to the dispatcher and the process repeats with the next instruction. After all instructions encoded in the bytecode have been executed, the dispatcher loop terminates, typically after executing an \emph{exit} instruction. Finally, in the \emph{VM exit} step, the native context is restored, and control is passed back to the native execution. Software protection solutions that use virtualisation-based obfuscation include, but are not limited to: VMProtect \cite{vmprotect}, Themida \cite{themida} and The Tigress C Obfuscator \cite{tigress}. 
 
 \section{Academic Work}
 
@@ -291,23 +326,24 @@ Salwan et al. introduce at the end of 2018 a deobfuscation tool targeting the Ti
 
 \subsection{Program Synthesis}
 
-Blazytko et al. came up in 2017 with Synthia \cite{blazytko2017}, another generic deobfuscation tool. As indicated by a paper by Banescu et al. \cite{banescu2016} published in 2016, in which the authors present ways to circumvent the underlying techniques (e.g. symbolic execution) employed by previous deobfuscation proposals, the authors of Synthia approach the problem from a different angle. They propose eliminating the virtualization-based obfuscation through semantics synthesis of the \gls{VM} handlers. Similar to previous approaches, they extract execution traces from the obfuscated program, but take a different approach to simplifying them. Their approach uses \gls{SMT} solvers and Monte Carlo Tree Search (MCTS) for trace simplification. They split the resulting traces into \emph{windows}, and then fuzz each window. The result of the fuzzing step is a set of input-output pairs, which represent the semantics of the trace window. They use the resulted MCTS in order to synthesize semantically-equivalent expressions with the input-output pairs resulted from the fuzzing process. Their work suggests that Synthia can extract semantics from arithmetic \gls{VM} instruction handlers, and can also simplify \gls{MBA} expressions.
+Blazytko et al. came up in 2017 with Synthia \cite{blazytko2017}, another generic deobfuscation tool. As indicated by a paper by Banescu et al. \cite{banescu2016} published in 2016, in which the authors present ways to circumvent the underlying techniques (e.g. symbolic execution) employed by previous deobfuscation proposals, the authors of Synthia approach the problem from a different angle. They propose eliminating the virtualization-based obfuscation through semantic synthesis of the \gls{VM} handlers. Similar to previous approaches, they extract execution traces from the obfuscated program, but take a different approach to simplifying them. Their approach uses \gls{SMT} solvers and Monte Carlo Tree Search (MCTS) for trace simplification. They split the resulting traces into \emph{windows}, and then fuzz each window. The result of the fuzzing step is a set of input-output pairs, which represent the semantics of the trace window. They use the resulted MCTS in order to synthesize semantically-equivalent expressions with the input-output pairs resulted from the fuzzing process. Their work suggests that Synthia can extract semantics from arithmetic \gls{VM} instruction handlers, and can also simplify \gls{MBA} expressions.
 
 \section{Discussion}
 
 As suggested by a survey by Kochberger et al. in 2021 \cite{kochberger2021sok}, out of the numerous projects proposed by the academia, very few of them are publicly available. The authors analysed four publicly available projects and encountered difficulties when running the tools on their custom sample set. Their claim is that the evaluated tools work either on very specific samples, or need various amounts of manual intervention in order to achieve results. They conclude stating that further work is needed in order to achieve more robust deobfuscation solutions.
 
-Until better automatic solutions are developed, reverse engineers in the industry still heavily rely on manual approaches. Our proposal resembles the techniques described by Rolles \cite{rolles2009unpacking}, yet shifts attention to the bytecode. We use a mix of static analysis and symbolic function summarisation in order to extract the function handlers' semantics. In our approach, we lift the custom \gls{VM} bytecode into the VEX \gls{IR}. We then use angr \cite{angr}, a very popular tool in the binary analysis community, in order to directly analyse the lifted bytecode. As far as we are concerned, there is no other proposal of using angr for reasoning directly about bytecode in the context of virtualisation-based obfuscation.
+Until better automatic solutions are developed, reverse engineers in the industry still heavily rely on manual approaches. Our proposal resembles the techniques described by Rolles \cite{rolles2009unpacking}, yet shifts attention to the bytecode. We use a mix of static analysis and symbolic function summarisation in order to extract the function handlers' semantics. Then, in our proposed approach, we lift the custom \gls{VM} bytecode into the VEX \gls{IR} (see Section \ref{sec:vex}). We then use angr \cite{angr}, a very popular tool in the binary analysis community, in order to directly analyse the lifted bytecode. As far as we are concerned, there is no other proposal of using angr for reasoning directly about bytecode in the context of virtualisation-based obfuscation.
 
 \chapter{Our approach}
+\label{ch:our_approach}
 
 \section{Overview}
 
-In this thesis we propose a new approach for reverse engineering programs obfuscated through the use of virtualisation. Our approach resembles in some aspects previous methodologies \cite{rolles2009unpacking}, but introduces some new tools and techniques into the process. We aim to utilise the popular angr framework and its features in order to run automated analyses directly on the embedded bytecode. To get there we propose using a mix of static analysis and function summarisation via symbolic execution (as also seen in \cite{symbolic_deobf_2018} and \cite{liang2018}) in order to extract the semantics of the function handlers. We use the extracted information and build architecture-specific plugins for angr. Such a plugin contains the missing information which the framework required in order to its tools to function as expected.
+In this thesis we propose a new approach for reverse engineering programs obfuscated through the use of virtualisation. Our approach resembles in some aspects previous methodologies \cite{rolles2009unpacking}, but introduces some new tools and techniques into the process. We aim to utilise the popular angr framework and its features in order to run automated analyses directly on the embedded bytecode. To get there we propose using a mix of static analysis and function summarisation via symbolic execution (see Section \ref{sec:se}), as also seen in \cite{symbolic_deobf_2018} and \cite{liang2018}, in order to extract the semantics of the function handlers. We use the extracted information and build architecture-specific plugins for angr. Such a plugin contains the missing information which the framework requires, in order for its tools and features to function as expected.
 
-Among our contributions we highlight \cc{arch-genesis}, a tool which simplifies the process of creating a new architecture-specific plugin for angr. It abstracts away most of the boilerplate code, and allows the user to focus only on lifting the bytecode and on analysing it in angr. We also show how our tool will generate a disassembler for the \gls{VM} bytecode, given the structure and meaning of the virtual instructions. Furthermore, we demonstrate how a \gls{CFG} can be recovered from the bytecode, using primitives exposed through the resulted plugin.
+Among our contributions we highlight \cc{arch-genesis}, a tool which simplifies the process of creating a new architecture-specific plugin for angr. It abstracts away most of the boilerplate code, and allows the user to focus only on lifting the bytecode and on analysing it in angr. We also show how this tool will generate a disassembler for the \gls{VM} bytecode, given the structure and names of the virtual instructions. Furthermore, we demonstrate how a \gls{CFG} can be recovered from the bytecode, using primitives exposed through the resulted plugin.
 
-To exemplify the use of our proposed methodology, we use \cc{arch-genesis} in order to solve two crackme-style \gls{CTF} challenges of varying difficulty. Both challenges propose as \gls{RE} targets \gls{ELF} binaries, compiled for the \cc{Intel x86_64} architecture, obfuscated using virtualisation. Although the chosen samples do not accurately resemble real-world malware, they are a solid examples for virtualisation-based obfuscation, and serve as good preliminary targets for testing our tool against.
+To exemplify the use of our proposed methodology, we use \cc{arch-genesis} in order to solve two crackme-style \gls{CTF} challenges of varying difficulty. Both challenges propose as \gls{RE} targets \gls{ELF} binaries, compiled for the \cc{Intel x86_64} architecture, obfuscated using virtualisation. Although the chosen samples do not accurately resemble real-world malware, these are solid examples for virtualisation-based obfuscation, and serve as good preliminary targets for testing our tool.
 
 In the following sections we present the process of reverse engineering the mentioned binary files and their associated embedded bytecode. We end this chapter with a discussion on the advantages and shortcomings of our approach, based on our empiric experience using it. We end with future directions.
 
@@ -317,16 +353,16 @@ All the source code and related materials for this work are available on Github 
 
 \subsection{Assumptions}
 
-We make some notable assumptions about the targets that our project can be used for in its current iteration. We expect to work with binaries obfuscated with, but not limited to, the embedded \gls{VM} obfuscation technique, that present an easy to medium level of complexity. As such, we assume that the \gls{VM}, and specifically its function handlers can be reverse engineered in a reasonable amount of time with common \gls{RE} techniques. We further assume that the number of function handlers is reasonable enough to implement, and that each function handler's semantics can be translated into simple primitives, such as the ones exposed by the \cc{pyvex} VEX frontend.
+We make some notable assumptions about the targets that our project can be used for in its current iteration. We expect it to work with binaries obfuscated with, but not limited to, the embedded \gls{VM} obfuscation technique, that present an easy to medium level of complexity. As such, we assume that the \gls{VM}, and specifically its function handlers can be reverse engineered in a reasonable amount of time with common \gls{RE} techniques. We further assume that the number of function handlers is reasonable enough to implement, and that each function handler's semantics can be translated into simple primitives.
 
 \section{Understanding the VM}
 
-In order to integrate a new architecture into angr, we need to understand the implementation and the structure of the \gls{VM} \gls{ISA}, and what each of the \gls{VM} handlers does. For this, we rely both on static analysis using Ghidra \cite{ghidra}, as well as a symbolic execution for simplifying and summarising the semantics of the \gls{VM} function handlers, using the \emph{Miasm} framework \cite{miasm}.
+In order to integrate a new architecture into angr, we need to understand the implementation and the structure of the \gls{VM} \gls{ISA}, and what each of the \gls{VM} handlers does. For this, we rely both on static analysis using Ghidra \cite{ghidra}, as well as a symbolic execution (see Section \ref{sec:se}) for simplifying and summarising the semantics of the \gls{VM} function handlers, using the \emph{Miasm} framework \cite{miasm}.
 
 \subsection{Static Analysis}
 \label{static_ghidra}
 
-We begin by opening the binary file in Ghidra \cite{ghidra}, an open source \gls{RE} framework, developed by the \gls{NSA}. Despite its dated looks and non-friendly \gls{UI}, Ghidra features not only a power disassembler, but numerous other features, such as \gls{CFG} representation, and a very powerful decompiler. We use it to quickly identify the source of the bytecode, which is the \gls{stdin}: the file path of a file containing the \gls{VM} bytecode is passed to \gls{stdin} in both cases, after which it is parsed and passed onwards to the bytecode interpretor. We continue the analysis with this interpretor, as it is the most interesting part of the program.
+We begin by opening the binary file in Ghidra \cite{ghidra}, which was previously covered in \ref{sec:ghidra}. We use it to quickly identify the source of the bytecode, which is the \gls{stdin}: the file path of a file containing the \gls{VM} bytecode is passed to \gls{stdin} in both cases, after which it is parsed and passed onwards to the bytecode interpretor. We continue the analysis with this interpretor, as it is the most interesting part of the program.
 
 \begin{figure}[ht]
     \centering
@@ -342,7 +378,7 @@ We first consult the \gls{CFG} view in order to identify the relevant components
     \item A \gls{VM} exit, which restores the state and passes control back to native execution;
 \end{enumerate}
 
-   We identify these components in the high level overview, as we can see in Figure \ref{fig:cfg_vmwhere}, for one of the binaries. We can visibly see the individual handlers, as well as some handler functions which are more shallow in complexity (mainly on the left side of the \gls{CFG}), and some that are visibly more complex (mainly on the right side of the \gls{CFG}). 
+   We identify these components in the high level overview, as we can see in Figure \ref{fig:cfg_vmwhere}, in one of the two analysed targets. We can visibly see the individual handlers, as well as some handler functions which are more shallow in complexity (mainly on the left side of the \gls{CFG}), and some that are visibly more complex (mainly on the right side of the \gls{CFG}). 
 
 \begin{lstlisting}[language=c, label={lst:switch_vmwhere}, caption={Decompilation section of the \cc{vmwhere} dispatcher, after variable renaming and retyping. We notice the implementation of the \cc{add}, \cc{jlz} and \cc{push_top} instructions.}]
 switch(*IP) {
@@ -373,7 +409,7 @@ case 0xf:
 
 The \emph{dispatch} tree is clearly visible in the case of the \cc{vmwhere} challenge, because function handlers are inlined inside a big switch statement, which handles each individual \gls{VM} instruction. We can identify the respective switch statement in the Ghidra decompiler. Moreover, a high-level \gls{CFG} of the dispatcher can be inspected in Listing \ref{lst:switch_vmwhere}. 
 
-In the of the \cc{vmcastle} binary, the handlers are not visible in the \gls{CFG} at all, because the dispatching mechanism used is different. Each handler routine is accessed via an indirect jump, more precisely a call instruction on the \cc{RDX} register. The \cc{RDX} register indexes into a function dispatch table, based on the current opcode. Listing \ref{lst:indirect_call_vmcastle} contains the relevant disassembled code for this example.
+In the cease of the \cc{vmcastle} binary, the handlers are not visible in the \gls{CFG} at all, because the dispatching mechanism used is different. Each handler routine is accessed via an indirect jump, more precisely a call instruction on the \cc{RDX} register. The \cc{RDX} register indexes into a function dispatch table, based on the current opcode. Listing \ref{lst:indirect_call_vmcastle} contains the relevant disassembled code for this example.
 
 \begin{lstlisting}[label={lst:indirect_call_vmcastle}, caption={x86\_64 disassembly of the \cc{vmcastle} dispatcher. The function handler corresponding to the current opcode is indirectly called through the register \cc{RDX}.}]
 ...
@@ -388,38 +424,34 @@ In the of the \cc{vmcastle} binary, the handlers are not visible in the \gls{CFG
 ...
 \end{lstlisting}
 
-We are also interested in the internal structures of the \gls{VM}, namely, the registers used, the stack, the memory addressing scheme, calling convention, etc. The most important registers to look out for are the virtual \gls{IP} and the virtual \gls{SP}, which we were able to identify. We also notice the location of the stack and the fact that it \emph{grows} upwards in both cases, a clear distinction from native \cc{x64} architecture. A notable distinction between the \cc{vmwhere} and the \cc{vmcastle} architectures is that the former performs all its operations directly on the stack, while the latter uses four extra registers for its operations: three general purpose registers and a flag register. This is clearly highlighted in Listings \ref{lst:add_vmwhere} and \ref{lst:add_vmcastle}, where the implementation of corresponding \cc{add} operations is displayed. The way operations are performed and how data moves around inside the \gls{VM} is important information which we need throughout the rest of the analysis.
+We are also interested in the internal structures of the \gls{VM}, namely, the registers used, the stack, the memory addressing scheme, calling convention, etc. The most important registers to look out for are the virtual \gls{IP} and the virtual \gls{SP}, which we were able to identify. We also notice the location of the stack and the fact that it \emph{grows} upwards in both cases, a clear distinction from native \cc{x64} architecture. A notable distinction between the \cc{vmwhere} and the \cc{vmcastle} architectures is that the former performs all its operations directly on the stack, while the latter uses four extra registers for its operations: three general purpose registers and a flag register. This is clearly highlighted in Listings \ref{lst:add_vmwhere} and \ref{lst:add_vmcastle}, where the implementation of similar \cc{add} operations is displayed. The way operations are performed and how data moves inside the \gls{VM} is important information which we need throughout the rest of the analysis.
 
 \begin{multicols}{2}
     \begin{lstlisting}[language=c, label={lst:add_vmwhere}, caption={Stack-based implementation of a simple \cc{add} instruction in the \cc{vmwhere} architecture.}]
 SP[-2] = SP[-2] + SP[-1];
 SP = SP + -1;
 IP = rip_next;
-break;
 \end{lstlisting}
 \columnbreak
 \begin{lstlisting}[language=c, label={lst:add_vmcastle}, caption={Register-based implementation of a simple \cc{add} instruction in the \cc{vmcastle} architecture.}]
 MEM.AC = MEM.R2 + MEM.R1;
-return;
 \end{lstlisting}
 \end{multicols}
 
 After getting a high-level overview, we continue the analysis with a mix of static analysis and symbolic execution, in order to better understand the details of each of \gls{VM} handler function.
 
-Next, we present how we used symbolic execution for function semantics summarisation, using the Miasm \cite{miasm} framework.
-
 \subsection{Automatic Code Summarisation using Miasm}
 \label{sec:miasm}
 
-We present here a technique utilising symbolic execution through the Miasm \cite{miasm} reverse engineering framework, in order to summarise function semantics. We have seen this approach used in multiple places including the Miasm blog in an article about reverse engineering the ZeusVM malware \cite{zeusvm_miasm}, as well as in multiple workshops by Tim Blazytko \cite{tim_miasm}. There are also academic publications such as \cite{liang2018} which use this exact method, or \cite{symbolic_deobf_2018} which employ a similar enough technique. We will applied this technique during our analysis, in order to automatically parse all \gls{VM} handlers and output their semantics in a clear and structured way. 
+We present here a technique utilising symbolic execution through the Miasm \cite{miasm} reverse engineering framework, in order to summarise function semantics. We have seen this approach used in multiple places including the Miasm blog in an article about reverse engineering the ZeusVM malware \cite{zeusvm_miasm}, as well as in multiple workshops by Tim Blazytko \cite{tim_miasm}. There are also academic publications such as \cite{liang2018} which use this exact method, or \cite{symbolic_deobf_2018} which employ a similar enough technique. We will apply this technique during our analysis, in order to automatically parse all \gls{VM} handlers and output their semantics in a simplified and structured way. 
 
-In order to get started, we followed the previously mentioned article \cite{zeusvm_miasm}. Since the article is 8 years old at the point of writing this paper, it was not surprising the figure that the code presented it outdated. We made a small contribution by updating the script from the article to \cc{python3} and to an up-to-date version of the Miasm framework.
+In order to get started, we followed the previously mentioned article \cite{zeusvm_miasm}. Since the article is 8 years old at the point of writing this dissertation, it was not surprising to figure out that the code presented it outdated, and no longer compatible with recent versions of the framework. We made a small contribution by updating the script from the article to \cc{python3} and to an up-to-date version of the Miasm framework.
 
-Miasm and angr, at their core, are emulators, and will function just like a normal emulator when computing strictly on concrete (non-symbolic) data. The beauty happens when we introduce and allow symbolic variables in the state. In that case, by executing several blocks of code, we register the state change across instructions, through the symbolic variables. As such, from the high-level static analysis performed previously, we collect the addresses of each individual handler, and execute them symbolically. For scope limiting purposes, we also identify the address where the control switches back to the dispatch loop: \cc{001018fd | eb 7b | JMP | DISPATCH_LOOP}. 
+Miasm and angr, at their core, are emulators, and will function just like a normal emulator when computing strictly on concrete (non-symbolic) data. The beauty happens when we introduce and allow symbolic values in the state. In that case, by executing several blocks of code, we register the state change across instructions, through the symbolic values. As such, from the high-level static analysis performed previously, we collect the addresses of each individual handler, and execute them symbolically. For scope limiting purposes, we also identify the address where the control switches back to the dispatch loop: \cc{001018fd | eb 7b | JMP | DISPATCH_LOOP}. 
 
-Let's look into an example featuring a more interesting handler from the \cc{vmwhere} \gls{VM}, in particular the handler number $17$, and execute it symbolically. We can see a partial result in Listing \ref{lst:miasm0}. 
+Let's look into an example featuring a more interesting handler from the \cc{vmwhere} \gls{VM} (handler number $17$), and execute it symbolically. We can see a partial result in Listing \ref{lst:miasm0}. 
 
-\begin{lstlisting}[label={lst:miasm0}, caption={Partial result of symbolically executing a function handler in Miasm. We notice the state change in core registers such as \cc{RDX}, flag changes, as well as changes in memory.}]
+\begin{lstlisting}[label={lst:miasm0}, caption={Partial result of symbolically executing a function handler in Miasm. We notice the state change in core registers such as \cc{RDX}, flag changes, as well as changes in memory. The output is clearly convoluted and not easy to read. }]
 IRDst = 0x18CF
 cf = ((((@64[RBP + 0xFFFFFFFFFFFFFFF0] + 0x7) ^ (@64[RBP + 0xFFFFFFFFFFFFFFF0] + 0xFFFFFFFFFFFFFFFF)) & ((@64[RBP + 0xFFFFFFFFFFFFFFF0] + 0xFFFFFFFFFFFFFFFF) ^ 0xFFFFFFFFFFFFFFF7)) ^ (@64[RBP + 0xFFFFFFFFFFFFFFF0] + 0x7) ^ (@64[RBP + 0xFFFFFFFFFFFFFFF0] + 0xFFFFFFFFFFFFFFFF) ^ 0x8)[63:64]
 zf = @64[RBP + 0xFFFFFFFFFFFFFFF0] == 0xFFFFFFFFFFFFFFF9
@@ -447,11 +479,11 @@ VM_STACK_TOP = VM_STACK_TOP & 0x1
 @8[VM_SP + 0x6] = (VM_STACK_TOP >> 0x7) & 0x1
 \end{lstlisting}
 
-After cleaning up the output and applying more intuitive labelling, the semantics of the handler are no longer that hard to understand. It pop a 1-byte value from the top of the stack, and pushes each of its bits back onto the stack, as individual entries. For example, if we had the value $[1e]$ on the stack, we would end up, instead, with the following values on the stack $[0, 1, 1, 1, 1, 0, 0, 0]$. We confirm this conclusion through static analysis in Ghidra, where we observe a loop which pushes each individual bit from the respective byte to the stack.
+After cleaning up the output and applying more intuitive labelling, the semantics of the handler are very easy to understand. It pop a 1-byte value from the top of the stack, and pushes each of its bits back onto the stack, as individual entries. For example, if we had the value $0x1e$ on top of the stack, we would end up, instead, with the following values on top of the stack $0, 1, 1, 1, 1, 0, 0, 0$. We confirm this conclusion through static analysis in Ghidra, where we observe a loop which pushes each individual bit from the respective byte to the stack.
 
 By studying both the decompiled code and the output from the Miasm automated analysis, we were able to recover the semantics of all the handlers. 
 
-It is important to note that the true power of this analysis technique is not fully highlighted in this scenario with the two \gls{CTF} challenges, as the samples lack more complex obfuscation. The blog post from Miasm about ZeusVM \cite{zeusvm_miasm} is a better example, as there are considerably more function handlers to analyse, with some of them being very similar. This technique can be further used to compare symbolic states, in order to identify what the exact differences between certain handlers are, through a simple difference operation. When dealing with heavier obfuscation, Miasm's symbolic execution engine can deal with common data-flow obfuscation such as \emph{constant unfolding}, \emph{dead code}, \emph{pattern based-obfuscation}, etc. by simplifying the mathematical expressions that arise. Even more, in the case of \gls{MBA}, which is one of the most difficult to deal with obfuscation schemes, we can use a msynth \cite{msynth}, a framework built on top of Miasm which can simplify \gls{MBA} expressions, based on one of the most generic and powerful attacks on \gls{MBA}, called QSynth \cite{qsynth}.
+It is important to note that the true power of this analysis technique is not fully highlighted in this scenario with the two \gls{CTF} challenges, as the samples lack more complex obfuscation. The blog post from Miasm about ZeusVM \cite{zeusvm_miasm} is a better example, as there are considerably more function handlers to analyse, with some of them being very similar. This technique can be further used to compare symbolic states, in order to identify what the exact differences between certain handlers are, through a simple difference operation. When dealing with heavier obfuscation, Miasm's symbolic execution engine can deal with common data-flow obfuscation such as \emph{constant unfolding}, \emph{dead code}, \emph{pattern based-obfuscation}, etc. by simplifying the mathematical expressions that arise. Even more, in the case of \gls{MBA}, which is one of the most difficult to deal with obfuscation schemes, we can use msynth \cite{msynth}, a framework built on top of Miasm which can simplify \gls{MBA} expressions, based on one of the most generic and powerful attacks on \gls{MBA}, called QSynth \cite{qsynth}.
 
 \section{Summary of Analysis}
 
@@ -461,7 +493,7 @@ Manual static analysis in Ghidra, as well as symbolic analysis using Miasm, whic
     \item arithmetic and logic operations: We identifies a number of function handlers which perform simple arithmetic operations, resembling instructions such as \cc{add}, \cc{sub}, \cc{xor}, \cc{shl}, \cc{shr}, \cc{mul}, \cc{div}, from well known architectures. The implementations in the two targeted \glspl{VM} are not the same. In the \cc{vmwhere} binary, the operations are computed using values from the top of the stack, whereas in the case of \cc{vmcastle}, the computation results are achieved through the use of registers;
     \item stack operations: Both \glspl{ISA} have similar implementations of the \cc{push} and \cc{pop} instructions. We could also identify variations where the value of a register is pushed onto the stack, a value is popped into a register (or not), the popped values are also printed to \cc{stdout}, etc.;
     \item conditionals and jumps: We identified function handlers which resemble in behaviour instructions such as \cc{cmp}, \cc{jlz}, \cc{jz}, \cc{jmp}. In the case of \cc{vmwhere}, all conditional checks are made on the value on top of the stack, and the jumps are all \emph{direct}, relying on immediate values as offsets from the current position. In the case of \cc{vmcastle} the implementations are slightly more complex. The \cc{cmp} operation updates the flag register \cc{ac}. Subsequently, a conditional jump will perform an indirect jump based on the \cc{ac} flag, taking the value stored in one of the three general purpose registers (\cc{r1}, \cc{r2}, \cc{r3}) as an offset;
-    \item \gls{syscall}: In both cases we identified handlers that perform reads and writes. Both operations result in a context switch to the kernel as a result of \glspl{syscall} in the host \gls{OS}. Their implementation is straight forward. In the case of \cc{vmwhere} the value is read from, or written to, the stack, whilst in the \cc{vmcastle} case, data is read from or written to registers. Since we are dealing with \glspl{syscall}, in the angr plugin implementation that follows, special measures will have to be taken for correctly implementing these instructions;
+    \item \gls{syscall}: In both cases we identified handlers that perform reads and writes. Both operations result in a context switch to the kernel as a result of \glspl{syscall} in the host \gls{OS}. Their implementation is straight forward. In the case of \cc{vmwhere} the value is read to, or written from, the stack, whilst in the \cc{vmcastle} case, data is read to or written from registers. Since we are dealing with \glspl{syscall}, in the angr plugin implementation that follows, special measures will have to be taken for correctly implementing these instructions;
     \item \cc{nop} and exits: In both cases we identified \cc{exit} instructions that simply signal to the embedded interpreter that the execution of the bytecode should cease and context should be switched back to the native execution. In the case of \cc{vmcastle} we also encountered 101 entries in the dispatch table pointing to the same instruction handler. The implementation of this instruction does nothing, and constitutes the equivalent of a \cc{nop} from \cc{x64};
     \item adhoc and complex instructions: In both cases, but especially in the case of \cc{vmwhere}, we identified function handlers that do not resemble any well known instructions from common architectures, but rather a combination of multiple instructions, leading to a more complex set of transformations that are applied to the state of the program. In the case of \cc{vmcastle} there are two conditional arithmetic operations applied to the top of the stack: a \cc{shl} and an \cc{add} operation that will be executed (or not) having $1$ as the argument, based on an immediate value. In the case of \cc{vmwhere}, the handlers which stand out are handler number $17$, also mentioned in Section \ref{sec:miasm}, and handler number $18$, which performs the corresponding reverse operation. Moreover, handler number $16$ reverses the order of the elements on the stack in a given range, specified through an immediate value;
 \end{enumerate} 
@@ -472,7 +504,7 @@ Other relevant information is the size of the stack, which in both cases is of $
 
 In this section, we will cover \cc{angr} \cite{angr}, a popular binary analysis framework, which has been growing in popularity in the binary analysis scene. It is built in python and designed to be modular and extensible. Thus, each of its modules can be easily extended. Figure \ref{fig:angr} clearly depicts angr's components and the way in which those interact. 
 
-Our goal is to be able to write a simple angr program (Listing \ref{lst:angr_ex} shows the equivalent of \emph{hello world} in angr) which loads a binary file containing bytecode written for a custom \gls{ISA}. We expect to have angr be able to load it, parse it, run analysis tools on it and symbolically execute it. We essentially want angr to treat our binary file just like any other binary file based on a common architecture, such as \cc{x86_64}. We will now go over the components which we extended in our plugins. We took a lot of inspiration from a tutorial on building an angr plugin for \gls{BF}, and other examples showcased by the angr team on their Github page \cite{angr_tut}.
+Our goal is to be able to write a simple angr program (Listing \ref{lst:angr_ex} shows the equivalent of \emph{hello world} in angr) which loads a binary file containing bytecode written for a custom \gls{ISA}. We expect to have angr be able to load it, parse it, run analysis tools on it and symbolically execute it. We essentially want angr to treat our binary file just like any other binary file based on a common architecture, such as \cc{x86_64}. We will now go over the components which we extended in our plugins. We took a lot of inspiration from a tutorial on building an angr plugin for \gls{BF} \cite{brainfk}, and other examples showcased by the angr team on their Github page \cite{angr_tut}.
 
 \begin{figure}[ht]
     \centering
@@ -521,11 +553,11 @@ If we register only one custom architecture during analysis, all the loaders for
 
 \subsection{Writing a Lifter}
 
-\textit{angr} is a multiplatform binary analysis platform and can be easily extend to also support other architectures. The main reason behind this powerful mode of operation is the following: every type of analysis that is performed through angr is done on an \gls{IR} called VEX. In fact, VEX is the same \gls{IR} used by Valgrind, another binary analysis platform which specialises in detecting memory corruption issues, profiling, etc. \cite{valgrind}. Thus, in order to instrument code for a custom architecture, we do not need to implement a new custom analysis engine, but only to provide a translation layer between the bytecode we provide and the VEX \gls{IR}. 
+\textit{angr} is a multiplatform binary analysis platform and can be easily extend to also support other architectures. The main reason behind this powerful mode of operation is the following: every type of analysis that is performed through angr is done on the VEX \gls{IR} (see Section \ref{sec:vex}). Thus, in order to instrument code for a custom architecture, we do not need to implement a new custom analysis engine, but only to provide a translation layer between the bytecode we provide and the VEX \gls{IR}. 
 
 This translation layer is called a lifter, because it \emph{lifts} the bytecode into a higher level representation. angr provides a framework called \cc{gymrat}, which offers a clear and concise interface for building a lifter. \cc{gymrat} is an abstraction over \cc{pyvex} -- a pythonic interface over the VEX \gls{IR} objects.
 
-In order to build a lifter for a custom architecture we must define the format for syntax and the semantics of each instruction. Typically, the syntax is given by the length of the instruction, a fixed \emph{magic number} which identifies it, called the opcode, and the embedded arguments. In order to express the semantics of the instructions, we have to describe the state change that the execution of the instruction would produce during execution, by utilising the primitives exposed through the \cc{pyvex} framework. 
+In order to build a lifter for a custom architecture we must define the format for the syntax and the semantics of each instruction. Typically, the syntax is given by the length of the instruction, a fixed \emph{magic number} which identifies it, called the opcode, and the embedded arguments. In order to express the semantics of the instructions, we have to describe the state change that the execution of the instruction would produce during execution, by utilising the primitives exposed through the \cc{pyvex} framework. 
 
 These primitives consist of operations which enable using immediate values in the form of constants, reading/writing data from/to pointers, reading/writing data from/to memory, and jumping. They are sufficient for expressing the vast majority of transformations, but are sometimes lacking, as we will discuss in the later section on shortcomings \ref{sec:shortcomings}.
 
@@ -597,7 +629,7 @@ name = 'ReadByte'
 
 \subsection{Disassembler}
 
-One of the most important aspects of binary analysis is being able to read code in order to understand what it does, as we have described for instance in Section \ref{static_ghidra}. Using a disassembler is still essential, even when attempting automatic analysis with a tool such as angr, in order to determine and analyse relevant \gls{BB} and to determine strategies of guiding symbolic execution. As such, at the very least, we would need a disassembler for the bytecode that we are analysing. When analysing \emph{classic} programs, we can check out the disassembly of the machine code through the well integrated capstone disassembly framework \cite{capstone}. We could theoretically write a capstone module for our custom architecture, but to achieve such a thing would require an unreasonable amount of effort, which is outside the scope of this work.
+One of the most important aspects of binary analysis is being able to read code in order to understand what it does, as we have described for instance in Section \ref{static_ghidra}. Using a disassembler is still essential, even when attempting automatic analysis with a tool such as angr, in order to determine and analyse relevant \gls{BB} and to determine strategies of guiding symbolic execution. As such, at the very least, we would need a disassembler for the bytecode that we are analysing. When analysing \emph{classic} programs in angr, we can inspect the disassembly of the machine code through the well integrated capstone disassembly framework \cite{capstone}. We could theoretically write a capstone module for our custom architecture, but to achieve such a thing would require an unreasonable amount of effort, which is outside the scope of this work.
 
 \begin{lstlisting}[label={lst:disass}, caption={Disassembly from a section of bytecode extracted from the \cc{vmcastle} sample. The disassembler itself is generated with the \cc{arch-genesis} tool.}]
 0x17c4:  push_imm b'?'
@@ -643,7 +675,9 @@ The section circled in green represents a sequence of operations on stack data, 
 
 \subsubsection{VMWHERE}
 
-Static analysis of the bytecode disassembly, in conjunction with the \gls{CFG}, enabled us to identify the previously mentioned inlined function, which takes a byte of data from \cc{stdin} and transforms it through a series of operations. We are not particularly interested in what the exact operations are, because we can symbolically execute them in angr. We are rather interested in how the result is used of the computation is used. The result of each round of computations is stored on the \gls{VM}'s stack. Listing \ref{lst:vmwhere_check} shows another sequence of operations that repeatedly takes place at the end of the program. Being on the shorter side, it is not so difficult to understand that it takes exactly one value from the top of the stack, performs a $xor$ logical operation on it with the byte \cc{\xZZ}, and then performs an $or$ logical operation on the result, with the value at the bottom of the stack, which is initially $0$.
+Listing \ref{lst:vmwhere_bnf} holds the corresponding grammar of the \cc{vmwhere} bytecode, in \gls{BNF}, with comments on semantics.
+
+Static analysis of the bytecode disassembly, in conjunction with the \gls{CFG}, enabled us to identify the previously mentioned inlined function, which takes a byte of data from \cc{stdin} and transforms it through a series of operations. We are not particularly interested in what the exact operations are, because we can symbolically execute them in angr. We are rather interested in how the result of the computation is used. The result of each round of computations is stored on the \gls{VM}'s stack. Listing \ref{lst:vmwhere_check} shows another sequence of operations that repeatedly takes place at the end of the program. Being on the shorter side, it is not so difficult to understand that it takes exactly one value from the top of the stack, performs a $xor$ logical operation on it with the byte \cc{\xZZ}, and then performs an $or$ logical operation on the result, with the value at the bottom of the stack, which is initially $0$.
 
 \begin{lstlisting}[label={lst:vmwhere_check}, caption={Disassembly of \cc{vmwhere} bytecode, which performs a bitwise-xor operation on the top two values on top of the stack, and then a bitwise-or operation on the previous result, and the value at the bottom of the stack.}]
 0x0972:  push b'\xZZ' @$ \label{line:vmwhere_check_imm}$@
@@ -655,9 +689,53 @@ Static analysis of the bytecode disassembly, in conjunction with the \gls{CFG}, 
 0x097c:  rev (sizeof(stack))
 \end{lstlisting}
 
-We are dealing with a \emph{crackme} type of program. What is does is that it accepts an input, performs a series of checks on it, and returns if the input string was accepted or not. Our goal is to find a correct input that bypasses the checker. In this case, the final check that we are interested in, can be found at the very end of the bytecode: \cc{0x0b9a:  jz 0xba0, 2976, 3}. After performing all the rounds which resemble Listing \ref{lst:vmwhere_check}, the only value left on the stack, which is the bottom of the stack, is checked to be equal to zero. The response is considered correct if that check passes. We can extrapolate, and deduce that each result of the computation we observed in the \gls{CFG} \ref{fig:cfg_bytecode} is checked for equality against the immediate value from Line \ref{line:vmwhere_check_imm} in the previously mentioned code Listing. By symbolically executing the inlined function, giving it as input a symbolic value, and finally constraining the output to be equal to the immediate value \cc{\xZZ} from Line \ref{line:vmwhere_check_imm}, we will obtain the corresponding input byte that produces the respective output. We automated this process in angr and repeated it for each of the identified constants in the bytecode in order to recover full secret.
+We are dealing with a \emph{crackme} type of program. What is does is that it accepts an input, performs a series of checks on it, and returns a message saying if the input string was accepted or not. Our goal is to find a correct input that bypasses the checker. In this case, the final check that we are interested in, can be found at the very end of the bytecode: \cc{0x0b9a:  jz 0xba0, 2976, 3}. After performing all the rounds which resemble Listing \ref{lst:vmwhere_check}, the only value left on the stack, which is the bottom of the stack, is checked to be equal to zero. The response is considered correct if that check passes. We can extrapolate, and deduce that each result of the computation we observed in the \gls{CFG} \ref{fig:cfg_bytecode} is checked for equality against the immediate value from Line \ref{line:vmwhere_check_imm} in the previously mentioned code Listing. By symbolically executing the inlined function, giving it as input a symbolic value, and finally constraining the output to be equal to the immediate value \cc{\xZZ} from Line \ref{line:vmwhere_check_imm}, we will obtain the corresponding input byte that produces the respective output. We automated this process in angr and repeated it for each of the identified constants in the bytecode in order to recover the full secret.
+
+\begin{lstlisting}[label={lst:vmwhere_bnf}, caption={BNF Grammar of the vmwhere bytecode syntax.}]
+<program> ::= <instruction> | <instruction> <program>
+
+<instruction> ::= <exit> | <add> | <sub> | <and> | <or> | <xor> 
+                | <shl> | <shr> | <read> | <write> | <push> 
+                | <jlz> | <jz> | <jmp> | <pop> | <pushstk> 
+                | <rev> | <exp> | <sqz>
+
+<exit>     ::= "00000000" ; exit the program
+<add>      ::= "00000001" ; add the two values on top of the stack
+<sub>      ::= "00000010" ; sub the two values on top of the stack
+<and>      ::= "00000011" ; and the two values on top of the stack
+<or>       ::= "00000100" ; or  the two values on top of the stack
+<xor>      ::= "00000101" : xor the two values on top of the stack
+<shl>      ::= "00000110" ; shl the value on top of the stack
+<shr>      ::= "00000111" ; shr the value on top of the stack
+<read>     ::= "00001000" ; read from stdin a byte on top of the stack
+<write>    ::= "00001001" ; write to stdout the value on top of the stack
+<push>     ::= "00001010" <bit_8> ; push one immediate byte on the stack
+<jlz>      ::= "00001011" <bit_16> ; conditional jump to 16-bit immediate
+                                     address if the value on top of the 
+                                     stack is lower than 0
+<jz>       ::= "00001100" <bit_16> ; conditional jump to 16-bit immediate
+                                     if the value on top of the stack is
+                                     equal to 0
+<jmp>      ::= "00001101" <bit_16> ; unconditional jump to 16-bit immediate
+                                     address
+<pop>      ::= "00001110" ; pop the value on top of the stack
+<pushstk>  ::= "00001111" ; push the value on top of the stack on the stack
+<rev>      ::= "00010000" <bit_8> ; reverse a range given by an 8-bit
+                                    immediate value from the stack
+<exp>      ::= "00010001" ; expand the value on top of the stack to 8 bits
+                            and push each individually on the stack
+<sqz>      ::= "00010010" ; pop the top eight values on top of the stack
+                            and compress them to an 8-bit value and push
+                            it on the stack
+
+<bit_8>   ::= <bit> <bit> <bit> <bit> <bit> <bit> <bit> <bit>
+<bit_16>  ::= <bit_8> <bit_8>
+<bit>      ::= "0" | "1"
+\end{lstlisting}
 
 \subsubsection{VMCASTLE}
+
+Listing \ref{lst:vmcastle_bnf} holds the corresponding grammar of the \cc{vmcastle} bytecode, in \gls{BNF}, with comments on semantics.
 
 The second challenge is also a \emph{crackme}. It is, however, a lot more difficult to statically analyse. The bytecode itself is obfuscated with techniques such as \emph{function inlining}, \emph{dead code inserting}, \emph{constant unfolding}, etc. We can bypass these obfuscation techniques, by executing the code symbolically with angr, using our plugin for \cc{vmcastle}. We only needed a small, but crucial, amount of information before automating the whole cracking process:
 
@@ -667,7 +745,54 @@ The second challenge is also a \emph{crackme}. It is, however, a lot more diffic
     \item We determined the first address that would be reached if the input was deemed correct. \label{item:three}
 \end{enumerate}
 
-With the above information, we created a symbolic string, inserted it on the stack, and started executing at the address determined in (\ref{item:one}). We then start a guided symbolic execute the code in a guided manner: we specifically avoid the range of addresses from (\ref{item:two}) and try to reach the address from (\ref{item:three}). In the end we end up with one state found and many more avoided. At this point we focus our attention on the found state. Its constraint solver has built an expression, which guides the execution to follow the exact path which leads to the found state. By finding a model which satisfies the constraints, using the integrated Z3 \cite{z3} \gls{SMT} solver, we essentially crack the checker. The full source code of the solution can be found in Appendix \ref{anex}.
+With the above information, we created a symbolic string, inserted it on the stack, and started executing at the address determined in (\ref{item:one}). We then start a guided symbolic execution of the code: we specifically avoid the range of addresses from (\ref{item:two}) and try to reach the address from (\ref{item:three}). In the end we end up with one state found and many more avoided. At this point we focus our attention on the found state. Its constraint solver has built an expression, which guides the execution to follow the exact path which leads to the found state. By finding a model which satisfies the constraints, using the integrated Z3 \cite{z3} \gls{SMT} solver, we essentially crack the checker. The full source code of the solution can be found in Appendix \ref{anex}.
+
+\begin{lstlisting}[label={lst:vmcastle_bnf}, caption={BNF Grammar of the vmcastle bytecode syntax.}]
+<program> ::= <instruction> | <instruction> <program>
+
+<instruction> ::= <exit> | <pop_reg> | <push_reg> | <push_imm>
+                | <add> | <sub> | <mul> | <div> | <mod>
+                | <jmp_reg> | <jmp_cond> | <cmp> | <print_reg>
+                | <read_reg> | <stack_top_itshl> | <stack_top_itadd>
+
+<exit>       ::= "01110101" <byte>      ; halt execution
+<pop_reg>    ::= "01100110" <reg>       ; pop the stack into the register
+<push_reg>   ::= "01100111" <reg>       ; push the value from the register,
+                                        ; on top of the stack
+<push_imm>   ::= "01101000" <byte>      ; push the 8-bit immediate value
+                                        ; top of the stack
+<add>        ::= "01101001" <byte>      ; ac = r1 + r2
+<sub>        ::= "01101010" <byte>      ; ac = r1 - r2
+<mul>        ::= "01101011" <byte>      ; ac = r1 * r2
+<div>        ::= "01101100" <byte>      ; ac = r1 / r2
+<mod>        ::= "01101101" <byte>      ; ac = r1 % r2
+<jmp_reg>    ::= "01101110" <reg>       ; unconditional jump to the 
+                                        ; address from the register
+<jmp_cond>   ::= "01101111" <reg>       ; conditional jump to the
+                                        ; address from the register
+                                        ; based on the value of ac
+<cmp>        ::= "01110000" <byte>      ; compare the values stored 
+                                        ; in registers r1 and r2 and
+                                        ; update ac with the result
+<print_reg>  ::= "01110001" <reg>       ; write to stdout the value
+                                        ; from the register 
+<read_reg>   ::= "01110010" <reg>       ; read from stdin a value 
+                                        ; and store it in the register
+<stack_top_itshl> ::= "01110011" <byte> ; shl the value on top of the stack
+                                        ; with 1 bit if the immediate
+                                        ; value is not zero
+<stack_top_itadd> ::= "01110000" <byte> ; add one to the value on top of 
+                                        ; the stack if the immediate value
+                                        ; is not zero
+
+<byte>      ::= <bit> <bit> <bit> <bit> <bit> <bit> <bit> <bit>
+<bit>       ::= "0" | "1"
+<reg>       ::= <r1> | <r2> | <r3> | <ac>
+<r1>        ::= "00000000"
+<r2>        ::= "00000001"
+<r3>        ::= "00000010"
+<ac>        ::= "00000011"
+\end{lstlisting}
 
 \section{Discussion}
 
@@ -688,7 +813,11 @@ While developing our solution we encountered several difficulties, which we will
 
 The \cc{pyvex} library, in particular the \cc{Instruction} class exposes a number of primitives which we used in order to \emph{translate} the \gls{VM} \gls{ISA} semantics into the VEX \gls{IR}. As previously mentioned these are more or less limited to interacting with registers and memory, the use of constant values (i.e. immediate values), and conditional jumps. This set of primitives is perfectly reasonable for \emph{normal} architectures, where an instructions performs a very specific and limited number of changes to the state of the program. This is not the case when we are dealing with custom \glspl{VM}. The function handlers of each instruction can happen to be complex and have very convoluted logic. Listing \ref{lst:miasm1} is an example of such a handler, but the complexity cap can be a lot higher.
 
-We have faced difficulties in implementation, especially with of handlers which deal with conditionals. This happened because there is no method which the \cc{Instruction} class exposes, for reliably describing conditionals. The \cc{ite(condition, a, b)} method suggests that it does exactly what we desire: it takes a conditional expression, and based on its truth value it will return \cc{a}, or \cc{b}. We have had several problems with this method. Firstly, we were not able to chain conditionals into more complex logical expression. Secondly, the result of a call to \cc{ite} does not have the expected type of \cc{VexValue}, but is instead a \cc{rdt}. Listing \ref{lst:vex_cond_jmp} holds the implementation of the function handler number $111$ from \cc{vmcastle}. In order to properly implement the conditional jump, we had to first wrap all \cc{ite} return values back into \cc{VexValues}, and then to come up with a \emph{hacky} solution for choosing the right jump destination, which can be seen in at Line \ref{line:trickery}. Our intuition is that the \cc{ite} method is not supposed to be directly used, considering the fact that it is used as part of the \cc{jump} method implementation, and is has no documentation for it, whereas all other primitives are properly documented.
+We have faced difficulties in implementation, especially with of handlers which deal with conditionals. This happened because there is no method which the \cc{Instruction} class exposes, for reliably describing conditionals. The \cc{ite(condition, a, b)} method suggests that it does exactly what we desire: it takes a conditional expression, and based on its truth value it will return \cc{a}, or \cc{b}. We have had several problems with this method. Firstly, we were not able to chain conditionals into more complex logical expression. Secondly, the result of a call to \cc{ite} does not have the expected type of \cc{VexValue}, but is instead a \cc{rdt}. Listing \ref{lst:vex_cond_jmp} holds the implementation of the function handler number $111$ from \cc{vmcastle}. In order to properly implement the conditional jump, we had to first wrap all \cc{ite} return values back into \cc{VexValues}, as can be seen for example at Line \ref{line:vexvalue}. Our intuition is that the \cc{ite} method is not supposed to be directly used, considering the fact that it is used as part of the \cc{jump} method implementation, and is has no documentation for it, whereas all other primitives are properly documented.
+
+We also encountered some generic difficulties with regards to angr, and its symbolic execution engine, while working on cracking the sample binaries. More explicitly, we encountered problems when we performed a read operation of a symbolic value. What we expected was that after the read, we would have a single state with the symbolic value in its expected location. However, the result was that the execution engine \emph{split} the state and concretized the symbolic value, based on the constraints applied to it. If, for instance, we were dealing with a symbolic byte, with its value constrained between $50$ and $100$, instead of a single state, there would be $50$ resulting states. Not surprisingly, this quickly leads to the common problem of path explosion. We were not able to figure out a way to avoid this issue, so we ended up manually putting the symbolic values in their corresponding memory locations, as a workaround.
+
+Lastly, our implementation could be limited performance-wise when instrumenting bigger programs. We claim this, because we are not able to use the \cc{unicorn} emulator \cite{unicorn}, which angr nicely integrates with, for the same reasons that we are not able to use capstone disassembly: lack of support for our custom \gls{ISA}.
 
 \begin{center}
 
@@ -713,32 +842,19 @@ dst_r1 = self.get(R1_REG, PTR_TYPE).signed
 dst_r2 = self.get(R2_REG, PTR_TYPE).signed
 dst_r3 = self.get(R3_REG, PTR_TYPE).signed
 
-dst1 = self.ite(ac < 0,
-                self.constant(1, PTR_TYPE),
-                self.constant(0, PTR_TYPE))
-dst1 = VexValue(self.irsb_c, dst1)
-dst2 = self.ite(ac == 0,
-                self.constant(1, PTR_TYPE),
-                self.constant(0, PTR_TYPE))
-dst2 = VexValue(self.irsb_c, dst2)
-dst3 = self.ite(ac > 0,
-                self.constant(1, PTR_TYPE),
-                self.constant(0, PTR_TYPE))
-dst3 = VexValue(self.irsb_c, dst3)
+dst = dst_r1
+dst = self.ite(ac == 0, dst_r2, dst)
+dst = VexValue(self.irsb_c, dst) @$ \label{line:vexvalue} $@
 
-dst = dst1 * dst_r1 
-    + dst2 * dst_r2 @$ \label{line:trickery} $@
-    + dst3 * dst_r3
-dst = dst * 2 + self.addr + 2
+dst = self.ite(ac > 0, dst_r3, dst)
+dst = VexValue(self.irsb_c, dst)
+
+dst = dst * self.constant(2, PTR_TYPE) 
+      + self.addr + 2
 self.jump(None, dst)
 \end{lstlisting}
 \end{minipage}
-
 \end{center}
-
-We also encountered some generic difficulties with regards to angr, and its symbolic execution engine, while working on cracking the sample binaries. More explicitly, we encountered problems when we performed a read operation of a symbolic variable. What we expected was that after the read, we would have a single state with the symbolic variable in its expected location. However, the result was that the execution engine \emph{split} the state and concretized the symbolic value, based on the constraints applied to it. If, for instance, we were dealing with a symbolic byte, with its value constrained between $50$ and $100$, instead of a single state, there would be $50$ resulting states. Not surprisingly, this quickly leads to the common problem of path explosion. We were not able to figure out a way to avoid this issue, so we ended up manually putting the symbolic values in their corresponding memory locations, as a workaround.
-
-Lastly, our implementation could be limited performance-wise when instrumenting bigger programs. We claim this, because we are not able to use the \cc{unicorn} emulator \cite{unicorn}, which angr nicely integrates with, for the same reasons that we are not able to use capstone disassembly: lack of support for our custom \gls{ISA}.
 
 \subsection{Future Directions}
 
@@ -748,13 +864,12 @@ Considering the shortcomings mentioned in the previous Section \ref{sec:shortcom
 
 angr, in its current state, provides two decompilation routes for a \gls{BB}: via capstone and via VEX. In our case, since there is obviously no capstone module for a custom \gls{ISA}, we can only see the VEX assembly code, which is useful in many cases, but is rather verbose and hard to read. angr exposes a shallow, but sill very usable disassembly layer, separate from capstone. It is the exact layer that we tapped into in order to provide the disassembler through our \cc{arch-genesis} tool. We would like to propose some changes to the angr engine, such that, when instrumenting a binary file that is not supported by capstone, a disassembly output is still provided via the previously mentioned, already existing layer. This change would have a positive impact in the overall process of instrumenting a custom \gls{ISA} with angr.
 
-A more ambitious goal would be to think about recovering the source code in its original form before obfuscation. As we have previously seen when we discussed about decompilation \ref{sec:reverse_engineering}, this is not entirely possible, due to the varying levels of information loss during the compilation process and obfuscation process. Instead, we can hope to achieve similar code with the same semantics. The advantages of a system which enables such a transformation are immediate: reverse engineers and analysts would be able to use the large tool-set that they are already used to in order to analyse bytecode written for a custom architecture. This is clearly not an easy task, as we would need a transpiler from the custom \gls{ISA} to a mainstream architecture (e.g \cc{Intel x64}). Coming up with a transpiler for every embedded \gls{VM} that we encounter is obviously not reasonable. What we can do it to look again at \glspl{IR}. LLVM \cite{llvm} is an \gls{IR} with a very powerful infrastructure supporting it. What we would need is a way to generate the semantically equivalent LLVM \gls{IR} for our targeted bytecode. To get there, we could for instance use LLVM bindings in a language such as python. Generating LLVM is known to be difficult, so we could instead implement the custom instruction semantics in VEX as we already did, and build a generic VEX to LLVM transpiler instead. For this goal, we could build on previous work \cite{symbolic_deobf_2018}.
+A more ambitious goal would be to think about recovering the source code in its original form before obfuscation. As we have previously seen when we discussed about decompilation \ref{sec:reverse_engineering}, this is not entirely possible, due to the varying levels of information loss during the compilation process and obfuscation process. Instead, we can hope to achieve similar code with the same semantics. The advantages of a system which enables such a transformation are immediate: reverse engineers and analysts would be able to use the large tool-set which they are already used to in order to analyse bytecode written for a custom architecture. This is clearly not an easy task, as we would need a transpiler from the custom \gls{ISA} to a mainstream architecture (e.g \cc{Intel x64}). Coming up with a transpiler for every embedded \gls{VM} that we encounter is obviously not reasonable. What we can do is to look again at \glspl{IR}. LLVM \cite{llvm} is an \gls{IR} with a very powerful infrastructure supporting it. What we would need is a way to generate the semantically equivalent LLVM \gls{IR} for our targeted bytecode. To get there, we could for instance use LLVM bindings in a language such as python. Generating LLVM is known to be difficult, so we could instead implement the custom instruction semantics in VEX as we already did, and build a generic VEX to LLVM transpiler instead. For this goal, we could build on previous work \cite{symbolic_deobf_2018}.
 
 The part of the process which we could not automate in our project, is also the most difficult and time consuming: implementing the logic of each function handler. We would like to further build onto the ideas from Section \ref{sec:miasm}, regarding the automatic analysis of the bytecode semantics via symbolic execution. We believe that a comprehensive and cleanly structured symbolic execution trace of each function handler could serve as the basis for an automatic VEX \gls{IR} generator. We could integrate this generator with angr, and have a fully automated version of our current project. To achieve this, we could build on previous work such as \cite{dang2014practical}, \cite{liang2018}, \cite{symbolic_deobf_2018}.
 
+A last consideration would be that of introducing grammars which describe the syntax of the target bytecode, into the flow of \cc{arch-genesis}. Instead of a large portion of configuration file, which is arguable tedious to write and susceptible to errors, a grammar in \gls{BNF} (as seen in Listings \ref{lst:vmwhere_bnf} and \ref{lst:vmcastle_bnf}) could be provided. As a result, the outline of the lifter can be generated from it, reducing the risks of parsing errors. However, introducing grammars, would not be sufficient in order to replace the whole configuration file, because other details such as the endian-ness or memory address size cannot be determined from it.
+
 \chapter{Conclusions}
 
-In this work we presented a novel approach to reverse engineering virtualisation-based obfuscation using the angr binary analysis framework. We began with offering some background knowledge and context where we discussed what malware is, as well as what tools and techniques can be leveraged against it. We covered static analysis, dynamic analysis and mixed analysis, the latter being expanded with a focus on symbolic and concolic execution. We then covered obfuscation techniques that make reverse engineering a significantly more difficult process. Following that, we gave an overview on virtualisation-based obfuscation and what it entails. We then proceeded to discuss relevant work in academia on this topic, as well as explained how our approach stands out from previous proposals from the scientific community. We then took a deeper diver into our contribution. We offered an overview of our approach, presented our sample targets, and stated a series of assumptions we make about a generic target, as well as the reasons behind these assumptions. We continued by explaining the incipient process of acquiring information about the \glspl{VM} embedded in our targets through static analysis, but also through symbolic execution. Based on the acquired information, we described the process of creating an angr plugin for a custom \gls{ISA}, and introduced \cc{arch-genesis}, our tool which automates a time-consuming part of the plugin building process. We further explained how we automatically generate a disassembler using \cc{arch-genesis}, and how we can use angr's functionality and our plugin in order to recover the \gls{CFG} from the bytecode. We presented the analysis process on the selected samples, using the previously generated plugins. We end this work with a discussion on results, shortcomings and future directions.
-
-% TODO - the conditional jump example is bad, and can be reformatted to a much simpler version. not doing this now tho - 18th jun.
-% TODO fix repo readme
+In this dissertation we presented a novel approach for reverse engineering virtualisation-based obfuscation using the angr binary analysis framework. We began with offering some background knowledge and context where we discussed what malware is, as well as what tools and techniques can be leveraged against it. We covered static analysis, dynamic analysis and mixed analysis, the latter being expanded with a focus on symbolic and concolic execution. We then covered obfuscation techniques that make reverse engineering a significantly more difficult process. Following that, we gave an overview on virtualisation-based obfuscation and what it entails. We then proceeded to discuss relevant work in academia on this topic, as well as explained how our approach stands out from previous proposals from the scientific community. We then took a deeper diver into our contribution. We offered an overview of our approach, presented our sample targets, and stated a series of assumptions we make about a generic target, as well as the reasons behind these assumptions. We continued by explaining the incipient process of acquiring information about the \glspl{VM} embedded in our targets through static analysis, but also through symbolic execution. Based on the acquired information, we described the process of creating an angr plugin for a custom \gls{ISA}, and introduced \cc{arch-genesis}, our tool which automates a time-consuming part of the plugin building process. We further explained how we automatically generate a disassembler using \cc{arch-genesis}, and how we can use angr's functionality and our plugin in order to recover the \gls{CFG} from the bytecode. We presented the analysis process on the selected samples, using the previously generated plugins. We ended this work with a discussion on results, shortcomings and future directions.

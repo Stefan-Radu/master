@@ -1,0 +1,89 @@
+exit
+description = 'exit program'
+bin_format = [ 117, [ 'x', 8] ]
+
+pop_reg
+bin_format = [ 102, ['r', 8] ]
+description = 'pop the top of the stack in the specified register'
+
+push_reg
+bin_format = [ 103, ['r', 8] ]
+
+push_imm
+bin_format = [ 104, ['r', 8] ]
+
+add
+bin_format = [ 105, ['r', 8] ]
+
+sub
+bin_format = [ 106, ['r', 8] ]
+
+mul
+bin_format = [ 107, ['r', 8] ]
+
+div
+bin_format = [ 108, ['r', 8] ]
+
+mod
+bin_format = [ 109, ['r', 8] ]
+
+jmp_reg
+bin_format = [ 110, ['r', 8] ]
+
+jmp_cond
+bin_format = [ 111, ['r', 8] ]
+
+cmp
+bin_format = [ 112, ['r', 8] ]
+
+print_reg
+bin_format = [ 113, ['r', 8] ]
+
+read_reg
+bin_format = [ 114, ['r', 8] ]
+
+stack_top_itshl
+bin_format = [ 115, ['r', 8] ]
+
+stack_top_itadd
+bin_format = [ 116, ['r', 8] ]
+
+-------------------------------------
+
+
+<program> ::= <instruction> | <instruction> <program>
+
+<instruction> ::= <exit> | <pop_reg> | <push_reg> | <push_imm>
+                | <add> | <sub> | <mul> | <div> | <mod>
+                | <jmp_reg> | <jmp_cond> | <cmp> | <print_reg>
+                | <read_reg> | <stack_top_itshl> | <stack_top_itadd>
+
+<exit>       ::= "01110101" <byte>      ; halt execution
+<pop_reg>    ::= "01100110" <reg>       ; pop the top of the stack into the register
+<push_reg>   ::= "01100111" <reg>       ; push the value into the register, 
+<push_imm>   ::= "01101000" <byte>      ; push the 8-bit immediate value on the stack
+<add>        ::= "01101001" <byte>      ; ac = r1 + r2
+<sub>        ::= "01101010" <byte>      ; ac = r1 - r2
+<mul>        ::= "01101011" <byte>      ; ac = r1 * r2
+<div>        ::= "01101100" <byte>      ; ac = r1 / r2
+<mod>        ::= "01101101" <byte>      ; ac = r1 % r2
+<jmp_reg>    ::= "01101110" <reg>       ; unconditional jump to the value from the register
+<jmp_cond>   ::= "01101111" <reg>       ; conditional jump to the value from the register
+                                        ; based on the value of ac
+<cmp>        ::= "01110000" <byte>      ; compare the values stored in the registers r1 and r2
+                                        ; and update ac to reflect the result of the comparison
+<print_reg>  ::= "01110001" <reg>       ; write to stdout the value from the register 
+<read_reg>   ::= "01110010" <reg>       ; read from stdin an 8-bit value and store it in the register
+<stack_top_itshl> ::= "01110011" <byte> ; shl the value on top of the stack with 1 bit if the
+                                        ; immediate value is not zero
+<stack_top_itadd> ::= "01110000" <byte> ; add one to the value on top of the stack if the
+                                        ; immediate value is not zero
+
+<byte>      ::= <bit> <bit> <bit> <bit> <bit> <bit> <bit> <bit>
+<bit>       ::= "0" | "1"
+
+<reg>       ::= <r1> | <r2> | <r3> | <ac>
+<r1>        ::= "00000000"
+<r2>        ::= "00000001"
+<r3>        ::= "00000010"
+<ac>        ::= "00000011"

@@ -241,6 +241,20 @@
       \field{pages}{643\bibrangedash 659}
       \range{pages}{17}
     \endentry
+    \entry{brainfk}{misc}{}
+      \field{sortinit}{b}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; accessed 18. Jun. 2024]}
+      \field{title}{{brainfuck - Esolang}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://esolangs.org/wiki/Brainfuck
+      \endverb
+      \verb{url}
+      \verb https://esolangs.org/wiki/Brainfuck
+      \endverb
+    \endentry
     \entry{syscall}{misc}{}
       \name{author}{1}{}{%
         {{hash=735572cb595e277e983bc2058339b009}{%
@@ -558,6 +572,21 @@
       \verb https://github.com/corkami/pics/blob/28cb0226093ed57b348723bc473cea0162dad366/binary/elf101/elf101-64.svg
       \endverb
     \endentry
+    \entry{why_vex}{misc}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{[Online; accessed 31. Aug. 2024]}
+      \field{title}{{Frequently Asked Questions - angr documentation}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.angr.io/en/latest/faq.html#why-did-you-choose-vex-instead-of-another-ir-such-as-llvm-reil-bap-etc
+      \endverb
+      \verb{url}
+      \verb https://docs.angr.io/en/latest/faq.html#why-did-you-choose-vex-instead-of-another-ir-such-as-llvm-reil-bap-etc
+      \endverb
+    \endentry
     \entry{fuzzing}{misc}{}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
@@ -570,6 +599,35 @@
       \endverb
       \verb{url}
       \verb https://owasp.org/www-community/Fuzzing
+      \endverb
+    \endentry
+    \entry{bnf}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4964fcba0be1e0a857faf025f9ce918f}{%
+           family={Garshol},
+           familyi={G\bibinitperiod},
+           given={Lars\bibnamedelima Marius},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4964fcba0be1e0a857faf025f9ce918f}
+      \strng{fullhash}{4964fcba0be1e0a857faf025f9ce918f}
+      \strng{bibnamehash}{4964fcba0be1e0a857faf025f9ce918f}
+      \strng{authorbibnamehash}{4964fcba0be1e0a857faf025f9ce918f}
+      \strng{authornamehash}{4964fcba0be1e0a857faf025f9ce918f}
+      \strng{authorfullhash}{4964fcba0be1e0a857faf025f9ce918f}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{[Online; accessed 1. Sep. 2024]}
+      \field{title}{{BNF and EBNF: What are they and how do they work?}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.garshol.priv.no/download/text/bnf.html
+      \endverb
+      \verb{url}
+      \verb https://www.garshol.priv.no/download/text/bnf.html
       \endverb
     \endentry
     \entry{ghidra}{misc}{}
@@ -613,6 +671,21 @@
       \endverb
       \verb{url}
       \verb https://github.com/ImaginaryCTF/ImaginaryCTF-2023-Challenges
+      \endverb
+    \endentry
+    \entry{angr_ir}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{[Online; accessed 31. Aug. 2024]}
+      \field{title}{{Intermediate Representation - angr documentation}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.angr.io/en/latest/advanced-topics/ir.html
+      \endverb
+      \verb{url}
+      \verb https://docs.angr.io/en/latest/advanced-topics/ir.html
       \endverb
     \endentry
     \entry{qsynth}{inproceedings}{}
@@ -799,6 +872,21 @@
       \field{pages}{313\bibrangedash 324}
       \range{pages}{12}
     \endentry
+    \entry{vex_ir}{misc}{}
+      \field{sortinit}{l}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labeltitlesource}{title}
+      \field{month}{8}
+      \field{note}{[Online; accessed 31. Aug. 2024]}
+      \field{title}{libvex\_ir.h}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/angr/vex/blob/a3f558b7f6426d45688dbbf425bee1e4bea9cc5d/pub/libvex_ir.h#L4
+      \endverb
+      \verb{url}
+      \verb https://github.com/angr/vex/blob/a3f558b7f6426d45688dbbf425bee1e4bea9cc5d/pub/libvex_ir.h#L4
+      \endverb
+    \endentry
     \entry{application_cfg}{misc}{}
       \name{author}{2}{}{%
         {{hash=a67d6b77fd0169f3d328595652faa4d7}{%
@@ -961,6 +1049,38 @@
       \endverb
       \verb{url}
       \verb https://github.com/mrphrazer/msynth
+      \endverb
+    \endentry
+    \entry{Newman2019Mar}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5c5a1fd3a59d375e7fe0b7ac40e18c8c}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Lily\bibnamedelima Hay},
+           giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {WIRED}%
+      }
+      \strng{namehash}{5c5a1fd3a59d375e7fe0b7ac40e18c8c}
+      \strng{fullhash}{5c5a1fd3a59d375e7fe0b7ac40e18c8c}
+      \strng{bibnamehash}{5c5a1fd3a59d375e7fe0b7ac40e18c8c}
+      \strng{authorbibnamehash}{5c5a1fd3a59d375e7fe0b7ac40e18c8c}
+      \strng{authornamehash}{5c5a1fd3a59d375e7fe0b7ac40e18c8c}
+      \strng{authorfullhash}{5c5a1fd3a59d375e7fe0b7ac40e18c8c}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{WIRED}
+      \field{month}{3}
+      \field{title}{{The NSA Makes Ghidra, a Powerful Cybersecurity Tool, Open Source}}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://www.wired.com/story/nsa-ghidra-open-source-tool
+      \endverb
+      \verb{url}
+      \verb https://www.wired.com/story/nsa-ghidra-open-source-tool
       \endverb
     \endentry
     \entry{objdump}{misc}{}

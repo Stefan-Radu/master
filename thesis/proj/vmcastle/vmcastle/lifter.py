@@ -281,20 +281,13 @@ class Instruction_JMP_COND(Instruction):
         dst_r2 = self.get(R2_REG, PTR_TYPE).signed
         dst_r3 = self.get(R3_REG, PTR_TYPE).signed
 
-        dst1 = self.ite(ac < 0,
-                       self.constant(1, PTR_TYPE),
-                       self.constant(0, PTR_TYPE))
-        dst1 = VexValue(self.irsb_c, dst1)
-        dst2 = self.ite(ac == 0,
-                       self.constant(1, PTR_TYPE),
-                       self.constant(0, PTR_TYPE))
-        dst2 = VexValue(self.irsb_c, dst2)
-        dst3 = self.ite(ac > 0,
-                       self.constant(1, PTR_TYPE),
-                       self.constant(0, PTR_TYPE))
-        dst3 = VexValue(self.irsb_c, dst3)
+        dst = dst_r1
+        dst = self.ite(ac == 0, dst_r2, dst)
+        dst = VexValue(self.irsb_c, dst)
 
-        dst = dst1 * dst_r1 + dst2 * dst_r2 + dst3 * dst_r3
+        dst = self.ite(ac > 0, dst_r3, dst)
+        dst = VexValue(self.irsb_c, dst)
+
         dst = dst * self.constant(2, PTR_TYPE) + self.addr + 2
         self.jump(None, dst)
 

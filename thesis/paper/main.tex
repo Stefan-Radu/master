@@ -20,7 +20,7 @@
 \usepackage{polyglossia}
 
 % Acronyms and glossary support
-\usepackage[acronym, toc]{glossaries}
+\usepackage[toc, acronym]{glossaries}
 
 % Setează limba textului la engleză
 \setdefaultlanguage{english}
@@ -59,9 +59,6 @@
 % Încarcă imaginile din directorul `images`
 \graphicspath{{./images/}}
 
-% Listări de cod
-\usepackage{listings}
-
 % Linkuri interactive în PDF
 \usepackage[
     colorlinks,
@@ -88,9 +85,9 @@
   {\cleardoublepage\vspace*{\fill}\thispagestyle{empty}}
   {\vfill\cleardoublepage}
 \renewenvironment{abstract}[1]
-  {\bigskip\selectlanguage{#1}%
+  {\selectlanguage{#1}%
    \begin{center}\bfseries\abstractname\end{center}}
-  {\par\bigskip}
+  {\par}
 
 % Suport pentru anexe
 \usepackage[titletoc, toc]{appendix}
@@ -138,6 +135,7 @@
 % missing math symbols
 \usepackage{stmaryrd}
 
+\renewcommand{\listfigurename}{List of Figures}
 
 % Metadate
 \title{Techniques for reverse engineering VM-based obfuscation}
@@ -177,6 +175,8 @@
 
 \tableofcontents
 
+\printglossary[type=\acronymtype]
+
 % Main matter
 \cleardoublepage
 \pagestyle{main}
@@ -184,11 +184,13 @@
 
 \include{content}
 
-\printglossary[type=\acronymtype]
-\printglossary
-
+\addcontentsline{toc}{chapter}{List of Listings}
 \lstlistoflistings
+
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
+
+\printglossary
 
 \newpage
 \printbibliography[heading=bibintoc]

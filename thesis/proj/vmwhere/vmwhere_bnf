@@ -1,0 +1,91 @@
+exit
+bin_format = [ 0x0 ]
+
+add
+bin_format = [ 0x1 ]
+
+sub
+bin_format = [ 0x2 ]
+
+and
+bin_format = [ 0x3 ] 
+
+or
+bin_format = [ 0x4 ] 
+
+xor
+bin_format = [ 0x5 ]
+
+shl
+bin_format = [ 0x6 ]
+
+shr
+bin_format = [ 0x7 ]
+
+read
+bin_format = [ 0x8 ]
+
+write
+bin_format = [ 0x9 ]
+
+push
+bin_format = [ 0xa, 'xxxxxxxx' ]
+
+jlz
+bin_format = [ 0xb, ['x' , 16 ] ]
+
+jz
+bin_format = [ 0xc, [ 'x', 16 ] ]
+
+jmp
+bin_format = [ 0xd, [ 'x', 16 ] ]
+
+pop
+bin_format = [ 0xe ]
+
+pushstk
+bin_format = [ 0xf ]
+
+rev
+bin_format = [ 0x10, [ 'x', 8 ] ]
+
+exp
+bin_format = [ 0x11 ]
+
+sqz
+bin_format = [ 0x12 ]
+
+-----------------------------------------
+
+Chat-Gpt generated BNF
+
+<program> ::= <instruction> | <instruction> <program>
+
+<instruction> ::= <exit> | <add> | <sub> | <and> | <or> | <xor> 
+                | <shl> | <shr> | <read> | <write> | <push> 
+                | <jlz> | <jz> | <jmp> | <pop> | <pushstk> 
+                | <rev> | <exp> | <sqz>
+
+<exit>     ::= "00000000"
+<add>      ::= "00000001"
+<sub>      ::= "00000010"
+<and>      ::= "00000011"
+<or>       ::= "00000100"
+<xor>      ::= "00000101"
+<shl>      ::= "00000110"
+<shr>      ::= "00000111"
+<read>     ::= "00001000"
+<write>    ::= "00001001"
+<push>     ::= "00001010" <bit_8>
+<jlz>      ::= "00001011" <bit_16>
+<jz>       ::= "00001100" <bit_16>
+<jmp>      ::= "00001101" <bit_16>
+<pop>      ::= "00001110"
+<pushstk>  ::= "00001111"
+<rev>      ::= "00010000" <bit_8>
+<exp>      ::= "00010001"
+<sqz>      ::= "00010010"
+
+<bit_8>   ::= <bit> <bit> <bit> <bit> <bit> <bit> <bit> <bit>
+<bit_16>  ::= <bit_8> <bit_8>
+<bit>      ::= "0" | "1"
