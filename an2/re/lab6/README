@@ -1,0 +1,7 @@
+## Task 1
+- diff between addresses 0x0010126b - 0x00101240 = -43
+we only need to override the least significant byte
+
+## Task 2
+
+-- stripped so I can only set relative paths to known symbols

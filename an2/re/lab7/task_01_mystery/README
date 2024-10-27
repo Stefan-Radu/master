@@ -1,0 +1,9 @@
+
+FileDescription = Win32 Cabinet Self-Extractor  
+- this is a self-extracting executable
+- probably the contents are archived into some common archiving format which winrar can identify, and as a consequence extract
+
+- we see a PE windows executable
+- from the assembly Ghidra identifies .NET symbols
+
+- this secret? "3rmahg3rd.b0b.d0ge@flare-on.com\0"

@@ -1,0 +1,318 @@
+\documentclass[12pt]{scrartcl}
+
+\usepackage[a4paper,left=3.0cm,right=2.5cm,top=3.0cm,bottom=2.5cm,headheight=15pt,headsep=1.5cm,footskip=1cm]{geometry}
+
+
+%---- Sonderzeichen-------%
+\usepackage {ngerman}
+
+
+
+%---- Codierung----%
+\usepackage[utf8]{inputenc}	% for Unix and Windows
+%\usepackage[applemac]{inputenc}	% for MAC
+
+
+%----- Mathematischer Zeichenvorrat---%
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{enumerate}
+
+%----- Mehrseitige Tabellen ----%
+\usepackage{longtable}
+
+% fuer die aktuelle Zeit
+\usepackage{scrtime}
+
+
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=black,
+citecolor=black, urlcolor=black]{hyperref}
+
+
+\usepackage{fancyhdr}
+\lhead{\nouppercase{\leftmark}} \chead{} \rhead{\thepage}
+\fancyfoot {}
+
+
+\usepackage[normalem]{ulem}
+\newcommand{\markup}[1]{\uline{#1}}
+
+\begin{document}
+
+\begin{center}
+\textbf{Seminar: "`Software Engineering"', Semester WS 14/15}
+
+Prof. Dr.-Ing. Samuel Kounev, Lehrstuhl für Informatik II, Software Engineering, Institut für Informatik, Universität Würzburg
+\end{center}
+
+
+% TODO missing citation fig. 3
+
+\subsection*{General data}
+
+\paragraph{Name of the reviewer:} Ștefan-Octavian Radu
+
+\paragraph{Title of the peer-reviewed article:} Few-shot learning for (medical)
+image analysis: An overview of recent techniques with a focus on classification
+
+
+\paragraph{Name of the author of the peer-reviewed article:} Philipp Treutlein
+
+\paragraph{Date:} \today
+
+
+\subsection*{Summary of the peer-reviewed text}
+
+The seminar paper discusses few-shot learning in the context of Medicine. A 
+topology of strategies that fall under the FSL umbrella is detailed. Further, 
+state of the art research is discussed, focusing on the afore mentioned topology. 
+The medical issue at hand as well as implementation details of the model (dataset, architecture, results) and the technique used are detailed.
+
+\subsection*{Rating}
+Rating in the table is given according to the following scale. This scale is based on the typical English review classification: 1 = accepted, I would argue for it (strong accept and I would argue for it); 2 = tend to accept (weak accept); 3 = tend to reject (weak reject); 4 = rejected, I would argue for it (strong reject and I would argue for it).
+
+\begin{longtable}{|p{12cm}|p{2.5cm}|}	
+		\hline
+			\textbf{Criteria} & \textbf{Rating (number)} \\
+		\hline
+		\hline
+		\endhead
+			\textbf{Abstract}
+						
+                Is the choice of words in the abstract appropriate? Is the
+                level of abstraction appropriate?
+				
+                Does the summary clearly indicate what to expect in the
+                article? 
+				
+                Is the summary understandable without having read the article?			
+			& 2 \ \\
+		\hline
+			\textbf{Formal aspects}
+				
+				Does the document have the required length and formatting?
+				
+				Does the document contain spelling or grammatical errors?
+			& 2 \ \\
+		\hline	
+			\textbf{Outline / Structuring}
+			
+				Does the introduction explain the outline?
+				
+				Are the word choices the level of abstraction appropriate for headings?
+				
+				Are terms explained before they are used?
+				
+				Are headings and consistent with section content?
+			& 3 \ \\
+		\hline	
+			\textbf{Writing style and readability}	%TODO
+			
+				How well does the article use technical terms, equations, pseudocode, figures, and tables?
+
+				Is the argumentation clear, comprehensible, and understandable?
+
+				Is the text too prosaic, unscientific, or overly scientific?
+				
+				Does the comprehensibility suffer from a pseudo"=scientific style?
+
+				Are sentences and paragraphs of an appropriate length?
+			& 1 \ \\
+		\hline	
+			\textbf{Reference use}
+			
+				Are references provided when they are necessary?
+				
+				Are the references given relevant?
+				
+				Are verbatim text passages marked as citations?
+			& 1 \ \\				
+		\hline		
+			\textbf{Bibliography}
+			
+				Are all entries of the bibliography complete and correct?
+				
+				Would references be mentioned that are missing in the article?
+				
+				Are all critical statements supported by a "literature" reference?
+			& 1 \ \\				
+		\hline
+			\textbf{Level of detail}
+			
+				Is the presentation of background""=concepts appropriate for the intended readers?
+				
+				Does the paper maintain an appropriate balance between technical details and "`high"=level"'"=concepts? (Expected to be an overview article).
+				
+				Are the breadth and level of detail appropriate for an article of this length?
+			& 2 \ \\				
+		\hline
+			\textbf{Completeness}
+			
+				Is the text complete?			
+			& 3 \ \\	
+		\hline
+			\textbf{Conclusion / Bottom line}%TODO
+			
+				  Is the content of the article adequately summarized?
+				
+				Is the content presented reflected (critically) in the concluding part?			
+			& 4 \ \\				
+		\hline
+			\textbf{Overall rating}%TODO
+			& 2 \ \\				
+		\hline		
+		
+\end{longtable}
+
+
+\subsection*{Explanations}
+
+%Is the choice of words in the abstract appropriate? Is the
+%level of abstraction appropriate?
+
+%Does the summary clearly indicate what to expect in the
+%article? 
+
+%Is the summary understandable without having read the article?			
+
+\paragraph{Abstract:} The abstract is concise and easy to read and to
+understand. It gives a good high-level overview of the paper. However,
+it could give a bit more detail about the results of the highlighted
+techniques and the context those techniques were applied in (e.g. mentioning
+the use in ECGs, dermatology, etc.)
+
+% ---------------------------------------
+
+%Does the document have the required length and formatting?
+
+%Does the document contain spelling or grammatical errors?
+
+\paragraph{Formal aspects:} There are some sparse grammatical errors (e.g.
+starting the paragraph with ``\dots'', starting a sentence with ``But'',
+unnecessary joining of words with a hyphen ``learning-abilities''). However,
+The document is overall properly formatted and doesn't have any obvious
+spelling mistakes. The content, might be a bit on the shorter side, only
+passing the minimum length requirements of 7.5 pages when taking the title,
+images and author comments into account.
+
+% ---------------------------------------
+
+%Does the introduction explain the outline?
+
+%Are the word choices the level of abstraction appropriate for headings?
+
+%Are terms explained before they are used?
+
+%Are headings and consistent with section content?
+
+\paragraph{Outline / Structuring:} 
+
+The introduction does not explain the outline.
+
+The section headings could be shorter and describe the content better.
+For example, instead of ``Few-shot learning in general'' a single word such as
+``Overview'' can be used. The last section, titled, ``3 Categorization and state-of-the-art'', is especially confusing. The categorization of FSL was already discussed in section 2, so further discussion, especially with mention in the headline is redundant. The focus seems to be more on the categories of FSL, rather than on the State of The Art. I would suggest refactoring of the section to focus more on State of The Art and only briefly mention which type of FSL was used for each example.
+
+Lastly, while reading the article I felt the lack of a background section where
+some of the terms could have been explained. As such, some of the terms used
+through lack a definition (e.g. MIR, CT-scan, ML, NN, etc.), or definitions,
+when present, are given when a term is first used, which distracts from the
+information presented in the respective section.
+
+% ---------------------------------------
+
+%How well does the article use technical terms, equations, pseudocode, figures, and tables?
+
+%Is the argumentation clear, comprehensible, and understandable?
+
+%Is the text too prosaic, unscientific, or overly scientific?
+
+%Does the comprehensibility suffer from a pseudo"=scientific style?
+
+%Are sentences and paragraphs of an appropriate length?
+
+\paragraph{Writing style and readability:} The style balanced and easy to read. The only observation would be that colloquial expressions are sometimes used, which could weaken
+the legitimacy of the work (e.g. ``the basic idea in ...'', ``the idea with...'').
+
+% ---------------------------------------
+
+%Are references provided when they are necessary?
+
+%Are the references given relevant?
+
+%Are verbatim text passages marked as citations?
+
+%Are all entries of the bibliography complete and correct?
+
+%Would references be mentioned that are missing in the article?
+
+%Are all critical statements supported by a "literature" reference?
+
+\paragraph{Reference use \& Bibliography:} Fig. 3 is missing a reference.
+Besides this I have no further comments.
+
+% ---------------------------------------
+
+The paper explains the various concepts in great detail and is quite adequate in depth as well as breadth. The basic section clarifies relevant relationships that are necessary to understand the main section. 
+The main body first provides an overview of the concepts. Subsequently, the author goes well into relevant implementation details, which are necessary for the selection of the concept to be used.
+
+% ---------------------------------------
+
+%Is the presentation of background""=concepts appropriate for the intended readers?
+
+%Does the paper maintain an appropriate balance between technical details and "`high"=level"'"=concepts? (Expected to be an overview article).
+
+%Are the breadth and level of detail appropriate for an article of this length?
+\paragraph{Level of detail:} There level of detail is not fully consistent
+throughout the paper. In the last section there are adequate levels of detail
+when discussing State of The Art work in the field using FSL. This includes:
+the problem at hand, architectural overview, implementation of the technique,
+used training data and results. However, the second paragraph ``Few-shot
+learning in general'' presents a topology of FSL, but gives only shallow
+details for some of the categories (e.g. `` Prototypical Networks''). The
+shallow sections fail to explain the reasoning behind the implementation (the
+\textit{why}) only mentioning how something is done.
+
+% ---------------------------------------
+
+%Is the text complete?
+
+\paragraph{Completeness:} The text is clearly not complete, but notes exists marking the author is aware of this: abstract and some sections are incomplete. The conclusion is formatted as a bullet point list and appears incomplete. Despite this, the core information is present in the current version.
+
+% ---------------------------------------
+
+%Is the content of the article adequately summarized?
+
+%Is the content presented reflected (critically) in the concluding part?			
+
+\paragraph{Conclusion / Bottom line:} The conclusion is incomplete and
+unformatted, along with a note stating that improvements are planned. The
+conclusion is given only as a bullet points list. Despite this, the mentioned
+points do not properly summarize the article and miss important points
+discussed. One of the bullet points which mentions great results after training
+on large data sets is confusing, since, from my understanding, the main reason
+for using FSL is to reduce the training data.
+
+\paragraph{Strongest aspect(s) of the paper:} Strong aspects of the paper are the
+clear language and good references and citations.
+
+\paragraph{Weakest aspect(s) of the paper:} Weak aspects of the paper include: 
+a confusing outline with improperly delimited sections, incomplete sections and an inconsistent level of detail.
+
+\subsection*{Miscellaneous}
+
+\paragraph{Notes from Author of Seminar paper} Given the fact that the
+reviewed paper is a draft, small notes from the author regarding missing
+content or future intentions are very helpful in determining what type of feedback would be useful.
+
+\paragraph{Figures} Some figures are given as example for some trivial cases,
+such as rotating and blurring an image. These could be omitted, as textual
+description suffices. Moreover, Fig. 3 is a bit large, covering crucial writing
+space. SVGs can be utilised for such diagrams in order to insert a smaller
+figure at no expense of quality. Thus, modern PDF readers which support the
+zoom feature can be used to inspect the given figure in detail. 
+
+I found the inclusion of a ``List of Figures'' a nice touch.
+
+\end{document}

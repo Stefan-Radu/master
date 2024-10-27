@@ -1,0 +1,209 @@
+\documentclass[12pt]{scrartcl}
+
+\usepackage[a4paper,left=3.0cm,right=2.5cm,top=3.0cm,bottom=2.5cm,headheight=15pt,headsep=1.5cm,footskip=1cm]{geometry}
+
+
+%---- Sonderzeichen-------%
+\usepackage {ngerman}
+
+
+
+%---- Codierung----%
+\usepackage[utf8]{inputenc}	% for Unix and Windows
+%\usepackage[applemac]{inputenc}	% for MAC
+
+
+%----- Mathematischer Zeichenvorrat---%
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{enumerate}
+
+%----- Mehrseitige Tabellen ----%
+\usepackage{longtable}
+
+% fuer die aktuelle Zeit
+\usepackage{scrtime}
+
+
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=black,
+citecolor=black, urlcolor=black]{hyperref}
+
+
+\usepackage{fancyhdr}
+\lhead{\nouppercase{\leftmark}} \chead{} \rhead{\thepage}
+\fancyfoot {}
+
+
+\usepackage[normalem]{ulem}
+\newcommand{\markup}[1]{\uline{#1}}
+
+\begin{document}
+
+
+
+\section*{Reviewer form\footnote{Please fill in all fields marked with "`[TODO]"' completely.}}
+\hrule
+\ \\
+
+\begin{center}
+\textbf{Seminar: "`Software Engineering"', Semester WS 14/15}
+
+Prof. Dr.-Ing. Samuel Kounev, Lehrstuhl für Informatik II, Software Engineering, Institut für Informatik, Universität Würzburg
+\end{center}
+
+
+
+\subsection*{General data}
+
+\paragraph{Name of the reviewer: Ștefan-Octavian Radu}
+
+\paragraph{Title of the peer-reviewed article:} State-of-the-art Mechanisms for Dynamic Software Updates and Changes of Java Applications
+
+
+\paragraph{Name of the author of the peer-reviewed article:} 
+
+\paragraph{Date:} \today
+
+
+
+\subsection*{Summary of the peer-reviewed text}
+The seminar paper describes concepts that make it possible to add new features to Java applications without terminating the application. Subsequently, state transformations are evaluated and compared with each other. A case study 
+illustrates the implementation of a specific state transformation using an exemplary implementation. The result of the seminar work is an evaluation of which state transformation is suitable for which application. 
+
+
+
+\subsection*{Rating}
+Please enter a rating in the table according to the following scale. This scale is based on the typical English review classification: 1 = accepted, I would argue for it (strong accept and I would argue for it); 2 = tend to accept (weak accept); 3 = tend to reject (weak reject); 4 = rejected, I would argue for it (strong reject and I would argue for it).
+
+In order to standardize the evaluation criteria, some questions are given in each case that should be considered in the evaluation. In addition, you must refer to our thesis writing guidelines\footnote{https://se.informatik.uni-wuerzburg.de/software-engineering-group/teaching/guidelines-fuer-das-schreiben-von-abschlusarbeiten/} and the guidance on academic papers\footnote{https://se.informatik.uni-wuerzburg.de/software-engineering-group/teaching/wissenschaftliches-schreiben/} on our homepage as evaluation criteria. Please justify your evaluation on the next page in the free text fields.
+
+\begin{longtable}{|p{12cm}|p{2.5cm}|}	
+		\hline
+			\textbf{Criteria} & \textbf{Rating (number)} \\
+		\hline
+		\hline
+		\endhead
+			\textbf{Abstract}		
+						
+				Is the choice of words in the abstract appropriate? Is the level of abstraction appropriate?
+				
+                Does the summary clearly indicate what to expect in the article? 
+				
+                Is the summary understandable without having read the article?			
+			& 1 \ \\
+		\hline
+			\textbf{Formal aspects}	
+				
+				Does the document have the required length and formatting?
+				
+				Does the document contain spelling or grammatical errors?
+			& 2 \ \\
+		\hline	
+			\textbf{Outline / Structuring}		
+			
+				Does the introduction explain the outline?
+				
+				Are the word choices the level of abstraction appropriate for headings?
+				
+				Are terms explained before they are used?
+				
+				Are headings and consistent with section content?
+			& 1 \ \\
+		\hline	
+			\textbf{Writing style and readability}	
+			
+				How well does the article use technical terms, equations, pseudocode, figures, and tables?
+
+				Is the argumentation clear, comprehensible, and understandable?
+
+				Is the text too prosaic, unscientific, or overly scientific?
+				
+				Does the comprehensibility suffer from a pseudo"=scientific style?
+
+				Are sentences and paragraphs of an appropriate length?
+			& 1 \ \\			
+		\hline	
+			\textbf{Reference use}
+			
+				Are references provided when they are necessary?
+				
+				Are the references given relevant?
+				
+				Are verbatim text passages marked as citations?
+			& 2 \ \\				
+		\hline		
+			\textbf{Bibliography}
+			
+				Are all entries of the bibliography complete and correct?
+				
+				Would references be mentioned that are missing in the article?
+				
+				Are all critical statements supported by a "literature" reference?
+			& 1 \ \\				
+		\hline
+			\textbf{Level of detail}
+			
+				Is the presentation of background""=concepts appropriate for the intended readers?
+				
+				Does the paper maintain an appropriate balance between technical details and "`high"=level"'"=concepts? (Expected to be an overview article).
+				
+				Are the breadth and level of detail appropriate for an article of this length?
+			& 1 \ \\				
+		\hline
+			\textbf{Completeness}
+			
+				Is the text complete?			
+			& 1 \ \\	
+		\hline
+			\textbf{Conclusion / Bottom line}
+			
+				  Is the content of the article adequately summarized?
+				
+				Is the content presented reflected (critically) in the concluding part?			
+			& 1 \ \\				
+		\hline
+			\textbf{Overall rating}
+			& 1 \ \\				
+		\hline		
+		
+\end{longtable}
+
+
+
+\subsection*{Explanations}
+In this section, provide detailed reasons for your evaluation above and constructive suggestions for improvement, if any.
+
+\paragraph{Language and writing style:} The argumentation chain of the paper is well understandable and comprehensible due to the clear structure. The simplicity of the sentences as well as the grammatically and typographically high level ensures the readability and comprehensibility of the seminar paper at any time. 
+The use of program examples and illustrations strengthens the clarity within the work. 
+
+\paragraph{Missing and irrelevant references:} Good and meaningful references are used throughout the seminar paper. It would be nice to quote from several references in some places (cf. Section 2.1, always quote from [1]). 
+This would possibly increase the scientific character of the paper.
+
+\paragraph{Detail level:} The paper explains the various concepts in great detail and is quite adequate in depth as well as breadth. The basic section clarifies relevant relationships that are necessary to understand the main section. 
+The main body first provides an overview of the concepts. Subsequently, the author goes well into relevant implementation details, which are necessary for the selection of the concept to be used.
+
+\paragraph{Strongest aspect(s) of the paper:} The first aspect is the good structuring of the paper as well as the content of the described topics. The second aspect is the case-study, with which a theoretical concept was practically realized and its possible application was presented.  
+
+\paragraph{Weakest aspect(s) of the paper:} The weakest aspect of the paper is that more different references could be used in some places. Furthermore, the paper does not meet the specified length of 20 pages. 
+
+
+
+\subsection*{Miscellaneous}
+Comments that cannot be assigned to any other category.
+
+\paragraph{Comments:} 
+\begin{itemize}
+ \item Abstract
+\end{itemize}
+The structure and wording of the abstract is very good. However, the case study is not mentioned in the abstract, although it seems important for the seminar paper. It would be good if the case study is included in the abstract. 
+Furthermore, a summary of the main aspects of the paper is missing. This summary could be achieved for example with "`The result of this paper is ..."' or similar.
+
+\begin{itemize}
+ \item Introduction
+\end{itemize}
+The introduction is clearly structured and contains almost all the important points for the introduction. The reader clearly recognizes the scientific importance of the research topic as well as the goal of the seminar paper. The only point of criticism is that it is not clearly enough shown why this 
+work is needed. The solution to this criticism could be achieved by citing 2-3 other papers. This would show what the cited papers could not do and therefore the added value of this seminar paper. 
+
+
+\end{document}

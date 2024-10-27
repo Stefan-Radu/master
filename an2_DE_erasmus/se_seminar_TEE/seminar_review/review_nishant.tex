@@ -1,0 +1,296 @@
+\documentclass[12pt]{scrartcl}
+
+\usepackage[a4paper,left=3.0cm,right=2.5cm,top=3.0cm,bottom=2.5cm,headheight=15pt,headsep=1.5cm,footskip=1cm]{geometry}
+
+
+%---- Sonderzeichen-------%
+\usepackage {ngerman}
+
+
+
+%---- Codierung----%
+\usepackage[utf8]{inputenc}	% for Unix and Windows
+%\usepackage[applemac]{inputenc}	% for MAC
+
+
+%----- Mathematischer Zeichenvorrat---%
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{enumerate}
+
+%----- Mehrseitige Tabellen ----%
+\usepackage{longtable}
+
+% fuer die aktuelle Zeit
+\usepackage{scrtime}
+
+
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=black,
+citecolor=black, urlcolor=black]{hyperref}
+
+
+\usepackage{fancyhdr}
+\lhead{\nouppercase{\leftmark}} \chead{} \rhead{\thepage}
+\fancyfoot {}
+
+
+\usepackage[normalem]{ulem}
+\newcommand{\markup}[1]{\uline{#1}}
+
+\begin{document}
+
+
+
+\begin{center}
+\textbf{Seminar: "`Software Engineering"', Semester WS 14/15}
+
+Prof. Dr.-Ing. Samuel Kounev, Lehrstuhl für Informatik II, Software Engineering, Institut für Informatik, Universität Würzburg
+\end{center}
+
+
+\subsection*{General data}
+
+\paragraph{Name of the reviewer: Ștefan-Octavian Radu}
+
+\paragraph{Title of the peer-reviewed article:} Function approximation and evaluation methods of mathematical functions
+
+\paragraph{Name of the author of the peer-reviewed article:} Nishant Ingle
+
+\paragraph{Date:} \today
+
+\subsection*{Summary of the peer-reviewed text} The article highlights
+implementation for some approximate algorithms for a number of important
+mathematical formulas.
+
+
+\subsection*{Rating}
+The rating is given in the table according to the following scale. This scale is based on the typical English review classification: 1 = accepted, I would argue for it (strong accept and I would argue for it); 2 = tend to accept (weak accept); 3 = tend to reject (weak reject); 4 = rejected, I would argue for it (strong reject and I would argue for it).
+
+\begin{longtable}{|p{12cm}|p{2.5cm}|}	
+		\hline
+			\textbf{Criteria} & \textbf{Rating (number)} \\
+		\hline
+		\hline
+		\endhead
+			\textbf{Abstract}		
+						
+				Is the choice of words in the abstract appropriate? Is the level of abstraction appropriate?
+				
+                Does the summary clearly indicate what to expect in the article? 
+				
+                Is the summary understandable without having read the article?			
+			& 1 \ \\
+		\hline
+			\textbf{Formal aspects}	
+				
+				Does the document have the required length and formatting?
+				
+				Does the document contain spelling or grammatical errors?
+			& 3 \ \\
+		\hline	
+			\textbf{Outline / Structuring}		
+			
+				Does the introduction explain the outline?
+				
+				Are the word choices the level of abstraction appropriate for headings?
+				
+				Are terms explained before they are used?
+				
+				Are headings and consistent with section content?
+			& 2 \ \\
+		\hline	
+			\textbf{Writing style and readability}	
+			
+				How well does the article use technical terms, equations, pseudocode, figures, and tables?
+
+				Is the argumentation clear, comprehensible, and understandable?
+
+				Is the text too prosaic, unscientific, or overly scientific?
+				
+				Does the comprehensibility suffer from a pseudo"=scientific style?
+
+				Are sentences and paragraphs of an appropriate length?
+			& 3 \ \\			
+		\hline	
+			\textbf{Reference use}
+			
+				Are references provided when they are necessary?
+				
+				Are the references given relevant?
+				
+				Are verbatim text passages marked as citations?
+			& 4 \ \\				
+		\hline		
+			\textbf{Bibliography}
+			
+				Are all entries of the bibliography complete and correct?
+				
+				Would references be mentioned that are missing in the article?
+				
+				Are all critical statements supported by a "literature" reference?
+			& 4 \ \\				
+		\hline
+			\textbf{Level of detail}
+			
+				Is the presentation of background""=concepts appropriate for the intended readers?
+				
+				Does the paper maintain an appropriate balance between technical details and "`high"=level"'"=concepts? (Expected to be an overview article).
+				
+				Are the breadth and level of detail appropriate for an article of this length?
+			& 4 \ \\				
+		\hline
+			\textbf{Completeness}
+			
+				Is the text complete?			
+			& 4 \ \\	
+		\hline
+			\textbf{Conclusion / Bottom line}
+			
+				  Is the content of the article adequately summarized?
+				
+				Is the content presented reflected (critically) in the concluding part?			
+			& 4 \ \\				
+		\hline
+			\textbf{Overall rating}
+			& 4 \ \\				
+		\hline		
+		
+\end{longtable}
+
+
+
+\subsection*{Explanations}
+
+%Is the choice of words in the abstract appropriate? Is the level of abstraction appropriate?
+
+%Does the summary clearly indicate what to expect in the article? 
+
+%Is the summary understandable without having read the article?			
+\paragraph{Abstract:} The abstract is clear, setting clear expectations from the rest of the article.
+
+%----------------------------------------------------
+
+%Does the document have the required length and formatting?
+
+%Does the document contain spelling or grammatical errors?
+            
+\paragraph{Formal aspects} The document does not contain any apparent spelling
+or grammatical errors. However, it is not properly formatted and doesn't contain
+the expected amount of content. In fact, the abstract, introduction and
+conclusion together contain more content the rest of the paper. The main
+section of the paper is named ``Content'', which, besides spatial separation,
+doesn't help the reader in any meaningful way. As such, it could be omitted,
+and the subsection names, which are more suggestive, could be used as sections.
+The main section is merely an enumeration of mathematical functions and
+pseudo-code blocks, which would preferably be placed in an appendix and
+referenced throughout the article when needed.
+
+
+%Does the introduction explain the outline?
+
+%Are the word choices the level of abstraction appropriate for headings?
+
+%Are terms explained before they are used?
+
+%Are headings and consistent with section content?
+
+\paragraph{Outline / Structuring} The outline is clearly explained in the
+introduction. The words choices for the headings are rather abstract, some of
+them being just the mathematical notation of a concept (e.g. $log(x)$ instead
+of ``Logarithm'', or $\sqrt{x}$ instead of ``The Square Root''). There are some
+brief definitions for some concepts, while others are introduced with no
+explanation (e.g. the Newton Raphson). The headings are consistent with the
+content, but often vague (e.g. ``Content'', or ``Explanation''). The document
+structure could be improved, but it not entirely inappropriate for the given
+content. Every newly introduced concept should be accompanied by an explanation,
+according to it's importance in the text.
+   
+%----------------------------------------------------
+
+%How well does the article use technical terms, equations, pseudocode, figures, and tables?
+
+%Is the argumentation clear, comprehensible, and understandable?
+
+%Is the text too prosaic, unscientific, or overly scientific?
+
+%Does the comprehensibility suffer from a pseudo"=scientific style?
+
+%Are sentences and paragraphs of an appropriate length?
+
+\paragraph{Writing style and readability:} The writing style of the author is
+more prosaic than scientific, utilising uncommon words or stylistic
+constructions that hinder comprehension (e.g. ``elusive'', ``swift and accurate
+results''). Moreover, a number of hyperbolic expressions that are present especially 
+in the conclusion. Besides the abstract, introduction and conclusion, most of the
+paragraphs are one-liners. Mathematical symbols are sometimes used instead of a
+word to denote particular concepts (e.g. $\%$ instead of ``percentage''). This
+hinders comprehension and makes the paper appear less scientific.
+
+%----------------------------------------------------
+
+%Are references provided when they are necessary?
+
+%Are the references given relevant?
+
+%Are verbatim text passages marked as citations?
+
+%Are all entries of the bibliography complete and correct?
+
+%Would references be mentioned that are missing in the article?
+
+%Are all critical statements supported by a "literature" reference?
+
+\paragraph{Reference use \& Bibliography:} There are no references used
+throughout the paper. The author introduced as such mathematical functions, core
+statements about them and pseudo-code fragments which stand for computer
+implementations of such functions, without mentioning the source. Given the
+context, this can be interpreted as plagiarism and not the author's own work.
+There are some bibliographic entries at the end of the article, but are not 
+mentioned anywhere in the article.
+
+%----------------------------------------------------
+
+%Is the presentation of background""=concepts appropriate for the intended readers?
+
+%Does the paper maintain an appropriate balance between technical details and "`high"=level"'"=concepts? (Expected to be an overview article).
+
+%Are the breadth and level of detail appropriate for an article of this length?
+
+\paragraph{Level of detail / Completeness} Throughout the article, the
+mathematical formulas and computer implementation are just stated as such,
+without further explanations. This limits very much the level of understanding
+that a reader can achieve from this paper. Furthermore, the ``evaluation''
+aspect in the title of the paper doesn't seem to be covered, and it's thus
+unclear what it refers to. Giving a proper description and background
+information on each function presented, and also the reasoning behind the
+presented algorithms would be very useful for the reader. Because of the afore
+mentioned points, the text cannot be considered complete.
+
+%Is the content of the article adequately summarized?
+
+%Is the content presented reflected (critically) in the concluding part?			
+
+\paragraph{Conclusion / Bottom line:} The conclusion is well written if judged
+in isolation. However, given the context, it does not accurately reflect the
+content of the paper. For example, it is stated that the paper provides a
+comprehensive exploration of the topic at hand, which is not accurate given the
+lack of explanations and reasoning. A number of such hyperbolic expressions are
+present throughout the conclusion, which are not well suited for a scientific
+paper. The conclusion should be rewritten in such a way that it gives a brief
+recap of the core aspects covered in the paper, clearly stating the results and
+the contribution of the author. A more neuter tone would be preferable, such that
+reader can objectively judge the usefulness of the work and not be influenced
+by the information's delivery.
+
+%----------------------------------------------------
+
+\paragraph{Strongest aspect(s) of the paper:} The strongest aspect of the paper
+is the abstract which does a good job of setting the expectations for the
+paper.
+
+
+\paragraph{Weakest aspect(s) of the paper:} The weakest aspects of the paper are 
+the lack of content explaining the stated formulas and algorithms.
+
+\end{document}

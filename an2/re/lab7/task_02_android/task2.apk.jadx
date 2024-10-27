@@ -1,0 +1,122 @@
+{
+  "projectVersion": 1,
+  "files": [
+    "task2.apk"
+  ],
+  "treeExpansions": [
+    [
+      "com",
+      "Source code",
+      "task2.apk"
+    ],
+    [
+      "flare_on.flare",
+      "com",
+      "Source code",
+      "task2.apk"
+    ],
+    [
+      "flareon.flare",
+      "com",
+      "Source code",
+      "task2.apk"
+    ],
+    [
+      "com.flareon.flare.ValidateActivity",
+      "flareon.flare",
+      "com",
+      "Source code",
+      "task2.apk"
+    ],
+    [
+      "Resources",
+      "task2.apk"
+    ],
+    [
+      "lib",
+      "Resources",
+      "task2.apk"
+    ],
+    [
+      "armeabi",
+      "lib",
+      "Resources",
+      "task2.apk"
+    ],
+    [
+      "META-INF",
+      "Resources",
+      "task2.apk"
+    ]
+  ],
+  "codeData": {
+    "comments": [],
+    "renames": []
+  },
+  "openTabs": [
+    {
+      "type": "class",
+      "tabPath": "com.flareon.flare.BuildConfig",
+      "subPath": "java",
+      "caret": 78,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "class",
+      "tabPath": "com.flareon.flare.R",
+      "subPath": "java",
+      "caret": 118,
+      "view": {
+        "x": 0,
+        "y": 91
+      }
+    },
+    {
+      "type": "class",
+      "tabPath": "com.flareon.flare.MainActivity",
+      "subPath": "java",
+      "caret": 241,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "class",
+      "tabPath": "com.flareon.flare.ValidateActivity",
+      "subPath": "java",
+      "caret": 1220,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "resource",
+      "tabPath": "AndroidManifest.xml",
+      "subPath": "",
+      "caret": 0,
+      "view": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "class",
+      "tabPath": "com.flare_on.flare.R",
+      "subPath": "java",
+      "caret": 64670,
+      "view": {
+        "x": 0,
+        "y": 18841
+      }
+    }
+  ],
+  "activeTab": 3,
+  "cacheDir": "task2.apk.cache",
+  "enableLiveReload": false,
+  "searchHistory": []
+}
